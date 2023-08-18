@@ -1,7 +1,7 @@
 {
-  "name": "sscreator-ui",
+  "name": "@sscreator/ui",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.0.1",
   "type": "module",
   "repository": "https://github.com/FHU-yezi/sscreator-ui.git",
   "author": "Yezi (https://github.com/FHU-yezi)",
