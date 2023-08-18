@@ -3,16 +3,46 @@
   "private": false,
   "version": "0.1.0",
   "type": "module",
+  "repository": "https://github.com/FHU-yezi/sscreator-ui.git",
+  "author": "Yezi (https://github.com/FHU-yezi)",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/sscreator-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/sscreator-ui.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "vite build"
   },
-  "dependencies": {
-    "preact": "^10.16.0"
+  "peerDependencies": {
+    "@preact/signals": "^1.2.0",
+    "clsx": "^2.0.0",
+    "preact": "^10.16.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1",
+    "unocss": "^0.54.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/node": "^20.5.0",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "@unocss/eslint-config": "^0.54.2",
+    "@unocss/preset-rem-to-px": "^0.54.2",
+    "@unocss/reset": "^0.54.2",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.1",
+    "react-error-boundary": "^4.0.11",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
