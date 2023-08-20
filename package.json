@@ -9,7 +9,12 @@
   "type": "module",
   "repository": "https://github.com/FHU-yezi/sscreator-ui.git",
   "author": "Yezi (https://github.com/FHU-yezi)",
-  "keywords": ["preact", "components", "design", "unocss"],
+  "keywords": [
+    "preact",
+    "components",
+    "design",
+    "unocss"
+  ],
   "license": "MIT",
   "files": [
     "dist"
@@ -31,7 +36,8 @@
     "preact": "^10.16.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
-    "unocss": "^0.54.2"
+    "unocss": "^0.54.2",
+    "wouter-preact": "^2.11.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
