@@ -24,11 +24,12 @@
     ".": {
       "import": "./dist/sscreator-ui.js",
       "types": "./dist/main.d.ts"
-    }
+    },
+    "./dist/sscreator-ui.css": "./dist/sscreator-ui.css"
   },
   "scripts": {
     "dev": "vite",
-    "build": "unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css && vite build"
+    "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css"
   },
   "peerDependencies": {
     "@preact/signals": "^1.2.0",
