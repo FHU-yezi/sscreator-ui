@@ -36,7 +36,7 @@ export default function TextAreaInput({
   noSelectAllOnFocus = false,
   width = "w-full",
   textColor = "text-zinc-950 dark:text-zinc-50",
-  backgroundColor = "bg-zinc-100 dark:bg-zinc-800",
+  backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
   borderColor = "border-zinc-200 dark:border-zinc-700",
   inputRef,
 }: Props) {
