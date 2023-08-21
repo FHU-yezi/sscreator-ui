@@ -10,6 +10,7 @@ export { default as TextInput } from "./components/input/TextInput";
 export { default as Center } from "./components/layout/Center";
 export { default as Column } from "./components/layout/Column";
 export { default as Row } from "./components/layout/Row";
+export { default as Grid } from "./components/layout/Grid";
 
 export { default as ExternalLink } from "./components/typography/ExternalLink";
 export { default as InternalLink } from "./components/typography/InternalLink";

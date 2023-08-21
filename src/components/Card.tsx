@@ -6,7 +6,6 @@ interface Props {
   className?: string;
   padding?: string;
   margin?: string;
-  gap?: string;
   rounded?: string;
   borderColor?: string;
 }
@@ -16,7 +15,6 @@ export default function Card({
   className,
   padding = "p-4",
   margin = "m-0",
-  gap = "gap-3",
   rounded = "rounded-lg",
   borderColor = "border-zinc-200 dark:border-zinc-700",
 }: Props) {
@@ -24,10 +22,9 @@ export default function Card({
     <div
       className={clsx(
         className,
-        "flex flex-col shadow border",
+        "shadow border",
         padding,
         margin,
-        gap,
         rounded,
         borderColor,
       )}

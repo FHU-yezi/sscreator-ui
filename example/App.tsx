@@ -5,6 +5,7 @@ import {
   Card,
   Column,
   ExternalLink,
+  Grid,
   IconButton,
   InternalLink,
   NumberInput,
@@ -139,10 +140,21 @@ export default function App() {
 
       <Title>卡片</Title>
       <Card>
-        <Text>项目 1</Text>
-        <Text>项目 2</Text>
-        <Text>项目 3</Text>
+        <Row>
+          <div className="rounded bg-green-500 p-2 shadow">元素 1</div>
+          <div className="rounded bg-orange-500 p-2 shadow">元素 2</div>
+          <div className="rounded bg-blue-500 p-2 shadow">元素 3</div>
+          <div className="rounded bg-purple-500 p-2 shadow">元素 4</div>
+        </Row>
       </Card>
+
+      <Title>Grid</Title>
+      <Grid cols="grid-cols-1 sm:grid-cols-2">
+        <div className="rounded bg-green-500 p-2 shadow">元素 1</div>
+        <div className="rounded bg-orange-500 p-2 shadow">元素 2</div>
+        <div className="rounded bg-blue-500 p-2 shadow">元素 3</div>
+        <div className="rounded bg-purple-500 p-2 shadow">元素 4</div>
+      </Grid>
     </Column>
   );
 }
