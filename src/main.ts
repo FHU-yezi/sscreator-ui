@@ -16,6 +16,8 @@ export { default as InternalLink } from "./components/typography/InternalLink";
 export { default as Text } from "./components/typography/Text";
 export { default as Title } from "./components/typography/Title";
 
+export { default as Card } from "./components/Card";
+
 export {
   getColorScheme,
   toggleColorScheme,

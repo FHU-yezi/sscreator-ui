@@ -2,6 +2,7 @@ import { signal } from "@preact/signals";
 import { FiFlag } from "react-icons/fi";
 import {
   Button,
+  Card,
   Column,
   ExternalLink,
   IconButton,
@@ -135,6 +136,13 @@ export default function App() {
         placeholder="占位符 Placeholder"
       />
       <Text>内容：{numberInputValue.value}</Text>
+
+      <Title>卡片</Title>
+      <Card>
+        <Text>项目 1</Text>
+        <Text>项目 2</Text>
+        <Text>项目 3</Text>
+      </Card>
     </Column>
   );
 }
