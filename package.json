@@ -28,7 +28,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css && vite build"
   },
   "peerDependencies": {
     "@preact/signals": "^1.2.0",
@@ -45,6 +45,7 @@
     "@types/node": "^20.5.0",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
+    "@unocss/cli": "^0.55.2",
     "@unocss/eslint-config": "^0.54.2",
     "@unocss/preset-rem-to-px": "^0.54.2",
     "@unocss/reset": "^0.54.2",
