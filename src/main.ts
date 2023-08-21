@@ -18,6 +18,7 @@ export { default as Text } from "./components/typography/Text";
 export { default as Title } from "./components/typography/Title";
 
 export { default as Card } from "./components/Card";
+export { default as Badge } from "./components/Badge";
 
 export {
   getColorScheme,

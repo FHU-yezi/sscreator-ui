@@ -1,6 +1,7 @@
 import { signal } from "@preact/signals";
 import { FiFlag } from "react-icons/fi";
 import {
+  Badge,
   Button,
   Card,
   Column,
@@ -155,6 +156,13 @@ export default function App() {
         <div className="rounded bg-blue-500 p-2 shadow">元素 3</div>
         <div className="rounded bg-purple-500 p-2 shadow">元素 4</div>
       </Grid>
+
+      <Title>徽章</Title>
+      <Row>
+        <Badge color="bg-green-400 dark:bg-green-600">可用</Badge>
+        <Badge color="bg-orange-400 dark:bg-orange-600">降级</Badge>
+        <Badge color="bg-red-400 dark:bg-red-600">不可用</Badge>
+      </Row>
     </Column>
   );
 }
