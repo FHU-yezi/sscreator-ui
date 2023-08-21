@@ -1,3 +1,4 @@
+import { signal } from "@preact/signals";
 import { FiFlag } from "react-icons/fi";
 import {
   Button,
@@ -5,13 +6,20 @@ import {
   ExternalLink,
   IconButton,
   InternalLink,
+  NumberInput,
   OutlineButton,
   OutlineIconButton,
   Row,
   Text,
+  TextAreaInput,
+  TextInput,
   Title,
 } from "../src/main";
 import "../src/utils/colorSchemeHelper";
+
+const textInputValue = signal("测试 Value");
+const textAreaInputValue = signal("测试 Value");
+const numberInputValue = signal(0);
 
 export default function App() {
   return (
@@ -100,6 +108,33 @@ export default function App() {
           <FiFlag />
         </OutlineIconButton>
       </Row>
+
+      <Title>文本输入</Title>
+      <TextInput
+        label="测试 Label"
+        value={textInputValue}
+        description="测试 Description"
+        placeholder="占位符 Placeholder"
+      />
+      <Text>内容：{textInputValue.value}</Text>
+
+      <Title>文本输入</Title>
+      <TextAreaInput
+        label="测试 Label"
+        value={textAreaInputValue}
+        description="测试 Description"
+        placeholder="占位符 Placeholder"
+      />
+      <Text>内容：{textAreaInputValue.value}</Text>
+
+      <Title>数字输入</Title>
+      <NumberInput
+        label="测试 Label"
+        value={numberInputValue}
+        description="测试 Description"
+        placeholder="占位符 Placeholder"
+      />
+      <Text>内容：{numberInputValue.value}</Text>
     </Column>
   );
 }

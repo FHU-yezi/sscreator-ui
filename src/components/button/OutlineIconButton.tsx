@@ -9,7 +9,7 @@ interface Props {
   children: ComponentChild;
   className?: string;
   onClick?(): void;
-  color?: string;
+  borderColor?: string;
   hoverColor?: string;
   isLoading?: boolean;
   isDisabled?: boolean;
@@ -19,7 +19,7 @@ export default function OutlineIconButton({
   children,
   className,
   onClick,
-  color = "border-zinc-800 dark:border-zinc-600",
+  borderColor = "border-zinc-800 dark:border-zinc-600",
   hoverColor = "hover:bg-zinc-100 hover:dark:bg-zinc-900",
   isLoading = false,
   isDisabled = false,
@@ -30,7 +30,7 @@ export default function OutlineIconButton({
       className={clsx(
         className,
         "transition-all border-2 p-2 rounded-lg shadow inline w-fit",
-        color,
+        borderColor,
         {
           [hoverColor]: !isLoading && !isDisabled,
           "cursor-wait": isLoading,
@@ -39,6 +39,7 @@ export default function OutlineIconButton({
         },
       )}
       onClick={onClick}
+      disabled={isDisabled}
     >
       <Center className="h-fit">
         <Text isBold>

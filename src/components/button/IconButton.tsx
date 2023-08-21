@@ -39,6 +39,7 @@ export default function IconButton({
         },
       )}
       onClick={onClick}
+      disabled={isDisabled}
     >
       <Center className="h-fit">
         <Text color="text-zinc-50 dark:text-zinc-200" isBold>
