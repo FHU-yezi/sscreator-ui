@@ -22,7 +22,7 @@ export { default as Title } from "./components/typography/Title";
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
 
-export { default as ColorSchemeSwitch } from "./blocks/ColorSchemeSwitch";
+export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 
 export {
   getColorScheme,

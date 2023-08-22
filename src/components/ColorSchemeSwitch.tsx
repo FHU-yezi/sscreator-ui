@@ -1,7 +1,7 @@
 import { BiMoon, BiSun } from "react-icons/bi";
-import OutlineIconButton from "../components/button/OutlineIconButton";
-import Row from "../components/layout/Row";
-import Text from "../components/typography/Text";
+import OutlineIconButton from "./button/OutlineIconButton";
+import Row from "./layout/Row";
+import Text from "./typography/Text";
 import { useColorScheme } from "../utils/colorSchemeHelper";
 
 export default function ColorSchemeSwitch() {
