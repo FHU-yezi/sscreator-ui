@@ -54,9 +54,7 @@ export default function Switch<T extends ComponentChild>({
               <Row className="items-center" gap="gap-1">
                 <Text
                   color={
-                    item.value === value.value
-                      ? "text-zinc-50 bg:text-zinc-950"
-                      : undefined
+                    item.value === value.value ? "text-zinc-50" : undefined
                   }
                 >
                   {item.leftIcon}
@@ -64,9 +62,7 @@ export default function Switch<T extends ComponentChild>({
                 <Text
                   className="whitespace-nowrap"
                   color={
-                    item.value === value.value
-                      ? "text-zinc-50 bg:text-zinc-950"
-                      : undefined
+                    item.value === value.value ? "text-zinc-50" : undefined
                   }
                 >
                   {item.label}

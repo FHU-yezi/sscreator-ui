@@ -4,6 +4,7 @@ import {
   Badge,
   Button,
   Card,
+  ColorSchemeSwitch,
   Column,
   ExternalLink,
   Grid,
@@ -30,6 +31,9 @@ const switchValue = signal<1 | 2 | 3>(2);
 export default function App() {
   return (
     <Column>
+      <Title>颜色主题切换</Title>
+      <ColorSchemeSwitch />
+
       <Title>文字</Title>
       <Text>文字 Text</Text>
       <Text isGray>灰色文字 Gray Text</Text>
