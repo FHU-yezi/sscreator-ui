@@ -11,6 +11,7 @@ interface Props {
   onClick?(): void;
   borderColor?: string;
   hoverColor?: string;
+  isBorderLess?: boolean;
   isLoading?: boolean;
   isDisabled?: boolean;
 }
@@ -21,23 +22,22 @@ export default function OutlineIconButton({
   onClick,
   borderColor = "border-zinc-800 dark:border-zinc-600",
   hoverColor = "hover:bg-zinc-100 hover:dark:bg-zinc-900",
+  isBorderLess = false,
   isLoading = false,
   isDisabled = false,
 }: Props) {
   return (
     <button
       type="button"
-      className={clsx(
-        className,
-        "transition-all border-2 p-2 rounded-lg shadow inline w-fit",
-        borderColor,
-        {
-          [hoverColor]: !isLoading && !isDisabled,
-          "cursor-wait": isLoading,
-          "cursor-not-allowed": isDisabled,
-          "opacity-60": isLoading || isDisabled,
-        },
-      )}
+      className={clsx(className, "transition-all p-2 rounded-lg inline w-fit", {
+        "border-2 shadow": !isBorderLess,
+        [borderColor]: !isBorderLess,
+
+        [hoverColor]: !isLoading && !isDisabled,
+        "cursor-wait": isLoading,
+        "cursor-not-allowed": isDisabled,
+        "opacity-60": isLoading || isDisabled,
+      })}
       onClick={onClick}
       disabled={isDisabled}
     >
