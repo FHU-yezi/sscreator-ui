@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import { BiLinkExternal } from "react-icons/bi";
+import { MdOutlineArrowOutward } from "react-icons/md";
 import { useLocation } from "wouter-preact";
 
 interface Props {
@@ -32,7 +32,10 @@ export default function InternalLink({
     >
       {children ?? path}
       {!hideIcon && (
-        <BiLinkExternal className={clsx(className, "ml-1 inline")} />
+        <MdOutlineArrowOutward
+          className={clsx(className, "ml-1 inline")}
+          size={18}
+        />
       )}
     </a>
   );

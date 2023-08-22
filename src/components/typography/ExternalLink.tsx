@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import { BiLinkExternal } from "react-icons/bi";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 interface Props {
   children?: ComponentChildren;
@@ -29,7 +29,10 @@ export default function ExternalLink({
     >
       {children ?? href}
       {!hideIcon && (
-        <BiLinkExternal className={clsx(className, "ml-1 inline")} />
+        <MdOutlineArrowOutward
+          className={clsx(className, "ml-1 inline")}
+          size={18}
+        />
       )}
     </a>
   );

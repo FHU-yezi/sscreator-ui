@@ -1,5 +1,5 @@
 import { signal } from "@preact/signals";
-import { FiFlag } from "react-icons/fi";
+import { MdOutlineFlag } from "react-icons/md";
 import {
   Badge,
   Button,
@@ -80,18 +80,18 @@ export default function App() {
       <ExternalLink href="https://github.com" />
 
       <Title>按钮</Title>
-      <Button leftIcon={<FiFlag />}>按钮</Button>
+      <Button leftIcon={<MdOutlineFlag />}>按钮</Button>
       <Button isLoading>加载态</Button>
-      <Button leftIcon={<FiFlag />} isLoading>
+      <Button leftIcon={<MdOutlineFlag />} isLoading>
         加载态（带图标）
       </Button>
       <Button isDisabled>禁用态</Button>
       <Button isInline>Inline 按钮</Button>
 
       <Title>外框按钮</Title>
-      <OutlineButton leftIcon={<FiFlag />}>按钮</OutlineButton>
+      <OutlineButton leftIcon={<MdOutlineFlag />}>按钮</OutlineButton>
       <OutlineButton isLoading>加载态</OutlineButton>
-      <OutlineButton leftIcon={<FiFlag />} isLoading>
+      <OutlineButton leftIcon={<MdOutlineFlag />} isLoading>
         加载态（带图标）
       </OutlineButton>
       <OutlineButton isDisabled>禁用态</OutlineButton>
@@ -100,26 +100,26 @@ export default function App() {
       <Title>图标按钮</Title>
       <Row>
         <IconButton>
-          <FiFlag />
+          <MdOutlineFlag />
         </IconButton>
         <IconButton isLoading>
-          <FiFlag />
+          <MdOutlineFlag />
         </IconButton>
         <IconButton isDisabled>
-          <FiFlag />
+          <MdOutlineFlag />
         </IconButton>
       </Row>
 
       <Title>外框图标按钮</Title>
       <Row>
         <OutlineIconButton>
-          <FiFlag />
+          <MdOutlineFlag />
         </OutlineIconButton>
         <OutlineIconButton isLoading>
-          <FiFlag />
+          <MdOutlineFlag />
         </OutlineIconButton>
         <OutlineIconButton isDisabled>
-          <FiFlag />
+          <MdOutlineFlag />
         </OutlineIconButton>
       </Row>
 
@@ -184,7 +184,7 @@ export default function App() {
           {
             label: "选项一",
             value: 1,
-            leftIcon: <FiFlag />,
+            leftIcon: <MdOutlineFlag />,
           },
           { label: "选项二", value: 2 },
           { label: "选项三", value: 3 },

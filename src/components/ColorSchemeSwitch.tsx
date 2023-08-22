@@ -1,8 +1,8 @@
-import { BiMoon, BiSun } from "react-icons/bi";
+import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { useColorScheme } from "../utils/colorSchemeHelper";
 import OutlineIconButton from "./button/OutlineIconButton";
 import Row from "./layout/Row";
 import Text from "./typography/Text";
-import { useColorScheme } from "../utils/colorSchemeHelper";
 
 export default function ColorSchemeSwitch() {
   const { colorScheme, toggleColorScheme } = useColorScheme();
@@ -22,7 +22,7 @@ export default function ColorSchemeSwitch() {
         onClick={isDark ? toggleColorScheme : undefined}
       >
         <Text color={isLight ? "text-zinc-50" : undefined}>
-          <BiSun />
+          <MdOutlineLightMode />
         </Text>
       </OutlineIconButton>
       <OutlineIconButton
@@ -33,7 +33,7 @@ export default function ColorSchemeSwitch() {
         onClick={isLight ? toggleColorScheme : undefined}
       >
         <Text color={isDark ? "text-zinc-50" : undefined}>
-          <BiMoon />
+          <MdOutlineDarkMode />
         </Text>
       </OutlineIconButton>
     </Row>
