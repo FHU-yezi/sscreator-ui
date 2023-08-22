@@ -13,6 +13,7 @@ import {
   IconButton,
   InfoAlert,
   InternalLink,
+  Key,
   NoResultNotice,
   NumberInput,
   OutlineButton,
@@ -82,6 +83,13 @@ export default function App() {
         简书
       </ExternalLink>
       <ExternalLink href="https://github.com" />
+
+      <Title>键位</Title>
+      <Text>
+        按下
+        <Key>Ctrl + C</Key>
+        来复制内容
+      </Text>
 
       <Title>按钮</Title>
       <Button leftIcon={<MdOutlineFlag />}>按钮</Button>

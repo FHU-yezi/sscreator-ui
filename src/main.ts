@@ -21,6 +21,7 @@ export { default as Row } from "./components/layout/Row";
 
 export { default as ExternalLink } from "./components/typography/ExternalLink";
 export { default as InternalLink } from "./components/typography/InternalLink";
+export { default as Key } from "./components/typography/Key";
 export { default as Text } from "./components/typography/Text";
 export { default as Title } from "./components/typography/Title";
 
