@@ -30,6 +30,8 @@ export { default as Checkbox } from "./components/Checkbox";
 
 export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 
+export { default as NoResultNotice } from "./blocks/NoResultNotice";
+
 export {
   getColorScheme,
   toggleColorScheme,

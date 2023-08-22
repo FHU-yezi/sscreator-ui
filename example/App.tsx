@@ -13,6 +13,7 @@ import {
   IconButton,
   InfoAlert,
   InternalLink,
+  NoResultNotice,
   NumberInput,
   OutlineButton,
   OutlineIconButton,
@@ -242,6 +243,9 @@ export default function App() {
           <Text>请尝试刷新页面或更换网络环境。</Text>
         </Column>
       </ErrorAlert>
+
+      <Title>无结果提示</Title>
+      <NoResultNotice />
     </Column>
   );
 }
