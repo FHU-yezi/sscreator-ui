@@ -4,6 +4,7 @@ import {
   Badge,
   Button,
   Card,
+  Checkbox,
   ColorSchemeSwitch,
   Column,
   ErrorAlert,
@@ -25,6 +26,8 @@ import {
   WarningAlert,
 } from "../src/main";
 import "../src/utils/colorSchemeHelper";
+
+const checkboxValue = signal(false);
 
 const textInputValue = signal("测试 Value");
 const textAreaInputValue = signal("测试 Value");
@@ -122,6 +125,14 @@ export default function App() {
           <MdOutlineFlag />
         </OutlineIconButton>
       </Row>
+
+      <Title>复选框</Title>
+      <Checkbox
+        label="测试 Label"
+        value={checkboxValue}
+        description="测试 Description"
+      />
+      <Text>内容：{checkboxValue.value}</Text>
 
       <Title>文本输入</Title>
       <TextInput

@@ -26,6 +26,7 @@ export { default as Title } from "./components/typography/Title";
 
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
+export { default as Checkbox } from "./components/Checkbox";
 
 export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 
