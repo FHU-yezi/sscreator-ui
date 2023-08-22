@@ -1,3 +1,5 @@
+export { default as Switch } from "./components/Switch";
+
 export { default as Button } from "./components/button/Button";
 export { default as IconButton } from "./components/button/IconButton";
 export { default as OutlineButton } from "./components/button/OutlineButton";
@@ -9,16 +11,16 @@ export { default as TextInput } from "./components/input/TextInput";
 
 export { default as Center } from "./components/layout/Center";
 export { default as Column } from "./components/layout/Column";
-export { default as Row } from "./components/layout/Row";
 export { default as Grid } from "./components/layout/Grid";
+export { default as Row } from "./components/layout/Row";
 
 export { default as ExternalLink } from "./components/typography/ExternalLink";
 export { default as InternalLink } from "./components/typography/InternalLink";
 export { default as Text } from "./components/typography/Text";
 export { default as Title } from "./components/typography/Title";
 
-export { default as Card } from "./components/Card";
 export { default as Badge } from "./components/Badge";
+export { default as Card } from "./components/Card";
 
 export {
   getColorScheme,

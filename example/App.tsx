@@ -13,6 +13,7 @@ import {
   OutlineButton,
   OutlineIconButton,
   Row,
+  Switch,
   Text,
   TextAreaInput,
   TextInput,
@@ -23,6 +24,8 @@ import "../src/utils/colorSchemeHelper";
 const textInputValue = signal("测试 Value");
 const textAreaInputValue = signal("测试 Value");
 const numberInputValue = signal(0);
+
+const switchValue = signal<1 | 2 | 3>(2);
 
 export default function App() {
   return (
@@ -163,6 +166,23 @@ export default function App() {
         <Badge color="bg-orange-400 dark:bg-orange-600">降级</Badge>
         <Badge color="bg-red-400 dark:bg-red-600">不可用</Badge>
       </Row>
+
+      <Title>滑动选择</Title>
+      <Switch
+        label="测试 Label"
+        value={switchValue}
+        description="测试 Description"
+        data={[
+          {
+            label: "选项一",
+            value: 1,
+            leftIcon: <FiFlag />,
+          },
+          { label: "选项二", value: 2 },
+          { label: "选项三", value: 3 },
+        ]}
+      />
+      <Text>当前选择：{switchValue.value}</Text>
     </Column>
   );
 }
