@@ -1,5 +1,10 @@
 export { default as Switch } from "./components/Switch";
 
+export { default as ErrorAlert } from "./components/alert/ErrorAlert";
+export { default as InfoAlert } from "./components/alert/InfoAlert";
+export { default as SuccessAlert } from "./components/alert/SuccessAlert";
+export { default as WarningAlert } from "./components/alert/WarningAlert";
+
 export { default as Button } from "./components/button/Button";
 export { default as IconButton } from "./components/button/IconButton";
 export { default as OutlineButton } from "./components/button/OutlineButton";
