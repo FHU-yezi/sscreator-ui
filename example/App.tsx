@@ -22,6 +22,10 @@ import {
   Row,
   SuccessAlert,
   Switch,
+  Table,
+  TableBody,
+  TableHeader,
+  TableRow,
   Text,
   TextAreaInput,
   TextInput,
@@ -281,6 +285,56 @@ export default function App() {
           <Text>请尝试刷新页面或更换网络环境。</Text>
         </Column>
       </ErrorAlert>
+
+      <Title>表格</Title>
+      <Table className="w-full">
+        <TableHeader>
+          <Text isBold isCenter isNoWrap>
+            第一列
+          </Text>
+          <Text isBold isCenter isNoWrap>
+            第二列
+          </Text>
+          <Text isBold isCenter isNoWrap>
+            第三列
+          </Text>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <Text isCenter isNoWrap>
+              第一行第一列
+            </Text>
+            <Text isCenter isNoWrap>
+              第一行第二列
+            </Text>
+            <Text isCenter isNoWrap>
+              第一行第三列
+            </Text>
+          </TableRow>
+          <TableRow>
+            <Text isCenter isNoWrap>
+              第二行第一列
+            </Text>
+            <Text isCenter isNoWrap>
+              第二行第二列
+            </Text>
+            <Text isCenter isNoWrap>
+              第二行第三列
+            </Text>
+          </TableRow>
+          <TableRow>
+            <Text isCenter isNoWrap>
+              第三行第一列
+            </Text>
+            <Text isCenter isNoWrap>
+              第三行第二列
+            </Text>
+            <Text isCenter isNoWrap>
+              第三行第三列
+            </Text>
+          </TableRow>
+        </TableBody>
+      </Table>
 
       <Title>无结果提示</Title>
       <NoResultNotice />
