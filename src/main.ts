@@ -29,6 +29,7 @@ export { default as Text } from "./components/typography/Text";
 
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
+export { default as LoadingIcon } from "./components/LoadingIcon";
 export { default as Checkbox } from "./components/Checkbox";
 export { Table, TableBody, TableHeader, TableRow } from "./components/Table";
 
