@@ -36,6 +36,7 @@ export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 
 export { default as Footer } from "./blocks/Footer";
 export { default as Header } from "./blocks/Header";
+export { default as AppContainer } from "./blocks/AppContainer";
 export { default as NoResultNotice } from "./blocks/NoResultNotice";
 
 export {

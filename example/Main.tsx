@@ -4,6 +4,7 @@ import { render, StrictMode } from "preact/compat";
 import { ErrorBoundary } from "react-error-boundary";
 import "uno.css";
 import {
+  AppContainer,
   ColorSchemeSwitch,
   Column,
   ExternalLink,
@@ -27,9 +28,9 @@ function Main() {
             <ColorSchemeSwitch />
           </Row>
         </Header>
-        <div className="mx-auto my-7 max-w-4xl min-h-screen w-[90vw]">
+        <AppContainer>
           <App />
-        </div>
+        </AppContainer>
         <Footer>
           <Column gap="gap-2">
             <Text isGray>
