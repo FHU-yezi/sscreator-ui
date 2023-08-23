@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { ComponentChild, ComponentChildren } from "preact";
-import { TbLoader2 } from "react-icons/tb";
+import LoadingIcon from "../LoadingIcon";
 import Center from "../layout/Center";
 import Row from "../layout/Row";
 import Text from "../typography/Text";
@@ -52,7 +52,7 @@ export default function OutlineButton({
           <Row gap="gap-2" className="items-center">
             {leftIcon}
             {children}
-            {isLoading && <TbLoader2 className="motion-safe:animate-spin" />}
+            {isLoading && <LoadingIcon noWrapInText />}
           </Row>
         </Text>
       </Center>

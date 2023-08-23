@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { ComponentChild } from "preact";
-import { TbLoader2 } from "react-icons/tb";
+import LoadingIcon from "../LoadingIcon";
 import Center from "../layout/Center";
 import Row from "../layout/Row";
 import Text from "../typography/Text";
@@ -45,7 +45,7 @@ export default function IconButton({
         <Text color="text-zinc-50 dark:text-zinc-200" isBold>
           <Row gap="gap-2" className="items-center">
             {children}
-            {isLoading && <TbLoader2 className="motion-safe:animate-spin" />}
+            {isLoading && <LoadingIcon noWrapInText />}
           </Row>
         </Text>
       </Center>
