@@ -10,6 +10,7 @@ import {
   ErrorAlert,
   ExternalLink,
   Grid,
+  HorizontalScoll,
   IconButton,
   InfoAlert,
   InternalLink,
@@ -25,6 +26,7 @@ import {
   TextAreaInput,
   TextInput,
   Title,
+  VerticalScoll,
   WarningAlert,
 } from "../src/main";
 import "../src/utils/colorSchemeHelper";
@@ -74,6 +76,34 @@ export default function App() {
         <div className="rounded bg-blue-500 p-2 shadow">元素 3</div>
         <div className="rounded bg-purple-500 p-2 shadow">元素 4</div>
       </Column>
+
+      <Title>水平滚动</Title>
+      <HorizontalScoll className="w-[30vh]">
+        <Text className="w-screen">
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+        </Text>
+      </HorizontalScoll>
+
+      <Title>垂直滚动</Title>
+      <VerticalScoll className="h-[30vh]">
+        <Text className="w-screen sm:w-[30%]">
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+          简书是一个 UGC 内容创作平台，其 Slogan
+          是「创作你的创作」，通过简书钻贝等虚拟货币，将用户对平台的贡献返还给他们。
+        </Text>
+      </VerticalScoll>
 
       <Title>内部链接</Title>
       <InternalLink path="/aa">链接</InternalLink>
