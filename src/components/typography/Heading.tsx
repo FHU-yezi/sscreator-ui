@@ -7,7 +7,7 @@ interface Props {
   color?: string;
 }
 
-export default function Title({
+export default function Heading({
   children,
   className,
   color = "text-zinc-950 dark:text-zinc-50",

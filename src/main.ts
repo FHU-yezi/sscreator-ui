@@ -25,7 +25,7 @@ export { default as ExternalLink } from "./components/typography/ExternalLink";
 export { default as InternalLink } from "./components/typography/InternalLink";
 export { default as Key } from "./components/typography/Key";
 export { default as Text } from "./components/typography/Text";
-export { default as Title } from "./components/typography/Title";
+export { default as Heading } from "./components/typography/Heading";
 
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";

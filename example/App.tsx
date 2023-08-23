@@ -29,7 +29,7 @@ import {
   Text,
   TextAreaInput,
   TextInput,
-  Title,
+  Heading,
   VerticalScoll,
   WarningAlert,
 } from "../src/main";
@@ -46,10 +46,10 @@ const switchValue = signal<1 | 2 | 3>(2);
 export default function App() {
   return (
     <Column>
-      <Title>颜色主题切换</Title>
+      <Heading>颜色主题切换</Heading>
       <ColorSchemeSwitch />
 
-      <Title>文字</Title>
+      <Heading>文字</Heading>
       <Text>文字 Text</Text>
       <Text isGray>灰色文字 Gray Text</Text>
       <Text isSmall>小号文字 Small Text</Text>
@@ -62,10 +62,10 @@ export default function App() {
         大号加粗文字 Large Bold Text
       </Text>
 
-      <Title>标题</Title>
-      <Title>标题 Title</Title>
+      <Heading>标题</Heading>
+      <Heading>标题 Heading</Heading>
 
-      <Title>行</Title>
+      <Heading>行</Heading>
       <Row>
         <div className="rounded bg-green-500 p-2 shadow">元素 1</div>
         <div className="rounded bg-orange-500 p-2 shadow">元素 2</div>
@@ -73,7 +73,7 @@ export default function App() {
         <div className="rounded bg-purple-500 p-2 shadow">元素 4</div>
       </Row>
 
-      <Title>列</Title>
+      <Heading>列</Heading>
       <Column>
         <div className="rounded bg-green-500 p-2 shadow">元素 1</div>
         <div className="rounded bg-orange-500 p-2 shadow">元素 2</div>
@@ -81,7 +81,7 @@ export default function App() {
         <div className="rounded bg-purple-500 p-2 shadow">元素 4</div>
       </Column>
 
-      <Title>水平滚动</Title>
+      <Heading>水平滚动</Heading>
       <HorizontalScoll className="w-[30vh]">
         <Text className="w-screen">
           简书是一个 UGC 内容创作平台，其 Slogan
@@ -93,7 +93,7 @@ export default function App() {
         </Text>
       </HorizontalScoll>
 
-      <Title>垂直滚动</Title>
+      <Heading>垂直滚动</Heading>
       <VerticalScoll className="h-[30vh]">
         <Text className="w-screen sm:w-[30%]">
           简书是一个 UGC 内容创作平台，其 Slogan
@@ -109,23 +109,23 @@ export default function App() {
         </Text>
       </VerticalScoll>
 
-      <Title>内部链接</Title>
+      <Heading>内部链接</Heading>
       <InternalLink path="/aa">链接</InternalLink>
 
-      <Title>外部链接</Title>
+      <Heading>外部链接</Heading>
       <ExternalLink href="https://www.jianshu.com" hideIcon>
         简书
       </ExternalLink>
       <ExternalLink href="https://github.com" />
 
-      <Title>键位</Title>
+      <Heading>键位</Heading>
       <Text>
         按下
         <Key>Ctrl + C</Key>
         来复制内容
       </Text>
 
-      <Title>按钮</Title>
+      <Heading>按钮</Heading>
       <Button leftIcon={<MdOutlineFlag />}>按钮</Button>
       <Button isLoading>加载态</Button>
       <Button leftIcon={<MdOutlineFlag />} isLoading>
@@ -134,7 +134,7 @@ export default function App() {
       <Button isDisabled>禁用态</Button>
       <Button isInline>Inline 按钮</Button>
 
-      <Title>外框按钮</Title>
+      <Heading>外框按钮</Heading>
       <OutlineButton leftIcon={<MdOutlineFlag />}>按钮</OutlineButton>
       <OutlineButton isLoading>加载态</OutlineButton>
       <OutlineButton leftIcon={<MdOutlineFlag />} isLoading>
@@ -143,7 +143,7 @@ export default function App() {
       <OutlineButton isDisabled>禁用态</OutlineButton>
       <OutlineButton isInline>Inline 按钮</OutlineButton>
 
-      <Title>图标按钮</Title>
+      <Heading>图标按钮</Heading>
       <Row>
         <IconButton>
           <MdOutlineFlag />
@@ -156,7 +156,7 @@ export default function App() {
         </IconButton>
       </Row>
 
-      <Title>外框图标按钮</Title>
+      <Heading>外框图标按钮</Heading>
       <Row>
         <OutlineIconButton>
           <MdOutlineFlag />
@@ -169,7 +169,7 @@ export default function App() {
         </OutlineIconButton>
       </Row>
 
-      <Title>复选框</Title>
+      <Heading>复选框</Heading>
       <Checkbox
         label="测试 Label"
         value={checkboxValue}
@@ -177,7 +177,7 @@ export default function App() {
       />
       <Text>内容：{checkboxValue.value}</Text>
 
-      <Title>文本输入</Title>
+      <Heading>文本输入</Heading>
       <TextInput
         label="测试 Label"
         value={textInputValue}
@@ -186,7 +186,7 @@ export default function App() {
       />
       <Text>内容：{textInputValue.value}</Text>
 
-      <Title>文本输入</Title>
+      <Heading>文本输入</Heading>
       <TextAreaInput
         label="测试 Label"
         value={textAreaInputValue}
@@ -195,7 +195,7 @@ export default function App() {
       />
       <Text>内容：{textAreaInputValue.value}</Text>
 
-      <Title>数字输入</Title>
+      <Heading>数字输入</Heading>
       <NumberInput
         label="测试 Label"
         value={numberInputValue}
@@ -204,7 +204,7 @@ export default function App() {
       />
       <Text>内容：{numberInputValue.value}</Text>
 
-      <Title>卡片</Title>
+      <Heading>卡片</Heading>
       <Card>
         <Row>
           <div className="rounded bg-green-500 p-2 shadow">元素 1</div>
@@ -214,7 +214,7 @@ export default function App() {
         </Row>
       </Card>
 
-      <Title>Grid</Title>
+      <Heading>Grid</Heading>
       <Grid cols="grid-cols-1 sm:grid-cols-2">
         <div className="rounded bg-green-500 p-2 shadow">元素 1</div>
         <div className="rounded bg-orange-500 p-2 shadow">元素 2</div>
@@ -222,14 +222,14 @@ export default function App() {
         <div className="rounded bg-purple-500 p-2 shadow">元素 4</div>
       </Grid>
 
-      <Title>徽章</Title>
+      <Heading>徽章</Heading>
       <Row>
         <Badge color="bg-green-400 dark:bg-green-600">可用</Badge>
         <Badge color="bg-orange-400 dark:bg-orange-600">降级</Badge>
         <Badge color="bg-red-400 dark:bg-red-600">不可用</Badge>
       </Row>
 
-      <Title>滑动选择</Title>
+      <Heading>滑动选择</Heading>
       <Switch
         label="测试 Label"
         value={switchValue}
@@ -246,7 +246,7 @@ export default function App() {
       />
       <Text>当前选择：{switchValue.value}</Text>
 
-      <Title>提示</Title>
+      <Heading>提示</Heading>
       <SuccessAlert>
         <Column gap="gap-2">
           <Text isLarge isBold>
@@ -286,7 +286,7 @@ export default function App() {
         </Column>
       </ErrorAlert>
 
-      <Title>表格</Title>
+      <Heading>表格</Heading>
       <Table className="w-full">
         <TableHeader>
           <Text isBold isCenter isNoWrap>
@@ -336,7 +336,7 @@ export default function App() {
         </TableBody>
       </Table>
 
-      <Title>无结果提示</Title>
+      <Heading>无结果提示</Heading>
       <NoResultNotice />
     </Column>
   );
