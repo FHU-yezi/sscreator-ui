@@ -5,7 +5,6 @@ import {
   Button,
   Card,
   Checkbox,
-  ColorSchemeSwitch,
   Column,
   ErrorAlert,
   ExternalLink,
@@ -46,9 +45,6 @@ const switchValue = signal<1 | 2 | 3>(2);
 export default function App() {
   return (
     <Column>
-      <Heading>颜色主题切换</Heading>
-      <ColorSchemeSwitch />
-
       <Heading>文字</Heading>
       <Text>文字 Text</Text>
       <Text isGray>灰色文字 Gray Text</Text>
