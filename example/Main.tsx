@@ -3,7 +3,15 @@ import "@unocss/reset/tailwind.css";
 import { render, StrictMode } from "preact/compat";
 import { ErrorBoundary } from "react-error-boundary";
 import "uno.css";
-import { ColorSchemeSwitch, Header, Row, Text } from "../src/main";
+import {
+  ColorSchemeSwitch,
+  Column,
+  ExternalLink,
+  Footer,
+  Header,
+  Row,
+  Text,
+} from "../src/main";
 import App from "./App";
 import ErrorFallback from "./components/ErrorFallback";
 
@@ -22,6 +30,21 @@ function Main() {
         <div className="mx-auto my-7 max-w-4xl min-h-screen w-[90vw]">
           <App />
         </div>
+        <Footer>
+          <Column gap="gap-2">
+            <Text isGray>
+              GitHub：
+              <ExternalLink href="https://github.com/FHU-yezi/sscreator-ui" />
+            </Text>
+            <Text isGray>Powered By Open-Source Software</Text>
+            <Text isGray>
+              By{" "}
+              <ExternalLink href="https://www.jianshu.com/u/ea36c8d8aa30">
+                初心不变_叶子
+              </ExternalLink>
+            </Text>
+          </Column>
+        </Footer>
       </ErrorBoundary>
     </StrictMode>
   );
