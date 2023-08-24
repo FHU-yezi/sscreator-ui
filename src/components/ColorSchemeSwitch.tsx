@@ -6,8 +6,8 @@ import Text from "./typography/Text";
 
 export default function ColorSchemeSwitch() {
   const { colorScheme, toggleColorScheme } = useColorScheme();
-  const isLight = colorScheme === "light";
-  const isDark = colorScheme === "dark";
+  const isLight = colorScheme.value === "light";
+  const isDark = colorScheme.value === "dark";
 
   return (
     <Row
