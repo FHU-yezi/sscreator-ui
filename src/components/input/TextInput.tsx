@@ -44,7 +44,7 @@ export default function TextInput({
         type="text"
         className={clsx(
           className,
-          "py-1.5 px-3 rounded-lg border-2 focus:outline-none disabled:opacity-60",
+          "py-1.5 px-3 rounded-lg border focus:outline-none disabled:opacity-60",
           width,
           textColor,
           backgroundColor,

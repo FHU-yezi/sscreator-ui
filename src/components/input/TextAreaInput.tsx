@@ -46,7 +46,7 @@ export default function TextAreaInput({
         type="text"
         className={clsx(
           className,
-          "py-1.5 px-3 rounded-lg border-2 focus:outline-none disabled:opacity-60 resize-none",
+          "py-1.5 px-3 rounded-lg border focus:outline-none disabled:opacity-60 resize-none",
           width,
           textColor,
           backgroundColor,

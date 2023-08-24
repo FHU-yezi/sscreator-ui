@@ -52,7 +52,7 @@ export default function NumberInput({
         pattern="[0-9\.]*"
         className={clsx(
           className,
-          "py-1.5 px-3 rounded-lg border-2 focus:outline-none disabled:opacity-60 appearance-none",
+          "py-1.5 px-3 rounded-lg border focus:outline-none disabled:opacity-60 appearance-none",
           width,
           textColor,
           backgroundColor,

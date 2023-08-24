@@ -33,7 +33,7 @@ export default function OutlineButton({
       type="button"
       className={clsx(
         className,
-        "transition-all border-2 px-4 py-2 rounded-lg shadow",
+        "transition-all border px-4 py-2 rounded-lg shadow",
         borderColor,
         {
           [hoverColor]: !isLoading && !isDisabled,

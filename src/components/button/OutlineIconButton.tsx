@@ -30,7 +30,7 @@ export default function OutlineIconButton({
     <button
       type="button"
       className={clsx(className, "transition-all p-2 rounded-lg inline w-fit", {
-        "border-2 shadow": !isBorderLess,
+        "border shadow": !isBorderLess,
         [borderColor]: !isBorderLess,
 
         [hoverColor]: !isLoading && !isDisabled,
