@@ -27,7 +27,7 @@ export function toggleColorScheme() {
 
 export function useColorScheme() {
   return {
-    colorScheme,
+    colorScheme: colorScheme.value,
     toggleColorScheme,
   };
 }
