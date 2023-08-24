@@ -4,6 +4,7 @@ import {
   Badge,
   Button,
   Card,
+  Center,
   Checkbox,
   Column,
   DataCard,
@@ -16,6 +17,7 @@ import {
   InfoAlert,
   InternalLink,
   Key,
+  LoadingArea,
   Modal,
   NoResultNotice,
   NumberInput,
@@ -45,6 +47,7 @@ const numberInputValue = signal(0);
 const switchValue = signal<1 | 2 | 3>(2);
 
 const isModalOpen = signal(false);
+const isLoadingAreaLoading = signal(true);
 
 export default function App() {
   return (
@@ -389,11 +392,24 @@ export default function App() {
           name="测试数据"
           value={1234}
           trendValue="增长 6.66%"
-          trendType="flat"
+          trendType="up"
           description="这是一条测试数据"
         />
         <DataCard className="flex-1" name="Demo Data" value="56.78%" />
       </Row>
+
+      <Heading>加载中区域</Heading>
+      <Checkbox label="加载中" value={isLoadingAreaLoading} />
+      <LoadingArea
+        className="h-48 w-full"
+        isLoading={isLoadingAreaLoading.value}
+      >
+        <Center className="h-48 w-full rounded bg-green-500 p-2 shadow">
+          <Text isLarge isBold>
+            内容
+          </Text>
+        </Center>
+      </LoadingArea>
     </Column>
   );
 }
