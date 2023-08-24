@@ -6,6 +6,7 @@ import {
   Card,
   Checkbox,
   Column,
+  DataCard,
   ErrorAlert,
   ExternalLink,
   Grid,
@@ -380,6 +381,19 @@ export default function App() {
 
       <Heading>无结果提示</Heading>
       <NoResultNotice />
+
+      <Heading>数据卡片</Heading>
+      <Row>
+        <DataCard
+          className="flex-1"
+          name="测试数据"
+          value={1234}
+          trendValue="增长 6.66%"
+          trendType="flat"
+          description="这是一条测试数据"
+        />
+        <DataCard className="flex-1" name="Demo Data" value="56.78%" />
+      </Row>
     </Column>
   );
 }
