@@ -30,7 +30,7 @@ export default function Text({
     <p
       className={clsx(className, {
         [color]: !isGray,
-        "text-zinc-500": isGray,
+        "text-zinc-500 dark:text-zinc-400": isGray,
 
         "text-sm": isSmall,
         "text-lg": isLarge,
