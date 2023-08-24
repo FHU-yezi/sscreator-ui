@@ -1,5 +1,3 @@
-export { default as Switch } from "./components/Switch";
-
 export { default as ErrorAlert } from "./components/alert/ErrorAlert";
 export { default as InfoAlert } from "./components/alert/InfoAlert";
 export { default as SuccessAlert } from "./components/alert/SuccessAlert";
@@ -30,10 +28,11 @@ export { default as Text } from "./components/typography/Text";
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
 export { default as Checkbox } from "./components/Checkbox";
-export { default as LoadingIcon } from "./components/LoadingIcon";
-export { Table, TableBody, TableHeader, TableRow } from "./components/Table";
-
 export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
+export { default as LoadingIcon } from "./components/LoadingIcon";
+export { default as Switch } from "./components/Switch";
+export { Table, TableBody, TableHeader, TableRow } from "./components/Table";
+export { default as Tooltip } from "./components/Tooltip";
 
 export { default as AppContainer } from "./blocks/AppContainer";
 export { default as DataCard } from "./blocks/DataCard";

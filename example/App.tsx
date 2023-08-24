@@ -33,6 +33,7 @@ import {
   Text,
   TextAreaInput,
   TextInput,
+  Tooltip,
   VerticalScoll,
   WarningAlert,
 } from "../src/main";
@@ -410,6 +411,14 @@ export default function App() {
           </Text>
         </Center>
       </LoadingArea>
+
+      <Heading>提示</Heading>
+      <Tooltip tooltip="这是一条很长的提示，为了测试提示组件是否能在这种情况下自动换行，以保证阅读体验">
+        <Text>鼠标移动到文字上查看提示</Text>
+      </Tooltip>
+      <Tooltip tooltip="这是一条较短的提示" isHideIcon>
+        <Text>隐藏图标的提示</Text>
+      </Tooltip>
     </Column>
   );
 }
