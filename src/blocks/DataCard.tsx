@@ -12,6 +12,7 @@ interface Props {
   description?: string;
   trendValue?: string | number;
   trendType?: "up" | "down" | "flat";
+  isBorderLess?: boolean;
 }
 
 export default function DataCard({
@@ -21,14 +22,15 @@ export default function DataCard({
   description,
   trendValue,
   trendType,
+  isBorderLess = false,
 }: Props) {
   return (
-    <Card className={className} padding="px-4 py-3">
+    <Card className={className} padding="px-4 py-3" isBorderLess={isBorderLess}>
       <Column gap="gap-1">
         <Text>{name}</Text>
 
         <Row gap="gap-2" className="items-center">
-          <Text isLarge isBold>
+          <Text className="text-xl" isBold>
             {value}
           </Text>
 

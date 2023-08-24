@@ -396,7 +396,13 @@ export default function App() {
           trendType="up"
           description="这是一条测试数据"
         />
-        <DataCard className="flex-1" name="Demo Data" value="56.78%" />
+        <DataCard
+          className="flex-1"
+          name="Demo Data"
+          value="56.78%"
+          description="无边框"
+          isBorderLess
+        />
       </Row>
 
       <Heading>加载中区域</Heading>
