@@ -149,26 +149,26 @@ export default function App() {
 
       <Heading>图标按钮</Heading>
       <Row>
-        <IconButton>
+        <IconButton label="示例按钮">
           <MdOutlineFlag />
         </IconButton>
-        <IconButton isLoading>
+        <IconButton label="示例按钮" isLoading>
           <MdOutlineFlag />
         </IconButton>
-        <IconButton isDisabled>
+        <IconButton label="示例按钮" isDisabled>
           <MdOutlineFlag />
         </IconButton>
       </Row>
 
       <Heading>外框图标按钮</Heading>
       <Row>
-        <OutlineIconButton>
+        <OutlineIconButton label="示例按钮">
           <MdOutlineFlag />
         </OutlineIconButton>
-        <OutlineIconButton isLoading>
+        <OutlineIconButton label="示例按钮" isLoading>
           <MdOutlineFlag />
         </OutlineIconButton>
-        <OutlineIconButton isDisabled>
+        <OutlineIconButton label="示例按钮" isDisabled>
           <MdOutlineFlag />
         </OutlineIconButton>
       </Row>

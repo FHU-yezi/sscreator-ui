@@ -48,7 +48,7 @@ export default function Checkbox({
             color="text-zinc-50"
           >
             <Center>
-              <MdDone size={18} />
+              <MdDone aria-label={`${label}，单选框`} size={18} />
             </Center>
           </Text>
         </button>

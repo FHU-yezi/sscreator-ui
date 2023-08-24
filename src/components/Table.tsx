@@ -20,9 +20,9 @@ export function TableHeader({
     <thead className={clsx(className, backgroundColor)}>
       <tr>
         {children.map((item) => (
-          <td className={clsx("border px-2 py-1.5", borderColor)}>
+          <th className={clsx("border px-2 py-1.5", borderColor)}>
             <Center>{item}</Center>
-          </td>
+          </th>
         ))}
       </tr>
     </thead>

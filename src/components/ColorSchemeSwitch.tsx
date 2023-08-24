@@ -16,6 +16,7 @@ export default function ColorSchemeSwitch() {
     >
       <OutlineIconButton
         className={isLight ? "bg-zinc-700" : undefined}
+        label="浅色模式"
         hoverColor=""
         borderColor={isLight ? "border-zinc-700" : undefined}
         isBorderLess
@@ -27,6 +28,7 @@ export default function ColorSchemeSwitch() {
       </OutlineIconButton>
       <OutlineIconButton
         className={isDark ? "bg-zinc-600" : undefined}
+        label="深色模式"
         hoverColor=""
         borderColor={isDark ? "border-zinc-600" : undefined}
         isBorderLess

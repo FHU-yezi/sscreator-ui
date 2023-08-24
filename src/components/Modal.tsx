@@ -104,7 +104,7 @@ export default function Modal({
               {title}
             </Text>
             {!hideCloseButton && (
-              <OutlineIconButton onClick={onClose} isBorderLess>
+              <OutlineIconButton onClick={onClose} label="关闭" isBorderLess>
                 <MdOutlineClose size={24} />
               </OutlineIconButton>
             )}

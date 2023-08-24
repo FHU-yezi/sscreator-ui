@@ -9,6 +9,7 @@ interface Props {
   children: ComponentChild;
   className?: string;
   onClick?(): void;
+  label?: string;
   borderColor?: string;
   hoverColor?: string;
   isBorderLess?: boolean;
@@ -20,6 +21,7 @@ export default function OutlineIconButton({
   children,
   className,
   onClick,
+  label,
   borderColor = "border-zinc-800 dark:border-zinc-600",
   hoverColor = "hover:bg-zinc-100 hover:dark:bg-zinc-900",
   isBorderLess = false,
@@ -40,6 +42,7 @@ export default function OutlineIconButton({
       })}
       onClick={onClick}
       disabled={isDisabled}
+      aria-label={label}
     >
       <Center className="h-fit">
         <Text isBold>

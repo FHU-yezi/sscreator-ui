@@ -9,6 +9,7 @@ interface Props {
   children: ComponentChild;
   className?: string;
   onClick?(): void;
+  label?: string;
   color?: string;
   hoverColor?: string;
   isLoading?: boolean;
@@ -19,6 +20,7 @@ export default function IconButton({
   children,
   className,
   onClick,
+  label,
   color = "bg-zinc-800",
   hoverColor = "hover:bg-zinc-900",
   isLoading = false,
@@ -40,6 +42,7 @@ export default function IconButton({
       )}
       onClick={onClick}
       disabled={isDisabled}
+      aria-label={label}
     >
       <Center className="h-fit">
         <Text color="text-zinc-50 dark:text-zinc-200" isBold>
