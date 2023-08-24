@@ -29,8 +29,8 @@ export { default as Text } from "./components/typography/Text";
 
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
-export { default as LoadingIcon } from "./components/LoadingIcon";
 export { default as Checkbox } from "./components/Checkbox";
+export { default as LoadingIcon } from "./components/LoadingIcon";
 export { Table, TableBody, TableHeader, TableRow } from "./components/Table";
 
 export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
@@ -40,6 +40,7 @@ export { default as Footer } from "./blocks/Footer";
 export { default as Header } from "./blocks/Header";
 export { default as LoadingPage } from "./blocks/LoadingPage";
 export { default as NoResultNotice } from "./blocks/NoResultNotice";
+export { default as Modal } from "./components/Modal";
 
 export {
   getColorScheme,

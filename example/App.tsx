@@ -9,11 +9,13 @@ import {
   ErrorAlert,
   ExternalLink,
   Grid,
+  Heading,
   HorizontalScoll,
   IconButton,
   InfoAlert,
   InternalLink,
   Key,
+  Modal,
   NoResultNotice,
   NumberInput,
   OutlineButton,
@@ -28,7 +30,6 @@ import {
   Text,
   TextAreaInput,
   TextInput,
-  Heading,
   VerticalScoll,
   WarningAlert,
 } from "../src/main";
@@ -41,6 +42,8 @@ const textAreaInputValue = signal("测试 Value");
 const numberInputValue = signal(0);
 
 const switchValue = signal<1 | 2 | 3>(2);
+
+const isModalOpen = signal(false);
 
 export default function App() {
   return (
@@ -331,6 +334,49 @@ export default function App() {
           </TableRow>
         </TableBody>
       </Table>
+
+      <Heading>模态窗</Heading>
+      <Button onClick={() => (isModalOpen.value = true)}>打开模态窗</Button>
+      <Modal isOpen={isModalOpen} title="测试标题">
+        <SuccessAlert>
+          <Column gap="gap-2">
+            <Text isLarge isBold>
+              成功
+            </Text>
+            <Text>文章已发布。</Text>
+            <Text>请返回您的个人主页查看展示效果。</Text>
+          </Column>
+        </SuccessAlert>
+        <InfoAlert>
+          <Column gap="gap-2">
+            <Text isLarge isBold>
+              提示
+            </Text>
+            <Text>
+              在昨天，您的文章被阅读了 300 次，收获了 23 个点赞和 17 条评论。
+            </Text>
+            <Text>欲访问更多信息，请转到 首页 - 创作中心。</Text>
+          </Column>
+        </InfoAlert>
+        <WarningAlert>
+          <Column gap="gap-2">
+            <Text isLarge isBold>
+              警告
+            </Text>
+            <Text>您有 1 篇文章未通过审核，已转为仅自己可见。</Text>
+            <Text>请转到 首页 - 文章管理 查看详情。</Text>
+          </Column>
+        </WarningAlert>
+        <ErrorAlert>
+          <Column gap="gap-2">
+            <Text isLarge isBold>
+              错误
+            </Text>
+            <Text>获取数据时出现未知异常。</Text>
+            <Text>请尝试刷新页面或更换网络环境。</Text>
+          </Column>
+        </ErrorAlert>
+      </Modal>
 
       <Heading>无结果提示</Heading>
       <NoResultNotice />
