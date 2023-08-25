@@ -20,7 +20,7 @@ export default function ColorSchemeSwitch() {
         hoverColor=""
         borderColor={isLight ? "border-zinc-700" : undefined}
         isBorderLess
-        onClick={isDark ? toggleColorScheme : undefined}
+        onClick={toggleColorScheme}
       >
         <Text color={isLight ? "text-zinc-50" : undefined}>
           <MdOutlineLightMode />
@@ -32,7 +32,7 @@ export default function ColorSchemeSwitch() {
         hoverColor=""
         borderColor={isDark ? "border-zinc-600" : undefined}
         isBorderLess
-        onClick={isLight ? toggleColorScheme : undefined}
+        onClick={toggleColorScheme}
       >
         <Text color={isDark ? "text-zinc-50" : undefined}>
           <MdOutlineDarkMode />
