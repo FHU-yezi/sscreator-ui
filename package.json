@@ -37,27 +37,27 @@
     "preact": "^10.16.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
-    "unocss": "^0.54.2",
+    "unocss": "^0.55.2",
     "wouter-preact": "^2.11.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@rollup/plugin-typescript": "^11.1.2",
-    "@types/node": "^20.5.0",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@types/node": "^20.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "@unocss/cli": "^0.55.2",
-    "@unocss/eslint-config": "^0.54.2",
-    "@unocss/preset-rem-to-px": "^0.54.2",
-    "@unocss/reset": "^0.54.2",
-    "eslint": "^8.46.0",
+    "@unocss/eslint-config": "^0.55.2",
+    "@unocss/preset-rem-to-px": "^0.55.2",
+    "@unocss/reset": "^0.55.2",
+    "eslint": "^8.47.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "react-error-boundary": "^4.0.11",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
   }
 }
