@@ -37,7 +37,6 @@ import {
   VerticalScoll,
   WarningAlert,
 } from "../src/main";
-import "../src/utils/colorSchemeHelper";
 
 const checkboxValue = signal(false);
 

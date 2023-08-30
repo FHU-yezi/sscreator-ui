@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import "@unocss/reset/tailwind.css";
 import { render, StrictMode } from "preact/compat";
-import { ErrorBoundary } from "react-error-boundary";
+import ErrorBoundary from "../src/components/ErrorBoundary";
 import "uno.css";
 import { AppContainer } from "../src/main";
 import App from "./App";
