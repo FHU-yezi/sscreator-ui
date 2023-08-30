@@ -48,9 +48,3 @@ export {
   toggleColorScheme,
   useColorScheme,
 } from "./utils/colorSchemeHelper";
-export {
-  toastError,
-  toastSuccess,
-  toastWarning,
-  Toaster,
-} from "./utils/toastHelper";

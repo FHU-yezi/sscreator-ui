@@ -36,9 +36,6 @@ import {
   Tooltip,
   VerticalScoll,
   WarningAlert,
-  toastError,
-  toastSuccess,
-  toastWarning,
 } from "../src/main";
 import "../src/utils/colorSchemeHelper";
 
@@ -428,27 +425,6 @@ export default function App() {
       <Tooltip tooltip="这是一条较短的提示" isHideIcon>
         <Text>隐藏图标的提示</Text>
       </Tooltip>
-
-      <Heading>Toast</Heading>
-      <Row>
-        <Button onClick={() => toastSuccess({ message: "数据录入成功" })}>
-          Success
-        </Button>
-        <Button
-          onClick={() =>
-            toastWarning({ message: "请输入有效的简书个人主页链接" })
-          }
-        >
-          Warning
-        </Button>
-        <Button
-          onClick={() =>
-            toastError({ message: "网络异常。请重试或更换网络环境" })
-          }
-        >
-          Error
-        </Button>
-      </Row>
     </Column>
   );
 }

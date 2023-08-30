@@ -2,7 +2,6 @@
 import "@unocss/reset/tailwind.css";
 import { render, StrictMode } from "preact/compat";
 import { ErrorBoundary } from "react-error-boundary";
-import { Toaster } from "react-hot-toast";
 import "uno.css";
 import { AppContainer } from "../src/main";
 import App from "./App";
@@ -19,8 +18,6 @@ function Main() {
           <App />
         </AppContainer>
         <Footer />
-
-        <Toaster />
       </ErrorBoundary>
     </StrictMode>
   );
