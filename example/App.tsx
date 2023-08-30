@@ -64,6 +64,9 @@ export default function App() {
       <Text isLarge isBold>
         大号加粗文字 Large Bold Text
       </Text>
+      <Text isOneLine>
+        换行测试文字，这段文字会非常长，以至于一行无法完全展示，这段文字只有第一行会展示，而且在文字的最后会有省略号。
+      </Text>
 
       <Heading>标题</Heading>
       <Heading>标题 Heading</Heading>

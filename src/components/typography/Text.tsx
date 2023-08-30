@@ -11,6 +11,7 @@ interface Props {
   isBold?: boolean;
   isCenter?: boolean;
   isNoWrap?: boolean;
+  isOneLine?: boolean;
   isInline?: boolean;
 }
 
@@ -24,6 +25,7 @@ export default function Text({
   isBold = false,
   isCenter = false,
   isNoWrap = false,
+  isOneLine = false,
   isInline = false,
 }: Props) {
   return (
@@ -38,6 +40,7 @@ export default function Text({
 
         "text-center": isCenter,
         "whitespace-nowrap": isNoWrap,
+        "line-clamp-1 text-ellipsis": isOneLine,
         inline: isInline,
       })}
     >
