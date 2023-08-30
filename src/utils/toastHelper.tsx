@@ -4,6 +4,8 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { MdCheckCircle, MdOutlineError } from "react-icons/md";
 import { getColorScheme } from "./colorSchemeHelper";
 
+export { Toaster } from "react-hot-toast";
+
 interface ToastFunctionProps {
   message: string;
   duration?: number;
