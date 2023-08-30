@@ -41,6 +41,8 @@ export { default as Header } from "./blocks/Header";
 export { default as LoadingArea } from "./blocks/LoadingArea";
 export { default as LoadingPage } from "./blocks/LoadingPage";
 export { default as NoResultNotice } from "./blocks/NoResultNotice";
+export { default as ErrorBoundary } from "./components/ErrorBoundary";
+export type { FallbackComponentProps } from "./components/ErrorBoundary";
 export { default as Modal } from "./components/Modal";
 
 export {
