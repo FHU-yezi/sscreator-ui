@@ -29,7 +29,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css"
+    "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css",
+    "storybook": "storybook dev -p 5173",
+    "build-storybook": "storybook build"
   },
   "peerDependencies": {
     "@preact/signals": "^1.2.0",
@@ -42,6 +44,11 @@
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@rollup/plugin-typescript": "^11.1.2",
+    "@storybook/addon-a11y": "^7.4.2",
+    "@storybook/addon-essentials": "^7.4.2",
+    "@storybook/blocks": "^7.4.2",
+    "@storybook/preact": "^7.4.2",
+    "@storybook/preact-vite": "^7.4.2",
     "@types/node": "^20.5.6",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
@@ -54,7 +61,12 @@
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-storybook": "^0.6.13",
     "prettier": "^3.0.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.4.2",
     "typescript": "^5.2.2",
     "vite": "^4.4.9"
   }
