@@ -15,7 +15,7 @@ interface Props {
   iconGap?: string;
   backgroundColor?: string;
   borderColor?: string;
-  IconColor?: string;
+  iconColor?: string;
 }
 
 export default function InfoAlert({
@@ -28,7 +28,7 @@ export default function InfoAlert({
   iconGap,
   backgroundColor = "bg-blue-50 dark:bg-blue-950",
   borderColor = "border-blue-400 dark:border-blue-600",
-  IconColor = "text-blue-400 dark:text-blue-600",
+  iconColor = "text-blue-400 dark:text-blue-600",
 }: Props) {
   return (
     <Card
@@ -39,7 +39,7 @@ export default function InfoAlert({
       borderColor={borderColor}
     >
       <Row gap={iconGap}>
-        <Text color={IconColor} isBold>
+        <Text color={iconColor} isBold>
           {leftIcon}
         </Text>
         {children}
