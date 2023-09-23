@@ -30,8 +30,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css",
-    "storybook": "storybook dev -p 5173",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 5173"
   },
   "peerDependencies": {
     "@preact/signals": "^1.2.0",
