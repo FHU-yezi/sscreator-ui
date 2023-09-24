@@ -3,10 +3,10 @@ export { default as InfoAlert } from "./components/alert/InfoAlert";
 export { default as SuccessAlert } from "./components/alert/SuccessAlert";
 export { default as WarningAlert } from "./components/alert/WarningAlert";
 
-export { default as Button } from "./components/button/Button";
-export { default as IconButton } from "./components/button/IconButton";
+export { default as PrimaryButton } from "./components/button/PrimaryButton";
+export { default as SecondaryButton } from "./components/button/SecondaryButton";
 export { default as OutlineButton } from "./components/button/OutlineButton";
-export { default as OutlineIconButton } from "./components/button/OutlineIconButton";
+export { default as GhostButton } from "./components/button/GhostButton";
 
 export { default as NumberInput } from "./components/input/NumberInput";
 export { default as TextAreaInput } from "./components/input/TextAreaInput";

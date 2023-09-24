@@ -4,7 +4,7 @@ import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import { useEffect, useMemo } from "preact/hooks";
 import { MdOutlineClose } from "react-icons/md";
-import OutlineIconButton from "./button/OutlineIconButton";
+import GhostButton from "./button/GhostButton";
 import Column from "./layout/Column";
 import Row from "./layout/Row";
 import Text from "./typography/Text";
@@ -104,9 +104,9 @@ export default function Modal({
               {title}
             </Text>
             {!hideCloseButton && (
-              <OutlineIconButton onClick={onClose} label="关闭" isBorderLess>
+              <GhostButton onClick={onClose} ariaLabel="关闭" iconOnly>
                 <MdOutlineClose size={24} />
-              </OutlineIconButton>
+              </GhostButton>
             )}
           </Row>
           {children}

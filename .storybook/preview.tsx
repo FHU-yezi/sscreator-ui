@@ -6,7 +6,7 @@ import "uno.css";
 
 const globalDecorator = (StoryFn) => {
   return (
-    <div className="bg-white dark:bg-zinc-950 transition-colors">
+    <div className="bg-white w-screen h-screen absolute top-0 left-0 p-8 dark:bg-zinc-950 transition-colors">
       <StoryFn />
     </div>
   );
@@ -23,10 +23,6 @@ export const decorators = [
   }),
 ];
 
-const preview: Preview = {
-  parameters: {
-    layout: "centered",
-  },
-};
+const preview: Preview = {};
 
 export default preview;

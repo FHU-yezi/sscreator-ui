@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { signal } from "@preact/signals";
 import type { Meta } from "@storybook/preact";
-import { Button, Column, Modal, Text } from "../src/main";
+import { Column, Modal, PrimaryButton, Text } from "../src/main";
 
 const isOpen = signal(false);
 
@@ -9,7 +9,9 @@ const meta: Meta<typeof Modal> = {
   component: (args) => (
     <>
       <Modal {...args} />
-      <Button onClick={() => (isOpen.value = true)}>Open Modal</Button>
+      <PrimaryButton onClick={() => (isOpen.value = true)}>
+        Open Modal
+      </PrimaryButton>
     </>
   ),
   args: {

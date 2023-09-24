@@ -1,11 +1,11 @@
 import type { Meta } from "@storybook/preact";
 import { MdFlag } from "react-icons/md";
-import { OutlineButton } from "../../src/main";
+import { GhostButton } from "../../src/main";
 
-const meta: Meta<typeof OutlineButton> = {
-  component: OutlineButton,
+const meta: Meta<typeof GhostButton> = {
+  component: GhostButton,
   args: {
-    children: "测试 OutlineButton",
+    children: "测试 GhostButton",
     className: undefined,
     onClick: () => null,
     loading: false,
@@ -16,9 +16,6 @@ const meta: Meta<typeof OutlineButton> = {
   },
   argTypes: {
     className: {
-      control: "text",
-    },
-    borderColor: {
       control: "text",
     },
     hoverColor: {
@@ -53,7 +50,7 @@ export const WithIcon = {
     children: (
       <>
         <MdFlag />
-        测试 OutlineButton
+        测试 GhostButton
       </>
     ),
   },
@@ -62,6 +59,6 @@ export const PureIcon = {
   args: {
     children: <MdFlag />,
     iconOnly: true,
-    ariaLabel: "测试 OutlineButton",
+    ariaLabel: "测试 GhostButton",
   },
 };

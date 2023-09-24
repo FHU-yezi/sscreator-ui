@@ -9,7 +9,6 @@ interface Props {
   children: ComponentChildren;
   className?: string;
   onClick?(): void;
-  borderColor?: string;
   hoverColor?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -18,11 +17,10 @@ interface Props {
   ariaLabel?: string;
 }
 
-export default function OutlineButton({
+export default function GhostButton({
   children,
   className,
   onClick,
-  borderColor = "border-blue-600",
   hoverColor = "hover:bg-blue-100 dark:hover:bg-blue-950",
   loading = false,
   disabled = false,
@@ -33,28 +31,24 @@ export default function OutlineButton({
   return (
     <button
       type="button"
-      className={clsx(
-        className,
-        "transition-all border-2 rounded-md shadow",
-        borderColor,
-        {
-          [hoverColor]: !loading && !disabled,
-          "active:scale-95 duration-300": !loading && !disabled,
-          "opacity-70": loading || disabled,
-          "cursor-wait": loading,
-          "cursor-not-allowed": disabled,
+      className={clsx(className, "transition-all duration-250 rounded-md", {
+        [hoverColor]: !loading && !disabled,
+        "active:scale-95 duration-300": !loading && !disabled,
+        "hover:shadow": !loading && !disabled,
+        "opacity-70": loading || disabled,
+        "cursor-wait": loading,
+        "cursor-not-allowed": disabled,
 
-          "w-full": fullWidth,
-          "px-4 py-2": !iconOnly,
-          "p-2": iconOnly,
-        },
-      )}
+        "w-full": fullWidth,
+        "px-4 py-2": !iconOnly,
+        "p-2": iconOnly,
+      })}
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
     >
       <Center className="h-fit">
-        <Text isBold>
+        <Text color="text-blue-600 dark:text-blue-400" isBold>
           <Row gap="gap-2" className="items-center">
             {children}
             {loading && <LoadingIcon noWrapInText />}
