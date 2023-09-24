@@ -17,7 +17,7 @@ export default function NoResultNotice({
       <Text>
         <BsDatabaseSlash size={36} />
       </Text>
-      <Text isLarge isBold>
+      <Text large bold>
         {message}
       </Text>
     </Column>

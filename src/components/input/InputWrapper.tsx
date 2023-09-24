@@ -11,11 +11,11 @@ interface Props {
 export default function InputWrapper({ children, label, description }: Props) {
   return (
     <Column gap="gap-1.5">
-      <Text isBold>{label}</Text>
+      <Text bold>{label}</Text>
 
       {children}
 
-      <Text isSmall isGray>
+      <Text small gray>
         {description}
       </Text>
     </Column>

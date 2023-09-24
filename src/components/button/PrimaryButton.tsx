@@ -49,7 +49,7 @@ export default function PrimaryButton({
       aria-label={ariaLabel}
     >
       <Center className="h-fit">
-        <Text color="text-zinc-50" isBold>
+        <Text color="text-zinc-50" bold>
           <Row gap="gap-2" className="items-center">
             {children}
             {loading && <LoadingIcon noWrapInText />}

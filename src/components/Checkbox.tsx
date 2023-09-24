@@ -54,7 +54,7 @@ export default function Checkbox({
         </button>
         <Text>{label}</Text>
       </Row>
-      <Text isSmall isGray>
+      <Text small gray>
         {description}
       </Text>
     </Column>

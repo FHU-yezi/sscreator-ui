@@ -6,7 +6,7 @@ const meta: Meta<typeof Card> = {
   args: {
     children: (
       <Column>
-        <Text isBold isLarge>
+        <Text bold large>
           测试标题
         </Text>
         <Text>这是一张卡片</Text>

@@ -6,7 +6,7 @@ const meta: Meta<typeof WarningAlert> = {
   args: {
     children: (
       <Column>
-        <Text isBold isLarge>
+        <Text bold large>
           文章被锁定
         </Text>
         <Text>您的文章未通过审核，现在处于锁定状态，请前往创作中心处理。</Text>

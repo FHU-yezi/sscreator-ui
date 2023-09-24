@@ -100,7 +100,7 @@ export default function Modal({
       >
         <Column>
           <Row className="items-center justify-between">
-            <Text isLarge isBold>
+            <Text large bold>
               {title}
             </Text>
             {!hideCloseButton && (

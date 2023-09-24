@@ -40,7 +40,7 @@ export default function SuccessAlert({
       shadowColor={shadowColor}
     >
       <Row>
-        <Text color={iconColor} isBold>
+        <Text color={iconColor} bold>
           {leftIcon}
         </Text>
         {children}

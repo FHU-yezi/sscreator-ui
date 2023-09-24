@@ -21,9 +21,11 @@ export default function Badge({
     <Text
       className={clsx(className, "w-fit py-1 px-2", backgroundColor, rounded)}
       color={textColor}
-      isSmall
-      isBold
-      isInline
+      small
+      bold
+      nowrap
+      truncate
+      inline
     >
       {children}
     </Text>

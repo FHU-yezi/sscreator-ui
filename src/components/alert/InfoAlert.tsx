@@ -40,7 +40,7 @@ export default function InfoAlert({
       shadowColor={shadowColor}
     >
       <Row>
-        <Text color={iconColor} isBold>
+        <Text color={iconColor} bold>
           {leftIcon}
         </Text>
         {children}

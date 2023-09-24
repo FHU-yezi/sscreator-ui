@@ -6,7 +6,7 @@ const meta: Meta<typeof SuccessAlert> = {
   args: {
     children: (
       <Column>
-        <Text isBold isLarge>
+        <Text bold large>
           文章已发布
         </Text>
         <Text>您的文章将在通过审核后对外可见。</Text>

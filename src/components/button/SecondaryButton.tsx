@@ -49,7 +49,7 @@ export default function SecondaryButton({
       aria-label={ariaLabel}
     >
       <Center className="h-fit">
-        <Text isBold>
+        <Text bold>
           <Row gap="gap-2" className="items-center">
             {children}
             {loading && <LoadingIcon noWrapInText />}

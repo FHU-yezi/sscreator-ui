@@ -48,7 +48,7 @@ export default function GhostButton({
       aria-label={ariaLabel}
     >
       <Center className="h-fit">
-        <Text color="text-blue-600 dark:text-blue-400" isBold>
+        <Text color="text-blue-600 dark:text-blue-400" bold>
           <Row gap="gap-2" className="items-center">
             {children}
             {loading && <LoadingIcon noWrapInText />}

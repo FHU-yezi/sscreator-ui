@@ -6,7 +6,7 @@ const meta: Meta<typeof ErrorAlert> = {
   args: {
     children: (
       <Column>
-        <Text isBold isLarge>
+        <Text bold large>
           错误
         </Text>
         <Text>发生意外错误，请联系技术支持。</Text>

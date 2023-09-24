@@ -6,7 +6,7 @@ const meta: Meta<typeof InfoAlert> = {
   args: {
     children: (
       <Column>
-        <Text isBold isLarge>
+        <Text bold large>
           提示
         </Text>
         <Text>您收到了新的私信，请于 个人中心 - 互动 查看。</Text>

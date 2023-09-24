@@ -23,7 +23,7 @@ export default function Key({
         backgroundColor,
         borderColor,
       )}
-      isBold
+      bold
     >
       {" "}
       {children}{" "}

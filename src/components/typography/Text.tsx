@@ -5,43 +5,43 @@ interface Props {
   children: ComponentChildren;
   className?: string;
   color?: string;
-  isGray?: boolean;
-  isSmall?: boolean;
-  isLarge?: boolean;
-  isBold?: boolean;
-  isCenter?: boolean;
-  isNoWrap?: boolean;
-  isOneLine?: boolean;
-  isInline?: boolean;
+  gray?: boolean;
+  small?: boolean;
+  large?: boolean;
+  bold?: boolean;
+  center?: boolean;
+  nowrap?: boolean;
+  truncate?: boolean;
+  inline?: boolean;
 }
 
 export default function Text({
   children,
   className,
   color = "text-zinc-950 dark:text-zinc-50",
-  isGray = false,
-  isSmall = false,
-  isLarge = false,
-  isBold = false,
-  isCenter = false,
-  isNoWrap = false,
-  isOneLine = false,
-  isInline = false,
+  gray = false,
+  small = false,
+  large = false,
+  bold = false,
+  center = false,
+  nowrap = false,
+  truncate = false,
+  inline = false,
 }: Props) {
   return (
     <p
       className={clsx(className, {
-        [color]: !isGray,
-        "text-zinc-500 dark:text-zinc-400": isGray,
+        [color]: !gray,
+        "text-zinc-500 dark:text-zinc-400": gray,
 
-        "text-sm": isSmall,
-        "text-lg": isLarge,
-        "font-semibold": isBold,
+        "text-sm": small,
+        "text-lg": large,
+        "font-semibold": bold,
 
-        "text-center": isCenter,
-        "whitespace-nowrap": isNoWrap,
-        "line-clamp-1 text-ellipsis": isOneLine,
-        inline: isInline,
+        "text-center": center,
+        "whitespace-nowrap": nowrap,
+        "line-clamp-1 text-ellipsis": truncate,
+        inline,
       })}
     >
       {children}

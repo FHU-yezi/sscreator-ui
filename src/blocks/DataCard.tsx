@@ -30,14 +30,14 @@ export default function DataCard({
         <Text>{name}</Text>
 
         <Row gap="gap-2" className="items-center">
-          <Text className="text-xl" isBold>
+          <Text className="text-xl" bold>
             {value}
           </Text>
 
           {trendType && trendValue && (
             <Text
-              isSmall
-              isNoWrap
+              small
+              nowrap
               color={clsx("rounded-md px-2 py-0.5", {
                 "text-red-500 bg-red-100 dark:bg-red-950": trendType === "up",
                 "text-green-500 bg-green-100 dark:bg-green-950":
@@ -62,7 +62,7 @@ export default function DataCard({
         </Row>
 
         {description && (
-          <Text isSmall isGray>
+          <Text small gray>
             {description}
           </Text>
         )}

@@ -40,7 +40,7 @@ export default function ErrorAlert({
       shadowColor={shadowColor}
     >
       <Row>
-        <Text color={iconColor} isBold>
+        <Text color={iconColor} bold>
           {leftIcon}
         </Text>
         {children}
