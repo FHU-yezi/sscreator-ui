@@ -25,7 +25,7 @@ export default function DataCard({
   isBorderLess = false,
 }: Props) {
   return (
-    <Card className={className} padding="px-4 py-3" isBorderLess={isBorderLess}>
+    <Card className={className} padding="px-4 py-3" borderless={isBorderLess}>
       <Column gap="gap-1">
         <Text>{name}</Text>
 

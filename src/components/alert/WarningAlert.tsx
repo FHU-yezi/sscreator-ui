@@ -12,9 +12,9 @@ interface Props {
   padding?: string;
   margin?: string;
   rounded?: string;
-  iconGap?: string;
   backgroundColor?: string;
   borderColor?: string;
+  shadowColor?: string;
   iconColor?: string;
 }
 
@@ -25,10 +25,10 @@ export default function WarningAlert({
   padding,
   margin,
   rounded,
-  iconGap,
   backgroundColor = "bg-orange-50 dark:bg-orange-950",
-  borderColor = "border-orange-400 dark:border-orange-600",
-  iconColor = "text-orange-400 dark:text-orange-600",
+  borderColor = "border-orange-500 dark:border-orange-700",
+  shadowColor = "shadow-orange-500/30 dark:shadow-orange-700/30",
+  iconColor = "text-orange-500 dark:text-orange-700",
 }: Props) {
   return (
     <Card
@@ -37,8 +37,9 @@ export default function WarningAlert({
       margin={margin}
       rounded={rounded}
       borderColor={borderColor}
+      shadowColor={shadowColor}
     >
-      <Row gap={iconGap}>
+      <Row>
         <Text color={iconColor} isBold>
           {leftIcon}
         </Text>

@@ -8,7 +8,8 @@ interface Props {
   margin?: string;
   rounded?: string;
   borderColor?: string;
-  isBorderLess?: boolean;
+  shadowColor?: string;
+  borderless?: boolean;
 }
 
 export default function Card({
@@ -16,15 +17,17 @@ export default function Card({
   className,
   padding = "p-4",
   margin = "m-0",
-  rounded = "rounded-lg",
-  borderColor = "border-zinc-200 dark:border-zinc-700",
-  isBorderLess = false,
+  rounded = "rounded-md",
+  borderColor = "border-zinc-300 dark:border-zinc-700",
+  shadowColor = "shadow-zinc-300/30 dark:shadow-zinc-700/30",
+  borderless = false,
 }: Props) {
   return (
     <div
       className={clsx(className, padding, margin, rounded, {
-        "border shadow": !isBorderLess,
-        [borderColor]: !isBorderLess,
+        "border shadow-md": !borderless,
+        [borderColor]: !borderless,
+        [shadowColor]: !borderless,
       })}
     >
       {children}
