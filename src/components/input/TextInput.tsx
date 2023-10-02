@@ -18,6 +18,8 @@ interface Props {
   textColor?: string;
   backgroundColor?: string;
   borderColor?: string;
+  focusBorderColor?: string;
+  invalidBorderColor?: string;
   inputRef?: Ref<HTMLInputElement>;
 }
 
@@ -36,6 +38,8 @@ export default function TextInput({
   textColor = "text-zinc-950 dark:text-zinc-50",
   backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
   borderColor = "border-zinc-200 dark:border-zinc-700",
+  focusBorderColor = "focus:border-blue-500",
+  invalidBorderColor = "invalid:border-red-500",
   inputRef,
 }: Props) {
   return (
@@ -44,11 +48,13 @@ export default function TextInput({
         type="text"
         className={clsx(
           className,
-          "py-1.5 px-3 rounded-lg border focus:outline-none disabled:opacity-60",
+          "py-1.5 px-3 rounded-lg border outline-none disabled:opacity-60 transition-colors",
           width,
           textColor,
           backgroundColor,
           borderColor,
+          focusBorderColor,
+          invalidBorderColor,
           {
             "cursor-not-allowed": isDisabled,
           },
