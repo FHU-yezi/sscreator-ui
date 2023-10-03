@@ -9,7 +9,7 @@ interface Props {
   label?: string;
   description?: string;
   isInvalid?: boolean;
-  errorMessage?: string;
+  invalidMessage?: string;
 }
 
 export default function InputWrapper({
@@ -18,7 +18,7 @@ export default function InputWrapper({
   label,
   description,
   isInvalid = false,
-  errorMessage,
+  invalidMessage,
 }: Props) {
   return (
     <Column gap="gap-1.5">
@@ -29,6 +29,7 @@ export default function InputWrapper({
       {children}
 
       <Text
+        className="transition-colors"
         color={isInvalid ? "text-red-500" : undefined}
         small
         gray={!isInvalid}
@@ -38,7 +39,7 @@ export default function InputWrapper({
         ) : (
           <>
             <MdOutlineInfo className="mr-1 inline" />
-            {errorMessage}
+            {invalidMessage ?? "输入无效"}
           </>
         )}
       </Text>

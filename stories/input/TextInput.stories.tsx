@@ -13,6 +13,8 @@ const meta: Meta<typeof TextInput> = {
     description: "描述",
     placeholder: "请输入内容",
     isDisabled: false,
+    isInvalid: false,
+    invalidMessage: undefined,
     noSelectAllOnFocus: false,
     width: undefined,
     textColor: undefined,
@@ -23,6 +25,9 @@ const meta: Meta<typeof TextInput> = {
   },
   argTypes: {
     className: {
+      control: "text",
+    },
+    invalidMessage: {
       control: "text",
     },
     width: {

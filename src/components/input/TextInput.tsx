@@ -11,6 +11,8 @@ interface Props {
   description?: string;
   placeholder?: string;
   isDisabled?: boolean;
+  isInvalid?: boolean;
+  invalidMessage?: string;
   onEnter?(): void;
   onFocus?(): void;
   onBlur?(): void;
@@ -31,6 +33,8 @@ export default function TextInput({
   description,
   placeholder,
   isDisabled = false,
+  isInvalid = false,
+  invalidMessage,
   onEnter,
   onFocus,
   onBlur,
@@ -40,13 +44,19 @@ export default function TextInput({
   backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
   borderColor = "border-zinc-200 dark:border-zinc-700",
   focusBorderColor = "focus:border-blue-500",
-  invalidBorderColor = "invalid:border-red-500",
+  invalidBorderColor = "border-red-500",
   inputRef,
 }: Props) {
   const inputId = useId();
 
   return (
-    <InputWrapper inputId={inputId} label={label} description={description}>
+    <InputWrapper
+      inputId={inputId}
+      label={label}
+      description={description}
+      isInvalid={isInvalid}
+      invalidMessage={invalidMessage}
+    >
       <input
         type="text"
         id={inputId}
@@ -56,11 +66,11 @@ export default function TextInput({
           width,
           textColor,
           backgroundColor,
-          borderColor,
-          focusBorderColor,
-          invalidBorderColor,
           {
             "cursor-not-allowed": isDisabled,
+            [borderColor]: !isInvalid,
+            [focusBorderColor]: !isInvalid,
+            [invalidBorderColor]: isInvalid,
           },
         )}
         placeholder={placeholder}
@@ -82,6 +92,7 @@ export default function TextInput({
         }}
         onBlur={onBlur}
         aria-label={label}
+        aria-invalid={isInvalid}
         spellCheck={false}
         ref={inputRef}
       />

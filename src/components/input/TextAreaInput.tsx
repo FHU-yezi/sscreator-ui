@@ -12,6 +12,8 @@ interface Props {
   placeholder?: string;
   rows?: number;
   isDisabled?: boolean;
+  isInvalid?: boolean;
+  invalidMessage?: string;
   onEnter?(): void;
   onFocus?(): void;
   onBlur?(): void;
@@ -20,6 +22,8 @@ interface Props {
   textColor?: string;
   backgroundColor?: string;
   borderColor?: string;
+  focusBorderColor?: string;
+  invalidBorderColor?: string;
   inputRef?: Ref<HTMLTextAreaElement>;
 }
 
@@ -31,6 +35,8 @@ export default function TextAreaInput({
   placeholder,
   rows = 10,
   isDisabled = false,
+  isInvalid = false,
+  invalidMessage,
   onEnter,
   onFocus,
   onBlur,
@@ -39,24 +45,34 @@ export default function TextAreaInput({
   textColor = "text-zinc-950 dark:text-zinc-50",
   backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
   borderColor = "border-zinc-200 dark:border-zinc-700",
+  focusBorderColor = "focus:border-blue-500",
+  invalidBorderColor = "border-red-500",
   inputRef,
 }: Props) {
   const inputId = useId();
 
   return (
-    <InputWrapper inputId={inputId} label={label} description={description}>
+    <InputWrapper
+      inputId={inputId}
+      label={label}
+      description={description}
+      isInvalid={isInvalid}
+      invalidMessage={invalidMessage}
+    >
       <textarea
         type="text"
         id={inputId}
         className={clsx(
           className,
-          "py-1.5 px-3 rounded-lg border focus:outline-none disabled:opacity-60 resize-none",
+          "py-1.5 px-3 rounded-lg border outline-none disabled:opacity-60 resize-none transition-colors",
           width,
           textColor,
           backgroundColor,
-          borderColor,
           {
             "cursor-not-allowed": isDisabled,
+            [borderColor]: !isInvalid,
+            [focusBorderColor]: !isInvalid,
+            [invalidBorderColor]: isInvalid,
           },
         )}
         placeholder={placeholder}
@@ -79,6 +95,7 @@ export default function TextAreaInput({
         }}
         onBlur={onBlur}
         aria-label={label}
+        aria-invalid={isInvalid}
         spellCheck={false}
         ref={inputRef}
       />

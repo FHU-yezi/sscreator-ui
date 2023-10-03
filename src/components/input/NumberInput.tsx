@@ -11,6 +11,8 @@ interface Props {
   description?: string;
   placeholder?: string;
   isDisabled?: boolean;
+  isInvalid?: boolean;
+  invalidMessage?: string;
   onEnter?(): void;
   onFocus?(): void;
   onBlur?(): void;
@@ -19,6 +21,8 @@ interface Props {
   textColor?: string;
   backgroundColor?: string;
   borderColor?: string;
+  focusBorderColor?: string;
+  invalidBorderColor?: string;
   inputRef?: Ref<HTMLInputElement>;
 }
 
@@ -28,7 +32,9 @@ export default function NumberInput({
   value,
   description,
   placeholder,
-  isDisabled,
+  isDisabled = false,
+  isInvalid = false,
+  invalidMessage,
   onEnter,
   onFocus,
   onBlur,
@@ -37,12 +43,20 @@ export default function NumberInput({
   textColor = "text-zinc-950 dark:text-zinc-50",
   backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
   borderColor = "border-zinc-200 dark:border-zinc-700",
+  focusBorderColor = "focus:border-blue-500",
+  invalidBorderColor = "border-red-500",
   inputRef,
 }: Props) {
   const inputId = useId();
 
   return (
-    <InputWrapper inputId={inputId} label={label} description={description}>
+    <InputWrapper
+      inputId={inputId}
+      label={label}
+      description={description}
+      isInvalid={isInvalid}
+      invalidMessage={invalidMessage}
+    >
       <input
         type="number"
         id={inputId}
@@ -50,13 +64,15 @@ export default function NumberInput({
         pattern="[0-9\.]*"
         className={clsx(
           className,
-          "py-1.5 px-3 rounded-lg border focus:outline-none disabled:opacity-60 appearance-none",
+          "py-1.5 px-3 rounded-lg border outline-none disabled:opacity-60 appearance-none transition-colors",
           width,
           textColor,
           backgroundColor,
-          borderColor,
           {
             "cursor-not-allowed": isDisabled,
+            [borderColor]: !isInvalid,
+            [focusBorderColor]: !isInvalid,
+            [invalidBorderColor]: isInvalid,
           },
         )}
         // 在 Firefox 上隐藏上下箭头
@@ -87,6 +103,7 @@ export default function NumberInput({
         }}
         onBlur={onBlur}
         aria-label={label}
+        aria-invalid={isInvalid}
         spellCheck={false}
         ref={inputRef}
       />
