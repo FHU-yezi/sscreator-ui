@@ -1,22 +1,46 @@
 import type { ComponentChildren } from "preact";
+import { MdOutlineInfo } from "react-icons/md";
 import Column from "../layout/Column";
 import Text from "../typography/Text";
 
 interface Props {
   children: ComponentChildren;
+  inputId?: string;
   label?: string;
   description?: string;
+  isInvalid?: boolean;
+  errorMessage?: string;
 }
 
-export default function InputWrapper({ children, label, description }: Props) {
+export default function InputWrapper({
+  children,
+  inputId,
+  label,
+  description,
+  isInvalid = false,
+  errorMessage,
+}: Props) {
   return (
     <Column gap="gap-1.5">
-      <Text bold>{label}</Text>
+      <label htmlFor={inputId}>
+        <Text bold>{label}</Text>
+      </label>
 
       {children}
 
-      <Text small gray>
-        {description}
+      <Text
+        color={isInvalid ? "text-red-500" : undefined}
+        small
+        gray={!isInvalid}
+      >
+        {!isInvalid ? (
+          description
+        ) : (
+          <>
+            <MdOutlineInfo className="mr-1 inline" />
+            {errorMessage}
+          </>
+        )}
       </Text>
     </Column>
   );

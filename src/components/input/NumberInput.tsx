@@ -1,15 +1,13 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { Ref } from "preact";
+import { useId } from "preact/hooks";
 import InputWrapper from "./InputWrapper";
 
 interface Props {
   className?: string;
   label?: string;
   value: Signal<number>;
-  min?: number;
-  max?: number;
-  step?: string;
   description?: string;
   placeholder?: string;
   isDisabled?: boolean;
@@ -28,9 +26,6 @@ export default function NumberInput({
   className,
   label,
   value,
-  min,
-  max,
-  step = "1",
   description,
   placeholder,
   isDisabled,
@@ -44,10 +39,13 @@ export default function NumberInput({
   borderColor = "border-zinc-200 dark:border-zinc-700",
   inputRef,
 }: Props) {
+  const inputId = useId();
+
   return (
-    <InputWrapper label={label} description={description}>
+    <InputWrapper inputId={inputId} label={label} description={description}>
       <input
         type="number"
+        id={inputId}
         inputMode="numeric"
         pattern="[0-9\.]*"
         className={clsx(
@@ -68,9 +66,6 @@ export default function NumberInput({
         placeholder={placeholder}
         disabled={isDisabled}
         value={value.value}
-        min={min}
-        max={max}
-        step={step}
         onChange={(event) => {
           const parseResult = parseFloat(event.currentTarget.value);
           if (!Number.isNaN(parseResult)) {
