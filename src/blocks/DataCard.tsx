@@ -12,7 +12,7 @@ interface Props {
   description?: string;
   trendValue?: string | number;
   trendType?: "up" | "down" | "flat";
-  isBorderLess?: boolean;
+  borderless?: boolean;
 }
 
 export default function DataCard({
@@ -22,10 +22,10 @@ export default function DataCard({
   description,
   trendValue,
   trendType,
-  isBorderLess = false,
+  borderless = false,
 }: Props) {
   return (
-    <Card className={className} padding="px-4 py-3" borderless={isBorderLess}>
+    <Card className={className} padding="px-4 py-3" borderless={borderless}>
       <Column gap="gap-1">
         <Text>{name}</Text>
 

@@ -10,8 +10,8 @@ interface Props {
   value: Signal<string>;
   description?: string;
   placeholder?: string;
-  isDisabled?: boolean;
-  isInvalid?: boolean;
+  disabled?: boolean;
+  invalid?: boolean;
   invalidMessage?: string;
   onEnter?(): void;
   onFocus?(): void;
@@ -32,8 +32,8 @@ export default function TextInput({
   value,
   description,
   placeholder,
-  isDisabled = false,
-  isInvalid = false,
+  disabled = false,
+  invalid = false,
   invalidMessage,
   onEnter,
   onFocus,
@@ -54,7 +54,7 @@ export default function TextInput({
       inputId={inputId}
       label={label}
       description={description}
-      isInvalid={isInvalid}
+      isInvalid={invalid}
       invalidMessage={invalidMessage}
     >
       <input
@@ -67,14 +67,14 @@ export default function TextInput({
           textColor,
           backgroundColor,
           {
-            "cursor-not-allowed": isDisabled,
-            [borderColor]: !isInvalid,
-            [focusBorderColor]: !isInvalid,
-            [invalidBorderColor]: isInvalid,
+            "cursor-not-allowed": disabled,
+            [borderColor]: !invalid,
+            [focusBorderColor]: !invalid,
+            [invalidBorderColor]: invalid,
           },
         )}
         placeholder={placeholder}
-        disabled={isDisabled}
+        disabled={disabled}
         value={value.value}
         onChange={(event) => (value.value = event.currentTarget.value)}
         onKeyUp={(event) => {
@@ -92,7 +92,7 @@ export default function TextInput({
         }}
         onBlur={onBlur}
         aria-label={label}
-        aria-invalid={isInvalid}
+        aria-invalid={invalid}
         spellCheck={false}
         ref={inputRef}
       />

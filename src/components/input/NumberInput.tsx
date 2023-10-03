@@ -10,8 +10,8 @@ interface Props {
   value: Signal<number>;
   description?: string;
   placeholder?: string;
-  isDisabled?: boolean;
-  isInvalid?: boolean;
+  disabled?: boolean;
+  invalid?: boolean;
   invalidMessage?: string;
   onEnter?(): void;
   onFocus?(): void;
@@ -32,8 +32,8 @@ export default function NumberInput({
   value,
   description,
   placeholder,
-  isDisabled = false,
-  isInvalid = false,
+  disabled = false,
+  invalid = false,
   invalidMessage,
   onEnter,
   onFocus,
@@ -54,7 +54,7 @@ export default function NumberInput({
       inputId={inputId}
       label={label}
       description={description}
-      isInvalid={isInvalid}
+      isInvalid={invalid}
       invalidMessage={invalidMessage}
     >
       <input
@@ -69,10 +69,10 @@ export default function NumberInput({
           textColor,
           backgroundColor,
           {
-            "cursor-not-allowed": isDisabled,
-            [borderColor]: !isInvalid,
-            [focusBorderColor]: !isInvalid,
-            [invalidBorderColor]: isInvalid,
+            "cursor-not-allowed": disabled,
+            [borderColor]: !invalid,
+            [focusBorderColor]: !invalid,
+            [invalidBorderColor]: invalid,
           },
         )}
         // 在 Firefox 上隐藏上下箭头
@@ -80,7 +80,7 @@ export default function NumberInput({
           "-moz-appearance": "textfield",
         }}
         placeholder={placeholder}
-        disabled={isDisabled}
+        disabled={disabled}
         value={value.value}
         onChange={(event) => {
           const parseResult = parseFloat(event.currentTarget.value);
@@ -103,7 +103,7 @@ export default function NumberInput({
         }}
         onBlur={onBlur}
         aria-label={label}
-        aria-invalid={isInvalid}
+        aria-invalid={invalid}
         spellCheck={false}
         ref={inputRef}
       />

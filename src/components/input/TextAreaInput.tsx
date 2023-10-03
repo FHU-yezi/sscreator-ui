@@ -11,8 +11,8 @@ interface Props {
   description?: string;
   placeholder?: string;
   rows?: number;
-  isDisabled?: boolean;
-  isInvalid?: boolean;
+  disabled?: boolean;
+  invalid?: boolean;
   invalidMessage?: string;
   onEnter?(): void;
   onFocus?(): void;
@@ -34,8 +34,8 @@ export default function TextAreaInput({
   description,
   placeholder,
   rows = 10,
-  isDisabled = false,
-  isInvalid = false,
+  disabled = false,
+  invalid = false,
   invalidMessage,
   onEnter,
   onFocus,
@@ -56,7 +56,7 @@ export default function TextAreaInput({
       inputId={inputId}
       label={label}
       description={description}
-      isInvalid={isInvalid}
+      isInvalid={invalid}
       invalidMessage={invalidMessage}
     >
       <textarea
@@ -69,14 +69,14 @@ export default function TextAreaInput({
           textColor,
           backgroundColor,
           {
-            "cursor-not-allowed": isDisabled,
-            [borderColor]: !isInvalid,
-            [focusBorderColor]: !isInvalid,
-            [invalidBorderColor]: isInvalid,
+            "cursor-not-allowed": disabled,
+            [borderColor]: !invalid,
+            [focusBorderColor]: !invalid,
+            [invalidBorderColor]: invalid,
           },
         )}
         placeholder={placeholder}
-        disabled={isDisabled}
+        disabled={disabled}
         value={value.value}
         rows={rows}
         onChange={(event) => (value.value = event.currentTarget.value)}
@@ -95,7 +95,7 @@ export default function TextAreaInput({
         }}
         onBlur={onBlur}
         aria-label={label}
-        aria-invalid={isInvalid}
+        aria-invalid={invalid}
         spellCheck={false}
         ref={inputRef}
       />

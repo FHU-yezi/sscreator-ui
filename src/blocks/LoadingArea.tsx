@@ -8,7 +8,7 @@ import Text from "../components/typography/Text";
 interface Props {
   children: ComponentChildren;
   className?: string;
-  isLoading: boolean;
+  loading: boolean;
   message?: string;
   iconSize?: number;
   backgroundColor?: string;
@@ -17,12 +17,12 @@ interface Props {
 export default function LoadingArea({
   children,
   className,
-  isLoading,
+  loading,
   message = "加载中",
   iconSize = 28,
   backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
 }: Props) {
-  if (!isLoading) {
+  if (!loading) {
     return children as VNode;
   }
 

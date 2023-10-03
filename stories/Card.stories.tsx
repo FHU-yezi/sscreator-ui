@@ -18,7 +18,7 @@ const meta: Meta<typeof Card> = {
     margin: undefined,
     rounded: undefined,
     borderColor: undefined,
-    isBorderLess: false,
+    borderless: false,
   },
   argTypes: {
     className: {

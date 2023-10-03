@@ -20,7 +20,7 @@ function closeModalWhenEscPressed(onClose: () => void) {
 interface Props {
   children: ComponentChildren;
   className?: string;
-  isOpen: Signal<boolean>;
+  open: Signal<boolean>;
   title?: string;
   backgroundColor?: string;
   padding?: string;
@@ -33,7 +33,7 @@ interface Props {
 export default function Modal({
   children,
   className,
-  isOpen,
+  open,
   title,
   backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
   padding = "px-6 pb-8 pt-4",
@@ -43,7 +43,7 @@ export default function Modal({
   preventCloseByPressEsc = false,
 }: Props) {
   const onClose = () => {
-    isOpen.value = false;
+    open.value = false;
     document.body.style.overflowY = "";
   };
   const onKeyDown = useMemo(
@@ -54,21 +54,21 @@ export default function Modal({
 
   //  Modal 展示时禁止下层元素滚动
   useEffect(() => {
-    if (isOpen.value) {
+    if (open.value) {
       document.body.style.overflowY = "hidden";
     }
-  }, [isOpen.value]);
+  }, [open.value]);
 
   // 如果没有显式禁止，允许用户通过按下 Esc 关闭 Modal
   useEffect(() => {
     if (!preventCloseByPressEsc) {
-      if (isOpen.value) {
+      if (open.value) {
         document.addEventListener("keydown", onKeyDown!);
       } else {
         document.removeEventListener("keydown", onKeyDown!);
       }
     }
-  }, [isOpen.value]);
+  }, [open.value]);
   return (
     <>
       {/* 遮罩层 */}
@@ -76,8 +76,8 @@ export default function Modal({
         className={clsx(
           "fixed left-0 top-0 z-20 h-screen w-screen transition-opacity",
           {
-            "pointer-events-none opacity-0": !isOpen.value,
-            "bg-black dark:bg-white opacity-20": isOpen.value,
+            "pointer-events-none opacity-0": !open.value,
+            "bg-black dark:bg-white opacity-20": open.value,
           },
         )}
         onClick={!preventCloseByClickMask ? onClose : undefined}
@@ -93,8 +93,8 @@ export default function Modal({
           padding,
           rounded,
           {
-            "pointer-events-none opacity-0": !isOpen.value,
-            "opacity-100": isOpen.value,
+            "pointer-events-none opacity-0": !open.value,
+            "opacity-100": open.value,
           },
         )}
       >
