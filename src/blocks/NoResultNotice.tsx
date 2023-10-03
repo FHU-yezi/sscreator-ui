@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { BsDatabaseSlash } from "react-icons/bs";
 import Column from "../components/layout/Column";
+import Icon from "../components/typography/Icon";
 import Text from "../components/typography/Text";
 
 interface Props {
@@ -14,9 +15,9 @@ export default function NoResultNotice({
 }: Props) {
   return (
     <Column className={clsx(className, "items-center")}>
-      <Text>
+      <Icon>
         <BsDatabaseSlash size={36} />
-      </Text>
+      </Icon>
       <Text large bold>
         {message}
       </Text>

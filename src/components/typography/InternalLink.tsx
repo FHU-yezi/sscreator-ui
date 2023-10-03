@@ -2,6 +2,7 @@ import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { useLocation } from "wouter-preact";
+import Icon from "./Icon";
 
 interface Props {
   children?: ComponentChildren;
@@ -32,10 +33,9 @@ export default function InternalLink({
     >
       {children ?? path}
       {!hideIcon && (
-        <MdOutlineArrowOutward
-          className={clsx(className, "ml-1 inline")}
-          size={18}
-        />
+        <Icon className="ml-1" color="text-blue-600 dark:text-blue-400">
+          <MdOutlineArrowOutward size={18} />
+        </Icon>
       )}
     </a>
   );

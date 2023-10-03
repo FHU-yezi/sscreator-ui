@@ -1,6 +1,7 @@
 import type { ComponentChildren } from "preact";
 import { MdOutlineInfo } from "react-icons/md";
 import Column from "../layout/Column";
+import Icon from "../typography/Icon";
 import Text from "../typography/Text";
 
 interface Props {
@@ -38,7 +39,9 @@ export default function InputWrapper({
           description
         ) : (
           <>
-            <MdOutlineInfo className="mr-1 inline" />
+            <Icon className="mr-1">
+              <MdOutlineInfo />
+            </Icon>
             {invalidMessage ?? "输入无效"}
           </>
         )}

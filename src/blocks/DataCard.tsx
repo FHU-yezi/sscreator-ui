@@ -3,6 +3,7 @@ import { MdTrendingDown, MdTrendingFlat, MdTrendingUp } from "react-icons/md";
 import Card from "../components/Card";
 import Column from "../components/layout/Column";
 import Row from "../components/layout/Row";
+import Icon from "../components/typography/Icon";
 import Text from "../components/typography/Text";
 
 interface Props {
@@ -49,13 +50,19 @@ export default function DataCard({
               {trendValue}
 
               {trendType === "up" && (
-                <MdTrendingUp className="ml-1 inline" size={18} />
+                <Icon className="ml-1">
+                  <MdTrendingUp size={18} />
+                </Icon>
               )}
               {trendType === "down" && (
-                <MdTrendingDown className="ml-1 inline" size={18} />
+                <Icon className="ml-1">
+                  <MdTrendingDown size={18} />
+                </Icon>
               )}
               {trendType === "flat" && (
-                <MdTrendingFlat className="ml-1 inline" size={18} />
+                <Icon className="ml-1">
+                  <MdTrendingFlat size={18} />
+                </Icon>
               )}
             </Text>
           )}

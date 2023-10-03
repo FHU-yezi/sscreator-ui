@@ -13,7 +13,7 @@ const meta: Meta<typeof NumberInput> = {
     description: "描述",
     placeholder: "请输入内容",
     disabled: false,
-    invlid: false,
+    invalid: false,
     invalidMessage: undefined,
     noSelectAllOnFocus: false,
     width: undefined,

@@ -21,6 +21,7 @@ export { default as VerticalScoll } from "./components/layout/VerticalScoll";
 
 export { default as ExternalLink } from "./components/typography/ExternalLink";
 export { default as Heading } from "./components/typography/Heading";
+export { default as Icon } from "./components/typography/Icon";
 export { default as InternalLink } from "./components/typography/InternalLink";
 export { default as Key } from "./components/typography/Key";
 export { default as Text } from "./components/typography/Text";
