@@ -2,13 +2,13 @@ import { signal } from "@preact/signals";
 import type { Meta } from "@storybook/preact";
 import { Column, Modal, PrimaryButton, Text } from "../src/main";
 
-const isOpen = signal(false);
+const open = signal(false);
 
 const meta: Meta<typeof Modal> = {
   component: (args) => (
     <>
       <Modal {...args} />
-      <PrimaryButton onClick={() => (isOpen.value = true)}>
+      <PrimaryButton onClick={() => (open.value = true)}>
         Open Modal
       </PrimaryButton>
     </>
@@ -20,7 +20,7 @@ const meta: Meta<typeof Modal> = {
       </Column>
     ),
     className: undefined,
-    isOpen,
+    open,
     title: "测试 Modal",
     backgroundColor: undefined,
     padding: undefined,

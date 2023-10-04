@@ -9,6 +9,7 @@ interface Props {
   children: ComponentChildren;
   className?: string;
   onClick?(): void;
+  textColor?: string;
   hoverBackgroundColor?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -21,6 +22,7 @@ export default function GhostButton({
   children,
   className,
   onClick,
+  textColor = "text-blue-600 dark:text-blue-400",
   hoverBackgroundColor = "hover:bg-blue-100 dark:hover:bg-blue-950",
   loading = false,
   disabled = false,
@@ -48,10 +50,10 @@ export default function GhostButton({
       aria-label={ariaLabel}
     >
       <Center className="h-fit">
-        <Text color="text-blue-600 dark:text-blue-400" bold>
+        <Text color={textColor} bold>
           <Row gap="gap-2" className="items-center">
             {children}
-            {loading && <LoadingIcon noWrapInText />}
+            {loading && <LoadingIcon />}
           </Row>
         </Text>
       </Center>
