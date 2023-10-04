@@ -36,7 +36,7 @@ export { Table, TableBody, TableHeader, TableRow } from "./components/Table";
 export { default as Tooltip } from "./components/Tooltip";
 
 export { default as AppContainer } from "./blocks/AppContainer";
-export { default as DataCard } from "./blocks/DataCard";
+export { default as FieldBlock } from "./blocks/FieldBlock";
 export { default as Footer } from "./blocks/Footer";
 export { default as Header } from "./blocks/Header";
 export { default as LoadingArea } from "./blocks/LoadingArea";
