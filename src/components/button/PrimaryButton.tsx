@@ -50,7 +50,7 @@ export default function PrimaryButton({
     >
       <Center className="h-fit">
         <Text color="text-zinc-50" bold>
-          <Row gap="gap-2" className="items-center">
+          <Row gap="gap-2" verticalCenter>
             {children}
             {loading && <LoadingIcon />}
           </Row>

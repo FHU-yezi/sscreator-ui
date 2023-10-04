@@ -51,7 +51,7 @@ export default function Switch<T extends ComponentChild>({
             onClick={() => (value.value = item.value)}
           >
             <Center>
-              <Row className="items-center" gap="gap-1">
+              <Row gap="gap-1" verticalCenter>
                 <Text
                   color={
                     item.value === value.value ? "text-zinc-50" : undefined

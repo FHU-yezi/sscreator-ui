@@ -51,7 +51,7 @@ export default function GhostButton({
     >
       <Center className="h-fit">
         <Text color={textColor} bold>
-          <Row gap="gap-2" className="items-center">
+          <Row gap="gap-2" verticalCenter>
             {children}
             {loading && <LoadingIcon />}
           </Row>

@@ -35,8 +35,9 @@ export default function Tooltip({
       </div>
 
       <Row
-        className="pointer-events-auto w-fit cursor-pointer items-center rounded-md px-2 py-1 hover:bg-zinc-100 hover:dark:bg-zinc-900"
+        className="pointer-events-auto w-fit cursor-pointer rounded-md px-2 py-1 hover:bg-zinc-100 hover:dark:bg-zinc-900"
         gap="gap-2"
+        verticalCenter
       >
         {!isHideIcon && (
           <Icon>

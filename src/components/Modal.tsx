@@ -99,7 +99,7 @@ export default function Modal({
         )}
       >
         <Column>
-          <Row className="items-center justify-between">
+          <Row className="justify-between" verticalCenter>
             <Text large bold>
               {title}
             </Text>

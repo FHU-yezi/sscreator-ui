@@ -2,7 +2,6 @@ import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import { MdDone } from "react-icons/md";
 import { whenEnterOrSpace } from "../utils/keyHelper";
-import Center from "./layout/Center";
 import Column from "./layout/Column";
 import Row from "./layout/Row";
 import Icon from "./typography/Icon";
@@ -23,7 +22,7 @@ export default function Checkbox({
 }: Props) {
   return (
     <Column gap="gap-1.5">
-      <Row className="w-fit items-center" gap="gap-2">
+      <Row className="w-fit" gap="gap-2" verticalCenter>
         <button
           type="button"
           role="checkbox"

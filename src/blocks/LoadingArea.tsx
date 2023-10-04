@@ -28,7 +28,7 @@ export default function LoadingArea({
 
   return (
     <Center className={clsx(className, "rounded", backgroundColor)}>
-      <Row className="items-center" gap="gap-2">
+      <Row gap="gap-2" verticalCenter>
         <LoadingIcon size={iconSize} />
         <Text large bold>
           {message}

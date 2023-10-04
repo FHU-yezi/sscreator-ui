@@ -55,7 +55,7 @@ export default function OutlineButton({
     >
       <Center className="h-fit">
         <Text bold>
-          <Row gap="gap-2" className="items-center">
+          <Row gap="gap-2" verticalCenter>
             {children}
             {loading && <LoadingIcon />}
           </Row>
