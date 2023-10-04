@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { signal } from "@preact/signals";
 import type { Meta } from "@storybook/preact";
 import { Column, Modal, PrimaryButton, Text } from "../src/main";

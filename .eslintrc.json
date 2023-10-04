@@ -31,6 +31,7 @@
     "no-return-assign": "off",
     "no-restricted-syntax": "off",
     "jsx-a11y/control-has-associated-label": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }
