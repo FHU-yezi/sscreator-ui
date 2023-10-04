@@ -13,8 +13,9 @@ interface Props {
 export default function ErrorBoundary({ children, FallbackComponent }: Props) {
   const [error] = useErrorBoundary();
 
-  return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>{error ? <FallbackComponent error={error} /> : children}</>
-  );
+  if (error) {
+    return <FallbackComponent error={error} />;
+  }
+
+  return children;
 }

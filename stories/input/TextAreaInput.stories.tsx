@@ -21,6 +21,7 @@ const meta: Meta<typeof TextAreaInput> = {
     textColor: undefined,
     backgroundColor: undefined,
     borderColor: undefined,
+    invalidBorderColor: undefined,
   },
   argTypes: {
     className: {
@@ -39,6 +40,9 @@ const meta: Meta<typeof TextAreaInput> = {
       control: "text",
     },
     borderColor: {
+      control: "text",
+    },
+    invalidBorderColor: {
       control: "text",
     },
   },

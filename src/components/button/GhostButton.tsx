@@ -9,7 +9,7 @@ interface Props {
   children: ComponentChildren;
   className?: string;
   onClick?(): void;
-  hoverColor?: string;
+  hoverBackgroundColor?: string;
   loading?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
@@ -21,7 +21,7 @@ export default function GhostButton({
   children,
   className,
   onClick,
-  hoverColor = "hover:bg-blue-100 dark:hover:bg-blue-950",
+  hoverBackgroundColor = "hover:bg-blue-100 dark:hover:bg-blue-950",
   loading = false,
   disabled = false,
   fullWidth = false,
@@ -32,7 +32,7 @@ export default function GhostButton({
     <button
       type="button"
       className={clsx(className, "transition-all duration-250 rounded-md", {
-        [hoverColor]: !loading && !disabled,
+        [hoverBackgroundColor]: !loading && !disabled,
         "active:scale-95 duration-300": !loading && !disabled,
         "hover:shadow": !loading && !disabled,
         "opacity-70": loading || disabled,

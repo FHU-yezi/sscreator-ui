@@ -8,6 +8,7 @@ interface Props {
   href: string;
   openInCurrentTab?: boolean;
   hideIcon?: boolean;
+  textColor?: string;
 }
 
 export default function ExternalLink({
@@ -16,12 +17,14 @@ export default function ExternalLink({
   href,
   openInCurrentTab = false,
   hideIcon = false,
+  textColor = "text-blue-600 dark:text-blue-400",
 }: Props) {
   return (
     <a
       className={clsx(
         className,
-        "inline w-fit hover:underline text-blue-600 dark:text-blue-400 break-all",
+        textColor,
+        "inline w-fit hover:underline break-all",
       )}
       href={href}
       target={openInCurrentTab ? "_self" : "_blank"}

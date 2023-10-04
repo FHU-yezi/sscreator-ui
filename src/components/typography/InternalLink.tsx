@@ -9,6 +9,7 @@ interface Props {
   className?: string;
   path: string;
   hideIcon?: boolean;
+  textColor?: string;
 }
 
 export default function InternalLink({
@@ -16,6 +17,7 @@ export default function InternalLink({
   className,
   path,
   hideIcon = false,
+  textColor = "text-blue-600 dark:text-blue-400",
 }: Props) {
   const [, setLocation] = useLocation();
 
@@ -23,7 +25,8 @@ export default function InternalLink({
     <a
       className={clsx(
         className,
-        "inline w-fit hover:underline text-blue-600 dark:text-blue-400 break-all",
+        textColor,
+        "inline w-fit hover:underline break-all",
       )}
       href={path}
       onClick={(event) => {
@@ -33,7 +36,7 @@ export default function InternalLink({
     >
       {children ?? path}
       {!hideIcon && (
-        <Icon className="ml-1" color="text-blue-600 dark:text-blue-400">
+        <Icon className="ml-1" iconColor={textColor}>
           <MdOutlineArrowOutward size={18} />
         </Icon>
       )}

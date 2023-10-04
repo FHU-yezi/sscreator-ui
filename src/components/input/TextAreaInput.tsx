@@ -22,7 +22,6 @@ interface Props {
   textColor?: string;
   backgroundColor?: string;
   borderColor?: string;
-  focusBorderColor?: string;
   invalidBorderColor?: string;
   inputRef?: Ref<HTMLTextAreaElement>;
 }
@@ -44,8 +43,7 @@ export default function TextAreaInput({
   width = "w-full",
   textColor = "text-zinc-950 dark:text-zinc-50",
   backgroundColor = "bg-zinc-50 dark:bg-zinc-900",
-  borderColor = "border-zinc-200 dark:border-zinc-700",
-  focusBorderColor = "focus:border-blue-500",
+  borderColor = "border-zinc-200 dark:border-zinc-700 focus:border-blue-500",
   invalidBorderColor = "border-red-500",
   inputRef,
 }: Props) {
@@ -71,7 +69,6 @@ export default function TextAreaInput({
           {
             "cursor-not-allowed": disabled,
             [borderColor]: !invalid,
-            [focusBorderColor]: !invalid,
             [invalidBorderColor]: invalid,
           },
         )}

@@ -4,15 +4,13 @@ import type { ComponentChildren } from "preact";
 interface Props {
   children: ComponentChildren;
   className?: string;
-  color?: string;
+  iconColor?: string;
 }
 
-export default function Icon({
-  children,
-  className,
-  color = "text-zinc-950 dark:text-zinc-50",
-}: Props) {
+export default function Icon({ children, className, iconColor }: Props) {
   return (
-    <span className={clsx(className, "inline-block", color)}>{children}</span>
+    <span className={clsx(className, "inline-block", iconColor)}>
+      {children}
+    </span>
   );
 }

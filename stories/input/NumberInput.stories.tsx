@@ -20,6 +20,7 @@ const meta: Meta<typeof NumberInput> = {
     textColor: undefined,
     backgroundColor: undefined,
     borderColor: undefined,
+    invalidBorderColor: undefined,
   },
   argTypes: {
     className: {
@@ -38,6 +39,9 @@ const meta: Meta<typeof NumberInput> = {
       control: "text",
     },
     borderColor: {
+      control: "text",
+    },
+    invalidBorderColor: {
       control: "text",
     },
   },

@@ -12,6 +12,7 @@ const meta: Meta<typeof OutlineButton> = {
     disabled: false,
     fullWidth: false,
     iconOnly: false,
+    hoverBackgroundColor: undefined,
     ariaLabel: undefined,
   },
   argTypes: {
@@ -21,7 +22,7 @@ const meta: Meta<typeof OutlineButton> = {
     borderColor: {
       control: "text",
     },
-    hoverColor: {
+    hoverBackgroundColor: {
       control: "text",
     },
     ariaLabel: {

@@ -12,13 +12,14 @@ const meta: Meta<typeof GhostButton> = {
     disabled: false,
     fullWidth: false,
     iconOnly: false,
+    hoverBackgroundColor: undefined,
     ariaLabel: undefined,
   },
   argTypes: {
     className: {
       control: "text",
     },
-    hoverColor: {
+    hoverBackgroundColor: {
       control: "text",
     },
     ariaLabel: {

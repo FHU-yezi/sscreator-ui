@@ -10,7 +10,7 @@ interface Props {
   className?: string;
   onClick?(): void;
   borderColor?: string;
-  hoverColor?: string;
+  hoverBackgroundColor?: string;
   loading?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
@@ -23,7 +23,7 @@ export default function OutlineButton({
   className,
   onClick,
   borderColor = "border-blue-600",
-  hoverColor = "hover:bg-blue-100 dark:hover:bg-blue-950",
+  hoverBackgroundColor = "hover:bg-blue-100 dark:hover:bg-blue-950",
   loading = false,
   disabled = false,
   fullWidth = false,
@@ -38,7 +38,7 @@ export default function OutlineButton({
         "transition-all border-2 rounded-md shadow",
         borderColor,
         {
-          [hoverColor]: !loading && !disabled,
+          [hoverBackgroundColor]: !loading && !disabled,
           "active:scale-95 duration-300": !loading && !disabled,
           "opacity-70": loading || disabled,
           "cursor-wait": loading,

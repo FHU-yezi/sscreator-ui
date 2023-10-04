@@ -20,7 +20,6 @@ const meta: Meta<typeof TextInput> = {
     textColor: undefined,
     backgroundColor: undefined,
     borderColor: undefined,
-    focusBorderColor: undefined,
     invalidBorderColor: undefined,
   },
   argTypes: {
@@ -40,9 +39,6 @@ const meta: Meta<typeof TextInput> = {
       control: "text",
     },
     borderColor: {
-      control: "text",
-    },
-    focusBorderColor: {
       control: "text",
     },
     invalidBorderColor: {
