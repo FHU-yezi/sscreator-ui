@@ -9,7 +9,7 @@ const meta: Meta<typeof Switch> = {
   args: {
     label: "切换组件",
     value: isOpen,
-    description: "这是一个测试复选框",
+    description: "这是一个测试切换组件",
     data: [
       {
         label: "选项 1",

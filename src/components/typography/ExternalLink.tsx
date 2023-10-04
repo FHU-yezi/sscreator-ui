@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import Icon from "./Icon";
 
 interface Props {
   children?: ComponentChildren;
@@ -32,10 +33,9 @@ export default function ExternalLink({
     >
       {children ?? href}
       {!hideIcon && (
-        <MdOutlineArrowOutward
-          className={clsx(className, "ml-1 inline")}
-          size={18}
-        />
+        <Icon className="ml-1">
+          <MdOutlineArrowOutward size={18} />
+        </Icon>
       )}
     </a>
   );

@@ -5,6 +5,7 @@ import { whenEnterOrSpace } from "../utils/keyHelper";
 import Center from "./layout/Center";
 import Column from "./layout/Column";
 import Row from "./layout/Row";
+import Icon from "./typography/Icon";
 import Text from "./typography/Text";
 
 interface Props {
@@ -41,16 +42,14 @@ export default function Checkbox({
           }
           aria-checked={value.value}
         >
-          <Text
+          <Icon
             className={clsx("transition-opacity", {
               "opacity-0": !value.value,
             })}
-            color="text-zinc-50"
+            iconColor="text-zinc-50"
           >
-            <Center>
-              <MdDone aria-label={`${label}，单选框`} size={18} />
-            </Center>
-          </Text>
+            <MdDone aria-label={`${label}，单选框`} size={18} />
+          </Icon>
         </button>
         <Text>{label}</Text>
       </Row>

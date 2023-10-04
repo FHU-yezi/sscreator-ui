@@ -52,7 +52,7 @@ export default function PrimaryButton({
         <Text color="text-zinc-50" bold>
           <Row gap="gap-2" className="items-center">
             {children}
-            {loading && <LoadingIcon noWrapInText />}
+            {loading && <LoadingIcon />}
           </Row>
         </Text>
       </Center>

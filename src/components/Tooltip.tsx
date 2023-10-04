@@ -3,6 +3,7 @@ import type { ComponentChildren } from "preact";
 import { MdOutlineInfo } from "react-icons/md";
 import Row from "./layout/Row";
 import Text from "./typography/Text";
+import Icon from "./typography/Icon";
 
 interface Props {
   children: ComponentChildren;
@@ -38,9 +39,9 @@ export default function Tooltip({
         gap="gap-2"
       >
         {!isHideIcon && (
-          <Text>
+          <Icon>
             <MdOutlineInfo size={18} />
-          </Text>
+          </Icon>
         )}
         {children}
       </Row>

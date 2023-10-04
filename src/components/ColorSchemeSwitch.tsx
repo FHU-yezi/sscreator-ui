@@ -2,7 +2,7 @@ import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { useColorScheme } from "../utils/colorSchemeHelper";
 import GhostButton from "./button/GhostButton";
 import Row from "./layout/Row";
-import Text from "./typography/Text";
+import Icon from "./typography/Icon";
 
 export default function ColorSchemeSwitch() {
   const { colorScheme, toggleColorScheme } = useColorScheme();
@@ -20,9 +20,9 @@ export default function ColorSchemeSwitch() {
         ariaLabel="浅色模式"
         iconOnly
       >
-        <Text color={isLight ? "text-zinc-50" : undefined}>
+        <Icon iconColor={isLight ? "text-zinc-50" : undefined}>
           <MdOutlineLightMode />
-        </Text>
+        </Icon>
       </GhostButton>
       <GhostButton
         className={isDark ? "bg-zinc-600" : undefined}
@@ -30,9 +30,9 @@ export default function ColorSchemeSwitch() {
         ariaLabel="深色模式"
         iconOnly
       >
-        <Text color={isDark ? "text-zinc-50" : undefined}>
+        <Icon iconColor={isDark ? "text-zinc-50" : undefined}>
           <MdOutlineDarkMode />
-        </Text>
+        </Icon>
       </GhostButton>
     </Row>
   );

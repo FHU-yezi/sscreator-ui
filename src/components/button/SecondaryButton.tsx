@@ -52,7 +52,7 @@ export default function SecondaryButton({
         <Text bold>
           <Row gap="gap-2" className="items-center">
             {children}
-            {loading && <LoadingIcon noWrapInText />}
+            {loading && <LoadingIcon />}
           </Row>
         </Text>
       </Center>

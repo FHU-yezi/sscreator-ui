@@ -3,7 +3,7 @@ import type { ComponentChild, ComponentChildren } from "preact";
 import { MdInfoOutline } from "react-icons/md";
 import Card from "../Card";
 import Row from "../layout/Row";
-import Text from "../typography/Text";
+import Icon from "../typography/Icon";
 
 interface Props {
   children: ComponentChildren;
@@ -40,9 +40,9 @@ export default function InfoAlert({
       shadowColor={shadowColor}
     >
       <Row>
-        <Text color={iconColor} bold>
+        <Icon className="font-semibold" iconColor={iconColor}>
           {leftIcon}
-        </Text>
+        </Icon>
         {children}
       </Row>
     </Card>
