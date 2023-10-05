@@ -7,30 +7,39 @@ import Icon from "./typography/Icon";
 export default function ColorSchemeSwitch() {
   const { colorScheme, toggleColorScheme } = useColorScheme();
   const isLight = colorScheme === "light";
-  const isDark = colorScheme === "dark";
 
   return (
     <Row
       gap="gap-0"
-      className="w-fit border border-zinc-200 rounded-lg shadow dark:border-zinc-700"
+      className="w-fit border border-zinc-100 rounded-lg shadow dark:border-zinc-800"
     >
       <GhostButton
-        className={isLight ? "bg-zinc-700" : undefined}
+        hoverBackgroundColor={
+          isLight
+            ? "bg-zinc-700 hover:bg-zinc-600"
+            : "bg-black hover:bg-zinc-900"
+        }
+        textColor="text-zinc-50"
         onClick={toggleColorScheme}
         ariaLabel="浅色模式"
         iconOnly
       >
-        <Icon iconColor={isLight ? "text-zinc-50" : undefined}>
+        <Icon>
           <MdOutlineLightMode />
         </Icon>
       </GhostButton>
       <GhostButton
-        className={isDark ? "bg-zinc-600" : undefined}
+        hoverBackgroundColor={
+          isLight
+            ? "bg-white hover:bg-zinc-100"
+            : "bg-zinc-800 hover:bg-zinc-700"
+        }
+        textColor="text-zinc-950 dark:text-zinc-50"
         onClick={toggleColorScheme}
         ariaLabel="深色模式"
         iconOnly
       >
-        <Icon iconColor={isDark ? "text-zinc-50" : undefined}>
+        <Icon>
           <MdOutlineDarkMode />
         </Icon>
       </GhostButton>
