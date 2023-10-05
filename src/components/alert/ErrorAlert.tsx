@@ -27,7 +27,7 @@ export default function ErrorAlert({
   rounded,
   backgroundColor = "bg-red-50 dark:bg-red-950",
   borderColor = "border-red-500 dark:border-red-700",
-  shadowColor = "shadow-red-500/30 dark:shadow-red-700/30",
+  shadowColor = "shadow-red-500/20 dark:shadow-red-700/20",
   iconColor = "text-red-500 dark:text-red-700",
 }: Props) {
   return (

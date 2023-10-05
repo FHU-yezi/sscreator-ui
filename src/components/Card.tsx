@@ -19,7 +19,7 @@ export default function Card({
   margin = "m-0",
   rounded = "rounded-md",
   borderColor = "border-zinc-300 dark:border-zinc-700",
-  shadowColor = "shadow-zinc-300/30 dark:shadow-zinc-700/30",
+  shadowColor = "shadow-zinc-300/20 dark:shadow-zinc-700/20",
   borderless = false,
 }: Props) {
   return (

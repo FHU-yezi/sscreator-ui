@@ -27,7 +27,7 @@ export default function WarningAlert({
   rounded,
   backgroundColor = "bg-orange-50 dark:bg-orange-950",
   borderColor = "border-orange-500 dark:border-orange-700",
-  shadowColor = "shadow-orange-500/30 dark:shadow-orange-700/30",
+  shadowColor = "shadow-orange-500/20 dark:shadow-orange-700/20",
   iconColor = "text-orange-500 dark:text-orange-700",
 }: Props) {
   return (

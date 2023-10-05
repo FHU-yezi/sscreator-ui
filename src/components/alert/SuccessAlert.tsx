@@ -27,7 +27,7 @@ export default function SuccessAlert({
   rounded,
   backgroundColor = "bg-green-50 dark:bg-green-950",
   borderColor = "border-green-500 dark:border-green-700",
-  shadowColor = "shadow-green-500/30 dark:shadow-green-700/30",
+  shadowColor = "shadow-green-500/20 dark:shadow-green-700/20",
   iconColor = "text-green-500 text-green-700",
 }: Props) {
   return (
