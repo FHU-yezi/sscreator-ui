@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.7.1",
+  "version": "0.8.0",
   "type": "module",
   "repository": "https://github.com/FHU-yezi/sscreator-ui.git",
   "author": "Yezi (https://github.com/FHU-yezi)",
