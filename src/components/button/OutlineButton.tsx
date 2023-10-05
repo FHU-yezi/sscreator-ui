@@ -22,7 +22,7 @@ export default function OutlineButton({
   children,
   className,
   onClick,
-  borderColor = "border-blue-600",
+  borderColor = "border-blue-400 dark:border-blue-600",
   hoverBackgroundColor = "hover:bg-blue-100 dark:hover:bg-blue-950",
   loading = false,
   disabled = false,
@@ -35,7 +35,7 @@ export default function OutlineButton({
       type="button"
       className={clsx(
         className,
-        "transition-all border-2 rounded-md shadow",
+        "transition-all border rounded-md shadow",
         borderColor,
         {
           [hoverBackgroundColor]: !loading && !disabled,
