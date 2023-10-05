@@ -33,13 +33,14 @@ export default function SecondaryButton({
   return (
     <button
       type="button"
-      className={clsx(className, "transition-all rounded-md shadow", color, {
+      className={clsx(className, "transition-all rounded-md", color, {
         [hoverColor]: !loading && !disabled,
-        "active:scale-95 duration-300": !loading && !disabled,
+        "active:scale-95 duration-300 shadow": !loading && !disabled,
         "opacity-70": loading || disabled,
         "cursor-wait": loading,
         "cursor-not-allowed": disabled,
 
+        "w-fit": !fullWidth,
         "w-full": fullWidth,
         "px-4 py-2": !iconOnly,
         "p-2": iconOnly,

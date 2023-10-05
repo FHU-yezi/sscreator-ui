@@ -41,6 +41,7 @@ export default function GhostButton({
         "cursor-wait": loading,
         "cursor-not-allowed": disabled,
 
+        "w-fit": !fullWidth,
         "w-full": fullWidth,
         "px-4 py-2": !iconOnly,
         "p-2": iconOnly,
