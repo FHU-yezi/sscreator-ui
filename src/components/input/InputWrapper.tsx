@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import type { ComponentChildren } from "preact";
 import { MdOutlineInfo } from "react-icons/md";
 import Column from "../layout/Column";
@@ -6,7 +7,6 @@ import Text from "../typography/Text";
 
 interface Props {
   children: ComponentChildren;
-  inputId?: string;
   label?: string;
   description?: string;
   isInvalid?: boolean;
@@ -15,7 +15,6 @@ interface Props {
 
 export default function InputWrapper({
   children,
-  inputId,
   label,
   description,
   isInvalid = false,
@@ -23,7 +22,7 @@ export default function InputWrapper({
 }: Props) {
   return (
     <Column gap="gap-1.5">
-      <label htmlFor={inputId}>
+      <label>
         <Text bold>{label}</Text>
       </label>
 

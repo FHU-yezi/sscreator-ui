@@ -1,7 +1,6 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { Ref } from "preact";
-import { useId } from "preact/hooks";
 import InputWrapper from "./InputWrapper";
 
 interface Props {
@@ -45,11 +44,8 @@ export default function NumberInput({
   invalidBorderColor = "border-red-500",
   inputRef,
 }: Props) {
-  const inputId = useId();
-
   return (
     <InputWrapper
-      inputId={inputId}
       label={label}
       description={description}
       isInvalid={invalid}
@@ -57,7 +53,6 @@ export default function NumberInput({
     >
       <input
         type="number"
-        id={inputId}
         inputMode="numeric"
         pattern="[0-9\.]*"
         className={clsx(

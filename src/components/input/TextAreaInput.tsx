@@ -1,7 +1,6 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { Ref } from "preact";
-import { useId } from "preact/hooks";
 import InputWrapper from "./InputWrapper";
 
 interface Props {
@@ -47,11 +46,8 @@ export default function TextAreaInput({
   invalidBorderColor = "border-red-500",
   inputRef,
 }: Props) {
-  const inputId = useId();
-
   return (
     <InputWrapper
-      inputId={inputId}
       label={label}
       description={description}
       isInvalid={invalid}
@@ -59,7 +55,6 @@ export default function TextAreaInput({
     >
       <textarea
         type="text"
-        id={inputId}
         className={clsx(
           className,
           "py-1.5 px-3 rounded-lg border outline-none disabled:opacity-60 resize-none transition-colors",
