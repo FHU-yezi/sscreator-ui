@@ -22,19 +22,15 @@ export default function ExternalLink({
 }: Props) {
   return (
     <a
-      className={clsx(
-        className,
-        textColor,
-        "inline w-fit hover:underline break-all",
-      )}
+      className={clsx(className, textColor, "inline hover:underline break-all")}
       href={href}
       target={openInCurrentTab ? "_self" : "_blank"}
       rel="noreferrer"
     >
       {children ?? href}
       {!hideIcon && (
-        <Icon className="ml-1">
-          <MdOutlineArrowOutward size={18} />
+        <Icon className="align-super" iconColor={textColor}>
+          <MdOutlineArrowOutward size={14} />
         </Icon>
       )}
     </a>

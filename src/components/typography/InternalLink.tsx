@@ -23,21 +23,17 @@ export default function InternalLink({
 
   return (
     <a
-      className={clsx(
-        className,
-        textColor,
-        "inline w-fit hover:underline break-all",
-      )}
+      className={clsx(className, textColor, "inline hover:underline break-all")}
       href={path}
       onClick={(event) => {
         event.preventDefault();
         setLocation(path);
       }}
     >
-      {children ?? path}
+      {children}
       {!hideIcon && (
-        <Icon className="ml-1" iconColor={textColor}>
-          <MdOutlineArrowOutward size={18} />
+        <Icon className="align-super" iconColor={textColor}>
+          <MdOutlineArrowOutward size={14} />
         </Icon>
       )}
     </a>
