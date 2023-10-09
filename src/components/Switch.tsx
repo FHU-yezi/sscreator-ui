@@ -40,34 +40,18 @@ export default function Switch<T extends ComponentChild>({
           <button
             type="button"
             className={clsx(
-              "flex-1 border-y-2 p-2 even:border-x-2 transition-colors first:(border-l-2 rounded-l) last:(border-r-2 rounded-r)",
+              "flex-1 border-y p-2 even:border-x transition-colors first:(border-l rounded-l) last:(border-r rounded-r) border-zinc-200 dark:border-zinc-700",
               {
-                "border-zinc-200 dark:border-zinc-700":
-                  item.value !== value.value,
-                "bg-zinc-700 border-zinc-700 dark:(bg-zinc-600 border-zinc-600)":
-                  item.value === value.value,
+                "bg-blue-300 dark:bg-blue-900": item.value === value.value,
               },
             )}
             onClick={() => (value.value = item.value)}
           >
             <Center>
-              <Row gap="gap-1" verticalCenter>
-                <Text
-                  color={
-                    item.value === value.value ? "text-zinc-50" : undefined
-                  }
-                >
-                  {item.leftIcon}
-                </Text>
-                <Text
-                  className="whitespace-nowrap"
-                  color={
-                    item.value === value.value ? "text-zinc-50" : undefined
-                  }
-                >
-                  {item.label}
-                </Text>
-              </Row>
+              <Text nowrap>
+                {item.leftIcon}
+                {item.label}
+              </Text>
             </Center>
           </button>
         ))}

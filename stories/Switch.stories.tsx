@@ -1,6 +1,7 @@
 import { signal } from "@preact/signals";
 import type { Meta } from "@storybook/preact";
-import { Switch } from "../src/main";
+import { MdFlag } from "react-icons/md";
+import { Icon, Switch } from "../src/main";
 
 const isOpen = signal(1);
 
@@ -14,6 +15,11 @@ const meta: Meta<typeof Switch> = {
       {
         label: "选项 1",
         value: 1,
+        leftIcon: (
+          <Icon className="mr-1">
+            <MdFlag />
+          </Icon>
+        ),
       },
       {
         label: "选项 2",
