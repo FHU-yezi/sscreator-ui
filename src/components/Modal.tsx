@@ -2,20 +2,20 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import { useEffect, useMemo } from "preact/hooks";
+// import { useEffect, useMemo } from "preact/hooks";
 import { MdOutlineClose } from "react-icons/md";
 import GhostButton from "./button/GhostButton";
 import Column from "./layout/Column";
 import Row from "./layout/Row";
 import Text from "./typography/Text";
 
-function closeModalWhenEscPressed(onClose: () => void) {
-  return (e: KeyboardEvent) => {
-    if (e.code === "Escape") {
-      onClose();
-    }
-  };
-}
+// function closeModalWhenEscPressed(onClose: () => void) {
+//   return (e: KeyboardEvent) => {
+//     if (e.code === "Escape") {
+//       onClose();
+//     }
+//   };
+// }
 
 interface Props {
   children: ComponentChildren;
@@ -27,7 +27,7 @@ interface Props {
   rounded?: string;
   hideCloseButton?: boolean;
   preventCloseByClickMask?: boolean;
-  preventCloseByPressEsc?: boolean;
+  // preventCloseByPressEsc?: boolean;
 }
 
 export default function Modal({
@@ -39,36 +39,36 @@ export default function Modal({
   padding = "px-6 pb-8 pt-4",
   rounded = "sm:rounded-lg",
   hideCloseButton,
-  preventCloseByClickMask = false,
-  preventCloseByPressEsc = false,
+  preventCloseByClickMask = false, // preventCloseByPressEsc = false,
 }: Props) {
   const onClose = () => {
     open.value = false;
-    document.body.style.overflowY = "";
+    // document.body.style.overflowY = "";
   };
-  const onKeyDown = useMemo(
-    () =>
-      !preventCloseByPressEsc ? closeModalWhenEscPressed(onClose) : undefined,
-    [preventCloseByPressEsc],
-  );
+  // const onKeyDown = useMemo(
+  //   () =>
+  //     !preventCloseByPressEsc ? closeModalWhenEscPressed(onClose) : undefined,
+  //   [preventCloseByPressEsc],
+  // );
 
   //  Modal 展示时禁止下层元素滚动
-  useEffect(() => {
-    if (open.value) {
-      document.body.style.overflowY = "hidden";
-    }
-  }, [open.value]);
+  // useEffect(() => {
+  //   if (open.value) {
+  //     document.body.style.overflowY = "hidden";
+  //   }
+  // }, [open.value]);
 
   // 如果没有显式禁止，允许用户通过按下 Esc 关闭 Modal
-  useEffect(() => {
-    if (!preventCloseByPressEsc) {
-      if (open.value) {
-        document.addEventListener("keydown", onKeyDown!);
-      } else {
-        document.removeEventListener("keydown", onKeyDown!);
-      }
-    }
-  }, [open.value]);
+  // useEffect(() => {
+  //   if (!preventCloseByPressEsc) {
+  //     if (open.value) {
+  //       document.addEventListener("keydown", onKeyDown!);
+  //     } else {
+  //       document.removeEventListener("keydown", onKeyDown!);
+  //     }
+  //   }
+  // }, [open.value]);
+
   return (
     <>
       {/* 遮罩层 */}
