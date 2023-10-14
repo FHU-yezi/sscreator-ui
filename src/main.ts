@@ -3,10 +3,10 @@ export { default as InfoAlert } from "./components/alert/InfoAlert";
 export { default as SuccessAlert } from "./components/alert/SuccessAlert";
 export { default as WarningAlert } from "./components/alert/WarningAlert";
 
+export { default as GhostButton } from "./components/button/GhostButton";
+export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as PrimaryButton } from "./components/button/PrimaryButton";
 export { default as SecondaryButton } from "./components/button/SecondaryButton";
-export { default as OutlineButton } from "./components/button/OutlineButton";
-export { default as GhostButton } from "./components/button/GhostButton";
 
 export { default as NumberInput } from "./components/input/NumberInput";
 export { default as TextAreaInput } from "./components/input/TextAreaInput";
@@ -25,6 +25,7 @@ export { default as InternalLink } from "./components/typography/InternalLink";
 export { default as Key } from "./components/typography/Key";
 export { default as Text } from "./components/typography/Text";
 
+export { default as Accordion } from "./components/Accordion";
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
 export { default as Checkbox } from "./components/Checkbox";
