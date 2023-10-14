@@ -42,13 +42,16 @@ export default function Switch<T extends ComponentChild>({
             className={clsx(
               "flex-1 border-y p-2 even:border-x transition-colors first:(border-l rounded-l) last:(border-r rounded-r) border-zinc-200 dark:border-zinc-700",
               {
-                "bg-blue-300 dark:bg-blue-900": item.value === value.value,
+                "bg-blue-600 dark:bg-blue-700": item.value === value.value,
               },
             )}
             onClick={() => (value.value = item.value)}
           >
             <Center>
-              <Text nowrap>
+              <Text
+                color={item.value === value.value ? "text-zinc-50" : undefined}
+                nowrap
+              >
                 {item.leftIcon}
                 {item.label}
               </Text>
