@@ -7,11 +7,11 @@ const meta: Meta<typeof GhostButton> = {
   args: {
     children: "测试 GhostButton",
     className: undefined,
+    icon: undefined,
     onClick: () => null,
     loading: false,
     disabled: false,
     fullWidth: false,
-    iconOnly: false,
     textColor: undefined,
     hoverBackgroundColor: undefined,
     ariaLabel: undefined,
@@ -52,18 +52,13 @@ export const FullWidth = {
 };
 export const WithIcon = {
   args: {
-    children: (
-      <>
-        <MdFlag />
-        测试 GhostButton
-      </>
-    ),
+    icon: <MdFlag />,
   },
 };
 export const PureIcon = {
   args: {
-    children: <MdFlag />,
-    iconOnly: true,
+    children: undefined,
+    icon: <MdFlag />,
     ariaLabel: "测试 GhostButton",
   },
 };

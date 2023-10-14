@@ -105,14 +105,12 @@ export default function Modal({
             </Text>
             {!hideCloseButton && (
               <GhostButton
+                icon={<MdOutlineClose size={24} />}
                 onClick={onClose}
                 textColor="text-zinc-950 dark:text-zinc-50"
                 hoverBackgroundColor="hover:bg-zinc-200 dark:hover:bg-zinc-800"
                 ariaLabel="关闭"
-                iconOnly
-              >
-                <MdOutlineClose size={24} />
-              </GhostButton>
+              />
             )}
           </Row>
           {children}

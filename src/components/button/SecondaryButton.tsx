@@ -1,40 +1,42 @@
 import clsx from "clsx";
-import type { ComponentChildren } from "preact";
+import type { ComponentChild, ComponentChildren } from "preact";
 import LoadingIcon from "../LoadingIcon";
-import Center from "../layout/Center";
 import Row from "../layout/Row";
+import Icon from "../typography/Icon";
 import Text from "../typography/Text";
 
 interface Props {
-  children: ComponentChildren;
+  children?: ComponentChildren;
   className?: string;
+  icon?: ComponentChild;
   onClick?(): void;
-  color?: string;
-  hoverColor?: string;
+  textColor?: string;
+  backgroundColor?: string;
+  hoverBackgroundColor?: string;
   loading?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
-  iconOnly?: boolean;
   ariaLabel?: string;
 }
 
 export default function SecondaryButton({
   children,
   className,
+  icon,
   onClick,
-  color = "bg-blue-200 dark:bg-blue-900",
-  hoverColor = "hover:bg-blue-300 dark:hover:bg-blue-800",
+  textColor,
+  backgroundColor = "bg-blue-200 dark:bg-blue-900",
+  hoverBackgroundColor = "hover:bg-blue-300 dark:hover:bg-blue-800",
   loading = false,
   disabled = false,
   fullWidth = false,
-  iconOnly = false,
   ariaLabel,
 }: Props) {
   return (
     <button
       type="button"
-      className={clsx(className, "transition-all rounded-md", color, {
-        [hoverColor]: !loading && !disabled,
+      className={clsx(className, "transition-all rounded-md", backgroundColor, {
+        [hoverBackgroundColor]: !loading && !disabled,
         "active:scale-95 duration-300 shadow": !loading && !disabled,
         "opacity-70": loading || disabled,
         "cursor-wait": loading,
@@ -42,21 +44,26 @@ export default function SecondaryButton({
 
         "w-fit": !fullWidth,
         "w-full": fullWidth,
-        "px-4 py-2": !iconOnly,
-        "p-2": iconOnly,
+        "px-4 py-2": children,
+        "p-2": icon && !children,
       })}
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
     >
-      <Center className="h-fit">
-        <Text bold>
-          <Row gap="gap-2" verticalCenter>
+      <Row
+        className={fullWidth ? "justify-center" : undefined}
+        gap="gap-2"
+        verticalCenter
+      >
+        {icon && <Icon iconColor={textColor}>{icon}</Icon>}
+        {children && (
+          <Text color={textColor} bold>
             {children}
-            {loading && <LoadingIcon />}
-          </Row>
-        </Text>
-      </Center>
+          </Text>
+        )}
+        {loading && <LoadingIcon iconColor={textColor} />}
+      </Row>
     </button>
   );
 }

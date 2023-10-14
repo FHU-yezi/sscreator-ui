@@ -7,11 +7,11 @@ const meta: Meta<typeof SecondaryButton> = {
   args: {
     children: "测试 SecondaryButton",
     className: undefined,
+    icon: false,
     onClick: () => null,
     loading: false,
     disabled: false,
     fullWidth: false,
-    iconOnly: false,
     ariaLabel: undefined,
   },
   argTypes: {
@@ -50,18 +50,13 @@ export const FullWidth = {
 };
 export const WithIcon = {
   args: {
-    children: (
-      <>
-        <MdFlag />
-        测试 SecondaryButton
-      </>
-    ),
+    icon: <MdFlag />,
   },
 };
 export const PureIcon = {
   args: {
-    children: <MdFlag />,
-    iconOnly: true,
+    children: undefined,
+    icon: <MdFlag />,
     ariaLabel: "测试 SecondaryButton",
   },
 };

@@ -7,11 +7,11 @@ const meta: Meta<typeof OutlineButton> = {
   args: {
     children: "测试 OutlineButton",
     className: undefined,
+    icon: undefined,
     onClick: () => null,
     loading: false,
     disabled: false,
     fullWidth: false,
-    iconOnly: false,
     hoverBackgroundColor: undefined,
     ariaLabel: undefined,
   },
@@ -51,18 +51,13 @@ export const FullWidth = {
 };
 export const WithIcon = {
   args: {
-    children: (
-      <>
-        <MdFlag />
-        测试 OutlineButton
-      </>
-    ),
+    icon: <MdFlag />,
   },
 };
 export const PureIcon = {
   args: {
-    children: <MdFlag />,
-    iconOnly: true,
+    children: undefined,
+    icon: <MdFlag />,
     ariaLabel: "测试 OutlineButton",
   },
 };
