@@ -6,6 +6,7 @@ interface Props {
   className?: string;
   gap?: string;
   verticalCenter?: boolean;
+  nowrap?: boolean;
 }
 
 export default function Row({
@@ -13,11 +14,13 @@ export default function Row({
   className,
   gap = "gap-4",
   verticalCenter = false,
+  nowrap = false,
 }: Props) {
   return (
     <div
       className={clsx(className, "flex", gap, {
         "items-center": verticalCenter,
+        "flex-nowrap": nowrap,
       })}
     >
       {children}

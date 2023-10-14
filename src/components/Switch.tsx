@@ -30,11 +30,9 @@ export default function Switch<T extends ComponentChild>({
   return (
     <InputWrapper label={label} description={description}>
       <Row
-        className={clsx(
-          "space-between flex-nowrap overflow-x-auto",
-          backgroundColor,
-        )}
+        className={clsx("overflow-x-auto", backgroundColor)}
         gap="gap-0"
+        nowrap
       >
         {data.map((item) => (
           <button
