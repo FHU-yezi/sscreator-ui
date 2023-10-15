@@ -3,6 +3,7 @@ export { default as InfoAlert } from "./components/alert/InfoAlert";
 export { default as SuccessAlert } from "./components/alert/SuccessAlert";
 export { default as WarningAlert } from "./components/alert/WarningAlert";
 
+export { default as CardButton } from "./components/button/CardButton";
 export { default as GhostButton } from "./components/button/GhostButton";
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as PrimaryButton } from "./components/button/PrimaryButton";
