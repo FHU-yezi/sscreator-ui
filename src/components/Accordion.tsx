@@ -1,5 +1,5 @@
-import { useSignal } from "@preact/signals";
 import clsx from "clsx";
+import type { Signal } from "@preact/signals";
 import type { ComponentChildren } from "preact";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import Card from "./Card";
@@ -12,17 +12,15 @@ interface Props {
   children: ComponentChildren;
   cardClassName?: string;
   title: string;
-  initialOpen?: boolean;
+  isOpened: Signal<boolean>;
 }
 
 export default function Accordion({
   children,
   cardClassName,
   title,
-  initialOpen = false,
+  isOpened,
 }: Props) {
-  const isOpened = useSignal(initialOpen);
-
   return (
     <Card className={clsx(cardClassName)}>
       <Column gap="gap-0">
