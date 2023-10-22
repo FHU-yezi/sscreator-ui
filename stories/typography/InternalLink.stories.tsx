@@ -10,6 +10,7 @@ const meta: Meta<typeof InternalLink> = {
   args: {
     children: "此链接",
     className: undefined,
+    onClick: undefined,
     path: "/",
     hideIcon: false,
     textColor: undefined,

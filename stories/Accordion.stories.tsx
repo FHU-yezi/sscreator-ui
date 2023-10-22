@@ -1,5 +1,8 @@
+import { signal } from "@preact/signals";
 import type { Meta } from "@storybook/preact";
 import { Accordion, Column, Text } from "../src/main";
+
+const isOpened = signal(false);
 
 const meta: Meta<typeof Accordion> = {
   component: (props) => <Accordion {...props} />,
@@ -12,7 +15,7 @@ const meta: Meta<typeof Accordion> = {
     ),
     cardClassName: undefined,
     title: "关于简书会员",
-    initialOpen: false,
+    isOpened,
   },
   argTypes: {
     cardClassName: {
