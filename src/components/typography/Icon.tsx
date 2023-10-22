@@ -7,7 +7,11 @@ interface Props {
   iconColor?: string;
 }
 
-export default function Icon({ children, className, iconColor }: Props) {
+export default function Icon({
+  children,
+  className,
+  iconColor = "text-zinc-950 dark:text-zinc-50",
+}: Props) {
   return (
     <span className={clsx(className, "inline-block", iconColor)}>
       {children}
