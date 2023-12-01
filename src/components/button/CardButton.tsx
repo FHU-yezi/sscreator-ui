@@ -31,7 +31,7 @@ export default function CardButton({
     <button
       type="button"
       className={clsx({
-        "active:scale-95 duration-300 shadow": !disabled,
+        "active:scale-95 duration-300": !disabled,
         "opacity-70": disabled,
         "cursor-not-allowed": disabled,
       })}
