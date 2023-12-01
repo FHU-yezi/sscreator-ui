@@ -27,12 +27,13 @@ export default function Checkbox({
           type="button"
           role="checkbox"
           className={clsx(
-            "h-5 w-5 border rounded shadow transition-colors",
+            "h-5 w-5 border rounded-md shadow transition-colors",
             borderColor,
             {
               "bg-white hover:bg-zinc-100 dark:(bg-zinc-800 hover:bg-zinc-900)":
                 !value.value,
-              "bg-zinc-900 hover:bg-zinc-950": value.value,
+              "bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500":
+                value.value,
             },
           )}
           onClick={() => (value.value = !value.value)}
