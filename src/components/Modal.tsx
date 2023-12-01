@@ -81,6 +81,7 @@ export default function Modal({
           },
         )}
         onClick={!preventCloseByClickMask ? onClose : undefined}
+        aria-hidden
       />
 
       {/* 模态窗 */}
@@ -97,6 +98,7 @@ export default function Modal({
             "opacity-100": open.value,
           },
         )}
+        aria-hidden={!open.value}
       >
         <Column>
           <Row className="justify-between" verticalCenter>
