@@ -13,11 +13,7 @@ const colorScheme = signal(
 
 effect(() => (document.documentElement.className = colorScheme.value));
 
-export function getColorScheme() {
-  return colorScheme.value;
-}
-
-export function toggleColorScheme() {
+function toggleColorScheme() {
   if (colorScheme.value === "light") {
     colorScheme.value = "dark";
   } else {
