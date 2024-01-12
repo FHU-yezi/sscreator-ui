@@ -32,7 +32,7 @@ export default function OutlineButton({
   return (
     <button
       className={clsx(
-        "border-2 shadow rounded transition-color group",
+        "border-2 shadow rounded transition-color disabled:opacity-70 group",
         {
           "px-3 py-1.5": !small,
           "p-1": small,
@@ -43,15 +43,15 @@ export default function OutlineButton({
         },
         className,
         {
-          "border-blue-600 enabled:hover:(border-blue-700 bg-blue-700) disabled:border-blue-900":
+          "border-blue-600 enabled:hover:(border-blue-700 bg-blue-700)":
             type === "primary",
-          "border-zinc-500 enabled:(hover:border-zinc-300 hover:bg-zinc-300 hover:dark:border-zinc-700 hover:dark:bg-zinc-700) disabled:border-zinc-900":
+          "border-zinc-500 enabled:(hover:border-zinc-300 hover:bg-zinc-300 hover:dark:border-zinc-700 hover:dark:bg-zinc-700)":
             type === "secondary",
-          "border-green-600 enabled:hover:(border-green-700 bg-green-700) disabled:border-green-900":
+          "border-green-600 enabled:hover:(border-green-700 bg-green-700)":
             type === "success",
-          "border-orange-600 enabled:hover:(border-orange-700 bg-orange-700) disabled:border-orange-900":
+          "border-orange-600 enabled:hover:(border-orange-700 bg-orange-700)":
             type === "warning",
-          "border-red-600 enabled:hover:(border-red-700 bg-red-700) disabled:border-red-900":
+          "border-red-600 enabled:hover:(border-red-700 bg-red-700)":
             type === "danger",
           [backgroundColor]: type === undefined,
         },

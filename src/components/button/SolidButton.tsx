@@ -32,7 +32,7 @@ export default function SolidButton({
   return (
     <button
       className={clsx(
-        "shadow rounded transition-color group",
+        "shadow rounded transition-color disabled:opacity-70 group",
         {
           "px-3 py-1.5": !small,
           "p-1": small,
@@ -43,15 +43,11 @@ export default function SolidButton({
         },
         className,
         {
-          "bg-blue-600 hover:bg-blue-700 disabled:bg-blue-900":
-            type === "primary",
-          "bg-zinc-200 hover:bg-zinc-300 disabled:bg-zinc-100":
-            type === "secondary",
-          "bg-green-700 hover:bg-green-800 disabled:bg-green-900":
-            type === "success",
-          "bg-orange-600 hover:bg-orange-700 disabled:bg-orange-900":
-            type === "warning",
-          "bg-red-600 hover:bg-red-700 disabled:bg-red-900": type === "danger",
+          "bg-blue-600 enabled:hover:bg-blue-700": type === "primary",
+          "bg-zinc-200 enabled:hover:bg-zinc-300": type === "secondary",
+          "bg-green-700 enabled:hover:bg-green-800": type === "success",
+          "bg-orange-600 enabled:hover:bg-orange-700": type === "warning",
+          "bg-red-600 enabled:hover:bg-red-700": type === "danger",
           [backgroundColor]: type === undefined,
         },
       )}

@@ -26,7 +26,7 @@ export default function SolidButton({
   return (
     <button
       className={clsx(
-        "transition-color group",
+        "transition-color disabled:opacity-70 group",
         {
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
@@ -43,32 +43,25 @@ export default function SolidButton({
           <Icon
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
             color={clsx({
-              "text-blue-600 enabled:hover:text-blue-800 disabled:text-blue-900":
-                type === "primary",
-              "text-zinc-950 enabled:hover:text-zinc-700 disabled:text-zinc-600 dark:(text-zinc-50 enabled:hover:text-zinc-400 disabled:text-zinc-600)":
+              "text-blue-600 enabled:hover:text-blue-800": type === "primary",
+              "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
                 type === "secondary",
-              "text-green-700 enabled:hover:text-green-900 disabled:text-green-900":
-                type === "success",
-              "text-orange-600 enabled:hover:text-orange-800 disabled:text-orange-900":
+              "text-green-700 enabled:hover:text-green-900": type === "success",
+              "text-orange-600 enabled:hover:text-orange-800":
                 type === "warning",
-              "text-red-600 enabled:hover:text-red-800 disabled:text-red-900":
-                type === "danger",
+              "text-red-600 enabled:hover:text-red-800": type === "danger",
               [color]: type === undefined,
             })}
           />
         )}
         <Text
-          color={clsx("group-disabled:opacity-70", {
-            "text-blue-600 enabled:hover:text-blue-800 disabled:text-blue-900":
-              type === "primary",
-            "text-zinc-950 enabled:hover:text-zinc-700 disabled:text-zinc-600 dark:(text-zinc-50 enabled:hover:text-zinc-400 disabled:text-zinc-600)":
+          color={clsx({
+            "text-blue-600 enabled:hover:text-blue-800": type === "primary",
+            "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
               type === "secondary",
-            "text-green-700 enabled:hover:text-green-900 disabled:text-green-900":
-              type === "success",
-            "text-orange-600 enabled:hover:text-orange-800 disabled:text-orange-900":
-              type === "warning",
-            "text-red-600 enabled:hover:text-red-800 disabled:text-red-900":
-              type === "danger",
+            "text-green-700 enabled:hover:text-green-900": type === "success",
+            "text-orange-600 enabled:hover:text-orange-800": type === "warning",
+            "text-red-600 enabled:hover:text-red-800": type === "danger",
             [color]: type === undefined,
           })}
         >
