@@ -8,6 +8,7 @@ interface Props {
   type?: BasicColorType;
   color?: string;
   bold?: boolean;
+  inline?: boolean;
 }
 
 export default function Text({
@@ -16,6 +17,7 @@ export default function Text({
   type,
   color = "text-zinc-950 dark:text-zinc-50",
   bold = false,
+  inline = false,
 }: Props) {
   return (
     <p
@@ -30,6 +32,7 @@ export default function Text({
         },
         {
           "font-bold": bold,
+          inline,
         },
       )}
     >
