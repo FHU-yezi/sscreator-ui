@@ -2,13 +2,13 @@ import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
 import { TbLoader2 } from "react-icons/tb";
 import { Icon, Row, Text } from "../../main";
-import type { ColorType } from "../../utils/colorType";
+import type { FullColorType } from "../../utils/colorType";
 
 interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
-  type?: ColorType;
+  type?: FullColorType;
   color?: string;
   loading?: boolean;
   disabled?: boolean;

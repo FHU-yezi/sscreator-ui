@@ -2,13 +2,13 @@ import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
 import { TbLoader2 } from "react-icons/tb";
 import { Icon, Row, Text } from "../../main";
-import type { ColorType } from "../../utils/colorType";
+import type { FullColorType } from "../../utils/colorType";
 
 interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
-  type?: ColorType;
+  type?: FullColorType;
   backgroundColor?: string;
   textColor?: string;
   loading?: boolean;
@@ -68,7 +68,7 @@ export default function SolidButton({
           />
         )}
         <Text
-          color={clsx("group-disabled:opacity-90", {
+          color={clsx({
             "text-zinc-50": type !== undefined && type !== "secondary",
             "text-zinc-950": type === "secondary",
             [textColor]: type === undefined,
