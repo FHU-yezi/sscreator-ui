@@ -33,7 +33,7 @@ export default function SmallText({
           [color]: type === undefined,
         },
         {
-          "font-bold": bold,
+          "font-semibold": bold,
           inline,
         },
       )}

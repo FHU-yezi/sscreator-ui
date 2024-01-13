@@ -1,6 +1,7 @@
 import { Route, Switch } from "wouter-preact";
 import PageWrapper from "./components/PageWrapper";
 import ButtonPage from "./pages/ButtonPage";
+import HeadingPage from "./pages/HeadingPage";
 import MainPage from "./pages/MainPage";
 import NoticePage from "./pages/NoticePage";
 import TextPage from "./pages/TextPage";
@@ -10,6 +11,9 @@ export default function App() {
     <Switch>
       <Route key="/" path="/">
         <PageWrapper Component={MainPage} />
+      </Route>
+      <Route key="/heading" path="/heading">
+        <PageWrapper Component={HeadingPage} />
       </Route>
       <Route key="/text" path="/text">
         <PageWrapper Component={TextPage} />

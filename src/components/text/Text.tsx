@@ -32,7 +32,7 @@ export default function Text({
           [color]: type === undefined,
         },
         {
-          "font-bold": bold,
+          "font-semibold": bold,
           inline,
         },
       )}
