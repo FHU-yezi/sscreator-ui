@@ -4,6 +4,7 @@ import { useLocation } from "wouter-preact";
 import {
   Column,
   Icon,
+  LargeText,
   Row,
   Text,
   TextButton,
@@ -22,7 +23,7 @@ export default function PageWrapper({ Component }: Props) {
     <Column className="my-8 w-[90vw] max-w-4xl mx-auto">
       <Row className="justify-between mb-4" itemsCenter>
         {location === "/" ? (
-          <Text>SSCreator UI</Text>
+          <LargeText bold>SSCreator UI</LargeText>
         ) : (
           <TextButton type="secondary" onClick={() => setLocation("/")}>
             <Icon icon={<MdKeyboardArrowLeft size={24} />} />

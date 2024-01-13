@@ -11,7 +11,7 @@ interface Props {
   inline?: boolean;
 }
 
-export default function Text({
+export default function LargeText({
   children,
   className,
   type,
@@ -22,6 +22,7 @@ export default function Text({
   return (
     <p
       className={clsx(
+        "text-lg",
         className,
         {
           "text-zinc-500": type === "gray",

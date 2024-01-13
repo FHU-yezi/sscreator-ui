@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import { OutlineButton, SolidButton, Text, TextButton } from "../../src/main";
 
-export default function ButtonsPage() {
+export default function ButtonPage() {
   return (
     <>
       <Text>Solid 按钮</Text>
