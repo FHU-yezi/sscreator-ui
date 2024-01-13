@@ -1,9 +1,10 @@
-import { Text } from "../../src/main";
+import PageCard from "../components/PageCard";
 
 export default function MainPage() {
   return (
     <>
-      <Text>Hello World</Text>
+      <PageCard name="按钮" path="/button" />
+      <PageCard name="提示" path="/notice" />
     </>
   );
 }

@@ -56,7 +56,7 @@ export default function SolidButton({
       aria-disabled={disabled}
       aria-busy={loading}
     >
-      <Row className="justify-center" gap="gap-2" verticalCenter nowrap>
+      <Row className="justify-center" gap="gap-2" itemsCenter nowrap>
         {loading && (
           <Icon
             icon={<TbLoader2 className="motion-safe:animate-spin" />}

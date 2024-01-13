@@ -5,7 +5,7 @@ interface Props {
   children: ComponentChildren;
   className?: string;
   gap?: string;
-  horizontalCenter?: boolean;
+  itemsCenter?: boolean;
   nowrap?: boolean;
 }
 
@@ -13,13 +13,13 @@ export default function Column({
   children,
   className,
   gap = "gap-4",
-  horizontalCenter = false,
+  itemsCenter = false,
   nowrap = false,
 }: Props) {
   return (
     <div
       className={clsx(className, "flex flex-col", gap, {
-        "items-center": horizontalCenter,
+        "items-center": itemsCenter,
         "flex-nowrap": nowrap,
       })}
     >

@@ -1,5 +1,5 @@
-export { default as Alert } from "./components/Alert";
 export { default as Icon } from "./components/Icon";
+export { default as Notice } from "./components/Notice";
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as SolidButton } from "./components/button/SolidButton";
 export { default as TextButton } from "./components/button/TextButton";

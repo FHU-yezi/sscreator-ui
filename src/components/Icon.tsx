@@ -16,7 +16,7 @@ export default function Icon({
     <span
       className={clsx(
         className,
-        "inline-block",
+        "inline-block align-middle",
         color,
       )}
     >

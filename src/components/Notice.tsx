@@ -8,7 +8,7 @@ interface Props {
   borderColor?: string;
 }
 
-export default function Alert({ children, type, borderColor = "" }: Props) {
+export default function Notice({ children, type, borderColor = "" }: Props) {
   return (
     <div
       className={clsx("p-4 rounded-lg border-2 shadow", {
