@@ -6,6 +6,7 @@ export default function MainPage() {
       <PageCard name="文本" path="/text" />
       <PageCard name="标题" path="/heading" />
       <PageCard name="按钮" path="/button" />
+      <PageCard name="输入" path="/input" />
       <PageCard name="提示" path="/notice" />
     </>
   );

@@ -26,7 +26,7 @@ export default function SolidButton({
   return (
     <button
       className={clsx(
-        "transition-color disabled:opacity-70 group",
+        "transition-colors disabled:opacity-70 group",
         {
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
