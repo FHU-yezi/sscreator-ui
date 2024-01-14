@@ -5,7 +5,7 @@ import type { BasicColorType } from "../../utils/colorType";
 interface Props {
   children: ComponentChildren;
   className?: string;
-  type?:  "gray" | BasicColorType;
+  type?: "gray" | BasicColorType;
   color?: string;
   bold?: boolean;
   inline?: boolean;

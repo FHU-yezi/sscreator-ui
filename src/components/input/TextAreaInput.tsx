@@ -78,7 +78,7 @@ export default function TextAreaInput({
           }
         }}
         onBlur={onBlur}
-        spellcheck={false}
+        spellCheck={false}
         aria-invalid={errorMessage === undefined}
       />
     </InputWrapper>

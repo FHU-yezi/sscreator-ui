@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import toast from "react-hot-toast";
 import { OutlineButton, SolidButton, Text, TextButton } from "../../src/main";
 

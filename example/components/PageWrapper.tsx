@@ -20,8 +20,8 @@ export default function PageWrapper({ Component }: Props) {
   const { colorScheme, toggleColorScheme } = useColorScheme();
 
   return (
-    <Column className="my-8 w-[90vw] max-w-4xl mx-auto">
-      <Row className="justify-between mb-4" itemsCenter>
+    <Column className="mx-auto my-8 max-w-4xl w-[90vw]">
+      <Row className="mb-4 justify-between" itemsCenter>
         {location === "/" ? (
           <LargeText bold>SSCreator UI</LargeText>
         ) : (

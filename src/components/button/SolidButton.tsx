@@ -1,8 +1,10 @@
 import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
 import { TbLoader2 } from "react-icons/tb";
-import { Icon, Row, Text } from "../../main";
 import type { FullColorType } from "../../utils/colorType";
+import Icon from "../Icon";
+import Row from "../layout/Row";
+import Text from "../text/Text";
 
 interface Props {
   children?: ComponentChildren;
@@ -31,6 +33,7 @@ export default function SolidButton({
 }: Props) {
   return (
     <button
+      type="button"
       className={clsx(
         "shadow rounded transition-colors disabled:opacity-70 group",
         {

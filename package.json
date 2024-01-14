@@ -29,7 +29,10 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css"
+    "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css",
+    "check:eslint": "eslint .",
+    "check:prettier": "prettier --check .",
+    "check:prettier-fix": "prettier --write ."
   },
   "peerDependencies": {
     "@preact/signals": "^1.2.0",
