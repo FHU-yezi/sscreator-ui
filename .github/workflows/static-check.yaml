@@ -1,0 +1,22 @@
+name: Static Check
+
+on:
+  push:
+  workflow_call:
+
+jobs:
+  static-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
+      - uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+      - name: Lint with Eslint
+        run: pnpm run check:eslint
+      - name: Style check with Prettier
+        run: pnpm run check:prettier
