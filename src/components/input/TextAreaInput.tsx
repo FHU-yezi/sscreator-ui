@@ -9,6 +9,7 @@ interface Props {
   type?: BasicColorType;
   label?: string;
   placeholder?: string;
+  rows?: number;
   helpText?: string;
   errorMessage?: string;
   disabled?: boolean;
@@ -16,14 +17,15 @@ interface Props {
   onEnter?(): void;
   onFocus?(): void;
   onBlur?(): void;
-  inputRef?: Ref<HTMLInputElement>;
+  inputRef?: Ref<HTMLTextAreaElement>;
 }
 
-export default function TextInput({
+export default function TextAreaInput({
   value,
   type,
   label,
   placeholder,
+  rows = 10,
   helpText,
   errorMessage,
   disabled = false,
@@ -40,7 +42,7 @@ export default function TextInput({
       errorMessage={errorMessage}
       disabled={disabled}
     >
-      <input
+      <textarea
         className={clsx(
           "border-2 rounded px-3 py-2 my-1 outline-none transition-colors bg-zinc-50 dark:bg-zinc-900",
           {
@@ -59,6 +61,7 @@ export default function TextInput({
         onChange={(event) => (value.value = event.currentTarget.value)}
         label={label}
         placeholder={placeholder}
+        rows={rows}
         disabled={disabled}
         ref={inputRef}
         onKeyUp={(event) => {

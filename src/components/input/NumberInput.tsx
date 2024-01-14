@@ -5,7 +5,7 @@ import type { BasicColorType } from "../../utils/colorType";
 import InputWrapper from "./InputWrapper";
 
 interface Props {
-  value: Signal<string>;
+  value: Signal<number | null>;
   type?: BasicColorType;
   label?: string;
   placeholder?: string;
@@ -54,9 +54,22 @@ export default function TextInput({
             "focus:border-red-600": type === "danger",
           },
         )}
-        type="text"
-        value={value.value}
-        onChange={(event) => (value.value = event.currentTarget.value)}
+        type="number"
+        inputMode="numeric"
+        pattern="[0-9\.]*"
+        // 在 Firefox 上隐藏上下箭头
+        style={{
+          "-moz-appearance": "textfield",
+        }}
+        value={value.value ?? undefined}
+        onChange={(event) => {
+          const parseResult = parseFloat(event.currentTarget.value);
+          if (!Number.isNaN(parseResult)) {
+            value.value = parseResult;
+          } else {
+            value.value = null;
+          }
+        }}
         label={label}
         placeholder={placeholder}
         disabled={disabled}
