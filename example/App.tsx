@@ -3,6 +3,7 @@ import PageWrapper from "./components/PageWrapper";
 import ButtonPage from "./pages/ButtonPage";
 import HeadingPage from "./pages/HeadingPage";
 import InputPage from "./pages/InputPage";
+import LinkPage from "./pages/LinkPage";
 import MainPage from "./pages/MainPage";
 import NoticePage from "./pages/NoticePage";
 import TextPage from "./pages/TextPage";
@@ -18,6 +19,9 @@ export default function App() {
       </Route>
       <Route key="/text" path="/text">
         <PageWrapper Component={TextPage} />
+      </Route>
+      <Route key="/link" path="/link">
+        <PageWrapper Component={LinkPage} />
       </Route>
       <Route key="/button" path="/button">
         <PageWrapper Component={ButtonPage} />
