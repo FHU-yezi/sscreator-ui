@@ -1,5 +1,6 @@
 import { Route, Switch } from "wouter-preact";
 import PageWrapper from "./components/PageWrapper";
+import BadgePage from "./pages/BadgePage";
 import ButtonPage from "./pages/ButtonPage";
 import HeadingPage from "./pages/HeadingPage";
 import InputPage from "./pages/InputPage";
@@ -22,6 +23,9 @@ export default function App() {
       </Route>
       <Route key="/link" path="/link">
         <PageWrapper Component={LinkPage} />
+      </Route>
+      <Route key="/badge" path="/badge">
+        <PageWrapper Component={BadgePage} />
       </Route>
       <Route key="/button" path="/button">
         <PageWrapper Component={ButtonPage} />
