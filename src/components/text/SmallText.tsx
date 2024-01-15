@@ -25,11 +25,11 @@ export default function SmallText({
         "text-sm",
         className,
         {
-          "text-zinc-500": type === "gray",
-          "text-green-600": type === "success",
-          "text-blue-600": type === "info",
-          "text-orange-600": type === "warning",
-          "text-red-600": type === "danger",
+          "text-zinc-500 dark:text-zinc-400": type === "gray",
+          "text-green-600 dark:text-green-400": type === "success",
+          "text-blue-600 dark:text-blue-400": type === "info",
+          "text-orange-600 dark:text-orange-400": type === "warning",
+          "text-red-600 dark:text-red-400": type === "danger",
           [color]: type === undefined,
         },
         {

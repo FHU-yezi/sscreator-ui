@@ -47,13 +47,17 @@ export default function TextAreaInput({
           "border-2 rounded px-3 py-2 my-1 outline-none transition-colors bg-zinc-50 dark:bg-zinc-900",
           {
             "border-zinc-300 dark:border-zinc-700": errorMessage === undefined,
-            "border-red-600 text-red-600": errorMessage !== undefined,
+            "border-red-600 text-red-600 dark:(border-red-400 text-red-400)":
+              errorMessage !== undefined,
           },
           {
-            "focus:border-green-600": type === "success",
-            "focus:border-blue-600": type === "info" || type === undefined,
-            "focus:border-orange-600": type === "warning",
-            "focus:border-red-600": type === "danger",
+            "focus:(border-green-600 dark:border-green-400)":
+              type === "success",
+            "focus:(border-blue-600 dark:border-blue-400)":
+              type === "info" || type === undefined,
+            "focus:(border-orange-600 dark:border-orange-400)":
+              type === "warning",
+            "focus:(border-red-600 dark:border-red-400)": type === "danger",
           },
         )}
         type="text"

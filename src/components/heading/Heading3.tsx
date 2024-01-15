@@ -5,7 +5,7 @@ import type { BasicColorType } from "../../utils/colorType";
 interface Props {
   children: ComponentChildren;
   className?: string;
-  type?: "gray" | BasicColorType;
+  type?: BasicColorType;
   color?: string;
 }
 
@@ -18,11 +18,10 @@ export default function Heading3({
   return (
     <h3
       className={clsx("text-xl font-bold", className, {
-        "text-zinc-500": type === "gray",
-        "text-green-600": type === "success",
-        "text-blue-600": type === "info",
-        "text-orange-600": type === "warning",
-        "text-red-600": type === "danger",
+        "text-green-600 dark:text-green-400": type === "success",
+        "text-blue-600 dark:text-blue-400": type === "info",
+        "text-orange-600 dark:text-orange-400": type === "warning",
+        "text-red-600 dark:text-red-400": type === "danger",
         [color]: type === undefined,
       })}
     >
