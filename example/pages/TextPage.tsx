@@ -1,8 +1,9 @@
-import { LargeText, SmallText, Text } from "../../src/main";
+import { Heading1, LargeText, SmallText, Text } from "../../src/main";
 
 export default function TextPage() {
   return (
     <>
+      <Heading1>Text</Heading1>
       <Text>测试文本</Text>
       <Text bold>测试文本 Bold</Text>
       <Text type="gray">测试文本 Gray</Text>
@@ -11,6 +12,7 @@ export default function TextPage() {
       <Text type="warning">测试文本 Warning</Text>
       <Text type="danger">测试文本 Danger</Text>
 
+      <Heading1>SmallText</Heading1>
       <SmallText>测试文本 Small</SmallText>
       <SmallText bold>测试文本 Small Bold</SmallText>
       <SmallText type="gray">测试文本 Small Gray</SmallText>
@@ -19,6 +21,7 @@ export default function TextPage() {
       <SmallText type="warning">测试文本 Small Warning</SmallText>
       <SmallText type="danger">测试文本 Small Danger</SmallText>
 
+      <Heading1>LargeText</Heading1>
       <LargeText>测试文本 Large</LargeText>
       <LargeText bold>测试文本 Large Bold</LargeText>
       <LargeText type="gray">测试文本 Large Gray</LargeText>

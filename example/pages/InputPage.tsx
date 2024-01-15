@@ -1,5 +1,11 @@
 import { signal } from "@preact/signals";
-import { NumberInput, Text, TextAreaInput, TextInput } from "../../src/main";
+import {
+  Heading1,
+  NumberInput,
+  Text,
+  TextAreaInput,
+  TextInput,
+} from "../../src/main";
 
 const textInputValue = signal("");
 const textAreaInputValue = signal("");
@@ -8,6 +14,7 @@ const numberInputValue = signal<number | null>(0);
 export default function InputPage() {
   return (
     <>
+      <Heading1>TextInput</Heading1>
       <TextInput
         value={textInputValue}
         label="测试 Label"
@@ -31,6 +38,7 @@ export default function InputPage() {
       />
       <Text>输入值：{textAreaInputValue.value}</Text>
 
+      <Heading1>TextAreaInput</Heading1>
       <TextAreaInput value={textAreaInputValue} label="禁用态" disabled />
       <TextAreaInput
         value={textAreaInputValue}
@@ -38,6 +46,7 @@ export default function InputPage() {
         errorMessage="测试错误消息"
       />
 
+      <Heading1>NumberInput</Heading1>
       <NumberInput
         value={numberInputValue}
         label="测试 Label"

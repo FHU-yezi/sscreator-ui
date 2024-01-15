@@ -1,11 +1,16 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import toast from "react-hot-toast";
-import { OutlineButton, SolidButton, Text, TextButton } from "../../src/main";
+import {
+  Heading1,
+  OutlineButton,
+  SolidButton,
+  TextButton,
+} from "../../src/main";
 
 export default function ButtonPage() {
   return (
     <>
-      <Text>Solid 按钮</Text>
+      <Heading1>Solid 按钮</Heading1>
       <div className="flex gap-2">
         <SolidButton type="primary" onClick={() => toast("Primary")}>
           Primary
@@ -103,7 +108,8 @@ export default function ButtonPage() {
           fullWidthDanger
         </SolidButton>
       </div>
-      <Text>Outline 按钮</Text>
+
+      <Heading1>Outline 按钮</Heading1>
       <div className="flex gap-2">
         <OutlineButton type="primary" onClick={() => toast("Primary")}>
           Primary
@@ -217,7 +223,8 @@ export default function ButtonPage() {
           fullWidthDanger
         </OutlineButton>
       </div>
-      <Text>Text 按钮</Text>
+
+      <Heading1>Text 按钮</Heading1>
       <div className="flex gap-2">
         <TextButton type="primary" onClick={() => toast("Primary")}>
           Primary

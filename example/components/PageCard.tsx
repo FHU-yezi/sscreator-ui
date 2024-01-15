@@ -13,7 +13,7 @@ export default function PageCard({ name, path }: Props) {
   return (
     <button
       type="button"
-      className="flex items-center justify-between border rounded p-4"
+      className="flex items-center justify-between border border-zinc-300 rounded p-4 dark:border-zinc-700"
       onClick={() => setLocation(path)}
     >
       <Text bold>{name}</Text>
