@@ -9,14 +9,18 @@ import Icon from "../Icon";
 import Row from "../layout/Row";
 import Text from "../text/Text";
 
+interface CustomStyle {
+  textColor?: string;
+}
+
 interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
   colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
-  color?: string;
   loading?: boolean;
   disabled?: boolean;
+  customStyle?: CustomStyle;
 }
 
 export default function SolidButton({
@@ -24,9 +28,9 @@ export default function SolidButton({
   className,
   onClick,
   colorScheme,
-  color = "",
   loading = false,
   disabled = false,
+  customStyle = {},
 }: Props) {
   return (
     <button
@@ -48,7 +52,26 @@ export default function SolidButton({
         {loading && (
           <Icon
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            color={clsx({
+            customStyle={{
+              textColor: clsx({
+                "text-blue-600 enabled:hover:text-blue-800":
+                  colorScheme === "primary",
+                "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
+                  colorScheme === "secondary",
+                "text-green-700 enabled:hover:text-green-900":
+                  colorScheme === "success",
+                "text-orange-600 enabled:hover:text-orange-800":
+                  colorScheme === "warning",
+                "text-red-600 enabled:hover:text-red-800":
+                  colorScheme === "danger",
+                [customStyle.textColor ?? ""]: colorScheme === undefined,
+              }),
+            }}
+          />
+        )}
+        <Text
+          customStyle={{
+            textColor: clsx({
               "text-blue-600 enabled:hover:text-blue-800":
                 colorScheme === "primary",
               "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
@@ -59,23 +82,9 @@ export default function SolidButton({
                 colorScheme === "warning",
               "text-red-600 enabled:hover:text-red-800":
                 colorScheme === "danger",
-              [color]: colorScheme === undefined,
-            })}
-          />
-        )}
-        <Text
-          color={clsx({
-            "text-blue-600 enabled:hover:text-blue-800":
-              colorScheme === "primary",
-            "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
-              colorScheme === "secondary",
-            "text-green-700 enabled:hover:text-green-900":
-              colorScheme === "success",
-            "text-orange-600 enabled:hover:text-orange-800":
-              colorScheme === "warning",
-            "text-red-600 enabled:hover:text-red-800": colorScheme === "danger",
-            [color]: colorScheme === undefined,
-          })}
+              [customStyle.textColor ?? ""]: colorScheme === undefined,
+            }),
+          }}
         >
           {children}
         </Text>

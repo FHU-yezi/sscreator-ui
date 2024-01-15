@@ -2,16 +2,20 @@ import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import type { SemanticColorType } from "../utils/colorSchemeTypes";
 
+interface CustomStyle {
+  backgroundColor?: string;
+}
+
 interface Props {
   children: ComponentChildren;
   colorScheme?: SemanticColorType;
-  backgroundColor?: string;
+  customStyle?: CustomStyle;
 }
 
 export default function Notice({
   children,
   colorScheme,
-  backgroundColor = "",
+  customStyle = {},
 }: Props) {
   return (
     <div
@@ -20,7 +24,7 @@ export default function Notice({
         "bg-blue-100 dark:bg-blue-950": colorScheme === "info",
         "bg-orange-100 dark:bg-orange-950": colorScheme === "warning",
         "bg-red-100 dark:bg-red-950": colorScheme === "danger",
-        [backgroundColor]: colorScheme === undefined,
+        [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
       })}
     >
       {children}

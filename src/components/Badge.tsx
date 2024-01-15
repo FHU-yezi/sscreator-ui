@@ -5,20 +5,23 @@ import type {
   SemanticColorType,
 } from "../utils/colorSchemeTypes";
 
+interface CustomStyle {
+  textColor?: string;
+  backgroundColor?: string;
+}
+
 interface Props {
   children: ComponentChildren;
   className?: string;
   colorScheme?: SemanticColorType | GrayColorType;
-  textColor?: string;
-  backgroundColor?: string;
+  customStyle?: CustomStyle;
 }
 
 export default function Badge({
   children,
   className,
   colorScheme,
-  textColor = "",
-  backgroundColor = "",
+  customStyle = {},
 }: Props) {
   return (
     <span
@@ -33,8 +36,8 @@ export default function Badge({
           colorScheme === "warning",
         "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300":
           colorScheme === "danger",
-        [textColor]: colorScheme === undefined,
-        [backgroundColor]: colorScheme === undefined,
+        [customStyle.textColor ?? ""]: colorScheme === undefined,
+        [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
       })}
     >
       {children}

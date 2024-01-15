@@ -9,17 +9,21 @@ import Icon from "../Icon";
 import Row from "../layout/Row";
 import Text from "../text/Text";
 
+interface CustomStyle {
+  backgroundColor?: string;
+  textColor?: string;
+}
+
 interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
   colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
-  backgroundColor?: string;
-  textColor?: string;
   loading?: boolean;
   disabled?: boolean;
   small?: boolean;
   fullWidth?: boolean;
+  customStyle?: CustomStyle;
 }
 
 export default function SolidButton({
@@ -27,12 +31,11 @@ export default function SolidButton({
   className,
   onClick,
   colorScheme,
-  backgroundColor = "",
-  textColor = "",
   loading = false,
   disabled = false,
   small = false,
   fullWidth = false,
+  customStyle = {},
 }: Props) {
   return (
     <button
@@ -55,7 +58,7 @@ export default function SolidButton({
           "bg-orange-600 enabled:hover:bg-orange-700":
             colorScheme === "warning",
           "bg-red-600 enabled:hover:bg-red-700": colorScheme === "danger",
-          [backgroundColor]: colorScheme === undefined,
+          [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
         },
       )}
       onClick={onClick}
@@ -67,21 +70,25 @@ export default function SolidButton({
         {loading && (
           <Icon
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            color={clsx({
-              "text-zinc-50":
-                colorScheme !== undefined && colorScheme !== "secondary",
-              "text-zinc-950": colorScheme === "secondary",
-              [textColor]: colorScheme === undefined,
-            })}
+            customStyle={{
+              textColor: clsx({
+                "text-zinc-50":
+                  colorScheme !== undefined && colorScheme !== "secondary",
+                "text-zinc-950": colorScheme === "secondary",
+                [customStyle.textColor ?? ""]: colorScheme === undefined,
+              }),
+            }}
           />
         )}
         <Text
-          color={clsx({
-            "text-zinc-50":
-              colorScheme !== undefined && colorScheme !== "secondary",
-            "text-zinc-950": colorScheme === "secondary",
-            [textColor]: colorScheme === undefined,
-          })}
+          customStyle={{
+            textColor: clsx({
+              "text-zinc-50":
+                colorScheme !== undefined && colorScheme !== "secondary",
+              "text-zinc-950": colorScheme === "secondary",
+              [customStyle.textColor ?? ""]: colorScheme === undefined,
+            }),
+          }}
         >
           {children}
         </Text>

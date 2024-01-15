@@ -9,17 +9,21 @@ import Icon from "../Icon";
 import Row from "../layout/Row";
 import Text from "../text/Text";
 
+interface CustomStyle {
+  backgroundColor?: string;
+  textColor?: string;
+}
+
 interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
   colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
-  backgroundColor?: string;
-  textColor?: string;
   loading?: boolean;
   disabled?: boolean;
   small?: boolean;
   fullWidth?: boolean;
+  customStyle?: CustomStyle;
 }
 
 export default function OutlineButton({
@@ -27,12 +31,11 @@ export default function OutlineButton({
   className,
   onClick,
   colorScheme,
-  backgroundColor = "",
-  textColor = "",
   loading = false,
   disabled = false,
   small = false,
   fullWidth = false,
+  customStyle = {},
 }: Props) {
   return (
     <button
@@ -59,7 +62,7 @@ export default function OutlineButton({
             colorScheme === "warning",
           "border-red-600 enabled:hover:(border-red-700 bg-red-700)":
             colorScheme === "danger",
-          [backgroundColor]: colorScheme === undefined,
+          [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
         },
       )}
       onClick={onClick}
@@ -71,22 +74,26 @@ export default function OutlineButton({
         {loading && (
           <Icon
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            color={clsx({
-              "text-zinc-950 dark:text-zinc-50 group-enabled:group-hover:text-zinc-50":
-                colorScheme !== undefined && colorScheme !== "secondary",
-              "text-zinc-950 dark:text-zinc-50": colorScheme === "secondary",
-              [textColor]: colorScheme === undefined,
-            })}
+            customStyle={{
+              textColor: clsx({
+                "text-zinc-950 dark:text-zinc-50 group-enabled:group-hover:text-zinc-50":
+                  colorScheme !== undefined && colorScheme !== "secondary",
+                "text-zinc-950 dark:text-zinc-50": colorScheme === "secondary",
+                [customStyle.textColor ?? ""]: colorScheme === undefined,
+              }),
+            }}
           />
         )}
         <Text
           className="transition-colors"
-          color={clsx({
-            "text-zinc-950 dark:text-zinc-50 group-enabled:group-hover:text-zinc-50":
-              colorScheme !== undefined && colorScheme !== "secondary",
-            "text-zinc-950 dark:text-zinc-50": colorScheme === "secondary",
-            [textColor]: colorScheme === undefined,
-          })}
+          customStyle={{
+            textColor: clsx({
+              "text-zinc-950 dark:text-zinc-50 group-enabled:group-hover:text-zinc-50":
+                colorScheme !== undefined && colorScheme !== "secondary",
+              "text-zinc-950 dark:text-zinc-50": colorScheme === "secondary",
+              [customStyle.textColor ?? ""]: colorScheme === undefined,
+            }),
+          }}
         >
           {children}
         </Text>

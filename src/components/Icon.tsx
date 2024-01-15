@@ -5,18 +5,22 @@ import type {
   SemanticColorType,
 } from "../utils/colorSchemeTypes";
 
+interface CustomStyle {
+  textColor?: string;
+}
+
 interface Props {
   icon: ComponentChild;
   className?: string;
   colorScheme?: SemanticColorType | GrayColorType;
-  color?: string;
+  customStyle?: CustomStyle;
 }
 
 export default function Icon({
   icon,
   className,
   colorScheme,
-  color = "text-zinc-950 dark:text-zinc-50",
+  customStyle = { textColor: "text-zinc-950 dark:text-zinc-50" },
 }: Props) {
   return (
     <span
@@ -26,7 +30,7 @@ export default function Icon({
         "text-blue-600 dark:text-blue-400": colorScheme === "info",
         "text-orange-600 dark:text-orange-400": colorScheme === "warning",
         "text-red-600 dark:text-red-400": colorScheme === "danger",
-        [color]: colorScheme === undefined,
+        [customStyle.textColor ?? ""]: colorScheme === undefined,
       })}
     >
       {icon}

@@ -2,13 +2,17 @@ import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 
+interface CustomStyle {
+  textColor?: string;
+}
+
 interface Props {
   children: ComponentChildren;
   className?: string;
   href: string;
   colorScheme?: SemanticColorType;
-  color?: string;
   openInCurrentTab?: boolean;
+  customStyle?: CustomStyle;
 }
 
 export default function ExternalLink({
@@ -16,8 +20,8 @@ export default function ExternalLink({
   className,
   href,
   colorScheme,
-  color = "text-blue-600 dark:text-blue-400",
   openInCurrentTab = false,
+  customStyle = { textColor: "text-blue-600 dark:text-blue-400" },
 }: Props) {
   return (
     <a
@@ -26,7 +30,7 @@ export default function ExternalLink({
         "text-blue-600 dark:text-blue-400": colorScheme === "info",
         "text-orange-600 dark:text-orange-400": colorScheme === "warning",
         "text-red-600 dark:text-red-400": colorScheme === "danger",
-        [color]: colorScheme === undefined,
+        [customStyle.textColor ?? ""]: colorScheme === undefined,
       })}
       href={href}
       target={openInCurrentTab ? "_self" : "_blank"}
