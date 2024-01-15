@@ -1,7 +1,10 @@
 import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
 import { TbLoader2 } from "react-icons/tb";
-import type { FullColorType } from "../../utils/colorType";
+import type {
+  PrimaryAndSecondaryColorType,
+  SemanticColorType,
+} from "../../utils/colorSchemeTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
 import Text from "../text/Text";
@@ -10,7 +13,7 @@ interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
-  type?: FullColorType;
+  colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
   color?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -20,7 +23,7 @@ export default function SolidButton({
   children,
   className,
   onClick,
-  type,
+  colorScheme,
   color = "",
   loading = false,
   disabled = false,
@@ -46,26 +49,32 @@ export default function SolidButton({
           <Icon
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
             color={clsx({
-              "text-blue-600 enabled:hover:text-blue-800": type === "primary",
+              "text-blue-600 enabled:hover:text-blue-800":
+                colorScheme === "primary",
               "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
-                type === "secondary",
-              "text-green-700 enabled:hover:text-green-900": type === "success",
+                colorScheme === "secondary",
+              "text-green-700 enabled:hover:text-green-900":
+                colorScheme === "success",
               "text-orange-600 enabled:hover:text-orange-800":
-                type === "warning",
-              "text-red-600 enabled:hover:text-red-800": type === "danger",
-              [color]: type === undefined,
+                colorScheme === "warning",
+              "text-red-600 enabled:hover:text-red-800":
+                colorScheme === "danger",
+              [color]: colorScheme === undefined,
             })}
           />
         )}
         <Text
           color={clsx({
-            "text-blue-600 enabled:hover:text-blue-800": type === "primary",
+            "text-blue-600 enabled:hover:text-blue-800":
+              colorScheme === "primary",
             "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
-              type === "secondary",
-            "text-green-700 enabled:hover:text-green-900": type === "success",
-            "text-orange-600 enabled:hover:text-orange-800": type === "warning",
-            "text-red-600 enabled:hover:text-red-800": type === "danger",
-            [color]: type === undefined,
+              colorScheme === "secondary",
+            "text-green-700 enabled:hover:text-green-900":
+              colorScheme === "success",
+            "text-orange-600 enabled:hover:text-orange-800":
+              colorScheme === "warning",
+            "text-red-600 enabled:hover:text-red-800": colorScheme === "danger",
+            [color]: colorScheme === undefined,
           })}
         >
           {children}

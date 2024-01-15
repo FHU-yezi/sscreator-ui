@@ -8,13 +8,13 @@ export default function LinkPage() {
     <>
       <Heading1>外部链接</Heading1>
       <ExternalLink href="https://www.jianshu.com">测试外部链接</ExternalLink>
-      <ExternalLink href="https://www.jianshu.com" type="success">
+      <ExternalLink href="https://www.jianshu.com" colorScheme="success">
         测试外部链接 Success
       </ExternalLink>
-      <ExternalLink href="https://www.jianshu.com" type="warning">
+      <ExternalLink href="https://www.jianshu.com" colorScheme="warning">
         测试外部链接 Warning
       </ExternalLink>
-      <ExternalLink href="https://www.jianshu.com" type="danger">
+      <ExternalLink href="https://www.jianshu.com" colorScheme="danger">
         测试外部链接 Danger
       </ExternalLink>
 
@@ -24,21 +24,21 @@ export default function LinkPage() {
       </ExternalLink>
       <ExternalLink
         href="https://www.jianshu.com"
-        type="success"
+        colorScheme="success"
         openInCurrentTab
       >
         测试外部链接 Success
       </ExternalLink>
       <ExternalLink
         href="https://www.jianshu.com"
-        type="warning"
+        colorScheme="warning"
         openInCurrentTab
       >
         测试外部链接 Warning
       </ExternalLink>
       <ExternalLink
         href="https://www.jianshu.com"
-        type="danger"
+        colorScheme="danger"
         openInCurrentTab
       >
         测试外部链接 Danger
@@ -48,13 +48,25 @@ export default function LinkPage() {
       <InternalLink path="/" onClick={() => setLocation("/")}>
         测试内部链接
       </InternalLink>
-      <InternalLink path="/" type="success" onClick={() => setLocation("/")}>
+      <InternalLink
+        path="/"
+        colorScheme="success"
+        onClick={() => setLocation("/")}
+      >
         测试内部链接 Success
       </InternalLink>
-      <InternalLink path="/" type="warning" onClick={() => setLocation("/")}>
+      <InternalLink
+        path="/"
+        colorScheme="warning"
+        onClick={() => setLocation("/")}
+      >
         测试内部链接 Warning
       </InternalLink>
-      <InternalLink path="/" type="danger" onClick={() => setLocation("/")}>
+      <InternalLink
+        path="/"
+        colorScheme="danger"
+        onClick={() => setLocation("/")}
+      >
         测试内部链接 Danger
       </InternalLink>
     </>

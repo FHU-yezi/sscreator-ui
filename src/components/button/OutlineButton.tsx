@@ -1,7 +1,10 @@
 import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
 import { TbLoader2 } from "react-icons/tb";
-import type { FullColorType } from "../../utils/colorType";
+import type {
+  PrimaryAndSecondaryColorType,
+  SemanticColorType,
+} from "../../utils/colorSchemeTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
 import Text from "../text/Text";
@@ -10,7 +13,7 @@ interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
-  type?: FullColorType;
+  colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
   backgroundColor?: string;
   textColor?: string;
   loading?: boolean;
@@ -23,7 +26,7 @@ export default function OutlineButton({
   children,
   className,
   onClick,
-  type,
+  colorScheme,
   backgroundColor = "",
   textColor = "",
   loading = false,
@@ -47,16 +50,16 @@ export default function OutlineButton({
         className,
         {
           "border-blue-600 enabled:hover:(border-blue-700 bg-blue-700)":
-            type === "primary",
+            colorScheme === "primary",
           "border-zinc-500 enabled:(hover:border-zinc-300 hover:bg-zinc-300 hover:dark:border-zinc-700 hover:dark:bg-zinc-700)":
-            type === "secondary",
+            colorScheme === "secondary",
           "border-green-600 enabled:hover:(border-green-700 bg-green-700)":
-            type === "success",
+            colorScheme === "success",
           "border-orange-600 enabled:hover:(border-orange-700 bg-orange-700)":
-            type === "warning",
+            colorScheme === "warning",
           "border-red-600 enabled:hover:(border-red-700 bg-red-700)":
-            type === "danger",
-          [backgroundColor]: type === undefined,
+            colorScheme === "danger",
+          [backgroundColor]: colorScheme === undefined,
         },
       )}
       onClick={onClick}
@@ -70,9 +73,9 @@ export default function OutlineButton({
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
             color={clsx({
               "text-zinc-950 dark:text-zinc-50 group-enabled:group-hover:text-zinc-50":
-                type !== undefined && type !== "secondary",
-              "text-zinc-950 dark:text-zinc-50": type === "secondary",
-              [textColor]: type === undefined,
+                colorScheme !== undefined && colorScheme !== "secondary",
+              "text-zinc-950 dark:text-zinc-50": colorScheme === "secondary",
+              [textColor]: colorScheme === undefined,
             })}
           />
         )}
@@ -80,9 +83,9 @@ export default function OutlineButton({
           className="transition-colors"
           color={clsx({
             "text-zinc-950 dark:text-zinc-50 group-enabled:group-hover:text-zinc-50":
-              type !== undefined && type !== "secondary",
-            "text-zinc-950 dark:text-zinc-50": type === "secondary",
-            [textColor]: type === undefined,
+              colorScheme !== undefined && colorScheme !== "secondary",
+            "text-zinc-950 dark:text-zinc-50": colorScheme === "secondary",
+            [textColor]: colorScheme === undefined,
           })}
         >
           {children}

@@ -1,28 +1,28 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import type { BasicColorType } from "../../utils/colorType";
+import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 
 interface Props {
   children: ComponentChildren;
   className?: string;
-  type?: BasicColorType;
+  colorScheme?: SemanticColorType;
   color?: string;
 }
 
 export default function Heading1({
   children,
   className,
-  type,
+  colorScheme,
   color = "text-zinc-950 dark:text-zinc-50",
 }: Props) {
   return (
     <h1
       className={clsx("text-3xl font-bold", className, {
-        "text-green-600 dark:text-green-400": type === "success",
-        "text-blue-600 dark:text-blue-400": type === "info",
-        "text-orange-600 dark:text-orange-400": type === "warning",
-        "text-red-600 dark:text-red-400": type === "danger",
-        [color]: type === undefined,
+        "text-green-600 dark:text-green-400": colorScheme === "success",
+        "text-blue-600 dark:text-blue-400": colorScheme === "info",
+        "text-orange-600 dark:text-orange-400": colorScheme === "warning",
+        "text-red-600 dark:text-red-400": colorScheme === "danger",
+        [color]: colorScheme === undefined,
       })}
     >
       {children}

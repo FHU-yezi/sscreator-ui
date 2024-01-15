@@ -25,14 +25,14 @@ export default function PageWrapper({ Component }: Props) {
         {location === "/" ? (
           <LargeText bold>SSCreator UI</LargeText>
         ) : (
-          <TextButton type="secondary" onClick={() => setLocation("/")}>
+          <TextButton colorScheme="secondary" onClick={() => setLocation("/")}>
             <Icon icon={<MdKeyboardArrowLeft size={24} />} />
             返回
           </TextButton>
         )}
         <Row gap="gap-2">
           <Text>{colorScheme === "light" ? "浅色模式" : "深色模式"}</Text>
-          <TextButton type="primary" onClick={toggleColorScheme}>
+          <TextButton colorScheme="primary" onClick={toggleColorScheme}>
             切换
           </TextButton>
         </Row>

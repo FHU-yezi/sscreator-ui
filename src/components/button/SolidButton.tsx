@@ -1,7 +1,10 @@
 import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
 import { TbLoader2 } from "react-icons/tb";
-import type { FullColorType } from "../../utils/colorType";
+import type {
+  PrimaryAndSecondaryColorType,
+  SemanticColorType,
+} from "../../utils/colorSchemeTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
 import Text from "../text/Text";
@@ -10,7 +13,7 @@ interface Props {
   children?: ComponentChildren;
   className?: string;
   onClick(): void;
-  type?: FullColorType;
+  colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
   backgroundColor?: string;
   textColor?: string;
   loading?: boolean;
@@ -23,7 +26,7 @@ export default function SolidButton({
   children,
   className,
   onClick,
-  type,
+  colorScheme,
   backgroundColor = "",
   textColor = "",
   loading = false,
@@ -46,12 +49,13 @@ export default function SolidButton({
         },
         className,
         {
-          "bg-blue-600 enabled:hover:bg-blue-700": type === "primary",
-          "bg-zinc-200 enabled:hover:bg-zinc-300": type === "secondary",
-          "bg-green-700 enabled:hover:bg-green-800": type === "success",
-          "bg-orange-600 enabled:hover:bg-orange-700": type === "warning",
-          "bg-red-600 enabled:hover:bg-red-700": type === "danger",
-          [backgroundColor]: type === undefined,
+          "bg-blue-600 enabled:hover:bg-blue-700": colorScheme === "primary",
+          "bg-zinc-200 enabled:hover:bg-zinc-300": colorScheme === "secondary",
+          "bg-green-700 enabled:hover:bg-green-800": colorScheme === "success",
+          "bg-orange-600 enabled:hover:bg-orange-700":
+            colorScheme === "warning",
+          "bg-red-600 enabled:hover:bg-red-700": colorScheme === "danger",
+          [backgroundColor]: colorScheme === undefined,
         },
       )}
       onClick={onClick}
@@ -64,17 +68,19 @@ export default function SolidButton({
           <Icon
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
             color={clsx({
-              "text-zinc-50": type !== undefined && type !== "secondary",
-              "text-zinc-950": type === "secondary",
-              [textColor]: type === undefined,
+              "text-zinc-50":
+                colorScheme !== undefined && colorScheme !== "secondary",
+              "text-zinc-950": colorScheme === "secondary",
+              [textColor]: colorScheme === undefined,
             })}
           />
         )}
         <Text
           color={clsx({
-            "text-zinc-50": type !== undefined && type !== "secondary",
-            "text-zinc-950": type === "secondary",
-            [textColor]: type === undefined,
+            "text-zinc-50":
+              colorScheme !== undefined && colorScheme !== "secondary",
+            "text-zinc-950": colorScheme === "secondary",
+            [textColor]: colorScheme === undefined,
           })}
         >
           {children}

@@ -12,271 +12,426 @@ export default function ButtonPage() {
     <>
       <Heading1>Solid 按钮</Heading1>
       <div className="flex gap-2">
-        <SolidButton type="primary" onClick={() => toast("Primary")}>
+        <SolidButton colorScheme="primary" onClick={() => toast("Primary")}>
           Primary
         </SolidButton>
-        <SolidButton type="secondary" onClick={() => toast("Secondary")}>
+        <SolidButton colorScheme="secondary" onClick={() => toast("Secondary")}>
           Secondary
         </SolidButton>
-        <SolidButton type="success" onClick={() => toast("Success")}>
+        <SolidButton colorScheme="success" onClick={() => toast("Success")}>
           Success
         </SolidButton>
-        <SolidButton type="warning" onClick={() => toast("Warning")}>
+        <SolidButton colorScheme="warning" onClick={() => toast("Warning")}>
           Warning
         </SolidButton>
-        <SolidButton type="danger" onClick={() => toast("Danger")}>
+        <SolidButton colorScheme="danger" onClick={() => toast("Danger")}>
           Danger
         </SolidButton>
       </div>
       <div className="flex gap-2">
-        <SolidButton type="primary" onClick={() => toast("Primary")} disabled>
+        <SolidButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          disabled
+        >
           DisabledPrimary
         </SolidButton>
         <SolidButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           disabled
         >
           DisabledSecondary
         </SolidButton>
-        <SolidButton type="success" onClick={() => toast("Success")} disabled>
+        <SolidButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          disabled
+        >
           DisabledSuccess
         </SolidButton>
-        <SolidButton type="warning" onClick={() => toast("Warning")} disabled>
+        <SolidButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          disabled
+        >
           DisabledWarning
         </SolidButton>
-        <SolidButton type="danger" onClick={() => toast("Danger")} disabled>
+        <SolidButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          disabled
+        >
           DisabledDanger
         </SolidButton>
       </div>
       <div className="flex gap-2">
-        <SolidButton type="primary" onClick={() => toast("Primary")} loading>
+        <SolidButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          loading
+        >
           LoadingPrimary
         </SolidButton>
         <SolidButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           loading
         >
           LoadingSecondary
         </SolidButton>
-        <SolidButton type="success" onClick={() => toast("Success")} loading>
+        <SolidButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          loading
+        >
           LoadingSuccess
         </SolidButton>
-        <SolidButton type="warning" onClick={() => toast("Warning")} loading>
+        <SolidButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          loading
+        >
           LoadingWarning
         </SolidButton>
-        <SolidButton type="danger" onClick={() => toast("Danger")} loading>
+        <SolidButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          loading
+        >
           LoadingDanger
         </SolidButton>
       </div>
       <div className="flex gap-2">
-        <SolidButton type="primary" onClick={() => toast("Primary")} small>
+        <SolidButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          small
+        >
           SmallPrimary
         </SolidButton>
-        <SolidButton type="secondary" onClick={() => toast("Secondary")} small>
+        <SolidButton
+          colorScheme="secondary"
+          onClick={() => toast("Secondary")}
+          small
+        >
           SmallSecondary
         </SolidButton>
-        <SolidButton type="success" onClick={() => toast("Success")} small>
+        <SolidButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          small
+        >
           SmallSuccess
         </SolidButton>
-        <SolidButton type="warning" onClick={() => toast("Warning")} small>
+        <SolidButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          small
+        >
           SmallWarning
         </SolidButton>
-        <SolidButton type="danger" onClick={() => toast("Danger")} small>
+        <SolidButton colorScheme="danger" onClick={() => toast("Danger")} small>
           SmallDanger
         </SolidButton>
       </div>
       <div className="flex flex-col gap-2">
-        <SolidButton type="primary" onClick={() => toast("Primary")} fullWidth>
+        <SolidButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          fullWidth
+        >
           fullWidthPrimary
         </SolidButton>
         <SolidButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           fullWidth
         >
           fullWidthSecondary
         </SolidButton>
-        <SolidButton type="success" onClick={() => toast("Success")} fullWidth>
+        <SolidButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          fullWidth
+        >
           fullWidthSuccess
         </SolidButton>
-        <SolidButton type="warning" onClick={() => toast("Warning")} fullWidth>
+        <SolidButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          fullWidth
+        >
           fullWidthWarning
         </SolidButton>
-        <SolidButton type="danger" onClick={() => toast("Danger")} fullWidth>
+        <SolidButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          fullWidth
+        >
           fullWidthDanger
         </SolidButton>
       </div>
 
       <Heading1>Outline 按钮</Heading1>
       <div className="flex gap-2">
-        <OutlineButton type="primary" onClick={() => toast("Primary")}>
+        <OutlineButton colorScheme="primary" onClick={() => toast("Primary")}>
           Primary
         </OutlineButton>
-        <OutlineButton type="secondary" onClick={() => toast("Secondary")}>
+        <OutlineButton
+          colorScheme="secondary"
+          onClick={() => toast("Secondary")}
+        >
           Secondary
         </OutlineButton>
-        <OutlineButton type="success" onClick={() => toast("Success")}>
+        <OutlineButton colorScheme="success" onClick={() => toast("Success")}>
           Success
         </OutlineButton>
-        <OutlineButton type="warning" onClick={() => toast("Warning")}>
+        <OutlineButton colorScheme="warning" onClick={() => toast("Warning")}>
           Warning
         </OutlineButton>
-        <OutlineButton type="danger" onClick={() => toast("Danger")}>
+        <OutlineButton colorScheme="danger" onClick={() => toast("Danger")}>
           Danger
         </OutlineButton>
       </div>
       <div className="flex gap-2">
-        <OutlineButton type="primary" onClick={() => toast("Primary")} disabled>
+        <OutlineButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          disabled
+        >
           DisabledPrimary
         </OutlineButton>
         <OutlineButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           disabled
         >
           DisabledSecondary
         </OutlineButton>
-        <OutlineButton type="success" onClick={() => toast("Success")} disabled>
+        <OutlineButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          disabled
+        >
           DisabledSuccess
         </OutlineButton>
-        <OutlineButton type="warning" onClick={() => toast("Warning")} disabled>
+        <OutlineButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          disabled
+        >
           DisabledWarning
         </OutlineButton>
-        <OutlineButton type="danger" onClick={() => toast("Danger")} disabled>
+        <OutlineButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          disabled
+        >
           DisabledDanger
         </OutlineButton>
       </div>
       <div className="flex gap-2">
-        <OutlineButton type="primary" onClick={() => toast("Primary")} loading>
+        <OutlineButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          loading
+        >
           LoadingPrimary
         </OutlineButton>
         <OutlineButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           loading
         >
           LoadingSecondary
         </OutlineButton>
-        <OutlineButton type="success" onClick={() => toast("Success")} loading>
+        <OutlineButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          loading
+        >
           LoadingSuccess
         </OutlineButton>
-        <OutlineButton type="warning" onClick={() => toast("Warning")} loading>
+        <OutlineButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          loading
+        >
           LoadingWarning
         </OutlineButton>
-        <OutlineButton type="danger" onClick={() => toast("Danger")} loading>
+        <OutlineButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          loading
+        >
           LoadingDanger
         </OutlineButton>
       </div>
       <div className="flex gap-2">
-        <OutlineButton type="primary" onClick={() => toast("Primary")} small>
+        <OutlineButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          small
+        >
           SmallPrimary
         </OutlineButton>
         <OutlineButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           small
         >
           SmallSecondary
         </OutlineButton>
-        <OutlineButton type="success" onClick={() => toast("Success")} small>
+        <OutlineButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          small
+        >
           SmallSuccess
         </OutlineButton>
-        <OutlineButton type="warning" onClick={() => toast("Warning")} small>
+        <OutlineButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          small
+        >
           SmallWarning
         </OutlineButton>
-        <OutlineButton type="danger" onClick={() => toast("Danger")} small>
+        <OutlineButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          small
+        >
           SmallDanger
         </OutlineButton>
       </div>
       <div className="flex flex-col gap-2">
         <OutlineButton
-          type="primary"
+          colorScheme="primary"
           onClick={() => toast("Primary")}
           fullWidth
         >
           fullWidthPrimary
         </OutlineButton>
         <OutlineButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           fullWidth
         >
           fullWidthSecondary
         </OutlineButton>
         <OutlineButton
-          type="success"
+          colorScheme="success"
           onClick={() => toast("Success")}
           fullWidth
         >
           fullWidthSuccess
         </OutlineButton>
         <OutlineButton
-          type="warning"
+          colorScheme="warning"
           onClick={() => toast("Warning")}
           fullWidth
         >
           fullWidthWarning
         </OutlineButton>
-        <OutlineButton type="danger" onClick={() => toast("Danger")} fullWidth>
+        <OutlineButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          fullWidth
+        >
           fullWidthDanger
         </OutlineButton>
       </div>
 
       <Heading1>Text 按钮</Heading1>
       <div className="flex gap-2">
-        <TextButton type="primary" onClick={() => toast("Primary")}>
+        <TextButton colorScheme="primary" onClick={() => toast("Primary")}>
           Primary
         </TextButton>
-        <TextButton type="secondary" onClick={() => toast("Secondary")}>
+        <TextButton colorScheme="secondary" onClick={() => toast("Secondary")}>
           Secondary
         </TextButton>
-        <TextButton type="success" onClick={() => toast("Success")}>
+        <TextButton colorScheme="success" onClick={() => toast("Success")}>
           Success
         </TextButton>
-        <TextButton type="warning" onClick={() => toast("Warning")}>
+        <TextButton colorScheme="warning" onClick={() => toast("Warning")}>
           Warning
         </TextButton>
-        <TextButton type="danger" onClick={() => toast("Danger")}>
+        <TextButton colorScheme="danger" onClick={() => toast("Danger")}>
           Danger
         </TextButton>
       </div>
       <div className="flex gap-2">
-        <TextButton type="primary" onClick={() => toast("Primary")} disabled>
+        <TextButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          disabled
+        >
           DisabledPrimary
         </TextButton>
         <TextButton
-          type="secondary"
+          colorScheme="secondary"
           onClick={() => toast("Secondary")}
           disabled
         >
           DisabledSecondary
         </TextButton>
-        <TextButton type="success" onClick={() => toast("Success")} disabled>
+        <TextButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          disabled
+        >
           DisabledSuccess
         </TextButton>
-        <TextButton type="warning" onClick={() => toast("Warning")} disabled>
+        <TextButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          disabled
+        >
           DisabledWarning
         </TextButton>
-        <TextButton type="danger" onClick={() => toast("Danger")} disabled>
+        <TextButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          disabled
+        >
           DisabledDanger
         </TextButton>
       </div>
       <div className="flex gap-2">
-        <TextButton type="primary" onClick={() => toast("Primary")} loading>
+        <TextButton
+          colorScheme="primary"
+          onClick={() => toast("Primary")}
+          loading
+        >
           LoadingPrimary
         </TextButton>
-        <TextButton type="secondary" onClick={() => toast("Secondary")} loading>
+        <TextButton
+          colorScheme="secondary"
+          onClick={() => toast("Secondary")}
+          loading
+        >
           LoadingSecondary
         </TextButton>
-        <TextButton type="success" onClick={() => toast("Success")} loading>
+        <TextButton
+          colorScheme="success"
+          onClick={() => toast("Success")}
+          loading
+        >
           LoadingSuccess
         </TextButton>
-        <TextButton type="warning" onClick={() => toast("Warning")} loading>
+        <TextButton
+          colorScheme="warning"
+          onClick={() => toast("Warning")}
+          loading
+        >
           LoadingWarning
         </TextButton>
-        <TextButton type="danger" onClick={() => toast("Danger")} loading>
+        <TextButton
+          colorScheme="danger"
+          onClick={() => toast("Danger")}
+          loading
+        >
           LoadingDanger
         </TextButton>
       </div>

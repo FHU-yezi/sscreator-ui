@@ -27,18 +27,23 @@ export default function InputWrapper({
       gap="gap-1"
     >
       {label && (
-        <Text type={errorMessage !== undefined ? "danger" : undefined} bold>
+        <Text
+          colorScheme={errorMessage !== undefined ? "danger" : undefined}
+          bold
+        >
           {label}
         </Text>
       )}
       {helpText && (
-        <SmallText type={errorMessage !== undefined ? "danger" : "gray"}>
+        <SmallText colorScheme={errorMessage !== undefined ? "danger" : "gray"}>
           {helpText}
         </SmallText>
       )}
       {children}
       {errorMessage && (
-        <SmallText type={errorMessage !== undefined ? "danger" : undefined}>
+        <SmallText
+          colorScheme={errorMessage !== undefined ? "danger" : undefined}
+        >
           {errorMessage}
         </SmallText>
       )}

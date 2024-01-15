@@ -1,12 +1,12 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { Ref } from "preact";
-import type { BasicColorType } from "../../utils/colorType";
+import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 import InputWrapper from "./InputWrapper";
 
 interface Props {
   value: Signal<number | null>;
-  type?: BasicColorType;
+  colorScheme?: SemanticColorType;
   label?: string;
   placeholder?: string;
   helpText?: string;
@@ -21,7 +21,7 @@ interface Props {
 
 export default function TextInput({
   value,
-  type,
+  colorScheme,
   label,
   placeholder,
   helpText,
@@ -50,12 +50,13 @@ export default function TextInput({
           },
           {
             "focus:(border-green-600 dark:border-green-400)":
-              type === "success",
+              colorScheme === "success",
             "focus:(border-blue-600 dark:border-blue-400)":
-              type === "info" || type === undefined,
+              colorScheme === "info" || colorScheme === undefined,
             "focus:(border-orange-600 dark:border-orange-400)":
-              type === "warning",
-            "focus:(border-red-600 dark:border-red-400)": type === "danger",
+              colorScheme === "warning",
+            "focus:(border-red-600 dark:border-red-400)":
+              colorScheme === "danger",
           },
         )}
         type="number"
