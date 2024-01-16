@@ -26,7 +26,7 @@ export default function Icon({
 }: Props) {
   return (
     <span
-      className={clsx(className, {
+      className={clsx(className, "w-min", {
         "text-zinc-500 dark:text-zinc-400": colorScheme === "gray",
         "text-green-600 dark:text-green-400": colorScheme === "success",
         "text-blue-600 dark:text-blue-400": colorScheme === "info",
