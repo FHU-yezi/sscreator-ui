@@ -90,15 +90,9 @@ export default function OutlineButton({
       <Row
         className="items-end justify-center"
         gap={small ? "gap-0.5" : "gap-1"}
+        itemsCenter
         nowrap
       >
-        {loading && (
-          <Icon
-            className="transition-colors"
-            icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            customStyle={textCustomStyle}
-          />
-        )}
         {leftIcon && (
           <Icon
             className="transition-colors"
@@ -122,6 +116,13 @@ export default function OutlineButton({
           <Icon
             className="transition-colors"
             icon={rightIcon}
+            customStyle={textCustomStyle}
+          />
+        )}
+        {loading && (
+          <Icon
+            className="transition-colors"
+            icon={<TbLoader2 className="motion-safe:animate-spin" size={20} />}
             customStyle={textCustomStyle}
           />
         )}

@@ -75,7 +75,7 @@ export default function SolidButton({
             colorScheme === "warning",
           "bg-red-600 enabled:hover:bg-red-700": colorScheme === "danger",
           [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
-        }
+        },
       )}
       disabled={disabled || loading}
       aria-disabled={disabled}
@@ -85,15 +85,9 @@ export default function SolidButton({
       <Row
         className="items-end justify-center"
         gap={small ? "gap-0.5" : "gap-1"}
+        itemsCenter
         nowrap
       >
-        {loading && (
-          <Icon
-            className="transition-colors"
-            icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            customStyle={textCustomStyle}
-          />
-        )}
         {leftIcon && (
           <Icon
             className="transition-colors"
@@ -117,6 +111,13 @@ export default function SolidButton({
           <Icon
             className="transition-colors"
             icon={rightIcon}
+            customStyle={textCustomStyle}
+          />
+        )}
+        {loading && (
+          <Icon
+            className="transition-colors"
+            icon={<TbLoader2 className="motion-safe:animate-spin" size={20} />}
             customStyle={textCustomStyle}
           />
         )}

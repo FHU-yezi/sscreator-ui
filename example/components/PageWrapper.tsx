@@ -26,7 +26,7 @@ export default function PageWrapper({ Component }: Props) {
         ) : (
           <OutlineButton
             colorScheme="secondary"
-            leftIcon={<MdKeyboardArrowLeft size={22} />}
+            leftIcon={<MdKeyboardArrowLeft size={24} />}
             onClick={() => setLocation("/")}
           >
             返回
@@ -36,7 +36,7 @@ export default function PageWrapper({ Component }: Props) {
           <Text>{colorScheme === "light" ? "浅色模式" : "深色模式"}</Text>
           <OutlineButton
             colorScheme="primary"
-            rightIcon={<MdSwapHoriz size={18} />}
+            rightIcon={<MdSwapHoriz size={20} />}
             onClick={toggleColorScheme}
             small
           >

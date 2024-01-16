@@ -65,14 +65,7 @@ export default function SolidButton({
       aria-busy={loading}
       {...props}
     >
-      <Row className="items-end justify-center" gap="gap-1" nowrap>
-        {loading && (
-          <Icon
-            className="transition-colors"
-            icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            customStyle={textCustomStyle}
-          />
-        )}
+      <Row className="items-end justify-center" gap="gap-1" itemsCenter nowrap>
         {leftIcon && (
           <Icon
             className="transition-colors"
@@ -87,6 +80,13 @@ export default function SolidButton({
           <Icon
             className="transition-colors"
             icon={rightIcon}
+            customStyle={textCustomStyle}
+          />
+        )}
+        {loading && (
+          <Icon
+            className="transition-colors"
+            icon={<TbLoader2 className="motion-safe:animate-spin" size={20} />}
             customStyle={textCustomStyle}
           />
         )}
