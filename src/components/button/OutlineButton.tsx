@@ -65,7 +65,7 @@ export default function OutlineButton({
 
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
-          "w-full": fullWidth,
+          "w-min": !fullWidth,
         },
         className,
         {
@@ -102,13 +102,16 @@ export default function OutlineButton({
         )}
         {small ? (
           <SmallText
-            className="transition-colors"
+            className="whitespace-nowrap transition-colors"
             customStyle={textCustomStyle}
           >
             {children}
           </SmallText>
         ) : (
-          <Text className="transition-colors" customStyle={textCustomStyle}>
+          <Text
+            className="whitespace-nowrap transition-colors"
+            customStyle={textCustomStyle}
+          >
             {children}
           </Text>
         )}
@@ -122,7 +125,12 @@ export default function OutlineButton({
         {loading && (
           <Icon
             className="transition-colors"
-            icon={<TbLoader2 className="motion-safe:animate-spin" size={20} />}
+            icon={
+              <TbLoader2
+                className="motion-safe:animate-spin"
+                size={small ? 16 : 20}
+              />
+            }
             customStyle={textCustomStyle}
           />
         )}

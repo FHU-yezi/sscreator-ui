@@ -64,7 +64,7 @@ export default function SolidButton({
 
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
-          "w-full": fullWidth,
+          "w-min": !fullWidth,
         },
         className,
         {
@@ -97,13 +97,16 @@ export default function SolidButton({
         )}
         {small ? (
           <SmallText
-            className="transition-colors"
+            className="whitespace-nowrap transition-colors"
             customStyle={textCustomStyle}
           >
             {children}
           </SmallText>
         ) : (
-          <Text className="transition-colors" customStyle={textCustomStyle}>
+          <Text
+            className="whitespace-nowrap transition-colors"
+            customStyle={textCustomStyle}
+          >
             {children}
           </Text>
         )}
@@ -117,7 +120,12 @@ export default function SolidButton({
         {loading && (
           <Icon
             className="transition-colors"
-            icon={<TbLoader2 className="motion-safe:animate-spin" size={20} />}
+            icon={
+              <TbLoader2
+                className="motion-safe:animate-spin"
+                size={small ? 16 : 20}
+              />
+            }
             customStyle={textCustomStyle}
           />
         )}

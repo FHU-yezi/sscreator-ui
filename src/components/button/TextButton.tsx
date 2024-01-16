@@ -8,6 +8,7 @@ import type {
 } from "../../utils/colorSchemeTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
+import SmallText from "../text/SmallText";
 import Text from "../text/Text";
 
 interface CustomStyle {
@@ -22,6 +23,7 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
   loading?: boolean;
   disabled?: boolean;
+  small?: boolean;
   customStyle?: CustomStyle;
 }
 
@@ -33,6 +35,7 @@ export default function SolidButton({
   colorScheme,
   loading = false,
   disabled = false,
+  small = false,
   customStyle = {},
   ...props
 }: Props) {
@@ -65,7 +68,12 @@ export default function SolidButton({
       aria-busy={loading}
       {...props}
     >
-      <Row className="items-end justify-center" gap="gap-1" itemsCenter nowrap>
+      <Row
+        className="w-min items-end justify-center"
+        gap="gap-1"
+        itemsCenter
+        nowrap
+      >
         {leftIcon && (
           <Icon
             className="transition-colors"
@@ -73,9 +81,21 @@ export default function SolidButton({
             customStyle={textCustomStyle}
           />
         )}
-        <Text className="transition-colors" customStyle={textCustomStyle}>
-          {children}
-        </Text>
+        {small ? (
+          <SmallText
+            className="whitespace-nowrap transition-colors"
+            customStyle={textCustomStyle}
+          >
+            {children}
+          </SmallText>
+        ) : (
+          <Text
+            className="whitespace-nowrap transition-colors"
+            customStyle={textCustomStyle}
+          >
+            {children}
+          </Text>
+        )}
         {rightIcon && (
           <Icon
             className="transition-colors"
@@ -86,7 +106,12 @@ export default function SolidButton({
         {loading && (
           <Icon
             className="transition-colors"
-            icon={<TbLoader2 className="motion-safe:animate-spin" size={20} />}
+            icon={
+              <TbLoader2
+                className="motion-safe:animate-spin"
+                size={small ? 16 : 20}
+              />
+            }
             customStyle={textCustomStyle}
           />
         )}
