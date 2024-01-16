@@ -5,10 +5,10 @@ import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 import InputWrapper from "./InputWrapper";
 
 interface Props extends Omit<HTMLAttributes<HTMLTextAreaElement>, "value"> {
-  value: Signal<string>;
-  colorScheme?: SemanticColorType;
   id: string;
   label?: string;
+  value: Signal<string>;
+  colorScheme?: SemanticColorType;
   rows?: number;
   helpText?: string;
   errorMessage?: string;
@@ -19,10 +19,10 @@ interface Props extends Omit<HTMLAttributes<HTMLTextAreaElement>, "value"> {
 }
 
 export default function TextAreaInput({
-  value,
-  colorScheme,
   id,
   label,
+  value,
+  colorScheme,
   rows = 10,
   helpText,
   errorMessage,

@@ -2,6 +2,7 @@ import { Route, Switch } from "wouter-preact";
 import PageWrapper from "./components/PageWrapper";
 import BadgePage from "./pages/BadgePage";
 import ButtonPage from "./pages/ButtonPage";
+import CheckboxPage from "./pages/CheckboxPage";
 import HeadingPage from "./pages/HeadingPage";
 import InputPage from "./pages/InputPage";
 import LinkPage from "./pages/LinkPage";
@@ -29,6 +30,9 @@ export default function App() {
       </Route>
       <Route key="/button" path="/button">
         <PageWrapper Component={ButtonPage} />
+      </Route>
+      <Route key="/checkbox" path="/checkbox">
+        <PageWrapper Component={CheckboxPage} />
       </Route>
       <Route key="/input" path="/input">
         <PageWrapper Component={InputPage} />

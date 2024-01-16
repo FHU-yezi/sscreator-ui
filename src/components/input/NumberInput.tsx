@@ -5,10 +5,10 @@ import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 import InputWrapper from "./InputWrapper";
 
 interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "value"> {
-  value: Signal<number | null>;
-  colorScheme?: SemanticColorType;
   id: string;
   label?: string;
+  value: Signal<number | null>;
+  colorScheme?: SemanticColorType;
   helpText?: string;
   errorMessage?: string;
   disabled?: boolean;
@@ -18,10 +18,10 @@ interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "value"> {
 }
 
 export default function TextInput({
-  value,
-  colorScheme,
   id,
   label,
+  value,
+  colorScheme,
   helpText,
   errorMessage,
   disabled = false,

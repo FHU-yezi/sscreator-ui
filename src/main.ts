@@ -1,4 +1,5 @@
 export { default as Badge } from "./components/Badge";
+export { default as Checkbox } from "./components/Checkbox";
 export { default as Icon } from "./components/Icon";
 export { default as Notice } from "./components/Notice";
 export { default as OutlineButton } from "./components/button/OutlineButton";
