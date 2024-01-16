@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import type { ComponentChild } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type {
   GrayColorType,
   SemanticColorType,
@@ -9,7 +10,7 @@ interface CustomStyle {
   textColor?: string;
 }
 
-interface Props {
+interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, "icon"> {
   icon: ComponentChild;
   className?: string;
   colorScheme?: SemanticColorType | GrayColorType;
@@ -21,6 +22,7 @@ export default function Icon({
   className,
   colorScheme,
   customStyle = { textColor: "text-zinc-950 dark:text-zinc-50" },
+  ...props
 }: Props) {
   return (
     <span
@@ -32,6 +34,7 @@ export default function Icon({
         "text-red-600 dark:text-red-400": colorScheme === "danger",
         [customStyle.textColor ?? ""]: colorScheme === undefined,
       })}
+      {...props}
     >
       {icon}
     </span>

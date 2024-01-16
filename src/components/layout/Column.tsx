@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ComponentChildren;
   className?: string;
   gap?: string;
@@ -15,6 +16,7 @@ export default function Column({
   gap = "gap-4",
   itemsCenter = false,
   nowrap = false,
+  ...props
 }: Props) {
   return (
     <div
@@ -22,6 +24,7 @@ export default function Column({
         "items-center": itemsCenter,
         "flex-nowrap": nowrap,
       })}
+      {...props}
     >
       {children}
     </div>

@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 
 interface CustomStyle {
   textColor?: string;
 }
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLAnchorElement> {
   children: ComponentChildren;
   className?: string;
-  href: string;
   colorScheme?: SemanticColorType;
   openInCurrentTab?: boolean;
   customStyle?: CustomStyle;
@@ -18,10 +18,10 @@ interface Props {
 export default function ExternalLink({
   children,
   className,
-  href,
   colorScheme,
   openInCurrentTab = false,
   customStyle = { textColor: "text-blue-600 dark:text-blue-400" },
+  ...props
 }: Props) {
   return (
     <a
@@ -32,9 +32,8 @@ export default function ExternalLink({
         "text-red-600 dark:text-red-400": colorScheme === "danger",
         [customStyle.textColor ?? ""]: colorScheme === undefined,
       })}
-      href={href}
       target={openInCurrentTab ? "_self" : "_blank"}
-      rel="noreferrer"
+      {...props}
     >
       {children}
     </a>

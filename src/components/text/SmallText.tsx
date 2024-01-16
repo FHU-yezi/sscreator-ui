@@ -10,7 +10,7 @@ interface CustomStyle {
   textColor?: string;
 }
 
-interface Props extends Pick<HTMLAttributes<HTMLParagraphElement>, "id"> {
+interface Props extends HTMLAttributes<HTMLParagraphElement> {
   children: ComponentChildren;
   className?: string;
   colorScheme?: SemanticColorType | GrayColorType;

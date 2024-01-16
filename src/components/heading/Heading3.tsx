@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 
 interface CustomStyle {
   textColor?: string;
 }
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLHeadingElement> {
   children: ComponentChildren;
   className?: string;
   colorScheme?: SemanticColorType;
@@ -18,6 +19,7 @@ export default function Heading3({
   className,
   colorScheme,
   customStyle = { textColor: "text-zinc-950 dark:text-zinc-50" },
+  ...props
 }: Props) {
   return (
     <h3
@@ -28,6 +30,7 @@ export default function Heading3({
         "text-red-600 dark:text-red-400": colorScheme === "danger",
         [customStyle.textColor ?? ""]: colorScheme === undefined,
       })}
+      {...props}
     >
       {children}
     </h3>

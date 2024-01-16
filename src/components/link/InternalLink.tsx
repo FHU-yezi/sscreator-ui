@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 
 interface CustomStyle {
   textColor?: string;
 }
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLAnchorElement> {
   children: ComponentChildren;
   className?: string;
   path: string;
@@ -22,6 +23,7 @@ export default function InternalLink({
   onClick,
   colorScheme,
   customStyle = { textColor: "text-blue-600 dark:text-blue-400" },
+  ...props
 }: Props) {
   return (
     <a
@@ -37,6 +39,7 @@ export default function InternalLink({
         event.preventDefault();
         onClick();
       }}
+      {...props}
     >
       {children}
     </a>

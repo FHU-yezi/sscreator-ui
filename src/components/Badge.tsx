@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type {
   GrayColorType,
   SemanticColorType,
@@ -10,7 +11,7 @@ interface CustomStyle {
   backgroundColor?: string;
 }
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLSpanElement> {
   children: ComponentChildren;
   className?: string;
   colorScheme?: SemanticColorType | GrayColorType;
@@ -22,6 +23,7 @@ export default function Badge({
   className,
   colorScheme,
   customStyle = {},
+  ...props
 }: Props) {
   return (
     <span
@@ -39,6 +41,7 @@ export default function Badge({
         [customStyle.textColor ?? ""]: colorScheme === undefined,
         [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
       })}
+      {...props}
     >
       {children}
     </span>

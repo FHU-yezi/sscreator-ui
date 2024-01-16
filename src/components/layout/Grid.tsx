@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 
-interface Props {
+interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "cols"> {
   children: ComponentChildren;
   className?: string;
   gap?: string;
@@ -13,6 +14,11 @@ export default function Grid({
   className,
   gap = "gap-4",
   cols,
+  ...props
 }: Props) {
-  return <div className={clsx(className, "grid", gap, cols)}>{children}</div>;
+  return (
+    <div className={clsx(className, "grid", gap, cols)} {...props}>
+      {children}
+    </div>
+  );
 }

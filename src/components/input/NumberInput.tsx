@@ -1,23 +1,20 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
-import type { Ref } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 import InputWrapper from "./InputWrapper";
 
-interface Props {
+interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "value"> {
   value: Signal<number | null>;
   colorScheme?: SemanticColorType;
   id: string;
   label?: string;
-  placeholder?: string;
   helpText?: string;
   errorMessage?: string;
   disabled?: boolean;
   selectAllOnFocus?: boolean;
   onEnter?(): void;
   onFocus?(): void;
-  onBlur?(): void;
-  inputRef?: Ref<HTMLInputElement>;
 }
 
 export default function TextInput({
@@ -25,15 +22,13 @@ export default function TextInput({
   colorScheme,
   id,
   label,
-  placeholder,
   helpText,
   errorMessage,
   disabled = false,
   selectAllOnFocus = false,
   onEnter,
   onFocus,
-  onBlur,
-  inputRef,
+  ...props
 }: Props) {
   return (
     <InputWrapper
@@ -80,9 +75,7 @@ export default function TextInput({
           }
         }}
         label={label}
-        placeholder={placeholder}
         disabled={disabled}
-        ref={inputRef}
         onKeyUp={(event) => {
           if (event.key === "Enter" && onEnter) {
             onEnter();
@@ -96,10 +89,10 @@ export default function TextInput({
             event.currentTarget.select();
           }
         }}
-        onBlur={onBlur}
         spellCheck={false}
         aria-invalid={errorMessage === undefined}
         aria-describedby={helpText ? `${id}-help-text` : undefined}
+        {...props}
       />
     </InputWrapper>
   );

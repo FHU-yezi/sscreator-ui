@@ -1,15 +1,14 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
-import type { Ref } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 import InputWrapper from "./InputWrapper";
 
-interface Props {
+interface Props extends Omit<HTMLAttributes<HTMLTextAreaElement>, "value"> {
   value: Signal<string>;
   colorScheme?: SemanticColorType;
   id: string;
   label?: string;
-  placeholder?: string;
   rows?: number;
   helpText?: string;
   errorMessage?: string;
@@ -17,8 +16,6 @@ interface Props {
   selectAllOnFocus?: boolean;
   onEnter?(): void;
   onFocus?(): void;
-  onBlur?(): void;
-  inputRef?: Ref<HTMLTextAreaElement>;
 }
 
 export default function TextAreaInput({
@@ -26,7 +23,6 @@ export default function TextAreaInput({
   colorScheme,
   id,
   label,
-  placeholder,
   rows = 10,
   helpText,
   errorMessage,
@@ -34,8 +30,7 @@ export default function TextAreaInput({
   selectAllOnFocus = false,
   onEnter,
   onFocus,
-  onBlur,
-  inputRef,
+  ...props
 }: Props) {
   return (
     <InputWrapper
@@ -69,10 +64,8 @@ export default function TextAreaInput({
         value={value.value}
         onChange={(event) => (value.value = event.currentTarget.value)}
         label={label}
-        placeholder={placeholder}
         rows={rows}
         disabled={disabled}
-        ref={inputRef}
         onKeyUp={(event) => {
           if (event.key === "Enter" && onEnter) {
             onEnter();
@@ -86,10 +79,10 @@ export default function TextAreaInput({
             event.currentTarget.select();
           }
         }}
-        onBlur={onBlur}
         spellCheck={false}
         aria-invalid={errorMessage === undefined}
         aria-describedby={helpText ? `${id}-help-text` : undefined}
+        {...props}
       />
     </InputWrapper>
   );

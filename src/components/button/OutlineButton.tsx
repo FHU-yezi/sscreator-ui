@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import { TbLoader2 } from "react-icons/tb";
 import type {
   PrimaryAndSecondaryColorType,
@@ -14,10 +15,9 @@ interface CustomStyle {
   textColor?: string;
 }
 
-interface Props {
+interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChildren;
   className?: string;
-  onClick(): void;
   colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
   loading?: boolean;
   disabled?: boolean;
@@ -29,13 +29,13 @@ interface Props {
 export default function OutlineButton({
   children,
   className,
-  onClick,
   colorScheme,
   loading = false,
   disabled = false,
   small = false,
   fullWidth = false,
   customStyle = {},
+  ...props
 }: Props) {
   return (
     <button
@@ -65,10 +65,10 @@ export default function OutlineButton({
           [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
         },
       )}
-      onClick={onClick}
       disabled={disabled || loading}
       aria-disabled={disabled}
       aria-busy={loading}
+      {...props}
     >
       <Row className="justify-center" gap="gap-2" itemsCenter nowrap>
         {loading && (
