@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import type { ComponentChildren } from "preact";
+import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import { TbLoader2 } from "react-icons/tb";
 import type {
@@ -15,7 +15,9 @@ interface CustomStyle {
 }
 
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
-  children?: ComponentChildren;
+  children?: ComponentChild;
+  leftIcon?: ComponentChild;
+  rightIcon?: ComponentChild;
   className?: string;
   colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
   loading?: boolean;
@@ -25,6 +27,8 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
 
 export default function SolidButton({
   children,
+  leftIcon,
+  rightIcon,
   className,
   colorScheme,
   loading = false,
@@ -32,6 +36,19 @@ export default function SolidButton({
   customStyle = {},
   ...props
 }: Props) {
+  const textCustomStyle = {
+    textColor: clsx({
+      "text-blue-600 enabled:hover:text-blue-800": colorScheme === "primary",
+      "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
+        colorScheme === "secondary",
+      "text-green-700 enabled:hover:text-green-900": colorScheme === "success",
+      "text-orange-600 enabled:hover:text-orange-800":
+        colorScheme === "warning",
+      "text-red-600 enabled:hover:text-red-800": colorScheme === "danger",
+      [customStyle.textColor ?? ""]: colorScheme === undefined,
+    }),
+  };
+
   return (
     <button
       type="button"
@@ -48,46 +65,31 @@ export default function SolidButton({
       aria-busy={loading}
       {...props}
     >
-      <Row className="justify-center" gap="gap-2" itemsCenter nowrap>
+      <Row className="items-end justify-center" gap="gap-1" nowrap>
         {loading && (
           <Icon
+            className="transition-colors"
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            customStyle={{
-              textColor: clsx({
-                "text-blue-600 enabled:hover:text-blue-800":
-                  colorScheme === "primary",
-                "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
-                  colorScheme === "secondary",
-                "text-green-700 enabled:hover:text-green-900":
-                  colorScheme === "success",
-                "text-orange-600 enabled:hover:text-orange-800":
-                  colorScheme === "warning",
-                "text-red-600 enabled:hover:text-red-800":
-                  colorScheme === "danger",
-                [customStyle.textColor ?? ""]: colorScheme === undefined,
-              }),
-            }}
+            customStyle={textCustomStyle}
           />
         )}
-        <Text
-          customStyle={{
-            textColor: clsx({
-              "text-blue-600 enabled:hover:text-blue-800":
-                colorScheme === "primary",
-              "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
-                colorScheme === "secondary",
-              "text-green-700 enabled:hover:text-green-900":
-                colorScheme === "success",
-              "text-orange-600 enabled:hover:text-orange-800":
-                colorScheme === "warning",
-              "text-red-600 enabled:hover:text-red-800":
-                colorScheme === "danger",
-              [customStyle.textColor ?? ""]: colorScheme === undefined,
-            }),
-          }}
-        >
+        {leftIcon && (
+          <Icon
+            className="transition-colors"
+            icon={leftIcon}
+            customStyle={textCustomStyle}
+          />
+        )}
+        <Text className="transition-colors" customStyle={textCustomStyle}>
           {children}
         </Text>
+        {rightIcon && (
+          <Icon
+            className="transition-colors"
+            icon={rightIcon}
+            customStyle={textCustomStyle}
+          />
+        )}
       </Row>
     </button>
   );

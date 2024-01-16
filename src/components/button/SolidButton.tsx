@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import type { ComponentChildren } from "preact";
+import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import { TbLoader2 } from "react-icons/tb";
 import type {
@@ -8,6 +8,7 @@ import type {
 } from "../../utils/colorSchemeTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
+import SmallText from "../text/SmallText";
 import Text from "../text/Text";
 
 interface CustomStyle {
@@ -16,7 +17,9 @@ interface CustomStyle {
 }
 
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
-  children?: ComponentChildren;
+  children?: ComponentChild;
+  leftIcon?: ComponentChild;
+  rightIcon?: ComponentChild;
   className?: string;
   colorScheme?: PrimaryAndSecondaryColorType | SemanticColorType;
   loading?: boolean;
@@ -28,6 +31,8 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
 
 export default function SolidButton({
   children,
+  leftIcon,
+  rightIcon,
   className,
   colorScheme,
   loading = false,
@@ -37,13 +42,24 @@ export default function SolidButton({
   customStyle = {},
   ...props
 }: Props) {
+  const textCustomStyle = {
+    textColor: clsx({
+      "text-zinc-50": colorScheme !== undefined && colorScheme !== "secondary",
+      "text-zinc-950": colorScheme === "secondary",
+      [customStyle.textColor ?? ""]: colorScheme === undefined,
+    }),
+  };
+
   return (
     <button
       type="button"
       className={clsx(
         "shadow rounded transition-colors disabled:opacity-70 group",
         {
-          "px-3 py-1.5": !small,
+          "px-3 py-1.5": !small && !leftIcon && !rightIcon,
+          "pl-2 pr-3 py-1.5": !small && leftIcon && !rightIcon,
+          "pl-3 pr-2 py-1.5": !small && !leftIcon && rightIcon,
+          "px-2 py-1.5": !small && leftIcon && rightIcon,
           "p-1": small,
 
           "cursor-wait": loading,
@@ -59,39 +75,51 @@ export default function SolidButton({
             colorScheme === "warning",
           "bg-red-600 enabled:hover:bg-red-700": colorScheme === "danger",
           [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
-        },
+        }
       )}
       disabled={disabled || loading}
       aria-disabled={disabled}
       aria-busy={loading}
       {...props}
     >
-      <Row className="justify-center" gap="gap-2" itemsCenter nowrap>
+      <Row
+        className="items-end justify-center"
+        gap={small ? "gap-0.5" : "gap-1"}
+        nowrap
+      >
         {loading && (
           <Icon
+            className="transition-colors"
             icon={<TbLoader2 className="motion-safe:animate-spin" />}
-            customStyle={{
-              textColor: clsx({
-                "text-zinc-50":
-                  colorScheme !== undefined && colorScheme !== "secondary",
-                "text-zinc-950": colorScheme === "secondary",
-                [customStyle.textColor ?? ""]: colorScheme === undefined,
-              }),
-            }}
+            customStyle={textCustomStyle}
           />
         )}
-        <Text
-          customStyle={{
-            textColor: clsx({
-              "text-zinc-50":
-                colorScheme !== undefined && colorScheme !== "secondary",
-              "text-zinc-950": colorScheme === "secondary",
-              [customStyle.textColor ?? ""]: colorScheme === undefined,
-            }),
-          }}
-        >
-          {children}
-        </Text>
+        {leftIcon && (
+          <Icon
+            className="transition-colors"
+            icon={leftIcon}
+            customStyle={textCustomStyle}
+          />
+        )}
+        {small ? (
+          <SmallText
+            className="transition-colors"
+            customStyle={textCustomStyle}
+          >
+            {children}
+          </SmallText>
+        ) : (
+          <Text className="transition-colors" customStyle={textCustomStyle}>
+            {children}
+          </Text>
+        )}
+        {rightIcon && (
+          <Icon
+            className="transition-colors"
+            icon={rightIcon}
+            customStyle={textCustomStyle}
+          />
+        )}
       </Row>
     </button>
   );

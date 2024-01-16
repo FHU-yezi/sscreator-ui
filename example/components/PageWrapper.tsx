@@ -1,13 +1,12 @@
 import type { JSX } from "preact";
-import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdSwapHoriz } from "react-icons/md";
 import { useLocation } from "wouter-preact";
 import {
   Column,
-  Icon,
   LargeText,
+  OutlineButton,
   Row,
   Text,
-  TextButton,
   useColorScheme,
 } from "../../src/main";
 
@@ -25,16 +24,24 @@ export default function PageWrapper({ Component }: Props) {
         {location === "/" ? (
           <LargeText bold>SSCreator UI</LargeText>
         ) : (
-          <TextButton colorScheme="secondary" onClick={() => setLocation("/")}>
-            <Icon icon={<MdKeyboardArrowLeft size={24} />} />
+          <OutlineButton
+            colorScheme="secondary"
+            leftIcon={<MdKeyboardArrowLeft size={22} />}
+            onClick={() => setLocation("/")}
+          >
             返回
-          </TextButton>
+          </OutlineButton>
         )}
-        <Row gap="gap-2">
+        <Row itemsCenter>
           <Text>{colorScheme === "light" ? "浅色模式" : "深色模式"}</Text>
-          <TextButton colorScheme="primary" onClick={toggleColorScheme}>
+          <OutlineButton
+            colorScheme="primary"
+            rightIcon={<MdSwapHoriz size={18} />}
+            onClick={toggleColorScheme}
+            small
+          >
             切换
-          </TextButton>
+          </OutlineButton>
         </Row>
       </Row>
       <Component />
