@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
+import type { HTMLAttributes } from "preact/compat";
 import type {
   GrayColorType,
   SemanticColorType,
@@ -9,7 +10,7 @@ interface CustomStyle {
   textColor?: string;
 }
 
-interface Props {
+interface Props extends Pick<HTMLAttributes<HTMLParagraphElement>, "id"> {
   children: ComponentChildren;
   className?: string;
   colorScheme?: SemanticColorType | GrayColorType;
@@ -25,6 +26,7 @@ export default function SmallText({
   bold = false,
   inline = false,
   customStyle = { textColor: "text-zinc-950 dark:text-zinc-50" },
+  ...props
 }: Props) {
   return (
     <p
@@ -44,6 +46,7 @@ export default function SmallText({
           inline,
         },
       )}
+      {...props}
     >
       {children}
     </p>

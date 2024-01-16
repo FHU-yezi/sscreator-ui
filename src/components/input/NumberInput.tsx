@@ -7,6 +7,7 @@ import InputWrapper from "./InputWrapper";
 interface Props {
   value: Signal<number | null>;
   colorScheme?: SemanticColorType;
+  id: string;
   label?: string;
   placeholder?: string;
   helpText?: string;
@@ -22,6 +23,7 @@ interface Props {
 export default function TextInput({
   value,
   colorScheme,
+  id,
   label,
   placeholder,
   helpText,
@@ -35,6 +37,7 @@ export default function TextInput({
 }: Props) {
   return (
     <InputWrapper
+      id={id}
       label={label}
       helpText={helpText}
       errorMessage={errorMessage}
@@ -60,6 +63,7 @@ export default function TextInput({
           },
         )}
         type="number"
+        id={id}
         inputMode="numeric"
         pattern="[0-9\.]*"
         // 在 Firefox 上隐藏上下箭头
@@ -95,6 +99,7 @@ export default function TextInput({
         onBlur={onBlur}
         spellCheck={false}
         aria-invalid={errorMessage === undefined}
+        aria-describedby={helpText ? `${id}-help-text` : undefined}
       />
     </InputWrapper>
   );

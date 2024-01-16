@@ -2,10 +2,10 @@ import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import Column from "../layout/Column";
 import SmallText from "../text/SmallText";
-import Text from "../text/Text";
 
 interface Props {
   children: ComponentChildren;
+  id: string;
   label?: string;
   helpText?: string;
   errorMessage?: string;
@@ -14,6 +14,7 @@ interface Props {
 
 export default function InputWrapper({
   children,
+  id,
   label,
   helpText,
   errorMessage,
@@ -27,21 +28,28 @@ export default function InputWrapper({
       gap="gap-1"
     >
       {label && (
-        <Text
-          colorScheme={errorMessage !== undefined ? "danger" : undefined}
-          bold
+        <label
+          id={`${id}-label`}
+          className={clsx("font-semibold", {
+            "text-red-600 dark:text-red-400": errorMessage !== undefined,
+          })}
+          htmlFor={id}
         >
           {label}
-        </Text>
+        </label>
       )}
       {helpText && (
-        <SmallText colorScheme={errorMessage !== undefined ? "danger" : "gray"}>
+        <SmallText
+          id={`${id}-help-text`}
+          colorScheme={errorMessage !== undefined ? "danger" : "gray"}
+        >
           {helpText}
         </SmallText>
       )}
       {children}
       {errorMessage && (
         <SmallText
+          id={`${id}-error-message`}
           colorScheme={errorMessage !== undefined ? "danger" : undefined}
         >
           {errorMessage}

@@ -16,6 +16,7 @@ export default function InputPage() {
     <>
       <Heading1>TextInput</Heading1>
       <TextInput
+        id="test-textinput"
         value={textInputValue}
         label="测试 Label"
         helpText="测试 HelpText"
@@ -23,14 +24,21 @@ export default function InputPage() {
       />
       <Text>输入值：{textInputValue.value}</Text>
 
-      <TextInput value={textInputValue} label="禁用态" disabled />
       <TextInput
+        id="test-textinput-disabled"
+        value={textInputValue}
+        label="禁用态"
+        disabled
+      />
+      <TextInput
+        id="test-textinput-error"
         value={textInputValue}
         label="错误态"
         errorMessage="测试错误消息"
       />
 
       <TextAreaInput
+        id="test-textarea"
         value={textAreaInputValue}
         label="测试 Label"
         helpText="测试 HelpText"
@@ -39,8 +47,14 @@ export default function InputPage() {
       <Text>输入值：{textAreaInputValue.value}</Text>
 
       <Heading1>TextAreaInput</Heading1>
-      <TextAreaInput value={textAreaInputValue} label="禁用态" disabled />
       <TextAreaInput
+        id="test-textarea-disabled"
+        value={textAreaInputValue}
+        label="禁用态"
+        disabled
+      />
+      <TextAreaInput
+        id="test-textarea-error"
         value={textAreaInputValue}
         label="错误态"
         errorMessage="测试错误消息"
@@ -48,6 +62,7 @@ export default function InputPage() {
 
       <Heading1>NumberInput</Heading1>
       <NumberInput
+        id="test-numberinput"
         value={numberInputValue}
         label="测试 Label"
         helpText="测试 HelpText"
@@ -55,8 +70,14 @@ export default function InputPage() {
       />
       <Text>输入值：{numberInputValue.value}</Text>
 
-      <NumberInput value={numberInputValue} label="禁用态" disabled />
       <NumberInput
+        id="test-numberinput-disabled"
+        value={numberInputValue}
+        label="禁用态"
+        disabled
+      />
+      <NumberInput
+        id="test-numberinput-error"
         value={numberInputValue}
         label="错误态"
         errorMessage="测试错误消息"

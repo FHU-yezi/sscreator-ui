@@ -7,6 +7,7 @@ import InputWrapper from "./InputWrapper";
 interface Props {
   value: Signal<string>;
   colorScheme?: SemanticColorType;
+  id: string;
   label?: string;
   placeholder?: string;
   rows?: number;
@@ -23,6 +24,7 @@ interface Props {
 export default function TextAreaInput({
   value,
   colorScheme,
+  id,
   label,
   placeholder,
   rows = 10,
@@ -37,6 +39,7 @@ export default function TextAreaInput({
 }: Props) {
   return (
     <InputWrapper
+      id={id}
       label={label}
       helpText={helpText}
       errorMessage={errorMessage}
@@ -62,6 +65,7 @@ export default function TextAreaInput({
           },
         )}
         type="text"
+        id={id}
         value={value.value}
         onChange={(event) => (value.value = event.currentTarget.value)}
         label={label}
@@ -85,6 +89,7 @@ export default function TextAreaInput({
         onBlur={onBlur}
         spellCheck={false}
         aria-invalid={errorMessage === undefined}
+        aria-describedby={helpText ? `${id}-help-text` : undefined}
       />
     </InputWrapper>
   );
