@@ -1,5 +1,6 @@
 import { Route, Switch } from "wouter-preact";
 import PageWrapper from "./components/PageWrapper";
+import AccordionPage from "./pages/AccordionPage";
 import BadgePage from "./pages/BadgePage";
 import ButtonPage from "./pages/ButtonPage";
 import CheckboxPage from "./pages/CheckboxPage";
@@ -39,6 +40,9 @@ export default function App() {
       </Route>
       <Route key="/notice" path="/notice">
         <PageWrapper Component={NoticePage} />
+      </Route>
+      <Route key="/accordion" path="/accordion">
+        <PageWrapper Component={AccordionPage} />
       </Route>
     </Switch>
   );
