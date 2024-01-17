@@ -28,18 +28,18 @@ export default function Badge({
   return (
     <span
       className={clsx(
-        "w-fit rounded px-2 whitespace-nowrap transition-colors",
+        "w-fit rounded px-1.5 py-0.5 whitespace-nowrap transition-colors",
         className,
         {
           "bg-zinc-200 dark:bg-zinc-700 text-zinc-950 dark:text-zinc-50":
             colorScheme === "gray",
-          "bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300":
+          "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
             colorScheme === "success",
-          "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
+          "bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300":
             colorScheme === "info",
-          "bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300":
+          "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
             colorScheme === "warning",
-          "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300":
+          "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
             colorScheme === "danger",
         },
       )}
