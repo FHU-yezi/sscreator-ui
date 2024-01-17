@@ -48,15 +48,16 @@ export default function SolidButton({
         },
         className,
         {
-          "text-blue-600 enabled:hover:text-blue-800":
+          "text-blue-600 dark:text-blue-400 enabled:hover:(text-blue-800 dark:text-blue-600)":
             colorScheme === "primary",
-          "text-zinc-950 enabled:hover:text-zinc-700 dark:(text-zinc-50 enabled:hover:text-zinc-400)":
+          "text-zinc-950 dark:text-zinc-50 enabled:hover:(text-zinc-700 dark:text-zinc-300)":
             colorScheme === "secondary",
-          "text-green-700 enabled:hover:text-green-900":
+          "text-green-600 dark:text-green-400 enabled:hover:(text-green-800 dark:text-green-600)":
             colorScheme === "success",
-          "text-orange-600 enabled:hover:text-orange-800":
+          "text-orange-600 dark:text-orange-400 enabled:hover:(text-orange-800 dark:text-orange-600)":
             colorScheme === "warning",
-          "text-red-600 enabled:hover:text-red-800": colorScheme === "danger",
+          "text-red-600 dark:text-red-400 enabled:hover:(text-red-800 dark:text-red-600)":
+            colorScheme === "danger",
         },
       )}
       disabled={disabled || loading}
