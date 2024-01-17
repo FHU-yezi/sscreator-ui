@@ -1,7 +1,9 @@
 export { default as Accordion } from "./components/Accordion";
 export { default as Badge } from "./components/Badge";
 export { default as Checkbox } from "./components/Checkbox";
+export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 export { default as Icon } from "./components/Icon";
+export { default as Modal } from "./components/Modal";
 export { default as Notice } from "./components/Notice";
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as SolidButton } from "./components/button/SolidButton";
@@ -22,7 +24,6 @@ export { default as ExternalLink } from "./components/link/ExternalLink";
 export { default as InternalLink } from "./components/link/InternalLink";
 export { default as LargeText } from "./components/text/LargeText";
 export { default as SmallText } from "./components/text/SmallText";
-export { default as Modal } from "./components/Modal";
 export { default as Text } from "./components/text/Text";
 
 export { useColorScheme } from "./hooks/useColorScheme";
