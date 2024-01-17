@@ -7,9 +7,6 @@ on:
 jobs:
   static-check:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
