@@ -7,16 +7,15 @@ on:
 jobs:
   static-check:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: true
-      - uses: actions/setup-node@v4
-        with:
-          cache: "pnpm"
+      - uses: oven-sh/setup-bun@v1
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
       - name: Lint with Eslint
-        run: pnpm run check:eslint
+        run: bun run check:eslint
       - name: Style check with Prettier
-        run: pnpm run check:prettier
+        run: bun run check:prettier

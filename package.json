@@ -30,6 +30,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css",
+    "publish": "pnpm publish",
     "check:eslint": "eslint .",
     "check:prettier": "prettier --check .",
     "check:prettier-fix": "prettier --write ."
