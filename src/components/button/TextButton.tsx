@@ -36,7 +36,7 @@ export default function SolidButton({
   loading = false,
   disabled = false,
   small = false,
-  customStyle = {},
+  customStyle = { textColor: "text-zinc-950 dark:text-zinc-50" },
   ...props
 }: Props) {
   const textCustomStyle = {
