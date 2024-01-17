@@ -11,6 +11,7 @@ import MainPage from "./pages/MainPage";
 import ModalPage from "./pages/ModalPage";
 import NoticePage from "./pages/NoticePage";
 import SelectPage from "./pages/SelectPage";
+import TablePage from "./pages/TablePage";
 import TextPage from "./pages/TextPage";
 
 export default function App() {
@@ -51,6 +52,9 @@ export default function App() {
       </Route>
       <Route key="/modal" path="/modal">
         <PageWrapper Component={ModalPage} />
+      </Route>
+      <Route key="/table" path="/table">
+        <PageWrapper Component={TablePage} />
       </Route>
     </Switch>
   );

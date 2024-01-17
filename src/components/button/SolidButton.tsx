@@ -54,6 +54,7 @@ export default function SolidButton({
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
           "w-min": !fullWidth,
+          "w-full": fullWidth,
         },
         className,
         {

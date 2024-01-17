@@ -6,6 +6,15 @@ export { default as Icon } from "./components/Icon";
 export { default as Modal } from "./components/Modal";
 export { default as Notice } from "./components/Notice";
 export { default as Select } from "./components/Select";
+export {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./components/Table";
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as SolidButton } from "./components/button/SolidButton";
 export { default as TextButton } from "./components/button/TextButton";
