@@ -36,6 +36,7 @@ export default function Select<T extends ComponentChild>({
           "border-2 border-zinc-300 px-3 py-2 my-1 dark:border-zinc-700 transition-colors rounded outline-none text-zinc-950 dark:text-zinc-50",
           {
             "w-min": !fullWidth,
+            "w-full": fullWidth,
           },
         )}
         onClick={() => (isOpened.value = !isOpened.value)}
