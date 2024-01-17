@@ -34,12 +34,12 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
           aria-describedby={helpText ? `${id}-help-text` : undefined}
         >
           <Icon
-            className={clsx("transition-opacity", {
+            className={clsx("transition-opacity text-zinc-50", {
               "opacity-0": !value.value,
             })}
+            colorScheme="unset"
             icon={<MdDone size={16} />}
             aria-hidden
-            customStyle={{ textColor: "text-zinc-50" }}
           />
         </button>
 

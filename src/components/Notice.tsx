@@ -7,42 +7,40 @@ import {
   MdInfoOutline,
   MdWarningAmber,
 } from "react-icons/md";
-import type { SemanticColorType } from "../utils/colorSchemeTypes";
+import type {
+  SemanticColorType,
+  UnsetColorType,
+} from "../utils/colorSchemeTypes";
 import Icon from "./Icon";
 import Row from "./layout/Row";
 import LargeText from "./text/LargeText";
 
-interface CustomStyle {
-  backgroundColor?: string;
-}
-
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ComponentChildren;
+  className?: string;
   title?: string;
-  colorScheme?: SemanticColorType;
-  customStyle?: CustomStyle;
+  colorScheme: UnsetColorType | SemanticColorType;
 }
 
 export default function Notice({
   children,
+  className,
   title,
   colorScheme,
-  customStyle = {},
   ...props
 }: Props) {
   return (
     <div
-      className={clsx("p-4 rounded-lg shadow", {
+      className={clsx("p-4 rounded-lg shadow", className, {
         "bg-green-100 dark:bg-green-950": colorScheme === "success",
         "bg-blue-100 dark:bg-blue-950": colorScheme === "info",
         "bg-orange-100 dark:bg-orange-950": colorScheme === "warning",
         "bg-red-100 dark:bg-red-950": colorScheme === "danger",
-        [customStyle.backgroundColor ?? ""]: colorScheme === undefined,
       })}
       {...props}
     >
       <Row className="mb-1" gap="gap-1" itemsCenter nowrap>
-        {colorScheme && (
+        {colorScheme !== "unset" && (
           <Icon
             className="inline-block"
             icon={

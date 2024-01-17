@@ -7,17 +7,12 @@ import TextButton from "./button/TextButton";
 import Row from "./layout/Row";
 import LargeText from "./text/LargeText";
 
-interface CustomStyle {
-  titleTextColor?: string;
-}
-
 interface Props {
   children: ComponentChildren;
   open: Signal<boolean>;
   title: string;
   notCloseable?: boolean;
   colorScheme?: SemanticColorType;
-  customStyle?: CustomStyle;
 }
 
 export default function Modal({
@@ -26,7 +21,6 @@ export default function Modal({
   title,
   notCloseable = false,
   colorScheme,
-  customStyle,
 }: Props) {
   return (
     <>
@@ -54,15 +48,12 @@ export default function Modal({
         aria-hidden={!open.value}
       >
         <Row className="mb-3 justify-between" itemsCenter>
-          <LargeText
-            colorScheme={colorScheme}
-            bold
-            customStyle={{ textColor: customStyle?.titleTextColor }}
-          >
+          <LargeText colorScheme={colorScheme} bold>
             {title}
           </LargeText>
           {!notCloseable && (
             <TextButton
+              colorScheme="secondary"
               leftIcon={<MdClose size={28} />}
               onClick={() => (open.value = false)}
             />
