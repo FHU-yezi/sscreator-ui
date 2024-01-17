@@ -81,21 +81,22 @@ export default function SolidButton({
             customStyle={textCustomStyle}
           />
         )}
-        {small ? (
-          <SmallText
-            className="whitespace-nowrap transition-colors"
-            customStyle={textCustomStyle}
-          >
-            {children}
-          </SmallText>
-        ) : (
-          <Text
-            className="whitespace-nowrap transition-colors"
-            customStyle={textCustomStyle}
-          >
-            {children}
-          </Text>
-        )}
+        {children &&
+          (small ? (
+            <SmallText
+              className="whitespace-nowrap transition-colors"
+              customStyle={textCustomStyle}
+            >
+              {children}
+            </SmallText>
+          ) : (
+            <Text
+              className="whitespace-nowrap transition-colors"
+              customStyle={textCustomStyle}
+            >
+              {children}
+            </Text>
+          ))}
         {rightIcon && (
           <Icon
             className="transition-colors"
