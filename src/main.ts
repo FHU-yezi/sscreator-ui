@@ -5,6 +5,7 @@ export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 export { default as Icon } from "./components/Icon";
 export { default as Modal } from "./components/Modal";
 export { default as Notice } from "./components/Notice";
+export { default as Select } from "./components/Select";
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as SolidButton } from "./components/button/SolidButton";
 export { default as TextButton } from "./components/button/TextButton";

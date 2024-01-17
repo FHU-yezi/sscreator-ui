@@ -10,6 +10,7 @@ import LinkPage from "./pages/LinkPage";
 import MainPage from "./pages/MainPage";
 import ModalPage from "./pages/ModalPage";
 import NoticePage from "./pages/NoticePage";
+import SelectPage from "./pages/SelectPage";
 import TextPage from "./pages/TextPage";
 
 export default function App() {
@@ -32,6 +33,9 @@ export default function App() {
       </Route>
       <Route key="/button" path="/button">
         <PageWrapper Component={ButtonPage} />
+      </Route>
+      <Route key="/select" path="/select">
+        <PageWrapper Component={SelectPage} />
       </Route>
       <Route key="/checkbox" path="/checkbox">
         <PageWrapper Component={CheckboxPage} />
