@@ -12,6 +12,7 @@ export default function MainPage() {
       <PageCard name="输入" path="/input" />
       <PageCard name="提示" path="/notice" />
       <PageCard name="折叠" path="/accordion" />
+      <PageCard name="模态窗" path="/modal" />
     </>
   );
 }

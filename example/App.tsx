@@ -8,6 +8,7 @@ import HeadingPage from "./pages/HeadingPage";
 import InputPage from "./pages/InputPage";
 import LinkPage from "./pages/LinkPage";
 import MainPage from "./pages/MainPage";
+import ModalPage from "./pages/ModalPage";
 import NoticePage from "./pages/NoticePage";
 import TextPage from "./pages/TextPage";
 
@@ -43,6 +44,9 @@ export default function App() {
       </Route>
       <Route key="/accordion" path="/accordion">
         <PageWrapper Component={AccordionPage} />
+      </Route>
+      <Route key="/modal" path="/modal">
+        <PageWrapper Component={ModalPage} />
       </Route>
     </Switch>
   );

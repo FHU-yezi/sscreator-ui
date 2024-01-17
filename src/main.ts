@@ -22,6 +22,7 @@ export { default as ExternalLink } from "./components/link/ExternalLink";
 export { default as InternalLink } from "./components/link/InternalLink";
 export { default as LargeText } from "./components/text/LargeText";
 export { default as SmallText } from "./components/text/SmallText";
+export { default as Modal } from "./components/Modal";
 export { default as Text } from "./components/text/Text";
 
 export { useColorScheme } from "./hooks/useColorScheme";
