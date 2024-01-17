@@ -1,10 +1,12 @@
 import clsx from "clsx";
-import type { ComponentChildren } from "preact";
+import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import type {
   GrayColorType,
   SemanticColorType,
 } from "../utils/colorSchemeTypes";
+import Icon from "./Icon";
+import Row from "./layout/Row";
 
 interface CustomStyle {
   textColor?: string;
@@ -12,7 +14,9 @@ interface CustomStyle {
 }
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
-  children: ComponentChildren;
+  children?: ComponentChild;
+  leftIcon?: ComponentChild;
+  rightIcon?: ComponentChild;
   className?: string;
   colorScheme?: SemanticColorType | GrayColorType;
   customStyle?: CustomStyle;
@@ -20,6 +24,8 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
 
 export default function Badge({
   children,
+  leftIcon,
+  rightIcon,
   className,
   colorScheme,
   customStyle = {},
@@ -43,7 +49,23 @@ export default function Badge({
       })}
       {...props}
     >
-      {children}
+      <Row className="items-end justify-center" gap="gap-1" itemsCenter nowrap>
+        {leftIcon && (
+          <Icon
+            className="transition-colors"
+            colorScheme={colorScheme}
+            icon={leftIcon}
+          />
+        )}
+        {children}
+        {rightIcon && (
+          <Icon
+            className="transition-colors"
+            colorScheme={colorScheme}
+            icon={rightIcon}
+          />
+        )}
+      </Row>
     </span>
   );
 }
