@@ -8,8 +8,9 @@ import {
   Icon,
   SmallText,
   SolidButton,
+  Text,
   TextButton,
-} from "../src/main";
+} from "../../src/main";
 
 interface Props {
   error: Error;
@@ -28,24 +29,22 @@ export default function ErrorFallback({ error }: Props) {
 
         <Column gap="gap-2">
           <SmallText bold>时间</SmallText>
-          <SmallText colorScheme="gray">
+          <Text colorScheme="gray">
             {new Date().toISOString().replace("T", " ").replace(/\..*Z/, "")}
-          </SmallText>
+          </Text>
         </Column>
 
         <Column gap="gap-2">
           <SmallText bold>页面路径</SmallText>
-          <SmallText colorScheme="gray">{location}</SmallText>
+          <Text colorScheme="gray">{location}</Text>
         </Column>
 
         <Column gap="gap-2">
           <SmallText bold>错误信息</SmallText>
-          <SmallText colorScheme="gray">
-            <Badge className="mr-2" colorScheme="danger">
-              {error.name}
-            </Badge>
-            {error.message}
-          </SmallText>
+          <Badge className="mr-2" colorScheme="danger">
+            {error.name}
+          </Badge>
+          <Text colorScheme="gray">{error.message}</Text>
         </Column>
 
         <SolidButton
