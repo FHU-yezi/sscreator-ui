@@ -13,6 +13,7 @@ interface Props extends HTMLAttributes<HTMLParagraphElement> {
   colorScheme?: UnsetColorType | SemanticColorType | GrayColorType;
   bold?: boolean;
   inline?: boolean;
+  nowrap?: boolean;
 }
 
 export default function LargeText({
@@ -21,6 +22,7 @@ export default function LargeText({
   colorScheme,
   bold = false,
   inline = false,
+  nowrap = false,
   ...props
 }: Props) {
   return (
@@ -39,6 +41,7 @@ export default function LargeText({
         {
           "font-semibold": bold,
           inline,
+          "whitespace-nowrap": nowrap,
         },
       )}
       {...props}

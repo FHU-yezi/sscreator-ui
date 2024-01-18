@@ -13,6 +13,7 @@ interface Props extends HTMLAttributes<HTMLParagraphElement> {
   colorScheme?: UnsetColorType | SemanticColorType | GrayColorType;
   bold?: boolean;
   inline?: boolean;
+  nowrap?: boolean;
 }
 
 export default function Text({
@@ -21,6 +22,7 @@ export default function Text({
   colorScheme,
   bold = false,
   inline = false,
+  nowrap = false,
   ...props
 }: Props) {
   return (
@@ -38,6 +40,7 @@ export default function Text({
         {
           "font-semibold": bold,
           inline,
+          "whitespace-nowrap": nowrap,
         },
       )}
       {...props}
