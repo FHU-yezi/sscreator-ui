@@ -1,20 +1,12 @@
 import PageCard from "../components/PageCard";
+import { routes } from "../routes";
 
 export default function MainPage() {
   return (
     <>
-      <PageCard name="文本" path="/text" />
-      <PageCard name="标题" path="/heading" />
-      <PageCard name="链接" path="/link" />
-      <PageCard name="徽标" path="/badge" />
-      <PageCard name="按钮" path="/button" />
-      <PageCard name="选择" path="/select" />
-      <PageCard name="复选框" path="/checkbox" />
-      <PageCard name="输入" path="/input" />
-      <PageCard name="提示" path="/notice" />
-      <PageCard name="折叠" path="/accordion" />
-      <PageCard name="模态窗" path="/modal" />
-      <PageCard name="表格" path="/table" />
+      {routes.map((item) => (
+        <PageCard name={item.name} path={item.path} />
+      ))}
     </>
   );
 }

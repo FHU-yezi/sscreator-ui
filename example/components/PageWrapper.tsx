@@ -13,13 +13,14 @@ import {
 } from "../../src/main";
 
 interface Props {
+  name?: string;
   Component(): JSX.Element;
 }
 
-export default function PageWrapper({ Component }: Props) {
+export default function PageWrapper({ name, Component }: Props) {
   // 设置页面标题
   useEffect(() => {
-    document.title = "SSCreator UI";
+    document.title = name ? `${name} - SSCreator UI` : "SSCreator UI";
   }, []);
 
   // 处理部分情况下页面切换后不在顶部的问题
