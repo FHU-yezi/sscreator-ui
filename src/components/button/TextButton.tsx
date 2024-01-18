@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
-import { TbLoader2 } from "react-icons/tb";
+import { VscLoading } from "react-icons/vsc";
 import type {
   PrimaryAndSecondaryColorType,
   SemanticColorType,
@@ -87,7 +87,7 @@ export default function SolidButton({
           <Icon
             colorScheme="unset"
             icon={
-              <TbLoader2
+              <VscLoading
                 className="motion-safe:animate-spin"
                 size={small ? 16 : 20}
               />
