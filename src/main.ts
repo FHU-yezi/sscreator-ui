@@ -32,6 +32,7 @@ export { default as Row } from "./components/layout/Row";
 export { default as VerticalScoll } from "./components/layout/VerticalScoll";
 export { default as ExternalLink } from "./components/link/ExternalLink";
 export { default as InternalLink } from "./components/link/InternalLink";
+export { default as LoadingPage } from "./components/loading/LoadingPage";
 export { default as LargeText } from "./components/text/LargeText";
 export { default as SmallText } from "./components/text/SmallText";
 export { default as Text } from "./components/text/Text";

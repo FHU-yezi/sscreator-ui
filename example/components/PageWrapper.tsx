@@ -1,10 +1,13 @@
 import type { JSX } from "preact";
+import { Suspense } from "preact/compat";
+import { useEffect } from "preact/hooks";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useLocation } from "wouter-preact";
 import {
   ColorSchemeSwitch,
   Column,
   LargeText,
+  LoadingPage,
   OutlineButton,
   Row,
 } from "../../src/main";
@@ -14,6 +17,14 @@ interface Props {
 }
 
 export default function PageWrapper({ Component }: Props) {
+  // 设置页面标题
+  useEffect(() => {
+    document.title = "SSCreator UI";
+  }, []);
+
+  // 处理部分情况下页面切换后不在顶部的问题
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const [location, setLocation] = useLocation();
 
   return (
@@ -32,7 +43,9 @@ export default function PageWrapper({ Component }: Props) {
         )}
         <ColorSchemeSwitch />
       </Row>
-      <Component />
+      <Suspense fallback={<LoadingPage />}>
+        <Component />
+      </Suspense>
     </Column>
   );
 }
