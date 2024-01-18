@@ -16,7 +16,7 @@ import Row from "./layout/Row";
 import LargeText from "./text/LargeText";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  children: ComponentChildren;
+  children?: ComponentChildren;
   className?: string;
   title?: string;
   colorScheme: UnsetColorType | SemanticColorType;
@@ -31,7 +31,7 @@ export default function Notice({
 }: Props) {
   return (
     <div
-      className={clsx("p-4 rounded-lg shadow", className, {
+      className={clsx("flex flex-col gap-1 p-4 rounded-lg shadow", className, {
         "bg-green-100 dark:bg-green-950": colorScheme === "success",
         "bg-blue-100 dark:bg-blue-950": colorScheme === "info",
         "bg-orange-100 dark:bg-orange-950": colorScheme === "warning",
@@ -39,7 +39,7 @@ export default function Notice({
       })}
       {...props}
     >
-      <Row className="mb-1" gap="gap-1" itemsCenter nowrap>
+      <Row gap="gap-1" itemsCenter nowrap>
         {colorScheme !== "unset" && (
           <Icon
             className="inline-block"

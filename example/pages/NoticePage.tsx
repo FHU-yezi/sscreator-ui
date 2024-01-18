@@ -3,6 +3,11 @@ import { Notice, Text } from "../../src/main";
 export default function NoticePage() {
   return (
     <>
+      <Notice colorScheme="success" title="Test Success" />
+      <Notice colorScheme="info" title="Test Info" />
+      <Notice colorScheme="warning" title="Test Warning" />
+      <Notice colorScheme="danger" title="Test Danger" />
+
       <Notice colorScheme="success" title="测试 Success 消息">
         <Text>操作成功执行。</Text>
       </Notice>
