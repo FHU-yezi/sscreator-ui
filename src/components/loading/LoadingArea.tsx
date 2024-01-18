@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import type { ComponentChildren, VNode } from "preact";
 import type { HTMLAttributes } from "preact/compat";
-import { VscLoading } from "react-icons/vsc";
-import Icon from "../Icon";
 import Center from "../layout/Center";
 import Row from "../layout/Row";
 import Text from "../text/Text";
+import LoadingIcon from "./LoadingIcon";
 
 interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "loading"> {
   children: ComponentChildren;
@@ -22,9 +21,7 @@ export default function LoadingArea({ children, className, loading }: Props) {
     <div className={clsx("bg-zinc-100 dark:bg-zinc-900 rounded", className)}>
       <Center className="h-full">
         <Row gap="gap-2" itemsCenter>
-          <Icon
-            icon={<VscLoading className="motion-safe:animate-spin" size={24} />}
-          />
+          <LoadingIcon size={24} />
           <Text bold>加载中</Text>
         </Row>
       </Center>

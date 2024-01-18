@@ -69,8 +69,8 @@ export const routes: Array<RouteItem> = [
     component: lazy(() => import("./pages/TablePage")),
   },
   {
-    name: "加载区域",
-    path: "/loading-area",
-    component: lazy(() => import("./pages/LoadingAreaPage")),
+    name: "加载",
+    path: "/loading",
+    component: lazy(() => import("./pages/LoadingPage")),
   },
 ];

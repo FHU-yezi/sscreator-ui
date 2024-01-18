@@ -1,7 +1,6 @@
 import { clsx } from "clsx";
 import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
-import { VscLoading } from "react-icons/vsc";
 import type {
   PrimaryAndSecondaryColorType,
   SemanticColorType,
@@ -9,6 +8,7 @@ import type {
 } from "../../utils/colorSchemeTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
+import LoadingIcon from "../loading/LoadingIcon";
 import SmallText from "../text/SmallText";
 import Text from "../text/Text";
 
@@ -83,17 +83,7 @@ export default function SolidButton({
             </Text>
           ))}
         {rightIcon && <Icon colorScheme="unset" icon={rightIcon} />}
-        {loading && (
-          <Icon
-            colorScheme="unset"
-            icon={
-              <VscLoading
-                className="motion-safe:animate-spin"
-                size={small ? 16 : 20}
-              />
-            }
-          />
-        )}
+        {loading && <LoadingIcon colorScheme="unset" size={small ? 16 : 20} />}
       </Row>
     </button>
   );
