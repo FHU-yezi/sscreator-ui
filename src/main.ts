@@ -39,4 +39,8 @@ export { default as LargeText } from "./components/text/LargeText";
 export { default as SmallText } from "./components/text/SmallText";
 export { default as Text } from "./components/text/Text";
 
-export { useColorScheme } from "./hooks/useColorScheme";
+export {
+  getColorScheme,
+  toggleColorScheme,
+  useColorScheme,
+} from "./hooks/useColorScheme";
