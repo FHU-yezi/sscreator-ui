@@ -1,6 +1,8 @@
 import { signal } from "@preact/signals";
+import { MdWallet } from "react-icons/md";
 import { Checkbox, Select, Text } from "../../src/main";
 
+const isDropdownOpened = signal(false);
 const selected = signal<string | null>(null);
 const isFullWidth = signal(false);
 
@@ -11,8 +13,23 @@ export default function SelectPage() {
       <Select
         id="programming-language"
         label="选择编程语言"
+        isDropdownOpened={isDropdownOpened}
         value={selected}
-        options={["C", "Rust", "Java", "Python", "Typescript"]}
+        options={[
+          {
+            label: "C 语言",
+            value: "C",
+          },
+          {
+            label: "Python",
+            value: "Python",
+          },
+          {
+            label: "TS",
+            value: "Typescript",
+            leftIcon: <MdWallet size={24} />,
+          },
+        ]}
         helpText="测试 helpText"
         fullWidth={isFullWidth.value}
       />
