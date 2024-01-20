@@ -17,7 +17,7 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   leftIcon?: ComponentChild;
   rightIcon?: ComponentChild;
   className?: string;
-  colorScheme:
+  colorScheme?:
     | UnsetColorType
     | PrimaryAndSecondaryColorType
     | SemanticColorType;
@@ -32,7 +32,7 @@ export default function SolidButton({
   leftIcon,
   rightIcon,
   className,
-  colorScheme,
+  colorScheme = "primary",
   loading = false,
   disabled = false,
   small = false,

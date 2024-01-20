@@ -4,7 +4,7 @@ import { Badge } from "../../src/main";
 export default function BadgePage() {
   return (
     <>
-      <Badge colorScheme="gray">测试 Badge</Badge>
+      <Badge>测试 Badge</Badge>
       <Badge colorScheme="success" leftIcon={<MdCheck size={24} />}>
         测试 Badge Success
       </Badge>

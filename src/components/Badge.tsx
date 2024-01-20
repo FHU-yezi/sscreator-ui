@@ -14,7 +14,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
   leftIcon?: ComponentChild;
   rightIcon?: ComponentChild;
   className?: string;
-  colorScheme: UnsetColorType | SemanticColorType | GrayColorType;
+  colorScheme?: UnsetColorType | SemanticColorType | GrayColorType;
 }
 
 export default function Badge({
@@ -22,7 +22,7 @@ export default function Badge({
   leftIcon,
   rightIcon,
   className,
-  colorScheme,
+  colorScheme = "gray",
   ...props
 }: Props) {
   return (
