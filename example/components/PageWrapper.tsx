@@ -6,10 +6,13 @@ import { useLocation } from "wouter-preact";
 import {
   ColorSchemeSwitch,
   Column,
+  ExternalLink,
+  Footer,
+  Header,
   LargeText,
   LoadingPage,
   OutlineButton,
-  Row,
+  Text,
 } from "../../src/main";
 
 interface Props {
@@ -29,8 +32,8 @@ export default function PageWrapper({ name, Component }: Props) {
   const [location, setLocation] = useLocation();
 
   return (
-    <Column className="mx-auto my-8 max-w-4xl w-[90vw]">
-      <Row className="mb-4 justify-between" itemsCenter>
+    <>
+      <Header className="items-center justify-between">
         {location === "/" ? (
           <LargeText bold>SSCreator UI</LargeText>
         ) : (
@@ -43,10 +46,18 @@ export default function PageWrapper({ name, Component }: Props) {
           </OutlineButton>
         )}
         <ColorSchemeSwitch />
-      </Row>
-      <Suspense fallback={<LoadingPage />}>
-        <Component />
-      </Suspense>
-    </Column>
+      </Header>
+      <Column className="mx-auto my-8 max-w-4xl w-[90vw]">
+        <Suspense fallback={<LoadingPage />}>
+          <Component />
+        </Suspense>
+      </Column>
+      <Footer className="mx-auto max-w-4xl w-[90vw]">
+        <Text>Made With Love</Text>
+        <ExternalLink href="https://github.com/FHU-yezi/sscreator-ui">
+          Opensource On GitHub
+        </ExternalLink>
+      </Footer>
+    </>
   );
 }
