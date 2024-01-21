@@ -34,6 +34,8 @@ export default function Select<T extends ComponentChild>({
   disabled = false,
   fullWidth = false,
 }: Props<T>) {
+  const currentOption = options.find((x) => x.value === value.value);
+
   return (
     <InputWrapper id={id} label={label} helpText={helpText} disabled={disabled}>
       <button
@@ -47,14 +49,19 @@ export default function Select<T extends ComponentChild>({
         )}
         onClick={() => (isDropdownOpened.value = !isDropdownOpened.value)}
       >
-        <Row className="justify-between" gap="gap-1">
-          <span
-            className={clsx("whitespace-nowrap", {
-              "text-zinc-500 dark:text-zinc-400": !value.value,
-            })}
-          >
-            {value.value ?? "(请选择)"}
-          </span>
+        <Row className="justify-between" gap="gap-2">
+          <Row gap="gap-1">
+            {currentOption?.leftIcon && (
+              <Icon colorScheme="unset" icon={currentOption.leftIcon} />
+            )}
+            <span
+              className={clsx("whitespace-nowrap", {
+                "text-zinc-500 dark:text-zinc-400": !value.value,
+              })}
+            >
+              {currentOption?.label ?? "(请选择)"}
+            </span>
+          </Row>
           <Icon colorScheme="unset" icon={<MdKeyboardArrowDown size={24} />} />
         </Row>
       </button>

@@ -11,8 +11,8 @@ import {
   Header,
   LargeText,
   LoadingPage,
-  OutlineButton,
   Text,
+  TextButton,
 } from "../../src/main";
 
 interface Props {
@@ -37,17 +37,17 @@ export default function PageWrapper({ name, Component }: Props) {
         {location === "/" ? (
           <LargeText bold>SSCreator UI</LargeText>
         ) : (
-          <OutlineButton
+          <TextButton
             colorScheme="secondary"
             leftIcon={<MdKeyboardArrowLeft size={24} />}
             onClick={() => setLocation("/")}
           >
             返回
-          </OutlineButton>
+          </TextButton>
         )}
         <ColorSchemeSwitch />
       </Header>
-      <Column className="mx-auto my-8 max-w-4xl w-[90vw]">
+      <Column className="mx-auto my-8 h-screen max-w-4xl w-[90vw]">
         <Suspense fallback={<LoadingPage />}>
           <Component />
         </Suspense>
