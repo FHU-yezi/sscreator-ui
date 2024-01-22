@@ -41,7 +41,7 @@ export default function Select<T extends ComponentChild>({
       <button
         type="button"
         className={clsx(
-          "border-2 border-zinc-300 px-3 py-2 my-1 dark:border-zinc-700 transition-colors rounded outline-none text-zinc-950 dark:text-zinc-50",
+          "border-2 relative border-zinc-300 px-3 py-2 dark:border-zinc-700 transition-colors rounded outline-none text-zinc-950 dark:text-zinc-50",
           {
             "w-min": !fullWidth,
             "w-full": fullWidth,
@@ -65,40 +65,48 @@ export default function Select<T extends ComponentChild>({
           <Icon colorScheme="unset" icon={<MdKeyboardArrowDown size={24} />} />
         </Row>
       </button>
-      {isDropdownOpened.value && (
-        <Column
-          className="absolute mt-14 w-min translate-y-1/2 border-2 border-zinc-300 rounded bg-white p-2 shadow dark:(border-zinc-700 bg-zinc-900)"
-          gap="gap-0"
-        >
-          {options.map((item) => (
-            <button
-              type="button"
-              className={clsx(
-                "px-2 py-1 text-left transition-colors  hover:bg-zinc-100 text-zinc-950 dark:(text-zinc-50 hover:bg-zinc-900)",
-                {
-                  "font-semibold": value.value === item,
-                },
-              )}
-              onClick={() => {
-                value.value = item.value;
-                isDropdownOpened.value = false;
-              }}
-            >
-              <Row className="justify-between whitespace-nowrap" itemsCenter>
-                <Row gap="gap-1">
-                  {item.leftIcon && (
-                    <Icon colorScheme="unset" icon={item.leftIcon} />
-                  )}
-                  {item.label}
-                </Row>
-                {value.value === item.value && (
-                  <Icon colorScheme="unset" icon={<MdCheck size={24} />} />
+      <div className="relative">
+        {isDropdownOpened.value && (
+          <Column
+            className={clsx(
+              "absolute border-2 border-zinc-300 rounded bg-white p-2 shadow -top-2.5 dark:(border-zinc-700 bg-zinc-900)",
+              {
+                "w-min": !fullWidth,
+                "w-full": fullWidth,
+              },
+            )}
+            gap="gap-0"
+          >
+            {options.map((item) => (
+              <button
+                type="button"
+                className={clsx(
+                  "px-2 py-1 text-left transition-colors  hover:bg-zinc-100 text-zinc-950 dark:(text-zinc-50 hover:bg-zinc-900)",
+                  {
+                    "font-semibold": value.value === item,
+                  },
                 )}
-              </Row>
-            </button>
-          ))}
-        </Column>
-      )}
+                onClick={() => {
+                  value.value = item.value;
+                  isDropdownOpened.value = false;
+                }}
+              >
+                <Row className="justify-between whitespace-nowrap" itemsCenter>
+                  <Row gap="gap-1">
+                    {item.leftIcon && (
+                      <Icon colorScheme="unset" icon={item.leftIcon} />
+                    )}
+                    {item.label}
+                  </Row>
+                  {value.value === item.value && (
+                    <Icon colorScheme="unset" icon={<MdCheck size={24} />} />
+                  )}
+                </Row>
+              </button>
+            ))}
+          </Column>
+        )}
+      </div>
     </InputWrapper>
   );
 }
