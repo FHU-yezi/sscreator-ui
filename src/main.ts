@@ -1,5 +1,6 @@
 export { default as Accordion } from "./components/Accordion";
 export { default as Badge } from "./components/Badge";
+export { default as Card } from "./components/Card";
 export { default as Checkbox } from "./components/Checkbox";
 export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 export { default as Footer } from "./components/Footer";

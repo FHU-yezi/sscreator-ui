@@ -7,6 +7,7 @@ import {
   MdInfoOutline,
   MdWarningAmber,
 } from "react-icons/md";
+import Card from "./Card";
 import type {
   SemanticColorType,
   UnsetColorType,
@@ -30,13 +31,14 @@ export default function Notice({
   ...props
 }: Props) {
   return (
-    <div
-      className={clsx("flex flex-col gap-1 p-4 rounded-lg shadow", className, {
+    <Card
+      className={clsx("flex flex-col gap-1 p-4", className, {
         "bg-green-100 dark:bg-green-950": colorScheme === "success",
         "bg-blue-100 dark:bg-blue-950": colorScheme === "info",
         "bg-orange-100 dark:bg-orange-950": colorScheme === "warning",
         "bg-red-100 dark:bg-red-950": colorScheme === "danger",
       })}
+      borderless
       {...props}
     >
       <Row gap="gap-1" itemsCenter nowrap>
@@ -61,6 +63,6 @@ export default function Notice({
         )}
       </Row>
       {children}
-    </div>
+    </Card>
   );
 }
