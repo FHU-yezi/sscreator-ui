@@ -25,28 +25,30 @@ export default function InputWrapper({
       className={clsx({
         "opacity-60": disabled,
       })}
-      gap="gap-1"
+      gap="gap-2"
     >
-      {label && (
-        <label
-          id={`${id}-label`}
-          className={clsx("font-semibold", {
-            "text-red-600 dark:text-red-400": errorMessage !== undefined,
-            "text-zinc-950 dark:text-zinc-50": errorMessage === undefined,
-          })}
-          htmlFor={id}
-        >
-          {label}
-        </label>
-      )}
-      {helpText && (
-        <SmallText
-          id={`${id}-help-text`}
-          colorScheme={errorMessage !== undefined ? "danger" : "gray"}
-        >
-          {helpText}
-        </SmallText>
-      )}
+      <Column gap="gap-1">
+        {label && (
+          <label
+            id={`${id}-label`}
+            className={clsx("font-semibold", {
+              "text-red-600 dark:text-red-400": errorMessage !== undefined,
+              "text-zinc-950 dark:text-zinc-50": errorMessage === undefined,
+            })}
+            htmlFor={id}
+          >
+            {label}
+          </label>
+        )}
+        {helpText && (
+          <SmallText
+            id={`${id}-help-text`}
+            colorScheme={errorMessage !== undefined ? "danger" : "gray"}
+          >
+            {helpText}
+          </SmallText>
+        )}
+      </Column>
       {children}
       {errorMessage && (
         <SmallText
