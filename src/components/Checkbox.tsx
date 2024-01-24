@@ -21,14 +21,11 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
           id={id}
           type="button"
           role="checkbox"
-          className={clsx(
-            "inline-block h-5 w-5 border-2 rounded transition-colors",
-            {
-              "bg-zinc-50 border-zinc-300 dark:(bg-zinc-900 border-zinc-700)":
-                !value.value,
-              "bg-blue-600 border-blue-600": value.value,
-            },
-          )}
+          className={clsx("h-5 w-5 border-2 rounded transition-colors", {
+            "bg-zinc-50 border-zinc-300 dark:(bg-zinc-900 border-zinc-700)":
+              !value.value,
+            "bg-blue-600 border-blue-600": value.value,
+          })}
           onClick={() => (value.value = !value.value)}
           aria-checked={value.value}
           aria-describedby={helpText ? `${id}-help-text` : undefined}

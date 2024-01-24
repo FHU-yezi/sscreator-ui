@@ -4,6 +4,8 @@ import { Checkbox, Select, Text } from "../../src/main";
 
 const isDropdownOpened = signal(false);
 const selected = signal<string | null>(null);
+
+const isDisabled = signal(false);
 const isFullWidth = signal(false);
 
 export default function SelectPage() {
@@ -31,6 +33,7 @@ export default function SelectPage() {
           },
         ]}
         helpText="测试 helpText"
+        disabled={isDisabled.value}
         fullWidth={isFullWidth.value}
       />
       <Text>当前选择：{selected.value}</Text>

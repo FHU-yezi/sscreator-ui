@@ -8,6 +8,7 @@ export { default as Header } from "./components/Header";
 export { default as Icon } from "./components/Icon";
 export { default as Modal } from "./components/Modal";
 export { default as Notice } from "./components/Notice";
+export { default as RadioGroup } from "./components/RadioGroup";
 export { default as Select } from "./components/Select";
 export {
   Table,
