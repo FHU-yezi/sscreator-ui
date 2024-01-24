@@ -1,16 +1,14 @@
 import type { JSX } from "preact";
-import { Suspense } from "preact/compat";
 import { useEffect } from "preact/hooks";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useLocation } from "wouter-preact";
 import {
   ColorSchemeSwitch,
-  Column,
   ExternalLink,
   Footer,
   Header,
   LargeText,
-  LoadingPage,
+  Main,
   Text,
   TextButton,
 } from "../../src/main";
@@ -47,11 +45,9 @@ export default function PageWrapper({ name, Component }: Props) {
         )}
         <ColorSchemeSwitch />
       </Header>
-      <Column className="mx-auto my-8 max-w-4xl min-h-screen w-[90vw]">
-        <Suspense fallback={<LoadingPage />}>
-          <Component />
-        </Suspense>
-      </Column>
+      <Main className="mx-auto my-8 max-w-4xl min-h-screen w-[90vw] flex flex-col gap-4">
+        <Component />
+      </Main>
       <Footer className="mx-auto max-w-4xl w-[90vw]">
         <Text>Made With Love</Text>
         <ExternalLink href="https://github.com/FHU-yezi/sscreator-ui">

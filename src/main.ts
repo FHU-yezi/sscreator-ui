@@ -6,6 +6,7 @@ export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 export { default as Footer } from "./components/Footer";
 export { default as Header } from "./components/Header";
 export { default as Icon } from "./components/Icon";
+export { default as Main } from "./components/Main";
 export { default as Modal } from "./components/Modal";
 export { default as Notice } from "./components/Notice";
 export { default as RadioGroup } from "./components/RadioGroup";
