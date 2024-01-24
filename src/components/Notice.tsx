@@ -44,7 +44,6 @@ export default function Notice({
       <Row gap="gap-1" itemsCenter nowrap>
         {colorScheme !== "unset" && (
           <Icon
-            className="inline-block"
             icon={
               {
                 success: <MdCheck size={26} />,
