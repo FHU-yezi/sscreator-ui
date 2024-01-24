@@ -22,6 +22,7 @@ interface Props<T> {
   helpText?: string;
   disabled?: boolean;
   fullWidth?: boolean;
+  zIndex?: number;
 }
 
 export default function Select<T extends ComponentChild>({
@@ -33,6 +34,7 @@ export default function Select<T extends ComponentChild>({
   helpText,
   disabled = false,
   fullWidth = false,
+  zIndex = 1,
 }: Props<T>) {
   const currentOption = options.find((x) => x.value === value.value);
 
@@ -76,6 +78,9 @@ export default function Select<T extends ComponentChild>({
               },
             )}
             gap="gap-0"
+            style={{
+              zIndex,
+            }}
           >
             {options.map((item) => (
               <button

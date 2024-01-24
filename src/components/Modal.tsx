@@ -13,6 +13,7 @@ interface Props {
   title: string;
   notCloseable?: boolean;
   colorScheme?: SemanticColorType;
+  zIndex?: number;
 }
 
 export default function Modal({
@@ -21,30 +22,37 @@ export default function Modal({
   title,
   notCloseable = false,
   colorScheme,
+  zIndex = 20,
 }: Props) {
   return (
     <>
       {/* 遮罩层 */}
       <div
         className={clsx(
-          "fixed left-0 top-0 z-10 h-screen w-screen bg-black dark:bg-white transition-opacity",
+          "fixed left-0 top-0 h-screen w-screen bg-black dark:bg-white transition-opacity",
           {
             "pointer-events-none opacity-0": !open.value,
             "opacity-20": open.value,
           },
         )}
         onClick={!notCloseable ? () => (open.value = false) : undefined}
+        style={{
+          zIndex: zIndex - 1,
+        }}
         aria-hidden
       />
 
       {/* 模态窗 */}
       <div
         className={clsx(
-          "fixed left-[50vw] top-[50vh] z-20 rounded w-[90vw] max-w-2xl bg-white p-4 dark:bg-zinc-900 transition-opacity -translate-1/2 max-h-[90vh] overflow-y-auto",
+          "fixed left-[50vw] top-[50vh] rounded w-[90vw] max-w-2xl bg-white p-4 dark:bg-zinc-900 transition-opacity -translate-1/2 max-h-[90vh] overflow-y-auto",
           {
             "pointer-events-none opacity-0": !open.value,
           },
         )}
+        style={{
+          zIndex,
+        }}
         aria-hidden={!open.value}
       >
         <Row className="mb-3 justify-between" itemsCenter>

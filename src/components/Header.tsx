@@ -11,7 +11,7 @@ export default function Header({ children, className }: Props) {
     <>
       <header
         className={clsx(
-          "fixed left-0 top-0 z-20 bg-zinc-100 dark:bg-zinc-900 flex gap-4 w-full px-[5%] h-12 items-center",
+          "fixed left-0 top-0 z-10 bg-zinc-100 dark:bg-zinc-900 flex gap-4 w-full px-[5%] h-12 items-center",
           className,
         )}
       >
