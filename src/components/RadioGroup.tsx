@@ -35,7 +35,7 @@ export default function RadioGroup<T>({
     <InputWrapper id={id} label={label} helpText={helpText} disabled={disabled}>
       <div className={className}>
         {options.map((item) => (
-          <Row gap="gap-2" itemsCenter>
+          <Row gap="gap-1" itemsCenter>
             <button
               id={`${id}-${item.value}-radiobox`}
               type="button"
@@ -43,6 +43,7 @@ export default function RadioGroup<T>({
               onClick={() => (value.value = item.value)}
               disabled={disabled}
               aria-checked={currentOption?.value === item.value}
+              aria-describedby={helpText ? `${id}-help-text` : undefined}
             >
               <Icon
                 className={clsx({
@@ -53,9 +54,9 @@ export default function RadioGroup<T>({
                 colorScheme="unset"
                 icon={
                   currentOption?.value === item.value ? (
-                    <MdRadioButtonChecked />
+                    <MdRadioButtonChecked size={20} />
                   ) : (
-                    <MdRadioButtonUnchecked />
+                    <MdRadioButtonUnchecked size={20} />
                   )
                 }
                 aria-hidden

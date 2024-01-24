@@ -1,6 +1,6 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
-import { MdDone } from "react-icons/md";
+import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import Icon from "./Icon";
 import Column from "./layout/Column";
 import Row from "./layout/Row";
@@ -16,26 +16,28 @@ interface Props {
 export default function Checkbox({ value, id, label, helpText }: Props) {
   return (
     <Column gap="gap-1">
-      <Row gap="gap-2" itemsCenter>
+      <Row gap="gap-1" itemsCenter>
         <button
           id={id}
           type="button"
           role="checkbox"
-          className={clsx("h-5 w-5 border-2 rounded transition-colors", {
-            "bg-zinc-50 border-zinc-300 dark:(bg-zinc-900 border-zinc-700)":
-              !value.value,
-            "bg-blue-600 border-blue-600": value.value,
-          })}
           onClick={() => (value.value = !value.value)}
           aria-checked={value.value}
           aria-describedby={helpText ? `${id}-help-text` : undefined}
         >
           <Icon
-            className={clsx("transition-opacity text-zinc-50", {
-              "opacity-0": !value.value,
+            className={clsx({
+              "text-zinc-950 dark:text-zinc-50": !value.value,
+              "text-blue-500": value.value,
             })}
             colorScheme="unset"
-            icon={<MdDone size={16} />}
+            icon={
+              value.value ? (
+                <MdCheckBox size={20} />
+              ) : (
+                <MdCheckBoxOutlineBlank size={20} />
+              )
+            }
             aria-hidden
           />
         </button>
