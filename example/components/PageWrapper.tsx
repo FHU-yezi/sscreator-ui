@@ -47,7 +47,7 @@ export default function PageWrapper({ name, Component }: Props) {
         )}
         <ColorSchemeSwitch />
       </Header>
-      <Column className="mx-auto my-8 h-screen max-w-4xl w-[90vw]">
+      <Column className="mx-auto my-8 max-w-4xl min-h-screen w-[90vw]">
         <Suspense fallback={<LoadingPage />}>
           <Component />
         </Suspense>
