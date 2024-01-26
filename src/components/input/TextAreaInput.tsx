@@ -42,7 +42,7 @@ export default function TextAreaInput({
     >
       <textarea
         className={clsx(
-          "border-2 rounded px-3 py-2 outline-none transition-colors bg-zinc-50 dark:bg-zinc-900",
+          "border rounded px-3 py-2 outline-none transition-colors bg-zinc-50 dark:bg-zinc-900",
           {
             "border-zinc-300 dark:border-zinc-700": errorMessage === undefined,
             "border-red-600 text-red-600 dark:(border-red-400 text-red-400)":
