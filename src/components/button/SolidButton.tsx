@@ -43,7 +43,7 @@ export default function SolidButton({
     <button
       type="button"
       className={clsx(
-        "shadow rounded transition-colors disabled:opacity-70",
+        "shadow rounded disabled:opacity-70",
         {
           "px-3 py-1.5": !small && !leftIcon && !rightIcon,
           "pl-2 pr-3 py-1.5": !small && leftIcon && !rightIcon,

@@ -28,7 +28,7 @@ export default function Badge({
   return (
     <span
       className={clsx(
-        "w-fit rounded px-1.5 py-0.5 whitespace-nowrap transition-colors",
+        "w-fit rounded px-1.5 py-0.5 whitespace-nowrap",
         className,
         {
           "bg-zinc-200 dark:bg-zinc-700 text-zinc-950 dark:text-zinc-50":

@@ -50,7 +50,7 @@ export default function AutoCompleteInput({
     >
       <input
         className={clsx(
-          "border rounded px-3 py-2 outline-none transition-colors bg-zinc-50 dark:bg-zinc-900",
+          "border rounded px-3 py-2 outline-none bg-zinc-50 dark:bg-zinc-900",
           {
             "border-zinc-300 dark:border-zinc-700": errorMessage === undefined,
             "border-red-600 text-red-600 dark:(border-red-400 text-red-400)":
@@ -113,7 +113,7 @@ export default function AutoCompleteInput({
               <button
                 type="button"
                 className={clsx(
-                  "px-2 py-1 text-left transition-colors  hover:bg-zinc-100 text-zinc-950 dark:(text-zinc-50 hover:bg-zinc-800)",
+                  "px-2 py-1 text-left  hover:bg-zinc-100 text-zinc-950 dark:(text-zinc-50 hover:bg-zinc-800)",
                   {
                     "font-semibold": value.value === item,
                   },
