@@ -1,14 +1,12 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { HTMLAttributes } from "preact/compat";
-import type { SemanticColorType } from "../../utils/colorSchemeTypes";
 import InputWrapper from "./InputWrapper";
 
 interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "value"> {
   id: string;
   label?: string;
   value: Signal<number | null>;
-  colorScheme?: SemanticColorType;
   helpText?: string;
   errorMessage?: string;
   disabled?: boolean;
@@ -21,7 +19,6 @@ export default function TextInput({
   id,
   label,
   value,
-  colorScheme,
   helpText,
   errorMessage,
   disabled = false,
@@ -42,19 +39,10 @@ export default function TextInput({
         className={clsx(
           "border rounded px-3 py-2 outline-none bg-zinc-50 dark:bg-zinc-900",
           {
-            "border-zinc-300 dark:border-zinc-700": errorMessage === undefined,
+            "border-zinc-300 dark:border-zinc-700 focus:(border-blue-600 dark:border-blue-400)":
+              errorMessage === undefined,
             "border-red-600 text-red-600 dark:(border-red-400 text-red-400)":
               errorMessage !== undefined,
-          },
-          {
-            "focus:(border-green-600 dark:border-green-400)":
-              colorScheme === "success",
-            "focus:(border-blue-600 dark:border-blue-400)":
-              colorScheme === "info" || colorScheme === undefined,
-            "focus:(border-orange-600 dark:border-orange-400)":
-              colorScheme === "warning",
-            "focus:(border-red-600 dark:border-red-400)":
-              colorScheme === "danger",
           },
         )}
         type="number"
