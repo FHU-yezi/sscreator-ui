@@ -43,7 +43,7 @@ export default function Select<T extends ComponentChild>({
       <button
         type="button"
         className={clsx(
-          "border relative border-zinc-300 px-3 py-2 dark:border-zinc-700 transition-colors rounded outline-none text-zinc-950 dark:text-zinc-50",
+          "border border-zinc-300 px-3 py-2 dark:border-zinc-700 rounded text-zinc-950 dark:text-zinc-50",
           {
             "w-min": !fullWidth,
             "w-full": fullWidth,
@@ -71,7 +71,7 @@ export default function Select<T extends ComponentChild>({
         {isDropdownOpened.value && (
           <Column
             className={clsx(
-              "absolute border border-zinc-300 rounded bg-white p-2 shadow -top-2.5 dark:(border-zinc-700 bg-zinc-900)",
+              "absolute border border-zinc-300 rounded bg-white shadow -top-2.5 dark:(border-zinc-700 bg-zinc-900)",
               {
                 "w-min": !fullWidth,
                 "w-full": fullWidth,
