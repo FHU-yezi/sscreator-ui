@@ -86,7 +86,7 @@ export default function Select<T extends ComponentChild>({
               <button
                 type="button"
                 className={clsx(
-                  "px-2 py-1 text-left transition-colors  hover:bg-zinc-100 text-zinc-950 dark:(text-zinc-50 hover:bg-zinc-900)",
+                  "px-2 py-1 text-left transition-colors  hover:bg-zinc-100 text-zinc-950 dark:(text-zinc-50 hover:bg-zinc-800)",
                   {
                     "font-semibold": value.value === item,
                   },

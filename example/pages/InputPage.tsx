@@ -1,5 +1,6 @@
-import { signal } from "@preact/signals";
+import { effect, signal } from "@preact/signals";
 import {
+  AutoCompleteInput,
   Heading1,
   NumberInput,
   Text,
@@ -9,7 +10,24 @@ import {
 
 const textInputValue = signal("");
 const textAreaInputValue = signal("");
+const autoCompleteInputValue = signal("");
 const numberInputValue = signal<number | null>(0);
+
+const options = signal<Array<string>>([]);
+const isDropdownOpened = signal(false);
+
+effect(
+  () =>
+    (options.value =
+      autoCompleteInputValue.value.length > 0 &&
+      autoCompleteInputValue.value.length <= 10
+        ? [
+            `${autoCompleteInputValue.value}@qq.com`,
+            `${autoCompleteInputValue.value}@126.com`,
+            `${autoCompleteInputValue.value}@163.com`,
+          ]
+        : []),
+);
 
 export default function InputPage() {
   return (
@@ -59,6 +77,19 @@ export default function InputPage() {
         label="错误态"
         errorMessage="测试错误消息"
       />
+
+      <Heading1>AutoCompleteInput</Heading1>
+      <AutoCompleteInput
+        id="test-autocompleteinput"
+        isDropdownOpened={isDropdownOpened}
+        value={autoCompleteInputValue}
+        options={options.value}
+        label="测试 Label"
+        helpText="测试 HelpText"
+        placeholder="测试 Placeholder"
+        fullWidth
+      />
+      <Text>输入值：{autoCompleteInputValue.value}</Text>
 
       <Heading1>NumberInput</Heading1>
       <NumberInput
