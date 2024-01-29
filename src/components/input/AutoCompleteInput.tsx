@@ -16,6 +16,7 @@ interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "value"> {
   selectAllOnFocus?: boolean;
   onEnter?(): void;
   onFocus?(): void;
+  onBlur?(): void;
   fullWidth?: boolean;
   zIndex?: number;
 }
@@ -33,6 +34,7 @@ export default function AutoCompleteInput({
   selectAllOnFocus = false,
   onEnter,
   onFocus,
+  onBlur,
   fullWidth = false,
   zIndex = 1,
   ...props
@@ -76,6 +78,15 @@ export default function AutoCompleteInput({
           if (selectAllOnFocus) {
             event.currentTarget.select();
           }
+
+          isDropdownOpened.value = true;
+        }}
+        onBlur={() => {
+          if (onBlur) {
+            onBlur();
+          }
+
+          isDropdownOpened.value = false;
         }}
         spellCheck={false}
         aria-invalid={errorMessage === undefined}
