@@ -86,7 +86,7 @@ export default function AutoCompleteInput({
             onBlur();
           }
 
-          isDropdownOpened.value = false;
+          setTimeout(() => (isDropdownOpened.value = false), 100);
         }}
         spellCheck={false}
         aria-invalid={errorMessage === undefined}
