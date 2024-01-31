@@ -6,20 +6,26 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    target: "es6",
+    target: false,
     outDir: "dist/",
+    minify: false,
     lib: {
       entry: resolve(__dirname, "src/main.ts"),
-      name: "sscreator-ui",
-      fileName: "sscreator-ui",
       formats: ["es"],
+    },
+    rollupOptions: {
+    external: [/preact.*/, "@preact/signals", "clsx", /react-icons.*/],
+      output: {
+        entryFileNames: "[name].js",
+        preserveModules: true,
+      },
+      preserveEntrySignatures: "strict",
     },
   },
   plugins: [
     UnoCSS(),
     Preact(),
     TypeScript({
-      target: "es6",
       rootDir: resolve(__dirname, "src/"),
       declaration: true,
       declarationDir: resolve(__dirname, "dist/"),
