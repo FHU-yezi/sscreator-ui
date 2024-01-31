@@ -77,7 +77,6 @@ export default function SolidButton({
         className="items-end justify-center"
         gap={small ? "gap-0.5" : "gap-1"}
         itemsCenter
-        nowrap
       >
         {leftIcon && <Icon colorScheme="unset" icon={leftIcon} />}
         {children &&

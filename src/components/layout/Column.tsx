@@ -7,7 +7,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   gap?: string;
   itemsCenter?: boolean;
-  nowrap?: boolean;
 }
 
 export default function Column({
@@ -15,14 +14,12 @@ export default function Column({
   className,
   gap = "gap-4",
   itemsCenter = false,
-  nowrap = false,
   ...props
 }: Props) {
   return (
     <div
       className={clsx(className, "flex flex-col", gap, {
         "items-center": itemsCenter,
-        "flex-nowrap": nowrap,
       })}
       {...props}
     >

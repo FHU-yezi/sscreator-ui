@@ -41,7 +41,7 @@ export default function Notice({
       borderless
       {...props}
     >
-      <Row gap="gap-1" itemsCenter nowrap>
+      <Row gap="gap-1" itemsCenter>
         {colorScheme !== "unset" && (
           <Icon
             icon={

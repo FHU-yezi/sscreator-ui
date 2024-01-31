@@ -45,7 +45,7 @@ export default function Badge({
       )}
       {...props}
     >
-      <Row className="items-end justify-center" gap="gap-1" itemsCenter nowrap>
+      <Row className="items-end justify-center" gap="gap-1" itemsCenter>
         {leftIcon && <Icon colorScheme={colorScheme} icon={leftIcon} />}
         {children}
         {rightIcon && <Icon colorScheme={colorScheme} icon={rightIcon} />}
