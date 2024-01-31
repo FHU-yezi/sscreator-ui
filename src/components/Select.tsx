@@ -1,4 +1,5 @@
 import type { Signal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChild } from "preact";
 import { MdCheck, MdKeyboardArrowDown } from "react-icons/md";
@@ -16,7 +17,6 @@ interface Option<T> {
 interface Props<T> {
   id: string;
   label?: string;
-  isDropdownOpened: Signal<boolean>;
   value: Signal<T | null>;
   options: Array<Option<T>>;
   helpText?: string;
@@ -28,7 +28,6 @@ interface Props<T> {
 export default function Select<T extends ComponentChild>({
   id,
   label,
-  isDropdownOpened,
   value,
   options,
   helpText,
@@ -36,6 +35,7 @@ export default function Select<T extends ComponentChild>({
   fullWidth = false,
   zIndex = 1,
 }: Props<T>) {
+  const isDropdownOpened = useSignal(false);
   const currentOption = options.find((x) => x.value === value.value);
 
   return (

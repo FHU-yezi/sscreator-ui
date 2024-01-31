@@ -1,4 +1,4 @@
-import type { Signal } from "@preact/signals";
+import { useSignal, type Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { HTMLAttributes } from "preact/compat";
 import Column from "../layout/Column";
@@ -7,7 +7,6 @@ import InputWrapper from "./InputWrapper";
 interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "value"> {
   id: string;
   label?: string;
-  isDropdownOpened: Signal<boolean>;
   value: Signal<string>;
   options: Array<string>;
   helpText?: string;
@@ -24,7 +23,6 @@ interface Props extends Omit<HTMLAttributes<HTMLInputElement>, "value"> {
 export default function AutoCompleteInput({
   id,
   label,
-  isDropdownOpened,
   value,
   options,
   onCompositionStart,
@@ -39,6 +37,8 @@ export default function AutoCompleteInput({
   zIndex = 1,
   ...props
 }: Props) {
+  const isDropdownOpened = useSignal(false);
+
   return (
     <InputWrapper
       id={id}
