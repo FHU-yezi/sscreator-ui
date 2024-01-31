@@ -2,7 +2,6 @@ import { signal } from "@preact/signals";
 import { MdWallet } from "react-icons/md";
 import { Checkbox, Select, Text } from "../../src/main";
 
-const isDropdownOpened = signal(false);
 const selected = signal<string | null>(null);
 
 const isDisabled = signal(false);
@@ -15,7 +14,6 @@ export default function SelectPage() {
       <Select
         id="programming-language"
         label="选择编程语言"
-        isDropdownOpened={isDropdownOpened}
         value={selected}
         options={[
           {

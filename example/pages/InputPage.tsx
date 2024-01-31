@@ -14,7 +14,6 @@ const autoCompleteInputValue = signal("");
 const numberInputValue = signal<number | null>(0);
 
 const options = signal<Array<string>>([]);
-const isDropdownOpened = signal(false);
 
 effect(
   () =>
@@ -81,7 +80,6 @@ export default function InputPage() {
       <Heading1>AutoCompleteInput</Heading1>
       <AutoCompleteInput
         id="test-autocompleteinput"
-        isDropdownOpened={isDropdownOpened}
         value={autoCompleteInputValue}
         options={options.value}
         label="测试 Label"
