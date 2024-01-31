@@ -14,7 +14,7 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-    external: [/preact.*/, "@preact/signals", "clsx", /react-icons.*/],
+      external: [/preact.*/, "@preact/signals", "clsx", "wouter-preact",/react-icons.*/],
       output: {
         entryFileNames: "[name].js",
         preserveModules: true,

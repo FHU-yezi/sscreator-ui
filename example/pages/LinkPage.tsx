@@ -1,9 +1,6 @@
-import { useLocation } from "wouter-preact";
 import { ExternalLink, Heading1, InternalLink } from "../../src/main";
 
 export default function LinkPage() {
-  const [, setLocation] = useLocation();
-
   return (
     <>
       <Heading1>外部链接</Heading1>
@@ -15,9 +12,7 @@ export default function LinkPage() {
       </ExternalLink>
 
       <Heading1>内部链接</Heading1>
-      <InternalLink path="/" onClick={() => setLocation("/")}>
-        测试内部链接
-      </InternalLink>
+      <InternalLink path="/">测试内部链接</InternalLink>
     </>
   );
 }
