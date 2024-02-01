@@ -19,6 +19,7 @@ export default defineConfig({
         "@preact/signals",
         "clsx",
         "wouter-preact",
+        "react-hot-toast",
         /react-icons.*/,
       ],
       output: {
