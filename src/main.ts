@@ -10,15 +10,6 @@ export { default as Modal } from "./components/Modal";
 export { default as Notice } from "./components/Notice";
 export { default as RadioGroup } from "./components/RadioGroup";
 export { default as Select } from "./components/Select";
-export {
-  Table,
-  TableBody,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "./components/Table";
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as SolidButton } from "./components/button/SolidButton";
 export { default as TextButton } from "./components/button/TextButton";
@@ -42,6 +33,16 @@ export { default as InternalLink } from "./components/link/InternalLink";
 export { default as LoadingArea } from "./components/loading/LoadingArea";
 export { default as LoadingIcon } from "./components/loading/LoadingIcon";
 export { default as LoadingPage } from "./components/loading/LoadingPage";
+export { default as InfiniteScrollTable } from "./components/table/InfiniteScrollTable";
+export {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./components/table/Table";
 export { default as LargeText } from "./components/text/LargeText";
 export { default as SmallText } from "./components/text/SmallText";
 export { default as Text } from "./components/text/Text";
