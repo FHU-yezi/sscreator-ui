@@ -37,7 +37,7 @@ export default function CheckboxGroup<T>({
           <Column gap="gap-1">
             <Row gap="gap-1" itemsCenter>
               <button
-                id={id}
+                id={`${id}-${item.label}-checkbox`}
                 type="button"
                 role="checkbox"
                 onClick={() =>
@@ -70,9 +70,9 @@ export default function CheckboxGroup<T>({
               </button>
 
               <label
-                id={`${id}-label`}
+                id={`${id}-${item.label}-checkbox-label`}
                 className="text-zinc-950 dark:text-zinc-50"
-                htmlFor={id}
+                htmlFor={`${id}-${item.label}-checkbox`}
               >
                 {item.label}
               </label>
