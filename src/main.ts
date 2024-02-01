@@ -1,7 +1,6 @@
 export { default as Accordion } from "./components/Accordion";
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
-export { default as Checkbox } from "./components/Checkbox";
 export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
 export { default as Footer } from "./components/Footer";
 export { default as Header } from "./components/Header";
@@ -23,6 +22,8 @@ export {
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export { default as SolidButton } from "./components/button/SolidButton";
 export { default as TextButton } from "./components/button/TextButton";
+export { default as Checkbox } from "./components/checkbox/Checkbox";
+export { default as CheckboxGroup } from "./components/checkbox/CheckboxGroup";
 export { default as Heading1 } from "./components/heading/Heading1";
 export { default as Heading2 } from "./components/heading/Heading2";
 export { default as Heading3 } from "./components/heading/Heading3";

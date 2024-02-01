@@ -1,10 +1,10 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
-import Icon from "./Icon";
-import Column from "./layout/Column";
-import Row from "./layout/Row";
-import SmallText from "./text/SmallText";
+import Icon from "../Icon";
+import Column from "../layout/Column";
+import Row from "../layout/Row";
+import SmallText from "../text/SmallText";
 
 interface Props {
   id: string;

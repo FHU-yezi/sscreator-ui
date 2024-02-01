@@ -49,6 +49,11 @@ export const routes: Array<RouteItem> = [
     component: lazy(() => import("./pages/CheckboxPage")),
   },
   {
+    name: "复选框组",
+    path: "/checkbox-group",
+    component: lazy(() => import("./pages/CheckboxGroupPage")),
+  },
+  {
     name: "输入",
     path: "/input",
     component: lazy(() => import("./pages/InputPage")),
