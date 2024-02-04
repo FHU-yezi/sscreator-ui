@@ -54,7 +54,7 @@ export default function TextInput({
           "-moz-appearance": "textfield",
         }}
         value={value.value ?? undefined}
-        onChange={(event) => {
+        onInput={(event) => {
           const parseResult = parseFloat(event.currentTarget.value);
           if (!Number.isNaN(parseResult)) {
             value.value = parseResult;

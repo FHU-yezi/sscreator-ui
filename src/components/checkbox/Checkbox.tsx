@@ -45,7 +45,7 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
         <label
           id={`${id}-label`}
           className="text-zinc-950 dark:text-zinc-50"
-          htmlFor={id}
+          for={id}
         >
           {label}
         </label>

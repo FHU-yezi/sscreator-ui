@@ -60,7 +60,7 @@ export default function AutoCompleteInput({
         type="text"
         id={id}
         value={value.value}
-        onChange={(event) => {
+        onInput={(event) => {
           value.value = event.currentTarget.value;
           isDropdownOpened.value = true;
         }}

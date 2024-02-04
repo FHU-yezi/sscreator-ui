@@ -65,7 +65,7 @@ export default function RadioGroup<T>({
             <label
               id={`${id}-${item.value}-label`}
               className="text-zinc-950 dark:text-zinc-50"
-              htmlFor={`${id}-${item.value}-radiobox`}
+              for={`${id}-${item.value}-radiobox`}
             >
               {item.label}
             </label>

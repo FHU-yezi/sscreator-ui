@@ -35,7 +35,7 @@ export default function InputWrapper({
               "text-red-600 dark:text-red-400": errorMessage !== undefined,
               "text-zinc-950 dark:text-zinc-50": errorMessage === undefined,
             })}
-            htmlFor={id}
+            for={id}
           >
             {label}
           </label>

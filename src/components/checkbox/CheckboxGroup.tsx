@@ -72,7 +72,7 @@ export default function CheckboxGroup<T>({
               <label
                 id={`${id}-${item.label}-checkbox-label`}
                 className="text-zinc-950 dark:text-zinc-50"
-                htmlFor={`${id}-${item.label}-checkbox`}
+                for={`${id}-${item.label}-checkbox`}
               >
                 {item.label}
               </label>

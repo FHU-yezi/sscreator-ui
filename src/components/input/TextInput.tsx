@@ -48,7 +48,7 @@ export default function TextInput({
         type="text"
         id={id}
         value={value.value}
-        onChange={(event) => (value.value = event.currentTarget.value)}
+        onInput={(event) => (value.value = event.currentTarget.value)}
         label={label}
         disabled={disabled}
         onKeyUp={(event) => {

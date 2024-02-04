@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import type { VNode } from "preact";
-import { render } from "preact/compat";
+import { render, type VNode } from "preact";
 import { Toaster } from "react-hot-toast";
 import { install } from "resize-observer";
 import type { RouteProps } from "wouter-preact";
