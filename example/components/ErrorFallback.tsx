@@ -1,3 +1,5 @@
+import type { ComponentChildren, VNode } from "preact";
+import { useErrorBoundary } from "preact/hooks";
 import { VscBracketError } from "react-icons/vsc";
 import { useLocation } from "wouter-preact";
 import {
@@ -13,11 +15,16 @@ import {
 } from "../../src/main";
 
 interface Props {
-  error: Error;
+  children: ComponentChildren;
 }
 
-export default function ErrorFallback({ error }: Props) {
+export default function ErrorFallback({ children }: Props) {
+  const [error]: [Error, any] = useErrorBoundary();
   const [location] = useLocation();
+
+  if (!error) {
+    return children as VNode;
+  }
 
   return (
     <Center className="mx-auto h-screen">
@@ -47,19 +54,12 @@ export default function ErrorFallback({ error }: Props) {
           <Text colorScheme="gray">{error.message}</Text>
         </Column>
 
-        <SolidButton
-          colorScheme="primary"
-          onClick={() => window.location.reload()}
-          fullWidth
-        >
+        <SolidButton onClick={() => window.location.reload()} fullWidth>
           刷新
         </SolidButton>
         {location !== "/" && (
           <Center>
-            <TextButton
-              colorScheme="primary"
-              onClick={() => window.location.replace("/")}
-            >
+            <TextButton onClick={() => window.location.replace("/")}>
               返回首页
             </TextButton>
           </Center>
