@@ -1,7 +1,8 @@
 import type { Signal } from "@preact/signals";
-import { Center, LoadingIcon } from "@sscreator/ui";
 import type { ComponentChildren } from "preact";
 import { useEffect, useMemo, useRef } from "preact/hooks";
+import LoadingIcon from "../loading/LoadingIcon";
+import Center from "../layout/Center";
 
 interface Props {
   children: ComponentChildren;

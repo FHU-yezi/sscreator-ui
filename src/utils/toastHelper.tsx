@@ -1,7 +1,8 @@
-import { Icon, Text } from "@sscreator/ui";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { toast } from "react-hot-toast";
 import { MdCheck, MdClose, MdWarningAmber } from "react-icons/md";
+import Icon from "../components/Icon";
+import Text from "../components/text/Text";
 
 interface ToastFunctionProps {
   message: string;
