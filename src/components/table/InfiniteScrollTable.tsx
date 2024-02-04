@@ -1,4 +1,3 @@
-import type { Signal } from "@preact/signals";
 import type { ComponentChildren } from "preact";
 import { useEffect, useMemo, useRef } from "preact/hooks";
 import LoadingIcon from "../loading/LoadingIcon";
@@ -7,8 +6,8 @@ import Center from "../layout/Center";
 interface Props {
   children: ComponentChildren;
   onLoadMore(): void;
-  hasMore: Signal<boolean>;
-  isLoading: Signal<boolean>;
+  hasMore: boolean;
+  isLoading: boolean;
 }
 
 export default function InfiniteScrollTable({
@@ -29,14 +28,14 @@ export default function InfiniteScrollTable({
   );
 
   useEffect(() => {
-    if (hasMore.value) {
+    if (hasMore) {
       observer.observe(detector.current!);
     } else {
       observer.unobserve(detector.current!);
     }
 
     return () => observer.unobserve(detector.current!);
-  }, [hasMore.value]);
+  }, [hasMore]);
 
   return (
     <div className="relative">
@@ -46,7 +45,7 @@ export default function InfiniteScrollTable({
         className="pointer-events-none absolute bottom-0 h-1 w-full"
         aria-hidden
       />
-      {isLoading.value && (
+      {isLoading && (
         <Center className="mt-2">
           <LoadingIcon size={36} />
         </Center>
