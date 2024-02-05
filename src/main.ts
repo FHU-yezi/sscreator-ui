@@ -46,6 +46,7 @@ export {
 export { default as LargeText } from "./components/text/LargeText";
 export { default as SmallText } from "./components/text/SmallText";
 export { default as Text } from "./components/text/Text";
+export { default as UltraLargeText } from "./components/text/UltraLargeText";
 
 export {
   getColorScheme,

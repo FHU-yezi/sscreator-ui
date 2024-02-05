@@ -1,4 +1,10 @@
-import { Heading1, LargeText, SmallText, Text } from "../../src/main";
+import {
+  Heading1,
+  LargeText,
+  SmallText,
+  Text,
+  UltraLargeText,
+} from "../../src/main";
 
 export default function TextPage() {
   return (
@@ -29,6 +35,25 @@ export default function TextPage() {
       <LargeText colorScheme="info">测试文本 Large Info</LargeText>
       <LargeText colorScheme="warning">测试文本 Large Warning</LargeText>
       <LargeText colorScheme="danger">测试文本 Large Danger</LargeText>
+
+      <Heading1>UltraLargeText</Heading1>
+      <UltraLargeText>测试文本 UltraLarge</UltraLargeText>
+      <UltraLargeText bold>测试文本 UltraLarge Bold</UltraLargeText>
+      <UltraLargeText colorScheme="gray">
+        测试文本 UltraLarge Gray
+      </UltraLargeText>
+      <UltraLargeText colorScheme="success">
+        测试文本 UltraLarge Success
+      </UltraLargeText>
+      <UltraLargeText colorScheme="info">
+        测试文本 UltraLarge Info
+      </UltraLargeText>
+      <UltraLargeText colorScheme="warning">
+        测试文本 UltraLarge Warning
+      </UltraLargeText>
+      <UltraLargeText colorScheme="danger">
+        测试文本 UltraLarge Danger
+      </UltraLargeText>
     </>
   );
 }
