@@ -14,9 +14,9 @@ import Text from "../text/Text";
 
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChild;
-  leftIcon?: ComponentChild;
-  rightIcon?: ComponentChild;
   className?: string;
+  leftIcon?: string;
+  rightIcon?: string;
   colorScheme?:
     | UnsetColorType
     | PrimaryAndSecondaryColorType
@@ -26,11 +26,11 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   small?: boolean;
 }
 
-export default function SolidButton({
+export default function TextButton({
   children,
+  className,
   leftIcon,
   rightIcon,
-  className,
   colorScheme = "primary",
   loading = false,
   disabled = false,
@@ -41,8 +41,11 @@ export default function SolidButton({
     <button
       type="button"
       className={clsx(
-        "disabled:opacity-70 w-min",
+        "disabled:opacity-70 w-min inline-flex justify-center items-center",
         {
+          "gap-2": !small,
+          "gap-1": small,
+
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
         },
@@ -65,12 +68,10 @@ export default function SolidButton({
       aria-busy={loading}
       {...props}
     >
-      <Row
-        className="items-end justify-center"
-        gap={small ? "gap-0.5" : "gap-1"}
-        itemsCenter
-      >
-        {leftIcon && <Icon colorScheme="unset" icon={leftIcon} />}
+      <Row gap="gap-1">
+        {leftIcon && (
+          <Icon className="text-2xl" colorScheme="unset" icon={leftIcon} />
+        )}
         {children &&
           (small ? (
             <SmallText className="whitespace-nowrap" colorScheme="unset">
@@ -82,8 +83,13 @@ export default function SolidButton({
             </Text>
           ))}
         {rightIcon && <Icon colorScheme="unset" icon={rightIcon} />}
-        {loading && <LoadingIcon colorScheme="unset" size={small ? 16 : 20} />}
       </Row>
+      {loading && (
+        <LoadingIcon
+          className={small ? "text-lg" : "text-xl"}
+          colorScheme="unset"
+        />
+      )}
     </button>
   );
 }

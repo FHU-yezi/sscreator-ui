@@ -1,4 +1,3 @@
-import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { useColorScheme } from "../hooks/useColorScheme";
 import TextButton from "./button/TextButton";
 
@@ -7,13 +6,12 @@ export default function ColorSchemeSwitch() {
 
   return (
     <TextButton
+      className="text-2xl"
       colorScheme="secondary"
       leftIcon={
-        colorScheme === "light" ? (
-          <MdLightMode size={24} />
-        ) : (
-          <MdDarkMode size={24} />
-        )
+        colorScheme === "light"
+          ? "i-mdi-white-balance-sunny"
+          : "i-mdi-moon-and-stars"
       }
       onClick={toggleColorScheme}
     />

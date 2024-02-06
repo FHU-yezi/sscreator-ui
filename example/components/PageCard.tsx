@@ -1,4 +1,3 @@
-import { MdKeyboardArrowRight } from "react-icons/md";
 import { useLocation } from "wouter-preact";
 import { Card, Icon, Text } from "../../src/main";
 
@@ -14,7 +13,7 @@ export default function PageCard({ name, path }: Props) {
     <button type="button" onClick={() => setLocation(path)}>
       <Card className="flex justify-between" withPadding>
         <Text bold>{name}</Text>
-        <Icon icon={<MdKeyboardArrowRight size={24} />} />
+        <Icon className="text-2xl" icon="i-mdi-keyboard-arrow-right" />
       </Card>
     </button>
   );

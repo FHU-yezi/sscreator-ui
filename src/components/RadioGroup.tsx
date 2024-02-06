@@ -1,6 +1,5 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
-import { MdRadioButtonChecked, MdRadioButtonUnchecked } from "react-icons/md";
 import Icon from "./Icon";
 import InputWrapper from "./input/InputWrapper";
 import Row from "./layout/Row";
@@ -46,18 +45,16 @@ export default function RadioGroup<T>({
               aria-describedby={helpText ? `${id}-help-text` : undefined}
             >
               <Icon
-                className={clsx({
+                className={clsx("block text-lg", {
                   "text-zinc-950 dark:text-zinc-50":
                     currentOption?.value !== item.value,
                   "text-blue-500": currentOption?.value === item.value,
                 })}
                 colorScheme="unset"
                 icon={
-                  currentOption?.value === item.value ? (
-                    <MdRadioButtonChecked size={20} />
-                  ) : (
-                    <MdRadioButtonUnchecked size={20} />
-                  )
+                  currentOption?.value === item.value
+                    ? "i-mdi-radiobox-marked"
+                    : "i-mdi-radiobox-blank"
                 }
                 aria-hidden
               />

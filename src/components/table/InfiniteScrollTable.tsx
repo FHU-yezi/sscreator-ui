@@ -47,7 +47,7 @@ export default function InfiniteScrollTable({
       />
       {isLoading && (
         <Center className="mt-2">
-          <LoadingIcon size={36} />
+          <LoadingIcon className="text-2xl" />
         </Center>
       )}
     </div>

@@ -21,7 +21,7 @@ export default function LoadingArea({ children, className, loading }: Props) {
     <div className={clsx("bg-zinc-100 dark:bg-zinc-900 rounded", className)}>
       <Center className="h-full">
         <Row gap="gap-2" itemsCenter>
-          <LoadingIcon size={24} />
+          <LoadingIcon className="text-lg" />
           <Text bold>加载中</Text>
         </Row>
       </Center>

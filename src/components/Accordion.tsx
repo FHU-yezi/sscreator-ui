@@ -1,7 +1,6 @@
 import { useSignal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import { MdKeyboardArrowUp } from "react-icons/md";
 import Icon from "./Icon";
 import Column from "./layout/Column";
 import Text from "./text/Text";
@@ -18,17 +17,20 @@ export default function Accordion({ children, label }: Props) {
     <Column gap="gap-0">
       <button
         type="button"
-        className={clsx("flex justify-between border rounded-t p-4", {
-          "rounded-b": !isOpened.value,
-        })}
+        className={clsx(
+          "flex justify-between border items-center rounded-t p-4",
+          {
+            "rounded-b": !isOpened.value,
+          },
+        )}
         onClick={() => (isOpened.value = !isOpened.value)}
       >
         <Text bold>{label}</Text>
         <Icon
-          className={clsx("transition-transform", {
+          className={clsx("transition-transform text-2xl", {
             "rotate-180": isOpened.value,
           })}
-          icon={<MdKeyboardArrowUp size={24} />}
+          icon="i-mdi-keyboard-arrow-up"
         />
       </button>
       <div

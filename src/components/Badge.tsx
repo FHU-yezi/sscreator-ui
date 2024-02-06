@@ -11,17 +11,17 @@ import Row from "./layout/Row";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   children?: ComponentChild;
-  leftIcon?: ComponentChild;
-  rightIcon?: ComponentChild;
   className?: string;
+  leftIcon?: string;
+  rightIcon?: string;
   colorScheme?: UnsetColorType | SemanticColorType | GrayColorType;
 }
 
 export default function Badge({
   children,
+  className,
   leftIcon,
   rightIcon,
-  className,
   colorScheme = "gray",
   ...props
 }: Props) {
@@ -45,10 +45,18 @@ export default function Badge({
       )}
       {...props}
     >
-      <Row className="items-end justify-center" gap="gap-1" itemsCenter>
-        {leftIcon && <Icon colorScheme={colorScheme} icon={leftIcon} />}
+      <Row gap="gap-1" itemsCenter>
+        {leftIcon && (
+          <Icon className="text-xl" colorScheme={colorScheme} icon={leftIcon} />
+        )}
         {children}
-        {rightIcon && <Icon colorScheme={colorScheme} icon={rightIcon} />}
+        {rightIcon && (
+          <Icon
+            className="text-xl"
+            colorScheme={colorScheme}
+            icon={rightIcon}
+          />
+        )}
       </Row>
     </span>
   );

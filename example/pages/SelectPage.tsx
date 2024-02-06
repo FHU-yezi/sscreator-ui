@@ -1,5 +1,4 @@
 import { signal } from "@preact/signals";
-import { MdWallet } from "react-icons/md";
 import { Checkbox, Select, Text } from "../../src/main";
 
 const selected = signal<string | null>(null);
@@ -27,7 +26,7 @@ export default function SelectPage() {
           {
             label: "TS",
             value: "Typescript",
-            leftIcon: <MdWallet size={24} />,
+            leftIcon: "i-mdi-wallet",
           },
         ]}
         helpText="测试 helpText"

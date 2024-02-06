@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import type {
   GrayColorType,
@@ -8,20 +7,20 @@ import type {
 } from "../utils/colorSchemeTypes";
 
 interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, "icon"> {
-  icon: ComponentChild;
   className?: string;
+  icon: string;
   colorScheme?: UnsetColorType | SemanticColorType | GrayColorType;
 }
 
 export default function Icon({
-  icon,
   className,
+  icon,
   colorScheme,
   ...props
 }: Props) {
   return (
     <span
-      className={clsx(className, "w-min", {
+      className={clsx(className, icon, {
         "text-zinc-950 dark:text-zinc-50": colorScheme === undefined,
         "text-zinc-500 dark:text-zinc-400": colorScheme === "gray",
         "text-green-600 dark:text-green-400": colorScheme === "success",
@@ -30,8 +29,6 @@ export default function Icon({
         "text-red-600 dark:text-red-400": colorScheme === "danger",
       })}
       {...props}
-    >
-      {icon}
-    </span>
+    />
   );
 }

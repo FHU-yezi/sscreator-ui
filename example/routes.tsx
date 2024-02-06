@@ -19,6 +19,11 @@ export const routes: Array<RouteItem> = [
     component: lazy(() => import("./pages/TextPage")),
   },
   {
+    name: "Toast",
+    path: "/toast",
+    component: lazy(() => import("./pages/ToastPage")),
+  },
+  {
     name: "链接",
     path: "/link",
     component: lazy(() => import("./pages/LinkPage")),

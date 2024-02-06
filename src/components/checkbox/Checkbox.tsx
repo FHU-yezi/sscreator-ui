@@ -1,6 +1,5 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
-import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import Icon from "../Icon";
 import Column from "../layout/Column";
 import Row from "../layout/Row";
@@ -26,17 +25,15 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
           aria-describedby={helpText ? `${id}-help-text` : undefined}
         >
           <Icon
-            className={clsx({
+            className={clsx("block text-2xl", {
               "text-zinc-950 dark:text-zinc-50": !value.value,
               "text-blue-500": value.value,
             })}
             colorScheme="unset"
             icon={
-              value.value ? (
-                <MdCheckBox size={20} />
-              ) : (
-                <MdCheckBoxOutlineBlank size={20} />
-              )
+              value.value
+                ? "i-mdi-checkbox-outline"
+                : "i-mdi-checkbox-blank-outline"
             }
             aria-hidden
           />

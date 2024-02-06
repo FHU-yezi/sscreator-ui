@@ -1,6 +1,5 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
-import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import Icon from "../Icon";
 import InputWrapper from "../input/InputWrapper";
 import Column from "../layout/Column";
@@ -51,7 +50,7 @@ export default function CheckboxGroup<T>({
                 aria-checked={value.value.includes(item.value)}
               >
                 <Icon
-                  className={clsx({
+                  className={clsx("block text-2xl", {
                     "text-zinc-950 dark:text-zinc-50": !value.value.includes(
                       item.value,
                     ),
@@ -59,11 +58,9 @@ export default function CheckboxGroup<T>({
                   })}
                   colorScheme="unset"
                   icon={
-                    value.value.includes(item.value) ? (
-                      <MdCheckBox size={20} />
-                    ) : (
-                      <MdCheckBoxOutlineBlank size={20} />
-                    )
+                    value.value.includes(item.value)
+                      ? "i-mdi-checkbox-outline"
+                      : "i-mdi-checkbox-blank-outline"
                   }
                   aria-hidden
                 />

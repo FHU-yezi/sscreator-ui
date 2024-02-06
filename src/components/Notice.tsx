@@ -1,17 +1,11 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import type { HTMLAttributes } from "preact/compat";
-import {
-  MdCheck,
-  MdClose,
-  MdInfoOutline,
-  MdWarningAmber,
-} from "react-icons/md";
-import Card from "./Card";
 import type {
   SemanticColorType,
   UnsetColorType,
 } from "../utils/colorSchemeTypes";
+import Card from "./Card";
 import Icon from "./Icon";
 import Row from "./layout/Row";
 import LargeText from "./text/LargeText";
@@ -44,12 +38,13 @@ export default function Notice({
       <Row gap="gap-1" itemsCenter>
         {colorScheme !== "unset" && (
           <Icon
+            className="text-2xl"
             icon={
               {
-                success: <MdCheck size={26} />,
-                info: <MdInfoOutline size={26} />,
-                warning: <MdWarningAmber size={26} />,
-                danger: <MdClose size={26} />,
+                success: "i-mdi-tick-circle",
+                info: "i-mdi-information",
+                warning: "i-mdi-warning",
+                danger: "i-mdi-close-circle",
               }[colorScheme]
             }
             colorScheme={colorScheme}

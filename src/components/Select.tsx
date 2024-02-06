@@ -2,7 +2,6 @@ import type { Signal } from "@preact/signals";
 import { useSignal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChild } from "preact";
-import { MdCheck, MdKeyboardArrowDown } from "react-icons/md";
 import Icon from "./Icon";
 import InputWrapper from "./input/InputWrapper";
 import Column from "./layout/Column";
@@ -11,7 +10,7 @@ import Row from "./layout/Row";
 interface Option<T> {
   label: string;
   value: T;
-  leftIcon?: ComponentChild;
+  leftIcon?: string;
 }
 
 interface Props<T> {
@@ -51,10 +50,14 @@ export default function Select<T extends ComponentChild>({
         )}
         onClick={() => (isDropdownOpened.value = !isDropdownOpened.value)}
       >
-        <Row className="justify-between" gap="gap-2">
-          <Row gap="gap-1">
+        <Row className="justify-between" gap="gap-2" itemsCenter>
+          <Row gap="gap-1" itemsCenter>
             {currentOption?.leftIcon && (
-              <Icon colorScheme="unset" icon={currentOption.leftIcon} />
+              <Icon
+                className="text-xl"
+                colorScheme="unset"
+                icon={currentOption.leftIcon}
+              />
             )}
             <span
               className={clsx("whitespace-nowrap", {
@@ -64,7 +67,11 @@ export default function Select<T extends ComponentChild>({
               {currentOption?.label ?? "(请选择)"}
             </span>
           </Row>
-          <Icon colorScheme="unset" icon={<MdKeyboardArrowDown size={24} />} />
+          <Icon
+            className="text-xl"
+            colorScheme="unset"
+            icon="i-mdi-keyboard-arrow-down"
+          />
         </Row>
       </button>
       <div className="relative">
@@ -97,14 +104,22 @@ export default function Select<T extends ComponentChild>({
                 }}
               >
                 <Row className="justify-between whitespace-nowrap" itemsCenter>
-                  <Row gap="gap-1">
+                  <Row gap="gap-1" itemsCenter>
                     {item.leftIcon && (
-                      <Icon colorScheme="unset" icon={item.leftIcon} />
+                      <Icon
+                        className="text-xl"
+                        colorScheme="unset"
+                        icon={item.leftIcon}
+                      />
                     )}
                     {item.label}
                   </Row>
                   {value.value === item.value && (
-                    <Icon colorScheme="unset" icon={<MdCheck size={24} />} />
+                    <Icon
+                      className="text-xl"
+                      colorScheme="unset"
+                      icon="i-mdi-tick"
+                    />
                   )}
                 </Row>
               </button>

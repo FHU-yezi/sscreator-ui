@@ -1,5 +1,4 @@
 import { signal } from "@preact/signals";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { toast } from "react-hot-toast";
 import {
   Checkbox,

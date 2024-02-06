@@ -1,4 +1,3 @@
-import { VscLoading } from "react-icons/vsc";
 import type {
   GrayColorType,
   SemanticColorType,
@@ -9,15 +8,14 @@ import Icon from "../Icon";
 interface Props {
   className?: string;
   colorScheme?: UnsetColorType | SemanticColorType | GrayColorType;
-  size: number;
 }
 
-export default function LoadingIcon({ className, colorScheme, size }: Props) {
+export default function LoadingIcon({ className, colorScheme }: Props) {
   return (
     <Icon
       className={className}
       colorScheme={colorScheme}
-      icon={<VscLoading className="motion-safe:animate-spin" size={size} />}
+      icon="i-line-md-loading-twotone-loop"
     />
   );
 }

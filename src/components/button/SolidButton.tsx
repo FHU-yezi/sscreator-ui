@@ -14,9 +14,9 @@ import Text from "../text/Text";
 
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChild;
-  leftIcon?: ComponentChild;
-  rightIcon?: ComponentChild;
   className?: string;
+  leftIcon?: string;
+  rightIcon?: string;
   colorScheme?:
     | UnsetColorType
     | PrimaryAndSecondaryColorType
@@ -29,9 +29,9 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
 
 export default function SolidButton({
   children,
+  className,
   leftIcon,
   rightIcon,
-  className,
   colorScheme = "primary",
   loading = false,
   disabled = false,
@@ -43,13 +43,14 @@ export default function SolidButton({
     <button
       type="button"
       className={clsx(
-        "shadow rounded disabled:opacity-70",
+        "shadow rounded disabled:opacity-70 inline-flex justify-center items-center",
         {
+          "gap-2": !small,
           "px-3 py-1.5": !small && !leftIcon && !rightIcon,
           "pl-2 pr-3 py-1.5": !small && leftIcon && !rightIcon,
           "pl-3 pr-2 py-1.5": !small && !leftIcon && rightIcon,
           "px-2 py-1.5": !small && leftIcon && rightIcon,
-          "p-1": small,
+          "gap-1 p-1": small,
 
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
@@ -73,12 +74,10 @@ export default function SolidButton({
       aria-busy={loading}
       {...props}
     >
-      <Row
-        className="items-end justify-center"
-        gap={small ? "gap-0.5" : "gap-1"}
-        itemsCenter
-      >
-        {leftIcon && <Icon colorScheme="unset" icon={leftIcon} />}
+      <Row gap="gap-1">
+        {leftIcon && (
+          <Icon className="text-2xl" colorScheme="unset" icon={leftIcon} />
+        )}
         {children &&
           (small ? (
             <SmallText className="whitespace-nowrap" colorScheme="unset">
@@ -90,8 +89,13 @@ export default function SolidButton({
             </Text>
           ))}
         {rightIcon && <Icon colorScheme="unset" icon={rightIcon} />}
-        {loading && <LoadingIcon colorScheme="unset" size={small ? 16 : 20} />}
       </Row>
+      {loading && (
+        <LoadingIcon
+          className={small ? "text-lg" : "text-xl"}
+          colorScheme="unset"
+        />
+      )}
     </button>
   );
 }

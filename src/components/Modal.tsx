@@ -1,7 +1,6 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import { MdClose } from "react-icons/md";
 import type { SemanticColorType } from "../utils/colorSchemeTypes";
 import TextButton from "./button/TextButton";
 import Row from "./layout/Row";
@@ -61,8 +60,9 @@ export default function Modal({
           </LargeText>
           {!notCloseable && (
             <TextButton
+              className="text-2xl"
               colorScheme="secondary"
-              leftIcon={<MdClose size={28} />}
+              leftIcon="i-mdi-close"
               onClick={() => (open.value = false)}
             />
           )}

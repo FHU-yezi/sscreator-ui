@@ -20,7 +20,6 @@ export default defineConfig({
         "clsx",
         "wouter-preact",
         "react-hot-toast",
-        /react-icons.*/,
       ],
       output: {
         entryFileNames: "[name].js",

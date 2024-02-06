@@ -1,6 +1,5 @@
 import type { JSX } from "preact";
 import { useEffect } from "preact/hooks";
-import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useLocation } from "wouter-preact";
 import {
   ColorSchemeSwitch,
@@ -37,7 +36,7 @@ export default function PageWrapper({ name, Component }: Props) {
         ) : (
           <TextButton
             colorScheme="secondary"
-            leftIcon={<MdKeyboardArrowLeft size={24} />}
+            leftIcon="i-mdi-keyboard-arrow-left"
             onClick={() => setLocation("/")}
           >
             返回

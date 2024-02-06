@@ -7,12 +7,12 @@ export default function LoadingAreaPage() {
   return (
     <>
       <Row>
-        <LoadingIcon size={36} />
-        <LoadingIcon colorScheme="gray" size={36} />
-        <LoadingIcon colorScheme="success" size={36} />
-        <LoadingIcon colorScheme="info" size={36} />
-        <LoadingIcon colorScheme="warning" size={36} />
-        <LoadingIcon colorScheme="danger" size={36} />
+        <LoadingIcon />
+        <LoadingIcon colorScheme="gray" />
+        <LoadingIcon colorScheme="success" />
+        <LoadingIcon colorScheme="info" />
+        <LoadingIcon colorScheme="warning" />
+        <LoadingIcon colorScheme="danger" />
       </Row>
 
       <Checkbox id="is-loading" label="Loading" value={isLoading} />
