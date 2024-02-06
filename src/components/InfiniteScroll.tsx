@@ -1,7 +1,7 @@
 import type { ComponentChildren } from "preact";
 import { useEffect, useMemo, useRef } from "preact/hooks";
-import LoadingIcon from "../loading/LoadingIcon";
-import Center from "../layout/Center";
+import LoadingIcon from "./loading/LoadingIcon";
+import Center from "./layout/Center";
 
 interface Props {
   children: ComponentChildren;
@@ -10,7 +10,7 @@ interface Props {
   isLoading: boolean;
 }
 
-export default function InfiniteScrollTable({
+export default function InfiniteScroll({
   children,
   onLoadMore,
   hasMore,
@@ -42,7 +42,7 @@ export default function InfiniteScrollTable({
       {children}
       <div
         ref={detector}
-        className="pointer-events-none absolute bottom-0 h-1 w-full"
+        className="pointer-events-none absolute bottom-10 h-1 w-full"
         aria-hidden
       />
       {isLoading && (
