@@ -35,7 +35,9 @@ export default function Select<T extends ComponentChild>({
   zIndex = 1,
 }: Props<T>) {
   const isDropdownOpened = useSignal(false);
-  const currentOption = options.find((x) => x.value === value.value);
+  const currentOption = options.find(
+    (x) => JSON.stringify(x.value) === JSON.stringify(value.value),
+  );
 
   return (
     <InputWrapper id={id} label={label} helpText={helpText} disabled={disabled}>
