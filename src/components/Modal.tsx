@@ -1,7 +1,7 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import type { SemanticColorType } from "../utils/colorSchemeTypes";
+import type { SemanticColorType } from "../types/colorSchemeTypes";
 import TextButton from "./button/TextButton";
 import Row from "./layout/Row";
 import LargeText from "./text/LargeText";

@@ -4,7 +4,7 @@ import type {
   GrayColorType,
   SemanticColorType,
   UnsetColorType,
-} from "../utils/colorSchemeTypes";
+} from "../types/colorSchemeTypes";
 
 interface Props extends Omit<HTMLAttributes<HTMLSpanElement>, "icon"> {
   className?: string;

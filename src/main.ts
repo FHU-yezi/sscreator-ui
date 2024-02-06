@@ -1,12 +1,11 @@
+export { default as Footer } from "./blocks/Footer";
+export { default as Header } from "./blocks/Header";
 export { default as Accordion } from "./components/Accordion";
 export { default as Badge } from "./components/Badge";
 export { default as Card } from "./components/Card";
 export { default as ColorSchemeSwitch } from "./components/ColorSchemeSwitch";
-export { default as Footer } from "./components/Footer";
-export { default as Header } from "./components/Header";
 export { default as Icon } from "./components/Icon";
 export { default as InfiniteScroll } from "./components/InfiniteScroll";
-export { default as Main } from "./components/Main";
 export { default as Modal } from "./components/Modal";
 export { default as Notice } from "./components/Notice";
 export { default as RadioGroup } from "./components/RadioGroup";
@@ -48,9 +47,9 @@ export { default as SmallText } from "./components/text/SmallText";
 export { default as Text } from "./components/text/Text";
 export { default as UltraLargeText } from "./components/text/UltraLargeText";
 
+export { toastDanger, toastSuccess, toastWarning } from "./blocks/toast";
 export {
   getColorScheme,
   toggleColorScheme,
   useColorScheme,
 } from "./hooks/useColorScheme";
-export { toastDanger, toastSuccess, toastWarning } from "./utils/toastHelper";

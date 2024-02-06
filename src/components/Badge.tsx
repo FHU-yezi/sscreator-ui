@@ -5,7 +5,7 @@ import type {
   GrayColorType,
   SemanticColorType,
   UnsetColorType,
-} from "../utils/colorSchemeTypes";
+} from "../types/colorSchemeTypes";
 import Icon from "./Icon";
 import Row from "./layout/Row";
 

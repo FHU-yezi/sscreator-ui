@@ -1,4 +1,5 @@
 import type { JSX } from "preact";
+import { Suspense } from "preact/compat";
 import { useEffect } from "preact/hooks";
 import { useLocation } from "wouter-preact";
 import {
@@ -7,7 +8,7 @@ import {
   Footer,
   Header,
   LargeText,
-  Main,
+  LoadingPage,
   Text,
   TextButton,
 } from "../../src/main";
@@ -44,9 +45,11 @@ export default function PageWrapper({ name, Component }: Props) {
         )}
         <ColorSchemeSwitch />
       </Header>
-      <Main className="mx-auto my-8 max-w-4xl min-h-screen w-[90vw] flex flex-col gap-4">
-        <Component />
-      </Main>
+      <main className="mx-auto my-8 max-w-4xl min-h-screen w-[90vw] flex flex-col gap-4">
+        <Suspense fallback={<LoadingPage />}>
+          <Component />
+        </Suspense>
+      </main>
       <Footer className="mx-auto max-w-4xl w-[90vw]">
         <Text>Made With Love</Text>
         <ExternalLink href="https://github.com/FHU-yezi/sscreator-ui">

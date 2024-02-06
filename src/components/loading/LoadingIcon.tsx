@@ -2,7 +2,7 @@ import type {
   GrayColorType,
   SemanticColorType,
   UnsetColorType,
-} from "../../utils/colorSchemeTypes";
+} from "../../types/colorSchemeTypes";
 import Icon from "../Icon";
 
 interface Props {

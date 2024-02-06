@@ -4,7 +4,7 @@ import type { HTMLAttributes } from "preact/compat";
 import type {
   SemanticColorType,
   UnsetColorType,
-} from "../utils/colorSchemeTypes";
+} from "../types/colorSchemeTypes";
 import HorizontalScoll from "./layout/HorizontalScoll";
 
 interface TableItemProps<T extends HTMLElement> extends HTMLAttributes<T> {

@@ -4,7 +4,7 @@ import type { HTMLAttributes } from "preact/compat";
 import type {
   SemanticColorType,
   UnsetColorType,
-} from "../utils/colorSchemeTypes";
+} from "../types/colorSchemeTypes";
 import Card from "./Card";
 import Icon from "./Icon";
 import Row from "./layout/Row";

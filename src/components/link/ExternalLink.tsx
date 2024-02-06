@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import type { HTMLAttributes } from "preact/compat";
-import type { UnsetColorType } from "../../utils/colorSchemeTypes";
+import type { UnsetColorType } from "../../types/colorSchemeTypes";
 
 interface Props extends HTMLAttributes<HTMLAnchorElement> {
   children: ComponentChildren;

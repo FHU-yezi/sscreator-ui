@@ -4,7 +4,7 @@ import type { HTMLAttributes } from "preact/compat";
 import type {
   SemanticColorType,
   UnsetColorType,
-} from "../../utils/colorSchemeTypes";
+} from "../../types/colorSchemeTypes";
 
 interface Props extends HTMLAttributes<HTMLHeadingElement> {
   children: ComponentChildren;

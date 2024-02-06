@@ -5,7 +5,7 @@ import type {
   PrimaryAndSecondaryColorType,
   SemanticColorType,
   UnsetColorType,
-} from "../../utils/colorSchemeTypes";
+} from "../../types/colorSchemeTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
 import LoadingIcon from "../loading/LoadingIcon";
