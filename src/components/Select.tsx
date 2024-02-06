@@ -10,7 +10,7 @@ import Row from "./layout/Row";
 interface Option<T> {
   label: string;
   value: T;
-  leftIcon?: string;
+  leftIcon?: ComponentChild;
 }
 
 interface Props<T> {
@@ -52,13 +52,7 @@ export default function Select<T extends ComponentChild>({
       >
         <Row className="justify-between" gap="gap-2" itemsCenter>
           <Row gap="gap-1" itemsCenter>
-            {currentOption?.leftIcon && (
-              <Icon
-                className="text-xl"
-                colorScheme="unset"
-                icon={currentOption.leftIcon}
-              />
-            )}
+            {currentOption?.leftIcon}
             <span
               className={clsx("whitespace-nowrap", {
                 "text-zinc-500 dark:text-zinc-400": !value.value,
@@ -105,13 +99,7 @@ export default function Select<T extends ComponentChild>({
               >
                 <Row className="justify-between whitespace-nowrap" itemsCenter>
                   <Row gap="gap-1" itemsCenter>
-                    {item.leftIcon && (
-                      <Icon
-                        className="text-xl"
-                        colorScheme="unset"
-                        icon={item.leftIcon}
-                      />
-                    )}
+                    {item?.leftIcon}
                     {item.label}
                   </Row>
                   {value.value === item.value && (

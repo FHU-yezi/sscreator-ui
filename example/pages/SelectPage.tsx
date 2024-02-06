@@ -1,5 +1,5 @@
 import { signal } from "@preact/signals";
-import { Checkbox, Select, Text } from "../../src/main";
+import { Checkbox, Icon, Select, Text } from "../../src/main";
 
 const selected = signal<string | null>(null);
 
@@ -26,7 +26,7 @@ export default function SelectPage() {
           {
             label: "TS",
             value: "Typescript",
-            leftIcon: "i-mdi-wallet",
+            leftIcon: <Icon icon="i-mdi-wallet" />,
           },
         ]}
         helpText="测试 helpText"
