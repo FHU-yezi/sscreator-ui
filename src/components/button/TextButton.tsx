@@ -68,7 +68,7 @@ export default function TextButton({
       aria-busy={loading}
       {...props}
     >
-      <Row gap="gap-1">
+      <Row gap="gap-1" itemsCenter>
         {leftIcon && (
           <Icon className="text-2xl" colorScheme="unset" icon={leftIcon} />
         )}
