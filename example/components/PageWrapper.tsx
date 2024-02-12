@@ -11,6 +11,7 @@ import {
   LoadingPage,
   Text,
   TextButton,
+  useTitle,
 } from "../../src/main";
 
 interface Props {
@@ -19,10 +20,7 @@ interface Props {
 }
 
 export default function PageWrapper({ name, Component }: Props) {
-  // 设置页面标题
-  useEffect(() => {
-    document.title = name ? `${name} - SSCreator UI` : "SSCreator UI";
-  }, []);
+  useTitle(name ? `${name} - SSCreator UI` : "SSCreator UI");
 
   // 处理部分情况下页面切换后不在顶部的问题
   useEffect(() => window.scrollTo(0, 0), []);
@@ -31,7 +29,7 @@ export default function PageWrapper({ name, Component }: Props) {
 
   return (
     <>
-      <Header className="items-center justify-between">
+      <Header className="justify-between">
         {location === "/" ? (
           <LargeText bold>SSCreator UI</LargeText>
         ) : (
