@@ -13,7 +13,7 @@ import {
 
 export default function TablePage() {
   return (
-    <Table className="w-full">
+    <Table className="w-full text-center">
       <TableHeader>
         <TableRow>
           <TableHead>文章标题</TableHead>

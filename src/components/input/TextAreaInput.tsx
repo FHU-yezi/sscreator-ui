@@ -39,11 +39,11 @@ export default function TextAreaInput({
     >
       <textarea
         className={clsx(
-          "border rounded px-3 py-2 outline-none bg-zinc-50 dark:bg-zinc-900",
+          "border rounded px-3 py-2 outline-none bg-zinc-50 text-zinc-950 dark:(bg-zinc-900 text-zinc-50)",
           {
-            "border-zinc-300 dark:border-zinc-700 dark:text-zinc-50 focus:(border-blue-600 dark:border-blue-400)":
+            "border-zinc-300 dark:border-zinc-700 focus:(border-blue-600 dark:border-blue-500)":
               errorMessage === undefined,
-            "border-red-600 text-red-600 dark:(border-red-400 text-red-400)":
+            "border-red-600 text-red-600 dark:(border-red-500 text-red-500)":
               errorMessage !== undefined,
           },
         )}

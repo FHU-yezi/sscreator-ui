@@ -32,8 +32,9 @@ export default function InputWrapper({
           <label
             id={`${id}-label`}
             className={clsx("font-semibold", {
-              "text-red-600 dark:text-red-400": errorMessage !== undefined,
               "text-zinc-950 dark:text-zinc-50": errorMessage === undefined,
+              "border-red-600 text-red-600 dark:(border-red-500 text-red-500)":
+                errorMessage !== undefined,
             })}
             for={id}
           >

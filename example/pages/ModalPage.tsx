@@ -35,7 +35,7 @@ export default function ModalPage() {
           <Text>此操作不可撤销。</Text>
           <Row className="justify-end" gap="gap-2">
             <OutlineButton
-              color="gray"
+              color="black"
               onClick={() => (isOpened.value = false)}
             >
               取消

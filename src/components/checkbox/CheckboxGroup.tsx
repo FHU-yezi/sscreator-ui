@@ -54,7 +54,7 @@ export default function CheckboxGroup<T>({
                     "text-zinc-950 dark:text-zinc-50": !value.value.includes(
                       item.value,
                     ),
-                    "text-blue-500": value.value.includes(item.value),
+                    "text-blue-600": value.value.includes(item.value),
                   })}
                   color="unset"
                   icon={

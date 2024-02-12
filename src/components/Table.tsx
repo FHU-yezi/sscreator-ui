@@ -4,6 +4,19 @@ import type { HTMLAttributes } from "preact/compat";
 import type { SemanticColorType, UnsetColorType } from "../types/colorTypes";
 import HorizontalScoll from "./layout/HorizontalScoll";
 
+function getTableElementColor(color?: UnsetColorType | SemanticColorType) {
+  return {
+    "bg-green-100 text-green-700 dark:(bg-green-950 text-green-600)":
+      color === "success",
+    "bg-blue-100 text-blue-600 dark:(bg-blue-950 text-blue-500)":
+      color === "info",
+    "bg-orange-100 text-orange-700 dark:(bg-orange-950 text-orange-600)":
+      color === "warning",
+    "bg-red-100 text-red-600 dark:(bg-red-950 text-red-500)":
+      color === "danger",
+  };
+}
+
 interface TableItemProps<T extends HTMLElement> extends HTMLAttributes<T> {
   children: ComponentChildren;
   className?: string;
@@ -21,16 +34,7 @@ export function TableHead({
       className={clsx(
         "px-2 py-1 font-semibold border border-zinc-300 dark:border-zinc-700 whitespace-nowrap",
         className,
-        {
-          "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
-            color === "success",
-          "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
-            color === "info",
-          "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
-            color === "warning",
-          "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
-            color === "danger",
-        },
+        getTableElementColor(color),
       )}
       {...props}
     >
@@ -50,16 +54,7 @@ export function TableCell({
       className={clsx(
         "px-2 py-1 border border-zinc-300 dark:border-zinc-700",
         className,
-        {
-          "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
-            color === "success",
-          "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
-            color === "info",
-          "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
-            color === "warning",
-          "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
-            color === "danger",
-        },
+        getTableElementColor(color),
       )}
       {...props}
     >
@@ -75,19 +70,7 @@ export function TableRow({
   ...props
 }: TableItemProps<HTMLTableRowElement>) {
   return (
-    <tr
-      className={clsx(className, {
-        "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
-          color === "success",
-        "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
-          color === "info",
-        "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
-          color === "warning",
-        "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
-          color === "danger",
-      })}
-      {...props}
-    >
+    <tr className={clsx(className, getTableElementColor(color))} {...props}>
       {children}
     </tr>
   );
@@ -100,19 +83,7 @@ export function TableHeader({
   ...props
 }: TableItemProps<HTMLTableSectionElement>) {
   return (
-    <thead
-      className={clsx(className, {
-        "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
-          color === "success",
-        "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
-          color === "info",
-        "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
-          color === "warning",
-        "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
-          color === "danger",
-      })}
-      {...props}
-    >
+    <thead className={clsx(className, getTableElementColor(color))} {...props}>
       {children}
     </thead>
   );
@@ -125,19 +96,7 @@ export function TableBody({
   ...props
 }: TableItemProps<HTMLTableSectionElement>) {
   return (
-    <tbody
-      className={clsx(className, {
-        "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
-          color === "success",
-        "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
-          color === "info",
-        "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
-          color === "warning",
-        "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
-          color === "danger",
-      })}
-      {...props}
-    >
+    <tbody className={clsx(className, getTableElementColor(color))} {...props}>
       {children}
     </tbody>
   );
@@ -151,16 +110,7 @@ export function TableFooter({
 }: TableItemProps<HTMLTableSectionElement>) {
   return (
     <tfoot
-      className={clsx("font-semibold", className, {
-        "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
-          color === "success",
-        "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
-          color === "info",
-        "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
-          color === "warning",
-        "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
-          color === "danger",
-      })}
+      className={clsx("font-semibold", className, getTableElementColor(color))}
       {...props}
     >
       {children}
@@ -177,17 +127,13 @@ export function Table({
   return (
     <HorizontalScoll>
       <table
-        className={clsx(className, {
-          "text-zinc-950 dark:text-zinc-50": color === undefined,
-          "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
-            color === "success",
-          "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300":
-            color === "info",
-          "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
-            color === "warning",
-          "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
-            color === "danger",
-        })}
+        className={clsx(
+          className,
+          {
+            "text-zinc-950 dark:text-zinc-50": color === undefined,
+          },
+          getTableElementColor(color),
+        )}
         {...props}
       >
         {children}

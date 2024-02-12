@@ -7,7 +7,7 @@ export default function ColorSchemeSwitch() {
   return (
     <TextButton
       className="text-2xl"
-      color="gray"
+      color="black"
       leftIcon={
         colorScheme === "light"
           ? "i-mdi-white-balance-sunny"

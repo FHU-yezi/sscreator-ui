@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import type {
-  GrayColorType,
+  BlackColorType,
   PrimaryColorType,
   SemanticColorType,
   UnsetColorType,
@@ -16,7 +16,11 @@ import Text from "../text/Text";
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChild;
   className?: string;
-  color?: UnsetColorType | PrimaryColorType | GrayColorType | SemanticColorType;
+  color?:
+    | UnsetColorType
+    | PrimaryColorType
+    | BlackColorType
+    | SemanticColorType;
   leftIcon?: string;
   rightIcon?: string;
   loading?: boolean;
@@ -56,15 +60,14 @@ export default function SolidButton({
           "w-full": fullWidth,
         },
         className,
+        color !== "unset" && "text-zinc-50",
         {
           "bg-blue-600 enabled:hover:bg-blue-700": color === "primary",
-          "bg-zinc-200 enabled:hover:bg-zinc-300": color === "gray",
+          "bg-zinc-700 enabled:hover:bg-zinc-800": color === "black",
           "bg-green-700 enabled:hover:bg-green-800": color === "success",
-          "bg-orange-600 enabled:hover:bg-orange-700": color === "warning",
+          "bg-orange-700 enabled:hover:bg-orange-800": color === "warning",
           "bg-red-600 enabled:hover:bg-red-700": color === "danger",
         },
-        color !== "unset" &&
-          (color === "gray" ? "text-zinc-950" : "text-zinc-50"),
       )}
       disabled={disabled || loading}
       aria-disabled={disabled}

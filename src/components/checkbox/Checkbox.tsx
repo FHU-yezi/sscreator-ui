@@ -27,7 +27,7 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
           <Icon
             className={clsx("block text-2xl", {
               "text-zinc-950 dark:text-zinc-50": !value.value,
-              "text-blue-500": value.value,
+              "text-blue-600": value.value,
             })}
             color="unset"
             icon={

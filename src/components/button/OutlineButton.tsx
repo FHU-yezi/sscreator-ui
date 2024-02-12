@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import type {
-  GrayColorType,
+  BlackColorType,
   PrimaryColorType,
   SemanticColorType,
   UnsetColorType,
@@ -16,7 +16,11 @@ import Text from "../text/Text";
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChild;
   className?: string;
-  color?: UnsetColorType | PrimaryColorType | GrayColorType | SemanticColorType;
+  color?:
+    | UnsetColorType
+    | PrimaryColorType
+    | BlackColorType
+    | SemanticColorType;
   leftIcon?: string;
   rightIcon?: string;
   loading?: boolean;
@@ -56,20 +60,15 @@ export default function OutlineButton({
           "w-full": fullWidth,
         },
         className,
+        color !== "unset" &&
+          "text-zinc-950 dark:text-zinc-50 enabled:hover:text-zinc-50",
         {
-          "border-blue-600 enabled:hover:(border-blue-700 bg-blue-700)":
-            color === "primary",
-          "border-zinc-500 enabled:(hover:border-zinc-300 hover:bg-zinc-300 hover:dark:border-zinc-700 hover:dark:bg-zinc-700)":
-            color === "gray",
-          "border-green-600 enabled:hover:(border-green-700 bg-green-700)":
-            color === "success",
-          "border-orange-600 enabled:hover:(border-orange-700 bg-orange-700)":
-            color === "warning",
-          "border-red-600 enabled:hover:(border-red-700 bg-red-700)":
-            color === "danger",
+          "border-blue-600 enabled:hover:bg-blue-600": color === "primary",
+          "border-zinc-700 enabled:hover:bg-zinc-700": color === "black",
+          "border-green-700 enabled:hover:bg-green-700": color === "success",
+          "border-orange-700 enabled:hover:bg-orange-700": color === "warning",
+          "border-red-600 enabled:hover:bg-red-600": color === "danger",
         },
-        color !== "unset" && "text-zinc-950 dark:text-zinc-50",
-        color !== "unset" && color !== "gray" && "enabled:hover:text-zinc-50",
       )}
       disabled={disabled || loading}
       aria-disabled={disabled}

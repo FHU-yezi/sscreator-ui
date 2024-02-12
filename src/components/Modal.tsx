@@ -61,7 +61,7 @@ export default function Modal({
           {!notCloseable && (
             <TextButton
               className="text-2xl"
-              color="gray"
+              color="black"
               leftIcon="i-mdi-close"
               onClick={() => (open.value = false)}
             />

@@ -34,7 +34,7 @@ export default function PageWrapper({ name, Component }: Props) {
           <LargeText bold>SSCreator UI</LargeText>
         ) : (
           <TextButton
-            color="gray"
+            color="black"
             leftIcon="i-mdi-keyboard-arrow-left"
             onClick={() => setLocation("/")}
           >
@@ -49,7 +49,7 @@ export default function PageWrapper({ name, Component }: Props) {
         </Suspense>
       </main>
       <Footer className="mx-auto max-w-4xl w-[90vw]">
-        <Text>Made With Love</Text>
+        <Text color="gray">Made With Love</Text>
         <ExternalLink href="https://github.com/FHU-yezi/sscreator-ui">
           Opensource On GitHub
         </ExternalLink>

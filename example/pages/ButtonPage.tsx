@@ -37,14 +37,14 @@ export default function ButtonPage() {
           Primary
         </SolidButton>
         <SolidButton
-          color="gray"
-          onClick={() => toast("Gray")}
+          color="black"
+          onClick={() => toast("Black")}
           loading={isLoading.value}
           disabled={isDisabled.value}
           small={isSmall.value}
           fullWidth={isFullWidth.value}
         >
-          Gray
+          Black
         </SolidButton>
         <SolidButton
           color="success"
@@ -90,14 +90,14 @@ export default function ButtonPage() {
           Primary
         </OutlineButton>
         <OutlineButton
-          color="gray"
-          onClick={() => toast("Gray")}
+          color="black"
+          onClick={() => toast("Black")}
           loading={isLoading.value}
           disabled={isDisabled.value}
           small={isSmall.value}
           fullWidth={isFullWidth.value}
         >
-          Gray
+          Black
         </OutlineButton>
         <OutlineButton
           color="success"
@@ -142,13 +142,13 @@ export default function ButtonPage() {
           Primary
         </TextButton>
         <TextButton
-          color="gray"
-          onClick={() => toast("Gray")}
+          color="black"
+          onClick={() => toast("Black")}
           loading={isLoading.value}
           disabled={isDisabled.value}
           small={isSmall.value}
         >
-          Gray
+          Black
         </TextButton>
         <TextButton
           color="success"

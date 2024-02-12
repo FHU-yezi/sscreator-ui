@@ -48,7 +48,7 @@ export default function RadioGroup<T>({
                 className={clsx("block text-lg", {
                   "text-zinc-950 dark:text-zinc-50":
                     currentOption?.value !== item.value,
-                  "text-blue-500": currentOption?.value === item.value,
+                  "text-blue-600": currentOption?.value === item.value,
                 })}
                 color="unset"
                 icon={

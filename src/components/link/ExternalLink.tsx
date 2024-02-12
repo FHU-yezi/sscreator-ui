@@ -20,7 +20,7 @@ export default function ExternalLink({
   return (
     <a
       className={clsx("underline", className, {
-        "text-blue-600 dark:text-blue-400": color === "primary",
+        "text-blue-700 dark:text-blue-500": color === "primary",
       })}
       target={openInCurrentTab ? "_self" : "_blank"}
       {...props}

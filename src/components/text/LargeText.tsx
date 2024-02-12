@@ -33,11 +33,11 @@ export default function LargeText({
         className,
         {
           "text-zinc-950 dark:text-zinc-50": color === "black",
-          "text-zinc-500 dark:text-zinc-400": color === "gray",
-          "text-green-600 dark:text-green-400": color === "success",
-          "text-blue-600 dark:text-blue-400": color === "info",
-          "text-orange-600 dark:text-orange-400": color === "warning",
-          "text-red-600 dark:text-red-400": color === "danger",
+          "text-zinc-600 dark:text-zinc-400": color === "gray",
+          "text-green-700 dark:text-green-600": color === "success",
+          "text-blue-600 dark:text-blue-500": color === "info",
+          "text-orange-700 dark:text-orange-600": color === "warning",
+          "text-red-600 dark:text-red-500": color === "danger",
         },
         {
           "font-semibold": bold,

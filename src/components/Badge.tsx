@@ -31,25 +31,25 @@ export default function Badge({
         "w-fit rounded px-1.5 py-0.5 whitespace-nowrap",
         className,
         {
-          "bg-zinc-200 dark:bg-zinc-700 text-zinc-950 dark:text-zinc-50":
+          "bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300":
             color === "gray",
-          "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300":
+          "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400":
             color === "success",
-          "bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300":
+          "bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400":
             color === "info",
-          "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300":
+          "bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-400":
             color === "warning",
-          "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300":
+          "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400":
             color === "danger",
         },
       )}
       {...props}
     >
       <Row gap="gap-1" itemsCenter>
-        {leftIcon && <Icon className="text-xl" color={color} icon={leftIcon} />}
+        {leftIcon && <Icon className="text-xl" color="unset" icon={leftIcon} />}
         {children}
         {rightIcon && (
-          <Icon className="text-xl" color={color} icon={rightIcon} />
+          <Icon className="text-xl" color="unset" icon={rightIcon} />
         )}
       </Row>
     </span>

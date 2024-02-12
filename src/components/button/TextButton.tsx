@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import type {
-  GrayColorType,
+  BlackColorType,
   PrimaryColorType,
   SemanticColorType,
   UnsetColorType,
@@ -16,7 +16,11 @@ import Text from "../text/Text";
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChild;
   className?: string;
-  color?: UnsetColorType | PrimaryColorType | GrayColorType | SemanticColorType;
+  color?:
+    | UnsetColorType
+    | PrimaryColorType
+    | BlackColorType
+    | SemanticColorType;
   leftIcon?: string;
   rightIcon?: string;
   loading?: boolean;
@@ -49,15 +53,15 @@ export default function TextButton({
         },
         className,
         {
-          "text-blue-600 dark:text-blue-400 enabled:hover:(text-blue-800 dark:text-blue-600)":
+          "text-blue-600 enabled:hover:text-blue-800 dark:(text-blue-500 enabled:hover:text-blue-700)":
             color === "primary",
-          "text-zinc-950 dark:text-zinc-50 enabled:hover:(text-zinc-700 dark:text-zinc-300)":
-            color === "gray",
-          "text-green-600 dark:text-green-400 enabled:hover:(text-green-800 dark:text-green-600)":
+          "text-zinc-600 enabled:hover:text-zinc-800 dark:(text-zinc-400 enabled:hover:text-zinc-600)":
+            color === "black",
+          "text-green-700 enabled:hover:text-green-900 dark:(text-green-600 enabled:hover:text-green-800)":
             color === "success",
-          "text-orange-600 dark:text-orange-400 enabled:hover:(text-orange-800 dark:text-orange-600)":
+          "text-orange-700 enabled:hover:text-orange-900 dark:(text-orange-600 enabled:hover:text-orange-800)":
             color === "warning",
-          "text-red-600 dark:text-red-400 enabled:hover:(text-red-800 dark:text-red-600)":
+          "text-red-600 enabled:hover:text-red-800 dark:(text-red-500 enabled:hover:text-red-700)":
             color === "danger",
         },
       )}
