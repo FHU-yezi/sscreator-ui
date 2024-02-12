@@ -21,7 +21,7 @@ export default function Heading1({
 }: Props) {
   return (
     <h1
-      className={clsx("text-2xl font-bold", className, {
+      className={clsx("text-3xl font-bold", className, {
         "text-zinc-950 dark:text-zinc-50": color === "black",
         "text-green-600 dark:text-green-400": color === "success",
         "text-blue-600 dark:text-blue-400": color === "info",
