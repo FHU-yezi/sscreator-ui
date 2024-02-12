@@ -39,21 +39,15 @@ export default function TextPage() {
       <Heading1>UltraLargeText</Heading1>
       <UltraLargeText>测试文本 UltraLarge</UltraLargeText>
       <UltraLargeText bold>测试文本 UltraLarge Bold</UltraLargeText>
-      <UltraLargeText color="gray">
-        测试文本 UltraLarge Gray
-      </UltraLargeText>
+      <UltraLargeText color="gray">测试文本 UltraLarge Gray</UltraLargeText>
       <UltraLargeText color="success">
         测试文本 UltraLarge Success
       </UltraLargeText>
-      <UltraLargeText color="info">
-        测试文本 UltraLarge Info
-      </UltraLargeText>
+      <UltraLargeText color="info">测试文本 UltraLarge Info</UltraLargeText>
       <UltraLargeText color="warning">
         测试文本 UltraLarge Warning
       </UltraLargeText>
-      <UltraLargeText color="danger">
-        测试文本 UltraLarge Danger
-      </UltraLargeText>
+      <UltraLargeText color="danger">测试文本 UltraLarge Danger</UltraLargeText>
     </>
   );
 }

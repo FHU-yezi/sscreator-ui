@@ -105,11 +105,7 @@ export default function Select<T extends ComponentChild>({
                     {item.label}
                   </Row>
                   {value.value === item.value && (
-                    <Icon
-                      className="text-xl"
-                      color="unset"
-                      icon="i-mdi-tick"
-                    />
+                    <Icon className="text-xl" color="unset" icon="i-mdi-tick" />
                   )}
                 </Row>
               </button>

@@ -9,11 +9,7 @@ export function toastSuccess(message: string) {
     </Text>,
     {
       icon: (
-        <Icon
-          className="text-lg"
-          color="success"
-          icon="i-mdi-tick-circle"
-        />
+        <Icon className="text-lg" color="success" icon="i-mdi-tick-circle" />
       ),
       className: "dark:bg-zinc-900",
     },
@@ -26,9 +22,7 @@ export function toastWarning(message: string) {
       {message}
     </Text>,
     {
-      icon: (
-        <Icon className="text-lg" color="warning" icon="i-mdi-warning" />
-      ),
+      icon: <Icon className="text-lg" color="warning" icon="i-mdi-warning" />,
       className: "dark:bg-zinc-900",
     },
   );
@@ -41,11 +35,7 @@ export function toastDanger(message: string) {
     </Text>,
     {
       icon: (
-        <Icon
-          className="text-lg"
-          color="danger"
-          icon="i-mdi-close-circle"
-        />
+        <Icon className="text-lg" color="danger" icon="i-mdi-close-circle" />
       ),
       className: "dark:bg-zinc-900",
     },

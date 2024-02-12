@@ -8,16 +8,10 @@ import {
 export default function ToastPage() {
   return (
     <>
-      <SolidButton
-        color="success"
-        onClick={() => toastSuccess("Success")}
-      >
+      <SolidButton color="success" onClick={() => toastSuccess("Success")}>
         Success
       </SolidButton>
-      <SolidButton
-        color="warning"
-        onClick={() => toastWarning("Warning")}
-      >
+      <SolidButton color="warning" onClick={() => toastWarning("Warning")}>
         Warning
       </SolidButton>
       <SolidButton color="danger" onClick={() => toastDanger("Danger")}>
