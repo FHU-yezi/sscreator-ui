@@ -14,6 +14,7 @@ export default function ColorSchemeSwitch() {
           : "i-mdi-moon-and-stars"
       }
       onClick={toggleColorScheme}
+      aria-label="切换颜色主题"
     />
   );
 }
