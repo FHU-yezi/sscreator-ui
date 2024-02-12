@@ -45,7 +45,7 @@ export default function SolidButton({
     <button
       type="button"
       className={clsx(
-        "shadow rounded disabled:opacity-70 inline-flex justify-center items-center",
+        "shadow rounded disabled:opacity-60 inline-flex justify-center items-center",
         {
           "gap-2": !small,
           "px-3 py-1.5": !small && !leftIcon && !rightIcon,

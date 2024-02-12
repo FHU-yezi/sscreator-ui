@@ -43,7 +43,7 @@ export default function TextButton({
     <button
       type="button"
       className={clsx(
-        "disabled:opacity-70 w-min inline-flex justify-center items-center",
+        "disabled:opacity-60 w-min inline-flex justify-center items-center",
         {
           "gap-2": !small,
           "gap-1": small,

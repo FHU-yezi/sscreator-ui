@@ -31,7 +31,7 @@ export default function Modal({
           "fixed left-0 top-0 h-screen w-screen bg-black transition-opacity",
           {
             "pointer-events-none opacity-0": !open.value,
-            "opacity-20 dark:opacity-30": open.value,
+            "opacity-30": open.value,
           },
         )}
         onClick={!notCloseable ? () => (open.value = false) : undefined}
