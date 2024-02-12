@@ -20,17 +20,14 @@ export default function ModalPage() {
         label="Not Closeable"
         value={isNotCloseable}
       />
-      <SolidButton
-        colorScheme="primary"
-        onClick={() => (isOpened.value = true)}
-      >
+      <SolidButton onClick={() => (isOpened.value = true)}>
         Open Modal
       </SolidButton>
 
       <Modal
         open={isOpened}
         title="删除文集？"
-        colorScheme="danger"
+        color="danger"
         notCloseable={isNotCloseable.value}
       >
         <Column>
@@ -38,13 +35,13 @@ export default function ModalPage() {
           <Text>此操作不可撤销。</Text>
           <Row className="justify-end" gap="gap-2">
             <OutlineButton
-              colorScheme="secondary"
+              color="gray"
               onClick={() => (isOpened.value = false)}
             >
               取消
             </OutlineButton>
             <SolidButton
-              colorScheme="danger"
+              color="danger"
               onClick={() => (isOpened.value = false)}
             >
               删除文集

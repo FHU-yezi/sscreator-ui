@@ -1,7 +1,7 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
-import type { SemanticColorType } from "../types/colorSchemeTypes";
+import type { SemanticColorType } from "../types/colorTypes";
 import TextButton from "./button/TextButton";
 import Row from "./layout/Row";
 import LargeText from "./text/LargeText";
@@ -11,16 +11,16 @@ interface Props {
   open: Signal<boolean>;
   title: string;
   notCloseable?: boolean;
-  colorScheme?: SemanticColorType;
+  color?: SemanticColorType;
   zIndex?: number;
 }
 
 export default function Modal({
   children,
+  color,
   open,
   title,
   notCloseable = false,
-  colorScheme,
   zIndex = 20,
 }: Props) {
   return (
@@ -55,13 +55,13 @@ export default function Modal({
         aria-hidden={!open.value}
       >
         <Row className="mb-3 justify-between" itemsCenter>
-          <LargeText colorScheme={colorScheme} bold>
+          <LargeText color={color} bold>
             {title}
           </LargeText>
           {!notCloseable && (
             <TextButton
               className="text-2xl"
-              colorScheme="secondary"
+              color="gray"
               leftIcon="i-mdi-close"
               onClick={() => (open.value = false)}
             />

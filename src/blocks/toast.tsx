@@ -4,14 +4,14 @@ import Text from "../components/text/Text";
 
 export function toastSuccess(message: string) {
   toast(
-    <Text colorScheme="success" bold>
+    <Text color="success" bold>
       {message}
     </Text>,
     {
       icon: (
         <Icon
           className="text-lg"
-          colorScheme="success"
+          color="success"
           icon="i-mdi-tick-circle"
         />
       ),
@@ -22,12 +22,12 @@ export function toastSuccess(message: string) {
 
 export function toastWarning(message: string) {
   toast(
-    <Text colorScheme="warning" bold>
+    <Text color="warning" bold>
       {message}
     </Text>,
     {
       icon: (
-        <Icon className="text-lg" colorScheme="warning" icon="i-mdi-warning" />
+        <Icon className="text-lg" color="warning" icon="i-mdi-warning" />
       ),
       className: "dark:bg-zinc-900",
     },
@@ -36,14 +36,14 @@ export function toastWarning(message: string) {
 
 export function toastDanger(message: string) {
   toast(
-    <Text colorScheme="danger" bold>
+    <Text color="danger" bold>
       {message}
     </Text>,
     {
       icon: (
         <Icon
           className="text-lg"
-          colorScheme="danger"
+          color="danger"
           icon="i-mdi-close-circle"
         />
       ),

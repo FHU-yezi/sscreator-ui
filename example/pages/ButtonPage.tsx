@@ -37,17 +37,17 @@ export default function ButtonPage() {
           Primary
         </SolidButton>
         <SolidButton
-          colorScheme="secondary"
-          onClick={() => toast("Secondary")}
+          color="gray"
+          onClick={() => toast("Gray")}
           loading={isLoading.value}
           disabled={isDisabled.value}
           small={isSmall.value}
           fullWidth={isFullWidth.value}
         >
-          Secondary
+          Gray
         </SolidButton>
         <SolidButton
-          colorScheme="success"
+          color="success"
           onClick={() => toast("Success")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -57,7 +57,7 @@ export default function ButtonPage() {
           Success
         </SolidButton>
         <SolidButton
-          colorScheme="warning"
+          color="warning"
           onClick={() => toast("Warning")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -67,7 +67,7 @@ export default function ButtonPage() {
           Warning
         </SolidButton>
         <SolidButton
-          colorScheme="danger"
+          color="danger"
           onClick={() => toast("Danger")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -90,17 +90,17 @@ export default function ButtonPage() {
           Primary
         </OutlineButton>
         <OutlineButton
-          colorScheme="secondary"
-          onClick={() => toast("Secondary")}
+          color="gray"
+          onClick={() => toast("Gray")}
           loading={isLoading.value}
           disabled={isDisabled.value}
           small={isSmall.value}
           fullWidth={isFullWidth.value}
         >
-          Secondary
+          Gray
         </OutlineButton>
         <OutlineButton
-          colorScheme="success"
+          color="success"
           onClick={() => toast("Success")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -110,7 +110,7 @@ export default function ButtonPage() {
           Success
         </OutlineButton>
         <OutlineButton
-          colorScheme="warning"
+          color="warning"
           onClick={() => toast("Warning")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -120,7 +120,7 @@ export default function ButtonPage() {
           Warning
         </OutlineButton>
         <OutlineButton
-          colorScheme="danger"
+          color="danger"
           onClick={() => toast("Danger")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -142,16 +142,16 @@ export default function ButtonPage() {
           Primary
         </TextButton>
         <TextButton
-          colorScheme="secondary"
-          onClick={() => toast("Secondary")}
+          color="gray"
+          onClick={() => toast("Gray")}
           loading={isLoading.value}
           disabled={isDisabled.value}
           small={isSmall.value}
         >
-          Secondary
+          Gray
         </TextButton>
         <TextButton
-          colorScheme="success"
+          color="success"
           onClick={() => toast("Success")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -160,7 +160,7 @@ export default function ButtonPage() {
           Success
         </TextButton>
         <TextButton
-          colorScheme="warning"
+          color="warning"
           onClick={() => toast("Warning")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -169,7 +169,7 @@ export default function ButtonPage() {
           Warning
         </TextButton>
         <TextButton
-          colorScheme="danger"
+          color="danger"
           onClick={() => toast("Danger")}
           loading={isLoading.value}
           disabled={isDisabled.value}

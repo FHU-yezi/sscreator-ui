@@ -18,36 +18,36 @@ export default function TablePage() {
         <TableRow>
           <TableHead>文章标题</TableHead>
           <TableHead>作者</TableHead>
-          <TableHead colorScheme="success">获赞量</TableHead>
+          <TableHead color="success">获赞量</TableHead>
           <TableHead>操作</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow colorScheme="danger">
+        <TableRow color="danger">
           <TableCell>测试文章</TableCell>
           <TableCell>作者 1</TableCell>
           <TableCell>3</TableCell>
           <TableCell>
             <Row className="justify-around px-2" gap="gap-1">
-              <TextButton colorScheme="success" small>
+              <TextButton color="success" small>
                 编辑
               </TextButton>
-              <TextButton colorScheme="danger" small>
+              <TextButton color="danger" small>
                 删除
               </TextButton>
             </Row>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell colorScheme="warning">简书</TableCell>
+          <TableCell color="warning">简书</TableCell>
           <TableCell>xxxx</TableCell>
           <TableCell>44</TableCell>
           <TableCell>
             <Row className="justify-around px-2" gap="gap-1">
-              <TextButton colorScheme="success" small>
+              <TextButton color="success" small>
                 编辑
               </TextButton>
-              <TextButton colorScheme="danger" small>
+              <TextButton color="danger" small>
                 删除
               </TextButton>
             </Row>
@@ -55,14 +55,14 @@ export default function TablePage() {
         </TableRow>
         <TableRow>
           <TableCell>About SSCreator UI</TableCell>
-          <TableCell colorScheme="info">test_author</TableCell>
+          <TableCell color="info">test_author</TableCell>
           <TableCell>17</TableCell>
           <TableCell>
             <Row className="justify-around px-2" gap="gap-1">
-              <TextButton colorScheme="success" small>
+              <TextButton color="success" small>
                 编辑
               </TextButton>
-              <TextButton colorScheme="danger" small>
+              <TextButton color="danger" small>
                 删除
               </TextButton>
             </Row>
@@ -76,7 +76,7 @@ export default function TablePage() {
           </TableCell>
           <TableCell>64</TableCell>
           <TableCell>
-            <SolidButton colorScheme="primary" small fullWidth>
+            <SolidButton small fullWidth>
               生成报告
             </SolidButton>
           </TableCell>

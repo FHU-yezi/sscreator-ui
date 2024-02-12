@@ -29,7 +29,7 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
               "text-zinc-950 dark:text-zinc-50": !value.value,
               "text-blue-500": value.value,
             })}
-            colorScheme="unset"
+            color="unset"
             icon={
               value.value
                 ? "i-mdi-checkbox-outline"
@@ -48,7 +48,7 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
         </label>
       </Row>
       {helpText && (
-        <SmallText id={`${id}-help-text`} colorScheme="gray">
+        <SmallText id={`${id}-help-text`} color="gray">
           {helpText}
         </SmallText>
       )}

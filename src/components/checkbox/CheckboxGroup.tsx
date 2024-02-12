@@ -56,7 +56,7 @@ export default function CheckboxGroup<T>({
                     ),
                     "text-blue-500": value.value.includes(item.value),
                   })}
-                  colorScheme="unset"
+                  color="unset"
                   icon={
                     value.value.includes(item.value)
                       ? "i-mdi-checkbox-outline"

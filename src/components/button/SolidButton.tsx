@@ -2,10 +2,11 @@ import { clsx } from "clsx";
 import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import type {
-  PrimaryAndSecondaryColorType,
+  GrayColorType,
+  PrimaryColorType,
   SemanticColorType,
   UnsetColorType,
-} from "../../types/colorSchemeTypes";
+} from "../../types/colorTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
 import LoadingIcon from "../loading/LoadingIcon";
@@ -15,12 +16,9 @@ import Text from "../text/Text";
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChild;
   className?: string;
+  color?: UnsetColorType | PrimaryColorType | GrayColorType | SemanticColorType;
   leftIcon?: string;
   rightIcon?: string;
-  colorScheme?:
-    | UnsetColorType
-    | PrimaryAndSecondaryColorType
-    | SemanticColorType;
   loading?: boolean;
   disabled?: boolean;
   small?: boolean;
@@ -30,9 +28,9 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
 export default function SolidButton({
   children,
   className,
+  color = "primary",
   leftIcon,
   rightIcon,
-  colorScheme = "primary",
   loading = false,
   disabled = false,
   small = false,
@@ -59,15 +57,14 @@ export default function SolidButton({
         },
         className,
         {
-          "bg-blue-600 enabled:hover:bg-blue-700": colorScheme === "primary",
-          "bg-zinc-200 enabled:hover:bg-zinc-300": colorScheme === "secondary",
-          "bg-green-700 enabled:hover:bg-green-800": colorScheme === "success",
-          "bg-orange-600 enabled:hover:bg-orange-700":
-            colorScheme === "warning",
-          "bg-red-600 enabled:hover:bg-red-700": colorScheme === "danger",
+          "bg-blue-600 enabled:hover:bg-blue-700": color === "primary",
+          "bg-zinc-200 enabled:hover:bg-zinc-300": color === "gray",
+          "bg-green-700 enabled:hover:bg-green-800": color === "success",
+          "bg-orange-600 enabled:hover:bg-orange-700": color === "warning",
+          "bg-red-600 enabled:hover:bg-red-700": color === "danger",
         },
-        colorScheme !== "unset" &&
-          (colorScheme === "secondary" ? "text-zinc-950" : "text-zinc-50"),
+        color !== "unset" &&
+          (color === "gray" ? "text-zinc-950" : "text-zinc-50"),
       )}
       disabled={disabled || loading}
       aria-disabled={disabled}
@@ -76,25 +73,22 @@ export default function SolidButton({
     >
       <Row gap="gap-1" itemsCenter>
         {leftIcon && (
-          <Icon className="text-2xl" colorScheme="unset" icon={leftIcon} />
+          <Icon className="text-2xl" color="unset" icon={leftIcon} />
         )}
         {children &&
           (small ? (
-            <SmallText className="whitespace-nowrap" colorScheme="unset">
+            <SmallText className="whitespace-nowrap" color="unset">
               {children}
             </SmallText>
           ) : (
-            <Text className="whitespace-nowrap" colorScheme="unset">
+            <Text className="whitespace-nowrap" color="unset">
               {children}
             </Text>
           ))}
-        {rightIcon && <Icon colorScheme="unset" icon={rightIcon} />}
+        {rightIcon && <Icon color="unset" icon={rightIcon} />}
       </Row>
       {loading && (
-        <LoadingIcon
-          className={small ? "text-lg" : "text-xl"}
-          colorScheme="unset"
-        />
+        <LoadingIcon className={small ? "text-lg" : "text-xl"} color="unset" />
       )}
     </button>
   );

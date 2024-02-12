@@ -9,18 +9,18 @@ export default function ToastPage() {
   return (
     <>
       <SolidButton
-        colorScheme="success"
+        color="success"
         onClick={() => toastSuccess("Success")}
       >
         Success
       </SolidButton>
       <SolidButton
-        colorScheme="warning"
+        color="warning"
         onClick={() => toastWarning("Warning")}
       >
         Warning
       </SolidButton>
-      <SolidButton colorScheme="danger" onClick={() => toastDanger("Danger")}>
+      <SolidButton color="danger" onClick={() => toastDanger("Danger")}>
         Danger
       </SolidButton>
     </>

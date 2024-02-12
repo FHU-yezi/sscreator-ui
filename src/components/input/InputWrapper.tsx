@@ -43,7 +43,7 @@ export default function InputWrapper({
         {helpText && (
           <SmallText
             id={`${id}-help-text`}
-            colorScheme={errorMessage !== undefined ? "danger" : "gray"}
+            color={errorMessage !== undefined ? "danger" : "gray"}
           >
             {helpText}
           </SmallText>
@@ -53,7 +53,7 @@ export default function InputWrapper({
       {errorMessage && (
         <SmallText
           id={`${id}-error-message`}
-          colorScheme={errorMessage !== undefined ? "danger" : undefined}
+          color={errorMessage !== undefined ? "danger" : undefined}
         >
           {errorMessage}
         </SmallText>

@@ -65,7 +65,7 @@ export default function Select<T extends ComponentChild>({
           </Row>
           <Icon
             className="text-xl"
-            colorScheme="unset"
+            color="unset"
             icon="i-mdi-keyboard-arrow-down"
           />
         </Row>
@@ -107,7 +107,7 @@ export default function Select<T extends ComponentChild>({
                   {value.value === item.value && (
                     <Icon
                       className="text-xl"
-                      colorScheme="unset"
+                      color="unset"
                       icon="i-mdi-tick"
                     />
                   )}

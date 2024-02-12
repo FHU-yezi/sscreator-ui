@@ -2,19 +2,19 @@ import type {
   GrayColorType,
   SemanticColorType,
   UnsetColorType,
-} from "../../types/colorSchemeTypes";
+} from "../../types/colorTypes";
 import Icon from "../Icon";
 
 interface Props {
   className?: string;
-  colorScheme?: UnsetColorType | SemanticColorType | GrayColorType;
+  color?: UnsetColorType | SemanticColorType | GrayColorType;
 }
 
-export default function LoadingIcon({ className, colorScheme }: Props) {
+export default function LoadingIcon({ className, color }: Props) {
   return (
     <Icon
       className={className}
-      colorScheme={colorScheme}
+      color={color}
       icon="i-line-md-loading-twotone-loop"
     />
   );

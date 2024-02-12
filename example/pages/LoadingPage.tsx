@@ -8,11 +8,11 @@ export default function LoadingAreaPage() {
     <>
       <Row>
         <LoadingIcon />
-        <LoadingIcon colorScheme="gray" />
-        <LoadingIcon colorScheme="success" />
-        <LoadingIcon colorScheme="info" />
-        <LoadingIcon colorScheme="warning" />
-        <LoadingIcon colorScheme="danger" />
+        <LoadingIcon color="gray" />
+        <LoadingIcon color="success" />
+        <LoadingIcon color="info" />
+        <LoadingIcon color="warning" />
+        <LoadingIcon color="danger" />
       </Row>
 
       <Checkbox id="is-loading" label="Loading" value={isLoading} />

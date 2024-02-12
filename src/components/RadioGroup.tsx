@@ -50,7 +50,7 @@ export default function RadioGroup<T>({
                     currentOption?.value !== item.value,
                   "text-blue-500": currentOption?.value === item.value,
                 })}
-                colorScheme="unset"
+                color="unset"
                 icon={
                   currentOption?.value === item.value
                     ? "i-mdi-radiobox-marked"

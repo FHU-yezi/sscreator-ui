@@ -36,7 +36,7 @@ export default function PageWrapper({ name, Component }: Props) {
           <LargeText bold>SSCreator UI</LargeText>
         ) : (
           <TextButton
-            colorScheme="secondary"
+            color="gray"
             leftIcon="i-mdi-keyboard-arrow-left"
             onClick={() => setLocation("/")}
           >

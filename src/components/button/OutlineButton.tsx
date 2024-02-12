@@ -2,10 +2,11 @@ import { clsx } from "clsx";
 import type { ComponentChild } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import type {
-  PrimaryAndSecondaryColorType,
+  GrayColorType,
+  PrimaryColorType,
   SemanticColorType,
   UnsetColorType,
-} from "../../types/colorSchemeTypes";
+} from "../../types/colorTypes";
 import Icon from "../Icon";
 import Row from "../layout/Row";
 import LoadingIcon from "../loading/LoadingIcon";
@@ -15,12 +16,9 @@ import Text from "../text/Text";
 interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
   children?: ComponentChild;
   className?: string;
+  color?: UnsetColorType | PrimaryColorType | GrayColorType | SemanticColorType;
   leftIcon?: string;
   rightIcon?: string;
-  colorScheme?:
-    | UnsetColorType
-    | PrimaryAndSecondaryColorType
-    | SemanticColorType;
   loading?: boolean;
   disabled?: boolean;
   small?: boolean;
@@ -30,9 +28,9 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "loading"> {
 export default function OutlineButton({
   children,
   className,
+  color = "primary",
   leftIcon,
   rightIcon,
-  colorScheme = "primary",
   loading = false,
   disabled = false,
   small = false,
@@ -60,20 +58,18 @@ export default function OutlineButton({
         className,
         {
           "border-blue-600 enabled:hover:(border-blue-700 bg-blue-700)":
-            colorScheme === "primary",
+            color === "primary",
           "border-zinc-500 enabled:(hover:border-zinc-300 hover:bg-zinc-300 hover:dark:border-zinc-700 hover:dark:bg-zinc-700)":
-            colorScheme === "secondary",
+            color === "gray",
           "border-green-600 enabled:hover:(border-green-700 bg-green-700)":
-            colorScheme === "success",
+            color === "success",
           "border-orange-600 enabled:hover:(border-orange-700 bg-orange-700)":
-            colorScheme === "warning",
+            color === "warning",
           "border-red-600 enabled:hover:(border-red-700 bg-red-700)":
-            colorScheme === "danger",
+            color === "danger",
         },
-        colorScheme !== "unset" && "text-zinc-950 dark:text-zinc-50",
-        colorScheme !== "unset" &&
-          colorScheme !== "secondary" &&
-          "enabled:hover:text-zinc-50",
+        color !== "unset" && "text-zinc-950 dark:text-zinc-50",
+        color !== "unset" && color !== "gray" && "enabled:hover:text-zinc-50",
       )}
       disabled={disabled || loading}
       aria-disabled={disabled}
@@ -82,25 +78,22 @@ export default function OutlineButton({
     >
       <Row gap="gap-1" itemsCenter>
         {leftIcon && (
-          <Icon className="text-2xl" colorScheme="unset" icon={leftIcon} />
+          <Icon className="text-2xl" color="unset" icon={leftIcon} />
         )}
         {children &&
           (small ? (
-            <SmallText className="whitespace-nowrap" colorScheme="unset">
+            <SmallText className="whitespace-nowrap" color="unset">
               {children}
             </SmallText>
           ) : (
-            <Text className="whitespace-nowrap" colorScheme="unset">
+            <Text className="whitespace-nowrap" color="unset">
               {children}
             </Text>
           ))}
-        {rightIcon && <Icon colorScheme="unset" icon={rightIcon} />}
+        {rightIcon && <Icon color="unset" icon={rightIcon} />}
       </Row>
       {loading && (
-        <LoadingIcon
-          className={small ? "text-lg" : "text-xl"}
-          colorScheme="unset"
-        />
+        <LoadingIcon className={small ? "text-lg" : "text-xl"} color="unset" />
       )}
     </button>
   );

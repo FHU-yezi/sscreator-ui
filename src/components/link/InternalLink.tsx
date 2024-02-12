@@ -2,20 +2,20 @@ import clsx from "clsx";
 import type { ComponentChildren } from "preact";
 import type { HTMLAttributes } from "preact/compat";
 import { useLocation } from "wouter-preact";
-import type { UnsetColorType } from "../../types/colorSchemeTypes";
+import type { PrimaryColorType, UnsetColorType } from "../../types/colorTypes";
 
 interface Props extends HTMLAttributes<HTMLAnchorElement> {
   children: ComponentChildren;
   className?: string;
   path: string;
-  colorScheme?: UnsetColorType;
+  color?: UnsetColorType | PrimaryColorType;
 }
 
 export default function InternalLink({
   children,
   className,
+  color = "primary",
   path,
-  colorScheme,
   ...props
 }: Props) {
   const [, setLocation] = useLocation();
@@ -23,7 +23,7 @@ export default function InternalLink({
   return (
     <a
       className={clsx("underline", className, {
-        "text-blue-600 dark:text-blue-400": !colorScheme,
+        "text-blue-600 dark:text-blue-400": color === "primary",
       })}
       href={path}
       onClick={(event) => {
