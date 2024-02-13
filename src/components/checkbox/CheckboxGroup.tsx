@@ -48,6 +48,7 @@ export default function CheckboxGroup<T>({
                 }}
                 disabled={disabled}
                 aria-checked={value.value.includes(item.value)}
+                aria-labelledby={`${id}-${item.label}-checkbox-label`}
               >
                 <Icon
                   className={clsx("block text-2xl", {

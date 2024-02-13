@@ -24,6 +24,7 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
             value.value = !value.value;
           }}
           aria-checked={value.value}
+          aria-labelledby={`${id}-label`}
           aria-describedby={helpText ? `${id}-help-text` : undefined}
         >
           <Icon
