@@ -9,16 +9,9 @@
   "type": "module",
   "repository": "https://github.com/FHU-yezi/sscreator-ui.git",
   "author": "Yezi (https://github.com/FHU-yezi)",
-  "keywords": [
-    "preact",
-    "components",
-    "design",
-    "unocss"
-  ],
+  "keywords": ["preact", "components", "design", "unocss"],
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "module": "./dist/main.js",
   "exports": {
     ".": {
