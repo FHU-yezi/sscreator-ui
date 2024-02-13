@@ -1,4 +1,4 @@
-import { effect, signal } from "@preact/signals";
+import { signal, useSignalEffect } from "@preact/signals";
 import {
   AutoCompleteInput,
   Heading1,
@@ -6,6 +6,7 @@ import {
   Text,
   TextAreaInput,
   TextInput,
+  useDebouncedSignal,
 } from "../../src/main";
 
 const textInputValue = signal("");
@@ -15,19 +16,24 @@ const numberInputValue = signal<number | null>(0);
 
 const options = signal<Array<string>>([]);
 
-effect(() => {
-  options.value =
-    autoCompleteInputValue.value.length > 0 &&
-    autoCompleteInputValue.value.length <= 10
-      ? [
-          `${autoCompleteInputValue.value}@qq.com`,
-          `${autoCompleteInputValue.value}@126.com`,
-          `${autoCompleteInputValue.value}@163.com`,
-        ]
-      : [];
-});
-
 export default function InputPage() {
+  const debouncedAutoCompleteInputValue = useDebouncedSignal(
+    autoCompleteInputValue,
+    100,
+  );
+
+  useSignalEffect(() => {
+    options.value =
+      debouncedAutoCompleteInputValue.value.length > 0 &&
+      debouncedAutoCompleteInputValue.value.length <= 10
+        ? [
+            `${autoCompleteInputValue.value}@qq.com`,
+            `${autoCompleteInputValue.value}@126.com`,
+            `${autoCompleteInputValue.value}@163.com`,
+          ]
+        : [];
+  });
+
   return (
     <>
       <Heading1>TextInput</Heading1>
@@ -87,6 +93,7 @@ export default function InputPage() {
         fullWidth
       />
       <Text>输入值：{autoCompleteInputValue.value}</Text>
+      <Text>输入值（Debounced）：{debouncedAutoCompleteInputValue.value}</Text>
 
       <Heading1>NumberInput</Heading1>
       <NumberInput

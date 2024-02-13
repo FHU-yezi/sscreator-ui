@@ -11,7 +11,7 @@ import {
   LoadingPage,
   Text,
   TextButton,
-  useTitle,
+  useDocumentTitle,
 } from "../../src/main";
 
 interface Props {
@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default function PageWrapper({ name, Component }: Props) {
-  useTitle(name ? `${name} - SSCreator UI` : "SSCreator UI");
+  useDocumentTitle(name ? `${name} - SSCreator UI` : "SSCreator UI");
 
   // 处理部分情况下页面切换后不在顶部的问题
   useEffect(() => window.scrollTo(0, 0), []);
