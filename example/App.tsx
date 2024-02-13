@@ -1,7 +1,6 @@
 import type { VNode } from "preact";
 import { render } from "preact";
 import { Toaster } from "react-hot-toast";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { install } from "resize-observer";
 import type { RouteProps } from "wouter-preact";
 import { Route, Switch } from "wouter-preact";
@@ -10,7 +9,6 @@ import PageWrapper from "./components/PageWrapper";
 import MainPage from "./pages/MainPage";
 import { routes } from "./routes";
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import "@unocss/reset/tailwind.css";
 import "uno.css";
 
@@ -32,7 +30,7 @@ export default function App() {
             <Route path={item.path}>
               <PageWrapper name={item.name} Component={item.component} />
             </Route>
-          )) as unknown as VNode<RouteProps<undefined, string>>
+          )) as any as VNode<RouteProps<undefined, string>>
         }
       </Switch>
 

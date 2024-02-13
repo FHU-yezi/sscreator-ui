@@ -8,7 +8,7 @@ if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 }
 
 const colorScheme = signal(
-  document.documentElement.className as unknown as "light" | "dark",
+  document.documentElement.className as any as "light" | "dark",
 );
 
 effect(() => {
