@@ -50,7 +50,9 @@ export default function Select<T extends ComponentChild>({
             "w-full": fullWidth,
           },
         )}
-        onClick={() => (isDropdownOpened.value = !isDropdownOpened.value)}
+        onClick={() => {
+          isDropdownOpened.value = !isDropdownOpened.value;
+        }}
       >
         <Row className="justify-between" gap="gap-2" itemsCenter>
           <Row gap="gap-1" itemsCenter>

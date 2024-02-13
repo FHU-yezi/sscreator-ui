@@ -39,13 +39,13 @@ export default function CheckboxGroup<T>({
                 id={`${id}-${item.label}-checkbox`}
                 type="button"
                 role="checkbox"
-                onClick={() =>
-                  value.value.includes(item.value)
-                    ? (value.value = value.value.filter(
-                        (x) => x !== item.value,
-                      ))
-                    : (value.value = [...value.value, item.value])
-                }
+                onClick={() => {
+                  if (value.value.includes(item.value)) {
+                    value.value = value.value.filter((x) => x !== item.value);
+                  } else {
+                    value.value = [...value.value, item.value];
+                  }
+                }}
                 disabled={disabled}
                 aria-checked={value.value.includes(item.value)}
               >

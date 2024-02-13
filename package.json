@@ -30,39 +30,30 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && unocss 'src/**/*.tsx' --preflights=false -o dist/sscreator-ui.css",
-    "publish": "pnpm publish",
-    "check:eslint": "eslint .",
-    "check:prettier": "prettier --check .",
-    "check:prettier-fix": "prettier --write ."
+    "publish": "npm publish",
+    "check:lint": "biome lint .",
+    "check:lint-fix": "biome lint --apply .",
+    "check:format": "biome format .",
+    "check:format-fix": "biome format --write ."
   },
   "peerDependencies": {
-    "@iconify-json/line-md": "^1.1.36",
-    "@iconify-json/mdi": "^1.1.64",
+    "preact": "^10.16.0",
     "@preact/signals": "^1.2.0",
     "clsx": "^2.0.0",
-    "preact": "^10.16.0",
     "react-hot-toast": "^2.4.1",
-    "wouter-preact": "^2.11.0"
+    "wouter-preact": "^2.11.0",
+    "@iconify-json/line-md": "^1.1.36",
+    "@iconify-json/mdi": "^1.1.64"
   },
   "devDependencies": {
+    "vite": "^5.0.11",
+    "@biomejs/biome": "^1.5.3",
     "@preact/preset-vite": "^2.8.1",
-    "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.10.7",
-    "@typescript-eslint/eslint-plugin": "^6.18.0",
-    "@typescript-eslint/parser": "^6.18.0",
+    "unocss": "^0.58.3",
     "@unocss/cli": "^0.58.3",
-    "@unocss/eslint-config": "^0.58.3",
     "@unocss/preset-rem-to-px": "^0.58.3",
     "@unocss/reset": "^0.58.3",
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "prettier": "^3.1.1",
-    "resize-observer": "^1.0.4",
-    "tslib": "^2.6.2",
-    "unocss": "^0.58.3",
-    "vite": "^5.0.11"
+    "resize-observer": "^1.0.4"
   }
 }

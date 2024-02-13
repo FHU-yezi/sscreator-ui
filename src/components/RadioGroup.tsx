@@ -39,7 +39,9 @@ export default function RadioGroup<T>({
               id={`${id}-${item.value}-radiobox`}
               type="button"
               role="radio"
-              onClick={() => (value.value = item.value)}
+              onClick={() => {
+                value.value = item.value;
+              }}
               disabled={disabled}
               aria-checked={currentOption?.value === item.value}
               aria-describedby={helpText ? `${id}-help-text` : undefined}

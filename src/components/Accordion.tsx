@@ -23,7 +23,9 @@ export default function Accordion({ children, label }: Props) {
             "rounded-b": !isOpened.value,
           },
         )}
-        onClick={() => (isOpened.value = !isOpened.value)}
+        onClick={() => {
+          isOpened.value = !isOpened.value;
+        }}
       >
         <Text bold>{label}</Text>
         <Icon

@@ -15,18 +15,17 @@ const numberInputValue = signal<number | null>(0);
 
 const options = signal<Array<string>>([]);
 
-effect(
-  () =>
-    (options.value =
-      autoCompleteInputValue.value.length > 0 &&
-      autoCompleteInputValue.value.length <= 10
-        ? [
-            `${autoCompleteInputValue.value}@qq.com`,
-            `${autoCompleteInputValue.value}@126.com`,
-            `${autoCompleteInputValue.value}@163.com`,
-          ]
-        : []),
-);
+effect(() => {
+  options.value =
+    autoCompleteInputValue.value.length > 0 &&
+    autoCompleteInputValue.value.length <= 10
+      ? [
+          `${autoCompleteInputValue.value}@qq.com`,
+          `${autoCompleteInputValue.value}@126.com`,
+          `${autoCompleteInputValue.value}@163.com`,
+        ]
+      : [];
+});
 
 export default function InputPage() {
   return (

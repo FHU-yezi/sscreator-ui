@@ -1,7 +1,7 @@
 import type { ComponentChildren } from "preact";
 import { useEffect, useMemo, useRef } from "preact/hooks";
-import LoadingIcon from "./loading/LoadingIcon";
 import Center from "./layout/Center";
+import LoadingIcon from "./loading/LoadingIcon";
 
 interface Props {
   children: ComponentChildren;

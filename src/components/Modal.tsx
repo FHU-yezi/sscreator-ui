@@ -34,7 +34,20 @@ export default function Modal({
             "opacity-30": open.value,
           },
         )}
-        onClick={!notCloseable ? () => (open.value = false) : undefined}
+        onClick={
+          !notCloseable
+            ? () => {
+                open.value = false;
+              }
+            : undefined
+        }
+        onKeyUp={
+          !notCloseable
+            ? () => {
+                open.value = false;
+              }
+            : undefined
+        }
         style={{
           zIndex: zIndex - 1,
         }}
@@ -63,7 +76,9 @@ export default function Modal({
               className="text-2xl"
               color="black"
               leftIcon="i-mdi-close"
-              onClick={() => (open.value = false)}
+              onClick={() => {
+                open.value = false;
+              }}
             />
           )}
         </Row>

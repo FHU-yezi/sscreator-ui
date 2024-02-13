@@ -1,4 +1,5 @@
-import { render, type VNode } from "preact";
+import type { VNode } from "preact";
+import { render } from "preact";
 import { Toaster } from "react-hot-toast";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { install } from "resize-observer";
@@ -31,7 +32,7 @@ export default function App() {
             <Route path={item.path}>
               <PageWrapper name={item.name} Component={item.component} />
             </Route>
-          )) as any as VNode<RouteProps<undefined, string>>
+          )) as unknown as VNode<RouteProps<undefined, string>>
         }
       </Switch>
 

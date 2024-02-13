@@ -19,7 +19,7 @@ interface Props {
 }
 
 export default function ErrorFallback({ children }: Props) {
-  const [error]: [Error, any] = useErrorBoundary();
+  const [error]: [Error, unknown] = useErrorBoundary();
   const [location] = useLocation();
 
   if (!error) {

@@ -20,7 +20,11 @@ export default function ModalPage() {
         label="Not Closeable"
         value={isNotCloseable}
       />
-      <SolidButton onClick={() => (isOpened.value = true)}>
+      <SolidButton
+        onClick={() => {
+          isOpened.value = true;
+        }}
+      >
         Open Modal
       </SolidButton>
 
@@ -36,13 +40,17 @@ export default function ModalPage() {
           <Row className="justify-end" gap="gap-2">
             <OutlineButton
               color="black"
-              onClick={() => (isOpened.value = false)}
+              onClick={() => {
+                isOpened.value = false;
+              }}
             >
               取消
             </OutlineButton>
             <SolidButton
               color="danger"
-              onClick={() => (isOpened.value = false)}
+              onClick={() => {
+                isOpened.value = false;
+              }}
             >
               删除文集
             </SolidButton>

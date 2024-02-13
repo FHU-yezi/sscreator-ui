@@ -20,7 +20,9 @@ export default function Checkbox({ value, id, label, helpText }: Props) {
           id={id}
           type="button"
           role="checkbox"
-          onClick={() => (value.value = !value.value)}
+          onClick={() => {
+            value.value = !value.value;
+          }}
           aria-checked={value.value}
           aria-describedby={helpText ? `${id}-help-text` : undefined}
         >

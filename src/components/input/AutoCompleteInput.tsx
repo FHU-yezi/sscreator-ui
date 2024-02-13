@@ -1,4 +1,5 @@
-import { useSignal, type Signal } from "@preact/signals";
+import type { Signal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
 import clsx from "clsx";
 import type { HTMLAttributes } from "preact/compat";
 import Column from "../layout/Column";
@@ -86,7 +87,9 @@ export default function AutoCompleteInput({
             onBlur();
           }
 
-          setTimeout(() => (isDropdownOpened.value = false), 100);
+          setTimeout(() => {
+            isDropdownOpened.value = false;
+          }, 100);
         }}
         spellCheck={false}
         aria-invalid={errorMessage === undefined}

@@ -1,14 +1,14 @@
 import {
   Row,
-  TextButton,
+  SolidButton,
   Table,
   TableBody,
   TableCell,
   TableFooter,
   TableHead,
   TableHeader,
-  SolidButton,
   TableRow,
+  TextButton,
 } from "../../src/main";
 
 export default function TablePage() {
