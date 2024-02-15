@@ -22,12 +22,12 @@ export default function Icon({
   return (
     <span
       className={clsx(className, icon, {
-        "text-zinc-950 dark:text-zinc-50": color === "black",
-        "text-zinc-600 dark:text-zinc-400": color === "gray",
-        "text-green-700 dark:text-green-600": color === "success",
-        "text-blue-600 dark:text-blue-500": color === "info",
-        "text-orange-700 dark:text-orange-600": color === "warning",
-        "text-red-600 dark:text-red-500": color === "danger",
+        "!text-zinc-950 dark:text-zinc-50": color === "black",
+        "!text-zinc-600 dark:text-zinc-400": color === "gray",
+        "!text-green-700 dark:text-green-600": color === "success",
+        "!text-blue-600 dark:text-blue-500": color === "info",
+        "!text-orange-700 dark:text-orange-600": color === "warning",
+        "!text-red-600 dark:text-red-500": color === "danger",
       })}
       {...props}
     />
