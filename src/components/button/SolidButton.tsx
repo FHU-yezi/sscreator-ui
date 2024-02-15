@@ -8,7 +8,6 @@ import type {
   UnsetColorType,
 } from "../../types/colorTypes";
 import Icon from "../Icon";
-import Row from "../layout/Row";
 import LoadingIcon from "../loading/LoadingIcon";
 import SmallText from "../text/SmallText";
 import Text from "../text/Text";
@@ -47,7 +46,7 @@ export default function SolidButton({
       className={clsx(
         "shadow rounded disabled:opacity-60 inline-flex justify-center items-center",
         {
-          "px-3 py-1.5 gap-2": !small,
+          "px-3 py-1.5 gap-1.5": !small,
           "px-1.5 py-1 gap-2": small,
 
           "cursor-wait": loading,
@@ -70,22 +69,30 @@ export default function SolidButton({
       aria-busy={loading}
       {...props}
     >
-      <Row gap="gap-1" itemsCenter>
-        {leftIcon && (
-          <Icon className="text-2xl" color="unset" icon={leftIcon} />
-        )}
-        {children &&
-          (small ? (
-            <SmallText className="whitespace-nowrap" color="unset">
-              {children}
-            </SmallText>
-          ) : (
-            <Text className="whitespace-nowrap" color="unset">
-              {children}
-            </Text>
-          ))}
-        {rightIcon && <Icon color="unset" icon={rightIcon} />}
-      </Row>
+      {leftIcon && (
+        <Icon
+          className={small ? "text-lg" : "text-xl"}
+          color="unset"
+          icon={leftIcon}
+        />
+      )}
+      {children &&
+        (small ? (
+          <SmallText className="whitespace-nowrap" color="unset">
+            {children}
+          </SmallText>
+        ) : (
+          <Text className="whitespace-nowrap" color="unset">
+            {children}
+          </Text>
+        ))}
+      {rightIcon && (
+        <Icon
+          className={small ? "text-lg" : "text-xl"}
+          color="unset"
+          icon={rightIcon}
+        />
+      )}
       {loading && (
         <LoadingIcon className={small ? "text-lg" : "text-xl"} color="unset" />
       )}

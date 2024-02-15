@@ -28,6 +28,8 @@ export default function ButtonPage() {
       <Heading1>Solid 按钮</Heading1>
       <Column>
         <SolidButton
+          leftIcon="i-mdi-information"
+          rightIcon="i-mdi-information"
           onClick={() => toast("Primary")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -81,6 +83,8 @@ export default function ButtonPage() {
       <Heading1>Outline 按钮</Heading1>
       <Column>
         <OutlineButton
+          leftIcon="i-mdi-information"
+          rightIcon="i-mdi-information"
           onClick={() => toast("Primary")}
           loading={isLoading.value}
           disabled={isDisabled.value}
@@ -134,6 +138,8 @@ export default function ButtonPage() {
       <Heading1>Text 按钮</Heading1>
       <Column>
         <TextButton
+          leftIcon="i-mdi-information"
+          rightIcon="i-mdi-information"
           onClick={() => toast("Primary")}
           loading={isLoading.value}
           disabled={isDisabled.value}

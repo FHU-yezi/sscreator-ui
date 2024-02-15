@@ -8,7 +8,6 @@ import type {
   UnsetColorType,
 } from "../../types/colorTypes";
 import Icon from "../Icon";
-import Row from "../layout/Row";
 import LoadingIcon from "../loading/LoadingIcon";
 import SmallText from "../text/SmallText";
 import Text from "../text/Text";
@@ -45,7 +44,7 @@ export default function TextButton({
       className={clsx(
         "disabled:opacity-60 w-min inline-flex justify-center items-center",
         {
-          "gap-2": !small,
+          "gap-1.5": !small,
           "gap-1": small,
 
           "cursor-wait": loading,
@@ -70,22 +69,30 @@ export default function TextButton({
       aria-busy={loading}
       {...props}
     >
-      <Row gap="gap-1" itemsCenter>
-        {leftIcon && (
-          <Icon className="text-2xl" color="unset" icon={leftIcon} />
-        )}
-        {children &&
-          (small ? (
-            <SmallText className="whitespace-nowrap" color="unset">
-              {children}
-            </SmallText>
-          ) : (
-            <Text className="whitespace-nowrap" color="unset">
-              {children}
-            </Text>
-          ))}
-        {rightIcon && <Icon color="unset" icon={rightIcon} />}
-      </Row>
+      {leftIcon && (
+        <Icon
+          className={small ? "text-lg" : "text-xl"}
+          color="unset"
+          icon={leftIcon}
+        />
+      )}
+      {children &&
+        (small ? (
+          <SmallText className="whitespace-nowrap" color="unset">
+            {children}
+          </SmallText>
+        ) : (
+          <Text className="whitespace-nowrap" color="unset">
+            {children}
+          </Text>
+        ))}
+      {rightIcon && (
+        <Icon
+          className={small ? "text-lg" : "text-xl"}
+          color="unset"
+          icon={rightIcon}
+        />
+      )}
       {loading && (
         <LoadingIcon className={small ? "text-lg" : "text-xl"} color="unset" />
       )}
