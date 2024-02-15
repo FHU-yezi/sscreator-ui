@@ -7,7 +7,6 @@ import type {
   UnsetColorType,
 } from "../types/colorTypes";
 import Icon from "./Icon";
-import Row from "./layout/Row";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   children?: ComponentChild;
@@ -28,7 +27,7 @@ export default function Badge({
   return (
     <span
       className={clsx(
-        "w-fit rounded px-1.5 py-0.5 whitespace-nowrap",
+        "inline-flex gap-1 items-center w-fit rounded px-1.5 py-0.5 whitespace-nowrap",
         className,
         {
           "bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300":
@@ -45,13 +44,9 @@ export default function Badge({
       )}
       {...props}
     >
-      <Row gap="gap-1" itemsCenter>
-        {leftIcon && <Icon className="text-xl" color="unset" icon={leftIcon} />}
-        {children}
-        {rightIcon && (
-          <Icon className="text-xl" color="unset" icon={rightIcon} />
-        )}
-      </Row>
+      {leftIcon && <Icon className="text-xl" color="unset" icon={leftIcon} />}
+      {children}
+      {rightIcon && <Icon className="text-xl" color="unset" icon={rightIcon} />}
     </span>
   );
 }
