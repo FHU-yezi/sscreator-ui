@@ -1,6 +1,7 @@
 import type { Signal } from "@preact/signals";
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import { useCallback, useEffect } from "preact/hooks";
 import type { SemanticColorType } from "../types/colorTypes";
 import TextButton from "./button/TextButton";
 import Row from "./layout/Row";
@@ -23,6 +24,36 @@ export default function Modal({
   notCloseable = false,
   zIndex = 20,
 }: Props) {
+  const onEsc = useCallback((event: KeyboardEvent) => {
+    if (event.code === "Escape") {
+      open.value = false;
+    }
+  }, []);
+
+  // 如果 Modal 被设置为可以关闭，则支持 Esc 关闭
+  useEffect(() => {
+    document.removeEventListener("keyup", onEsc);
+
+    if (!notCloseable && open.value) {
+      document.addEventListener("keyup", onEsc);
+    }
+
+    return () => document.removeEventListener("keyup", onEsc);
+  }, [notCloseable, open.value]);
+
+  // Modal 弹出时禁止页面滚动
+  useEffect(() => {
+    if (open.value) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open.value]);
+
   return (
     <>
       {/* 遮罩层 */}
