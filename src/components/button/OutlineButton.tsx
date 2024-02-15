@@ -46,8 +46,8 @@ export default function OutlineButton({
       className={clsx(
         "border shadow rounded disabled:opacity-60 inline-flex justify-center items-center",
         {
-          "px-3 py-1.5 gap-1.5": !small,
-          "px-1.5 py-1 gap-2": small,
+          "px-3 py-1.5 gap-1": !small,
+          "px-1.5 py-1 gap-1.5": small,
 
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
@@ -79,11 +79,11 @@ export default function OutlineButton({
       )}
       {children &&
         (small ? (
-          <SmallText className="whitespace-nowrap" color="unset">
+          <SmallText color="unset" nowrap>
             {children}
           </SmallText>
         ) : (
-          <Text className="whitespace-nowrap" color="unset">
+          <Text color="unset" nowrap>
             {children}
           </Text>
         ))}

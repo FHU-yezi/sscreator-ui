@@ -44,8 +44,8 @@ export default function TextButton({
       className={clsx(
         "disabled:opacity-60 w-min inline-flex justify-center items-center",
         {
-          "gap-1.5": !small,
-          "gap-1": small,
+          "gap-1": !small,
+          "gap-1.5": small,
 
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
@@ -78,11 +78,11 @@ export default function TextButton({
       )}
       {children &&
         (small ? (
-          <SmallText className="whitespace-nowrap" color="unset">
+          <SmallText color="unset" nowrap>
             {children}
           </SmallText>
         ) : (
-          <Text className="whitespace-nowrap" color="unset">
+          <Text color="unset" nowrap>
             {children}
           </Text>
         ))}
