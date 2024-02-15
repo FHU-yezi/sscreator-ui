@@ -47,12 +47,8 @@ export default function OutlineButton({
       className={clsx(
         "border shadow rounded disabled:opacity-60 inline-flex justify-center items-center",
         {
-          "gap-2": !small,
-          "px-3 py-1.5": !small && !leftIcon && !rightIcon,
-          "pl-2 pr-3 py-1.5": !small && leftIcon && !rightIcon,
-          "pl-3 pr-2 py-1.5": !small && !leftIcon && rightIcon,
-          "px-2 py-1.5": !small && leftIcon && rightIcon,
-          "gap-1 p-1": small,
+          "px-3 py-1.5 gap-2": !small,
+          "px-1.5 py-1 gap-2": small,
 
           "cursor-wait": loading,
           "cursor-not-allowed": disabled,
