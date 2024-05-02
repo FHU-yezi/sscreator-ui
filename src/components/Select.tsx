@@ -57,13 +57,7 @@ export default function Select<T extends ComponentChild>({
         <Row className="justify-between" gap="gap-2" itemsCenter>
           <Row gap="gap-1" itemsCenter>
             {currentOption?.leftIcon}
-            <span
-              className={clsx("whitespace-nowrap", {
-                "text-zinc-500 dark:text-zinc-400": !value.value,
-              })}
-            >
-              {currentOption?.label ?? "(请选择)"}
-            </span>
+            <span className="whitespace-nowrap">{currentOption?.label}</span>
           </Row>
           <Icon
             className="text-xl"

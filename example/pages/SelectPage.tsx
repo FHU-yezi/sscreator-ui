@@ -1,7 +1,7 @@
 import { signal } from "@preact/signals";
 import { Checkbox, Icon, Select, Text } from "../../src/main";
 
-const selected = signal<string | null>(null);
+const selected = signal("Python");
 
 const isDisabled = signal(false);
 const isFullWidth = signal(false);
