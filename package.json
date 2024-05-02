@@ -45,7 +45,6 @@
     "@rollup/plugin-typescript": "^11.1.0",
     "@types/node": "^20.12.0",
     "@unocss/cli": "^0.59.0",
-    "@unocss/preset-rem-to-px": "^0.59.0",
     "@unocss/reset": "^0.59.0",
     "resize-observer": "^1.0.0",
     "tslib": "^2.6.0",
