@@ -5,7 +5,7 @@ export default function MainPage() {
   return (
     <>
       {routes.map((item) => (
-        <PageCard name={item.name} path={item.path} />
+        <PageCard key={item.path} name={item.name} path={item.path} />
       ))}
     </>
   );

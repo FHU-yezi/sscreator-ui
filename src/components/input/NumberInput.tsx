@@ -55,7 +55,7 @@ export default function TextInput({
         }}
         value={value.value ?? undefined}
         onInput={(event) => {
-          const parseResult = parseFloat(event.currentTarget.value);
+          const parseResult = Number.parseFloat(event.currentTarget.value);
           if (!Number.isNaN(parseResult)) {
             value.value = parseResult;
           } else {

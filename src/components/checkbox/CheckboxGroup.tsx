@@ -33,7 +33,7 @@ export default function CheckboxGroup<T>({
     <InputWrapper id={id} label={label} helpText={helpText} disabled={disabled}>
       <div className={className}>
         {options.map((item) => (
-          <Column gap="gap-1">
+          <Column key={item.value} gap="gap-1">
             <Row gap="gap-1" itemsCenter>
               <button
                 id={`${id}-${item.label}-checkbox`}

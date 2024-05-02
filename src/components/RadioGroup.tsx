@@ -34,7 +34,7 @@ export default function RadioGroup<T>({
     <InputWrapper id={id} label={label} helpText={helpText} disabled={disabled}>
       <div className={className}>
         {options.map((item) => (
-          <Row gap="gap-1" itemsCenter>
+          <Row key={item.value} gap="gap-1" itemsCenter>
             <button
               id={`${id}-${item.value}-radiobox`}
               type="button"

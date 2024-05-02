@@ -114,6 +114,7 @@ export default function AutoCompleteInput({
             {options.map((item) => (
               <button
                 type="button"
+                key={item}
                 className={clsx(
                   "px-2 py-1 text-left  hover:bg-zinc-100 text-zinc-950 dark:(text-zinc-50 hover:bg-zinc-800)",
                   {
