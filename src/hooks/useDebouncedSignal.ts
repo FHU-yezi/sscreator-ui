@@ -1,4 +1,4 @@
-import { Signal, useSignal } from "@preact/signals";
+import { type Signal, useSignal } from "@preact/signals";
 import { useEffect, useRef } from "preact/hooks";
 
 export default function useDebouncedSignal<T>(

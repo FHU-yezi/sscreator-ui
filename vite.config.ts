@@ -1,6 +1,6 @@
-import { resolve } from "path";
 import Preact from "@preact/preset-vite";
 import TypeScript from "@rollup/plugin-typescript";
+import { resolve } from "node:path";
 import UnoCSS from "unocss/vite";
 import { defineConfig } from "vite";
 

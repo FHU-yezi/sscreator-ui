@@ -27,7 +27,7 @@ export default function App() {
 
         {
           routes.map((item) => (
-            <Route path={item.path}>
+            <Route key={item.path} path={item.path}>
               <PageWrapper name={item.name} Component={item.component} />
             </Route>
           )) as any as VNode<RouteProps<undefined, string>>
